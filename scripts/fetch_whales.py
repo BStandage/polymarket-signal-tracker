@@ -64,7 +64,7 @@ class Config:
 
     # Resolved-market outcomes fetch
     fetch_closed_markets: bool = True
-    closed_market_pages: int = 20       # up to this many pages of 500 each
+    closed_market_pages: int = 200      # up to this many pages of 100 each (~20k)
 
     # Rate limiting
     rate_calls: int = 6

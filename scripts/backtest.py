@@ -45,9 +45,9 @@ from utils import DATA_DIR, log, read_json, write_json, safe_float
 @dataclass
 class BacktestConfig:
     # Minimum wallet history required to rank a wallet at time T
-    min_resolved_before_rank: int = 5
+    min_resolved_before_rank: int = 2
     # Exclude wallets whose account_age at T is below this (days)
-    min_age_days_at_rank: int = 30
+    min_age_days_at_rank: int = 7
     # Top-K follow list sizes to evaluate
     top_ks: tuple[int, ...] = (10, 25, 50, 100)
     # Lookback gap — we rank using data at least this long before T
