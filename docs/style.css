@@ -696,45 +696,68 @@ th.numeric, td.numeric { text-align: right; }
  * ====================================================================*/
 
 @media (max-width: 700px) {
-  /* Smart-money row: CSS grid so side / title / trade / time never overlap */
+  /* Bulletproof flex-column layout — each child takes its natural height,
+     stacked in explicit order, no overlap possible. */
+  .signals-feed { overflow-x: hidden; }
+
   .signal-row {
-    display: grid !important;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto;
-    gap: 6px 10px;
-    padding: 12px 14px;
-    align-items: center;
-    min-height: 0;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    padding: 14px 14px !important;
+    min-height: 0 !important;
+    border-bottom: 1px solid var(--line);
+    position: relative;
   }
+  .signal-row > * { flex: 0 0 auto !important; min-width: 0 !important; }
+
   .signal-row .signal-side {
-    grid-column: 1; grid-row: 1;
-    align-self: flex-start;
-    padding-top: 2px;
+    order: 1 !important;
+    align-self: flex-start !important;
+    display: inline-block !important;
+    width: auto !important;
   }
   .signal-row .signal-body {
-    grid-column: 2; grid-row: 1;
-    min-width: 0;
+    order: 2 !important;
+    display: block !important;
+    width: 100% !important;
   }
-  .signal-row .trigger-link {
-    grid-column: 3; grid-row: 1;
-    align-self: flex-start;
-    padding: 6px 10px;
-    font-size: 10px;
+  .signal-row .signal-title {
+    display: block !important;
+    font-size: 13.5px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    margin-bottom: 5px !important;
+  }
+  .signal-row .signal-stats {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 3px 8px !important;
+    font-size: 11px !important;
+    line-height: 1.45 !important;
   }
   .signal-row .signal-time {
-    grid-column: 1 / -1; grid-row: 2;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    text-align: left;
-    min-width: 0;
-    font-size: 10px;
-    gap: 12px;
-    padding-top: 6px;
-    border-top: 1px dashed var(--line);
-    margin-top: 4px;
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: baseline !important;
+    text-align: left !important;
+    font-size: 10px !important;
+    gap: 12px !important;
+    padding-top: 8px !important;
+    border-top: 1px dashed var(--line) !important;
+    margin-top: 2px !important;
+    width: 100% !important;
   }
-  .signal-row .signal-title { font-size: 13px; }
-  .signal-row .signal-stats { font-size: 10.5px; gap: 3px 6px; }
+  .signal-row .trigger-link {
+    order: 4 !important;
+    align-self: stretch !important;
+    text-align: center !important;
+    padding: 8px !important;
+    font-size: 10.5px !important;
+    margin-top: 4px !important;
+  }
 }
