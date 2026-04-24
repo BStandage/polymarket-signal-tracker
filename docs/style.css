@@ -153,46 +153,6 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 700px) {
   :root { --page-pad: 18px; }
-
-  /* Signal row: grid layout so nothing overlaps */
-  .signal-row {
-    display: grid;
-    grid-template-columns: auto 1fr auto;
-    grid-template-rows: auto auto auto;
-    gap: 6px 10px;
-    padding: 12px 14px;
-    align-items: center;
-  }
-  .signal-row .signal-side {
-    grid-column: 1; grid-row: 1;
-    align-self: flex-start;
-    padding-top: 2px;
-  }
-  .signal-row .signal-body {
-    grid-column: 2; grid-row: 1 / span 2;
-    min-width: 0;
-  }
-  .signal-row .trigger-link {
-    grid-column: 3; grid-row: 1;
-    align-self: flex-start;
-    padding: 6px 10px;
-    font-size: 10px;
-  }
-  .signal-row .signal-time {
-    grid-column: 1 / -1; grid-row: 3;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-    text-align: left;
-    min-width: 0;
-    font-size: 10px;
-    gap: 12px;
-    padding-top: 4px;
-    border-top: 1px dashed var(--line);
-    margin-top: 4px;
-  }
-  .signal-row .signal-title { font-size: 13px; }
-  .signal-row .signal-stats { font-size: 10.5px; gap: 3px 6px; }
 }
 
 /* Stats strip ----------------------------------------------------- */
@@ -729,4 +689,52 @@ th.numeric, td.numeric { text-align: right; }
   text-transform: uppercase;
   padding-top: 18px;
   border-top: 1px solid var(--line);
+}
+
+/* ====================================================================
+ * Mobile overrides — kept at end of file so they win the cascade
+ * ====================================================================*/
+
+@media (max-width: 700px) {
+  /* Smart-money row: CSS grid so side / title / trade / time never overlap */
+  .signal-row {
+    display: grid !important;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+    gap: 6px 10px;
+    padding: 12px 14px;
+    align-items: center;
+    min-height: 0;
+  }
+  .signal-row .signal-side {
+    grid-column: 1; grid-row: 1;
+    align-self: flex-start;
+    padding-top: 2px;
+  }
+  .signal-row .signal-body {
+    grid-column: 2; grid-row: 1;
+    min-width: 0;
+  }
+  .signal-row .trigger-link {
+    grid-column: 3; grid-row: 1;
+    align-self: flex-start;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .signal-row .signal-time {
+    grid-column: 1 / -1; grid-row: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: left;
+    min-width: 0;
+    font-size: 10px;
+    gap: 12px;
+    padding-top: 6px;
+    border-top: 1px dashed var(--line);
+    margin-top: 4px;
+  }
+  .signal-row .signal-title { font-size: 13px; }
+  .signal-row .signal-stats { font-size: 10.5px; gap: 3px 6px; }
 }
