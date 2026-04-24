@@ -127,19 +127,27 @@
 
   async function load() {
     try {
-      const [whales, markets, lastUpdated, backtest] = await Promise.all([
+      const [whales, markets, lastUpdated, backtest, liveSignals, watchlist] = await Promise.all([
         fetchJSON("data/whales.json"),
         fetchJSON("data/markets.json"),
         fetchJSON("data/last_updated.json"),
         fetchJSON("data/backtest_report.json").catch(() => null),
+        fetchJSON("data/live_signals.json").catch(() => null),
+        fetchJSON("data/watchlist.json").catch(() => null),
       ]);
       state.wallets = (whales && whales.wallets) || [];
       state.markets = (markets && markets.markets) || [];
       state.backtest = backtest;
-      setLastUpdated(lastUpdated || whales);
+      state.liveSignals = liveSignals;
+      state.watchlist = watchlist;
+      setLastUpdated(lastUpdated || liveSignals || whales);
       document.getElementById("whale-count").textContent = state.wallets.length;
+      const sigCount = (liveSignals && liveSignals.enter_count != null)
+        ? liveSignals.enter_count : (liveSignals && liveSignals.signal_count) || 0;
+      document.getElementById("signal-count").textContent = sigCount;
       applyFilters();
-      renderSignals();
+      renderLiveSignals();
+      renderWatchlist();
       renderConsensus();
       renderBacktest();
     } catch (err) {
@@ -452,60 +460,101 @@
   // A "signal" is an open position held by one of our top-ranked whales,
   // scored by (whale.final_score × size × freshness).
   // --------------------------------------------------------------------
-  function renderSignals() {
+  function renderLiveSignals() {
     const feed = document.getElementById("signals-feed");
-    const activeIds = activeMarketSet();
-    const signals = deriveSignals(state.wallets, activeIds);
-    document.getElementById("signal-count").textContent = signals.length;
-
+    const ls = state.liveSignals;
+    if (!ls) {
+      feed.innerHTML = `<div class="signal-empty">Waiting for first signal-detector run…</div>`;
+      return;
+    }
+    const signals = ls.signals || [];
     if (!signals.length) {
-      feed.innerHTML = `<div class="signal-empty">No active-market signals from ranked whales yet.</div>`;
+      feed.innerHTML = `<div class="signal-empty">No fresh signals in the last ${ls.config?.signal_lookback_minutes || 45} min. Watchlist is ${ls.watchlist_size || 0} wallets.</div>`;
       return;
     }
 
-    feed.innerHTML = signals.slice(0, 30).map((s) => {
-      const href = s.slug ? `${POLYMARKET_BASE}${s.slug}` : null;
+    feed.innerHTML = signals.map((s) => {
+      const slug = s.market_slug;
+      const href = slug ? `${POLYMARKET_BASE}${slug}` : null;
       const title = escapeHtml(s.market_title || s.market_id || "—");
-      const drift = s.drift;
-      const driftClass = drift > 0 ? "drift-pos" : drift < 0 ? "drift-neg" : "muted";
-      const driftStr = drift == null ? "—" : `${drift > 0 ? "+" : ""}${(drift * 100).toFixed(1)}%`;
       const sideCls = s.side === "YES" ? "yes" : s.side === "NO" ? "no" : "";
-      const rankBadge = s.rank ? `#${s.rank}` : `—`;
-      const short = `${s.address.slice(0, 6)}…${s.address.slice(-4)}`;
       const titleEl = href
         ? `<a class="signal-title" href="${href}" target="_blank" rel="noopener">${title}</a>`
         : `<span class="signal-title">${title}</span>`;
 
-      const openedAgo = s.entry_timestamp ? relTimeAgo(s.entry_timestamp) : null;
-      const closesIn  = s.end_date ? relTimeUntil(s.end_date) : null;
-      const timeBlock = (openedAgo || closesIn)
-        ? `<div class="signal-time">
-             ${openedAgo ? `<span class="t-opened">Opened ${openedAgo}</span>` : ""}
-             ${closesIn  ? `<span class="t-closes">${closesIn.label}</span>` : ""}
-           </div>`
+      const w = s.whale || {};
+      const short = w.address ? `${w.address.slice(0,6)}…${w.address.slice(-4)}` : "—";
+      const winRate = (w.raw_win_rate || 0) * 100;
+      const recent = (w.recent_n && w.recent_wins != null)
+        ? `${w.recent_wins}/${w.recent_n} last 30d`
         : "";
 
-      return `<div class="signal-row">
+      const drift = s.drift;
+      const driftStr = drift == null ? "—" :
+        `${drift >= 0 ? "+" : ""}${(drift * 100).toFixed(1)}%`;
+      const driftClass = drift == null ? "muted"
+        : drift > 0.03 ? "drift-neg" : drift < 0 ? "drift-pos" : "muted";
+
+      const age = s.age_min;
+      const ageClass = age < 10 ? "pos" : age < 30 ? "warn" : "muted";
+
+      const vCls = {ENTER: "verdict-enter", LATE: "verdict-late", SKIP: "verdict-skip"}[s.verdict] || "";
+
+      return `<div class="signal-row ${vCls}">
         <span class="signal-side ${sideCls}">${escapeHtml(s.side || "?")}</span>
         <div class="signal-body">
-          ${titleEl}
+          <div class="signal-top">
+            ${titleEl}
+            <span class="verdict-badge ${vCls}">${s.verdict}</span>
+          </div>
           <div class="signal-stats">
             <span>Entry <b>${fmt(s.entry_price, 3)}</b></span>
             <span class="sep">·</span>
             <span>Now <b>${fmt(s.current_price, 3)}</b></span>
             <span class="sep">·</span>
-            <span class="${driftClass}"><b>${driftStr}</b></span>
+            <span class="${driftClass}">drift <b>${driftStr}</b></span>
             <span class="sep">·</span>
-            <span class="size">${fmtMoney(s.size_usdc)} pos</span>
+            <span class="size">${fmtMoney(s.size_usdc)}</span>
+            <span class="sep">·</span>
+            <span class="${ageClass}">${age != null ? age.toFixed(0) : "—"}m ago</span>
             <span class="sep">·</span>
             <span class="whale">
-              <span class="rank">${rankBadge}</span>
-              ${short} · <b>${fmtMoney(s.whale_total_pnl, true)}</b> lifetime
+              ${short} · <b>${(w.total_wins ?? "?")}/${(w.n_total ?? "?")} (${winRate.toFixed(0)}%)</b>
+              ${recent ? ` · <span class="muted">${recent}</span>` : ""}
             </span>
           </div>
+          ${s.skip_reasons?.length ? `<div class="signal-reasons">${s.skip_reasons.map(r => `<span class="tag">${escapeHtml(r)}</span>`).join("")}</div>` : ""}
         </div>
-        ${timeBlock}
         ${href ? `<a class="trigger-link" href="${href}" target="_blank" rel="noopener">Trade →</a>` : ""}
+      </div>`;
+    }).join("");
+  }
+
+  function renderWatchlist() {
+    const el = document.getElementById("watchlist-grid");
+    if (!el) return;
+    const wl = state.watchlist;
+    if (!wl || !wl.watchlist || !wl.watchlist.length) {
+      el.innerHTML = `<div class="watchlist-empty">Watchlist empty — run whale_selector.py.</div>`;
+      return;
+    }
+    el.innerHTML = wl.watchlist.map((r, i) => {
+      const m = r.metrics || {};
+      const winRate = (m.raw_win_rate || 0) * 100;
+      const recentRate = m.recent_n > 0 ? `${m.recent_wins}/${m.recent_n}` : "—";
+      const recentPct = m.recent_n > 0 ? ((m.recent_wins / m.recent_n) * 100).toFixed(0) + "%" : "";
+      const daysAgo = m.days_since_last_trade;
+      const activeTag = daysAgo < 2 ? "active" : daysAgo < 7 ? "recent" : "stale";
+      return `<div class="watch-card ${activeTag}">
+        <div class="watch-rank">#${i + 1}</div>
+        <div class="watch-addr mono">${r.address.slice(0, 10)}…${r.address.slice(-4)}</div>
+        <div class="watch-stats">
+          <div class="watch-stat"><span class="k">Record</span><span class="v">${m.total_wins}/${m.n_total} <span class="muted">(${winRate.toFixed(0)}%)</span></span></div>
+          <div class="watch-stat"><span class="k">PnL</span><span class="v pos">${fmtMoney(m.pnl_usdc)}</span></div>
+          <div class="watch-stat"><span class="k">ROI</span><span class="v">${(m.roi * 100).toFixed(0)}%</span></div>
+          <div class="watch-stat"><span class="k">30d</span><span class="v">${recentRate} <span class="muted">${recentPct}</span></span></div>
+          <div class="watch-stat"><span class="k">Last trade</span><span class="v">${daysAgo?.toFixed(0)}d ago</span></div>
+        </div>
       </div>`;
     }).join("");
   }

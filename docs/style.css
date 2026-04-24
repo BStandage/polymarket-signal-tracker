@@ -746,3 +746,91 @@ th.numeric, td.numeric { text-align: right; }
     margin-top: 10px;
   }
 }
+
+/* ====================================================================
+ * Live signal verdict badges + watchlist cards
+ * ====================================================================*/
+
+.verdict-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  border-radius: 4px;
+  border: 1px solid;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.verdict-badge.verdict-enter { color: var(--signal); border-color: var(--signal-dim); background: rgba(74,255,142,0.08); }
+.verdict-badge.verdict-late  { color: #ffd37a; border-color: rgba(255,211,122,0.4); background: rgba(255,211,122,0.05); }
+.verdict-badge.verdict-skip  { color: var(--text-faint); border-color: var(--line-strong); background: rgba(255,255,255,0.02); }
+
+.signal-row.verdict-enter { border-left: 3px solid var(--signal); }
+.signal-row.verdict-late  { border-left: 3px solid #ffd37a; }
+.signal-row.verdict-skip  { opacity: 0.6; }
+
+.signal-top {
+  display: flex; align-items: center; flex-wrap: wrap;
+  justify-content: space-between; gap: 8px;
+  margin-bottom: 4px;
+}
+
+.signal-reasons { margin-top: 5px; display: flex; flex-wrap: wrap; gap: 4px; }
+.signal-reasons .tag {
+  font-size: 10px;
+  color: var(--text-faint);
+  padding: 1px 6px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.signal-stats .warn { color: #ffd37a; }
+
+/* Watchlist grid */
+.watchlist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 12px;
+}
+.watch-card {
+  border: 1px solid var(--line);
+  background: rgba(0,0,0,0.35);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.watch-card.active { border-color: rgba(74,255,142,0.28); box-shadow: 0 0 20px rgba(74,255,142,0.05); }
+.watch-card.recent { border-color: rgba(255,211,122,0.22); }
+.watch-card.stale  { opacity: 0.65; }
+
+.watch-rank {
+  position: absolute; top: 10px; right: 12px;
+  font-family: var(--mono); font-size: 11px; color: var(--text-faint);
+}
+.watch-addr {
+  font-size: 12px;
+  color: var(--text);
+  font-family: var(--mono);
+  letter-spacing: 0.02em;
+}
+.watch-stats { display: flex; flex-direction: column; gap: 4px; font-size: 11px; }
+.watch-stat {
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-variant-numeric: tabular-nums;
+}
+.watch-stat .k { color: var(--text-faint); font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+.watch-stat .v { color: var(--text); font-family: var(--mono); }
+.watch-stat .v.pos { color: var(--signal); }
+
+.watchlist-empty {
+  padding: 30px;
+  text-align: center;
+  color: var(--text-faint);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}

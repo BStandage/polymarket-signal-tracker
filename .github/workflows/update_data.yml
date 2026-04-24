@@ -2,8 +2,8 @@ name: Update whale data
 
 on:
   schedule:
-    # every 30 minutes
-    - cron: "*/30 * * * *"
+    # daily at 04:00 UTC — full pipeline refresh + whale selection
+    - cron: "0 4 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -51,18 +51,26 @@ jobs:
         working-directory: scripts
         run: python backtest.py
 
+      - name: Refresh whale watchlist
+        id: selector
+        continue-on-error: true
+        working-directory: scripts
+        run: python whale_selector.py
+
       - name: Commit updated data if changed
         env:
           FETCH_OUTCOME: ${{ steps.fetch.outcome }}
           SCORE_OUTCOME: ${{ steps.score.outcome }}
           BT_OUTCOME:    ${{ steps.backtest.outcome }}
+          SEL_OUTCOME:   ${{ steps.selector.outcome }}
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add docs/data/whales.json docs/data/markets.json docs/data/last_updated.json \
-                  docs/data/backtest_report.json docs/data/closed_outcomes.json 2>/dev/null || true
+                  docs/data/backtest_report.json docs/data/closed_outcomes.json \
+                  docs/data/watchlist.json 2>/dev/null || true
 
           if git diff --staged --quiet; then
             echo "No data changes to commit."
