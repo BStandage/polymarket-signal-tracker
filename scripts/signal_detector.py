@@ -33,15 +33,18 @@ class SignalConfig:
     data_base: str = "https://data-api.polymarket.com"
     gamma_base: str = "https://gamma-api.polymarket.com"
 
-    # Freshness windows
-    signal_lookback_minutes: int = 45     # trades older than this are not emitted
-    fresh_minutes: int = 10               # ENTER-verdict cutoff
-    late_minutes: int = 30                # LATE-verdict cutoff
+    # Freshness windows — much more lenient now. If drift is small, age barely matters.
+    signal_lookback_minutes: int = 720    # 12h — show any trade we can still mirror
+    fresh_minutes: int = 60               # informational threshold ("fresh" badge context)
+    stale_minutes: int = 360              # only downgrades if drift ALSO out of bounds
 
-    # Filters
-    min_size_usdc: float = 500.0          # drop boredom trades
-    max_drift_for_enter: float = 0.03     # price drift from whale entry > 3% downgrades to WAIT
-    max_drift_for_late: float = 0.07      # > 7% drift → SKIP
+    # Hard filters — trades below this size are DROPPED entirely (not just SKIP)
+    hard_min_size_usdc: float = 100.0     # noise threshold
+    min_size_usdc: float = 500.0          # conviction threshold (below = SKIP verdict)
+
+    # Drift is the primary gate — if price hasn't moved, opportunity still exists
+    max_drift_for_enter: float = 0.03     # within 3% of whale's entry → ENTER
+    max_drift_for_late: float = 0.07      # 3–7% → LATE; > 7% → SKIP
 
     # Per-wallet activity pull
     activity_limit: int = 50
@@ -121,55 +124,7 @@ def classify_signal(trade: dict, current_price: float | None) -> dict:
     checks: list[dict] = []
     verdict = "ENTER"
 
-    # --- Check 1: freshness ---
-    if age_min <= CFG.fresh_minutes:
-        checks.append({
-            "name": "Freshness",
-            "status": "pass",
-            "value": f"{age_min:.0f}m ago",
-            "threshold": f"≤ {CFG.fresh_minutes}m",
-            "note": "Fresh — window is open",
-        })
-    elif age_min <= CFG.late_minutes:
-        verdict = "LATE"
-        checks.append({
-            "name": "Freshness",
-            "status": "warn",
-            "value": f"{age_min:.0f}m ago",
-            "threshold": f"> {CFG.fresh_minutes}m (fresh window)",
-            "note": f"Late — edge may be partly priced in. Stale at {CFG.late_minutes}m.",
-        })
-    else:
-        verdict = "SKIP"
-        checks.append({
-            "name": "Freshness",
-            "status": "fail",
-            "value": f"{age_min:.0f}m ago",
-            "threshold": f"> {CFG.late_minutes}m (stale cutoff)",
-            "note": "Stale — too late to tail, edge gone",
-        })
-
-    # --- Check 2: size / conviction ---
-    if size_usdc >= CFG.min_size_usdc:
-        checks.append({
-            "name": "Size",
-            "status": "pass",
-            "value": f"${size_usdc:,.0f}",
-            "threshold": f"≥ ${CFG.min_size_usdc:,.0f}",
-            "note": "Conviction trade (above minimum)",
-        })
-    else:
-        if verdict != "SKIP":
-            verdict = "SKIP"
-        checks.append({
-            "name": "Size",
-            "status": "fail",
-            "value": f"${size_usdc:,.0f}",
-            "threshold": f"≥ ${CFG.min_size_usdc:,.0f}",
-            "note": "Below conviction threshold — likely noise/partial-fill",
-        })
-
-    # --- Check 3: price drift ---
+    # --- Check 1: DRIFT (primary — has the market moved since whale entered?) ---
     if abs_drift is None:
         checks.append({
             "name": "Drift",
@@ -182,28 +137,75 @@ def classify_signal(trade: dict, current_price: float | None) -> dict:
         checks.append({
             "name": "Drift",
             "status": "pass",
-            "value": f"{drift_pct*100:+.1f}% (abs {abs_drift*100:.1f}%)",
+            "value": f"{drift_pct*100:+.1f}%",
             "threshold": f"≤ {CFG.max_drift_for_enter*100:.0f}%",
-            "note": "Near whale's entry — edge hasn't moved yet",
+            "note": "Near whale's entry — you can still mirror the trade at their price",
         })
     elif abs_drift <= CFG.max_drift_for_late:
-        if verdict == "ENTER":
-            verdict = "LATE"
+        verdict = "LATE"
         checks.append({
             "name": "Drift",
             "status": "warn",
-            "value": f"{drift_pct*100:+.1f}% (abs {abs_drift*100:.1f}%)",
+            "value": f"{drift_pct*100:+.1f}%",
             "threshold": f"> {CFG.max_drift_for_enter*100:.0f}%",
-            "note": f"Line moved {drift_pct*100:+.1f}% since whale entered — part of the edge is already priced in",
+            "note": f"Line moved {drift_pct*100:+.1f}% — part of the edge is already priced in",
         })
     else:
         verdict = "SKIP"
         checks.append({
             "name": "Drift",
             "status": "fail",
-            "value": f"{drift_pct*100:+.1f}% (abs {abs_drift*100:.1f}%)",
+            "value": f"{drift_pct*100:+.1f}%",
             "threshold": f"> {CFG.max_drift_for_late*100:.0f}%",
-            "note": f"Line moved {drift_pct*100:+.1f}% — the move already happened, you'd be buying post-alpha",
+            "note": f"Line moved {drift_pct*100:+.1f}% — the move already happened",
+        })
+
+    # --- Check 2: SIZE (conviction filter) ---
+    if size_usdc >= CFG.min_size_usdc:
+        checks.append({
+            "name": "Size",
+            "status": "pass",
+            "value": f"${size_usdc:,.0f}",
+            "threshold": f"≥ ${CFG.min_size_usdc:,.0f}",
+            "note": "Conviction trade (above minimum)",
+        })
+    else:
+        verdict = "SKIP"
+        checks.append({
+            "name": "Size",
+            "status": "fail",
+            "value": f"${size_usdc:,.0f}",
+            "threshold": f"≥ ${CFG.min_size_usdc:,.0f}",
+            "note": "Below conviction threshold — likely noise/partial-fill",
+        })
+
+    # --- Check 3: AGE (informational only — doesn't downgrade unless very stale) ---
+    if age_min <= CFG.fresh_minutes:
+        checks.append({
+            "name": "Age",
+            "status": "pass",
+            "value": f"{age_min:.0f}m ago",
+            "threshold": f"≤ {CFG.fresh_minutes}m",
+            "note": "Fresh",
+        })
+    elif age_min <= CFG.stale_minutes:
+        checks.append({
+            "name": "Age",
+            "status": "warn",
+            "value": f"{age_min:.0f}m ago",
+            "threshold": f"> {CFG.fresh_minutes}m",
+            "note": "Aging — but OK to tail if drift still small",
+        })
+    else:
+        # Only downgrades if drift is ALSO problematic
+        if verdict == "ENTER":
+            verdict = "LATE"
+        checks.append({
+            "name": "Age",
+            "status": "fail",
+            "value": f"{age_min:.0f}m ago",
+            "threshold": f"> {CFG.stale_minutes}m",
+            "note": "Very stale — even if price is near entry, you have less time to profit",
         })
 
     # Legacy short-form reason strings (kept for back-compat with older UI)
@@ -244,6 +246,10 @@ def run() -> dict:
         metrics = entry.get("metrics", {})
         trades = fetch_recent_trades(data_api, addr, since_ts)
         for t in trades:
+            # Hard noise filter — drop anything below hard_min_size_usdc before
+            # even classifying. These are partial fills / boredom trades.
+            if safe_float(t.get("usdcSize")) < CFG.hard_min_size_usdc:
+                continue
             cid = t.get("conditionId")
             outcome_idx = t.get("outcomeIndex")
             try:
@@ -306,7 +312,7 @@ def run() -> dict:
         "config": {
             "signal_lookback_minutes": CFG.signal_lookback_minutes,
             "fresh_minutes": CFG.fresh_minutes,
-            "late_minutes":  CFG.late_minutes,
+            "stale_minutes": CFG.stale_minutes,
             "min_size_usdc": CFG.min_size_usdc,
         },
         "watchlist_size": len(watchlist),

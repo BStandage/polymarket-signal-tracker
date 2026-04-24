@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=12" />
+  <link rel="stylesheet" href="style.css?v=13" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
-  <script src="app.js?v=12" defer></script>
+  <script src="app.js?v=13" defer></script>
 </head>
 <body>
   <canvas id="particle-field" aria-hidden="true"></canvas>
@@ -73,7 +73,7 @@
     <section class="section section--primary">
       <div class="section-head">
         <h2 class="accent">Live signals</h2>
-        <p class="section-caption">Fresh trades (&lt; 45 min) from wallets on our watchlist. ENTER = fresh + reasonable drift. LATE = edge partly priced in. SKIP = stale or size too small.</p>
+        <p class="section-caption">Trades from watchlisted wallets (last 12h). ENTER = price still near whale's entry + real size. LATE = 3–7% drift (edge partly priced in). SKIP = &gt;7% drift OR size &lt; $500. Age doesn't downgrade if price hasn't moved.</p>
       </div>
       <div class="signals-feed" id="signals-feed">
         <div class="signal-empty">Loading…</div>
@@ -84,7 +84,7 @@
     <section class="section">
       <div class="section-head">
         <h2>Watchlist</h2>
-        <p class="section-caption">Wallets auto-qualified by: ≥20 resolved bets, ≥$10k PnL, ≥10% ROI, statistically skilled, active within 14d, recent 30d win-rate ≥60%, drawdown &lt;50% of PnL, account age ≥60d. No manual picking.</p>
+        <p class="section-caption">Wallets auto-qualified by: ≥20 resolved bets, ≥$10k PnL, ≥10% ROI, statistically skilled (z ≥ 1.5 OR ≥80% win-rate with n≥30), active within 14d, 30d win-rate ≥60%, drawdown &lt;50% of PnL. No manual picking.</p>
       </div>
       <div class="watchlist-grid" id="watchlist-grid"></div>
     </section>

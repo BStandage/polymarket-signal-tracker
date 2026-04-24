@@ -62,11 +62,8 @@ class SelectionConfig:
     # 7. Drawdown
     max_drawdown_frac: float = 0.50
 
-    # 8. Age
-    min_account_age_days: int = 60
-
     # Ranking output
-    top_n_watchlist: int = 20      # cap the watchlist size
+    top_n_watchlist: int = 25      # cap the watchlist size
 
 
 CFG = SelectionConfig()
@@ -181,7 +178,6 @@ def evaluate_wallet(wallet: dict, closed_outcomes: dict[str, int],
         "recent":  days_since_last <= CFG.lookback_recent_days,
         "no_decay": (recent_n < CFG.min_decay_bets) or (recent_win_rate >= CFG.min_decay_win_rate),
         "drawdown": (pnl <= 0) or (max_dd / pnl <= CFG.max_drawdown_frac),
-        "age":     account_age_days >= CFG.min_account_age_days,
     }
     passed = all(checks.values())
 
@@ -265,7 +261,6 @@ def run_selection() -> dict:
             "lookback_recent_days": CFG.lookback_recent_days,
             "min_decay_win_rate": CFG.min_decay_win_rate,
             "max_drawdown_frac": CFG.max_drawdown_frac,
-            "min_account_age_days": CFG.min_account_age_days,
         },
         "summary": {
             "wallets_evaluated": len(evaluated),
