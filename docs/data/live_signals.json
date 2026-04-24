@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-24T17:16:12.610196Z",
+  "updated_at": "2026-04-24T17:29:23.398970Z",
   "config": {
     "signal_lookback_minutes": 45,
     "fresh_minutes": 10,
@@ -7,7 +7,7 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 14,
-  "signal_count": 5,
+  "signal_count": 3,
   "enter_count": 0,
   "signals": [
     {
@@ -21,7 +21,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.93,
-      "current_price": 0.945,
+      "current_price": 0.95,
       "shares": 0.47,
       "size_usdc": 0.44,
       "tx_hash": "0x3a066a2b7fa2b21c4a80901c107bb321a14525ab2deca41b0f914fc219423b32",
@@ -34,16 +34,39 @@
         "recent_wins": 79,
         "recent_n": 87,
         "recent_win_rate": 0.908,
-        "z_score": 0.0,
+        "z_score": 0.352,
         "n_total": 119,
         "total_wins": 110
       },
       "verdict": "SKIP",
-      "age_min": 18.8,
-      "drift": 0.015,
+      "age_min": 32.0,
+      "drift": 0.02,
+      "checks": [
+        {
+          "name": "Freshness",
+          "status": "fail",
+          "value": "32m ago",
+          "threshold": "> 30m (stale cutoff)",
+          "note": "Stale — too late to tail, edge gone"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$0",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+2.2% (abs 2.0%)",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — edge hasn't moved yet"
+        }
+      ],
       "skip_reasons": [
-        "19m late",
-        "size only $0"
+        "Stale — too late to tail, edge gone",
+        "Below conviction threshold — likely noise/partial-fill"
       ]
     },
     {
@@ -70,15 +93,38 @@
         "recent_wins": 35,
         "recent_n": 42,
         "recent_win_rate": 0.8333,
-        "z_score": 0.0,
+        "z_score": 0.34,
         "n_total": 64,
         "total_wins": 53
       },
-      "verdict": "LATE",
-      "age_min": 27.3,
-      "drift": 0.005,
+      "verdict": "SKIP",
+      "age_min": 40.5,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Freshness",
+          "status": "fail",
+          "value": "40m ago",
+          "threshold": "> 30m (stale cutoff)",
+          "note": "Stale — too late to tail, edge gone"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$880",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.6% (abs 0.5%)",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — edge hasn't moved yet"
+        }
+      ],
       "skip_reasons": [
-        "27m late"
+        "Stale — too late to tail, edge gone"
       ]
     },
     {
@@ -105,88 +151,39 @@
         "recent_wins": 79,
         "recent_n": 87,
         "recent_win_rate": 0.908,
-        "z_score": 0.0,
+        "z_score": 0.352,
         "n_total": 119,
         "total_wins": 110
       },
       "verdict": "SKIP",
-      "age_min": 30.5,
+      "age_min": 43.7,
       "drift": 0.01,
+      "checks": [
+        {
+          "name": "Freshness",
+          "status": "fail",
+          "value": "44m ago",
+          "threshold": "> 30m (stale cutoff)",
+          "note": "Stale — too late to tail, edge gone"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$34",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+1.6% (abs 1.0%)",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — edge hasn't moved yet"
+        }
+      ],
       "skip_reasons": [
-        "stale (31m old)",
-        "size only $34"
-      ]
-    },
-    {
-      "signal_id": "0x53eCc53E_0xe33f582b",
-      "ts": 1777048560.0,
-      "timestamp_iso": "2026-04-24T16:36:00Z",
-      "market_id": "0x8f6e71601903224dc29c69b886a63f248c8051be259e7db299850708f1f86dd6",
-      "market_title": "Lakers vs. Rockets",
-      "market_slug": "nba-lal-hou-2026-04-26",
-      "outcome": "Rockets",
-      "outcome_idx": 1,
-      "side": "ROCKETS",
-      "entry_price": 0.6356,
-      "current_price": 0.65,
-      "shares": 291.78,
-      "size_usdc": 187.5,
-      "tx_hash": "0xe33f582b01968b2d7e4cd5639a8e95558ed338bcc4a9dcb35082e05afdc90255",
-      "whale": {
-        "address": "0x53eCc53E7a69AaD0e6ddA60264cc2E363092df91",
-        "pseudonym": "Informal-Index-Discovery",
-        "raw_win_rate": 0.9244,
-        "lifetime_pnl": 70485.77,
-        "roi": 2.2248,
-        "recent_wins": 79,
-        "recent_n": 87,
-        "recent_win_rate": 0.908,
-        "z_score": 0.0,
-        "n_total": 119,
-        "total_wins": 110
-      },
-      "verdict": "SKIP",
-      "age_min": 40.2,
-      "drift": 0.0144,
-      "skip_reasons": [
-        "stale (40m old)",
-        "size only $188"
-      ]
-    },
-    {
-      "signal_id": "0x0dde1B35_0xbd8ec949",
-      "ts": 1777048270.0,
-      "timestamp_iso": "2026-04-24T16:31:10Z",
-      "market_id": "0xd93366079fab7bcb8a03705969822056b76226a48fd5bb7b1475a5b186cf6f07",
-      "market_title": "Will the 2026 Midterm Elections happen as scheduled?",
-      "market_slug": "will-the-2026-midterm-elections-happen-as-scheduled",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.89,
-      "current_price": 0.9,
-      "shares": 95.18,
-      "size_usdc": 84.71,
-      "tx_hash": "0xbd8ec9492e40ebd57b982ed11fe17e382d9f98370a8456e8ca883bad72a6cf2d",
-      "whale": {
-        "address": "0x0dde1B35552efaE5Aa3759Aedb6fa7b2d6f594c3",
-        "pseudonym": "Prickly-Signup",
-        "raw_win_rate": 0.8281,
-        "lifetime_pnl": 112590.58,
-        "roi": 0.3067,
-        "recent_wins": 35,
-        "recent_n": 42,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 64,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 45.0,
-      "drift": 0.01,
-      "skip_reasons": [
-        "stale (45m old)",
-        "size only $85"
+        "Stale — too late to tail, edge gone",
+        "Below conviction threshold — likely noise/partial-fill"
       ]
     }
   ]

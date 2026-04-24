@@ -104,7 +104,7 @@ def fetch_current_price(gamma: ApiClient, condition_id: str, outcome_idx: int) -
 
 
 def classify_signal(trade: dict, current_price: float | None) -> dict:
-    """Produce ENTER / LATE / SKIP + reasoning."""
+    """Produce ENTER / LATE / SKIP + detailed per-check rationale."""
     now_ts = dt.datetime.now(dt.timezone.utc).timestamp()
     ts = safe_float(trade.get("timestamp"))
     age_min = (now_ts - ts) / 60.0 if ts else 9999
@@ -112,34 +112,107 @@ def classify_signal(trade: dict, current_price: float | None) -> dict:
     size_usdc = safe_float(trade.get("usdcSize"))
 
     drift = None
+    drift_pct = None
     if current_price is not None and entry > 0:
-        drift = abs(current_price - entry)
+        drift = current_price - entry       # signed: positive = market moved up since whale bought
+        drift_pct = drift / entry           # relative to entry price
+    abs_drift = abs(drift) if drift is not None else None
 
-    reasons: list[str] = []
+    checks: list[dict] = []
     verdict = "ENTER"
 
-    if age_min > CFG.late_minutes:
-        verdict = "SKIP"
-        reasons.append(f"stale ({age_min:.0f}m old)")
-    elif age_min > CFG.fresh_minutes:
+    # --- Check 1: freshness ---
+    if age_min <= CFG.fresh_minutes:
+        checks.append({
+            "name": "Freshness",
+            "status": "pass",
+            "value": f"{age_min:.0f}m ago",
+            "threshold": f"≤ {CFG.fresh_minutes}m",
+            "note": "Fresh — window is open",
+        })
+    elif age_min <= CFG.late_minutes:
         verdict = "LATE"
-        reasons.append(f"{age_min:.0f}m late")
-
-    if size_usdc < CFG.min_size_usdc:
+        checks.append({
+            "name": "Freshness",
+            "status": "warn",
+            "value": f"{age_min:.0f}m ago",
+            "threshold": f"> {CFG.fresh_minutes}m (fresh window)",
+            "note": f"Late — edge may be partly priced in. Stale at {CFG.late_minutes}m.",
+        })
+    else:
         verdict = "SKIP"
-        reasons.append(f"size only ${size_usdc:.0f}")
+        checks.append({
+            "name": "Freshness",
+            "status": "fail",
+            "value": f"{age_min:.0f}m ago",
+            "threshold": f"> {CFG.late_minutes}m (stale cutoff)",
+            "note": "Stale — too late to tail, edge gone",
+        })
 
-    if drift is not None:
-        if drift > CFG.max_drift_for_late:
+    # --- Check 2: size / conviction ---
+    if size_usdc >= CFG.min_size_usdc:
+        checks.append({
+            "name": "Size",
+            "status": "pass",
+            "value": f"${size_usdc:,.0f}",
+            "threshold": f"≥ ${CFG.min_size_usdc:,.0f}",
+            "note": "Conviction trade (above minimum)",
+        })
+    else:
+        if verdict != "SKIP":
             verdict = "SKIP"
-            reasons.append(f"price moved {drift*100:.1f}% since entry")
-        elif drift > CFG.max_drift_for_enter and verdict == "ENTER":
+        checks.append({
+            "name": "Size",
+            "status": "fail",
+            "value": f"${size_usdc:,.0f}",
+            "threshold": f"≥ ${CFG.min_size_usdc:,.0f}",
+            "note": "Below conviction threshold — likely noise/partial-fill",
+        })
+
+    # --- Check 3: price drift ---
+    if abs_drift is None:
+        checks.append({
+            "name": "Drift",
+            "status": "unknown",
+            "value": "n/a",
+            "threshold": f"≤ {CFG.max_drift_for_enter*100:.0f}%",
+            "note": "Current price unavailable",
+        })
+    elif abs_drift <= CFG.max_drift_for_enter:
+        checks.append({
+            "name": "Drift",
+            "status": "pass",
+            "value": f"{drift_pct*100:+.1f}% (abs {abs_drift*100:.1f}%)",
+            "threshold": f"≤ {CFG.max_drift_for_enter*100:.0f}%",
+            "note": "Near whale's entry — edge hasn't moved yet",
+        })
+    elif abs_drift <= CFG.max_drift_for_late:
+        if verdict == "ENTER":
             verdict = "LATE"
-            reasons.append(f"price drifted {drift*100:.1f}%")
+        checks.append({
+            "name": "Drift",
+            "status": "warn",
+            "value": f"{drift_pct*100:+.1f}% (abs {abs_drift*100:.1f}%)",
+            "threshold": f"> {CFG.max_drift_for_enter*100:.0f}%",
+            "note": f"Line moved {drift_pct*100:+.1f}% since whale entered — part of the edge is already priced in",
+        })
+    else:
+        verdict = "SKIP"
+        checks.append({
+            "name": "Drift",
+            "status": "fail",
+            "value": f"{drift_pct*100:+.1f}% (abs {abs_drift*100:.1f}%)",
+            "threshold": f"> {CFG.max_drift_for_late*100:.0f}%",
+            "note": f"Line moved {drift_pct*100:+.1f}% — the move already happened, you'd be buying post-alpha",
+        })
+
+    # Legacy short-form reason strings (kept for back-compat with older UI)
+    short_reasons = [c["note"] for c in checks if c["status"] in ("warn", "fail")]
 
     return {
         "verdict": verdict,
-        "reasons": reasons,
+        "checks": checks,
+        "reasons": short_reasons,
         "age_min": round(age_min, 1),
         "drift": round(drift, 4) if drift is not None else None,
     }
@@ -221,6 +294,7 @@ def run() -> dict:
                 "verdict":     classification["verdict"],
                 "age_min":     classification["age_min"],
                 "drift":       classification["drift"],
+                "checks":      classification["checks"],
                 "skip_reasons": classification["reasons"],
             }
             signals.append(sig)

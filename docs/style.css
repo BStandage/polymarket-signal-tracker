@@ -834,3 +834,79 @@ th.numeric, td.numeric { text-align: right; }
   font-size: 12px;
   letter-spacing: 0.06em;
 }
+
+/* Verdict badge: clickable + rotating chevron */
+.verdict-badge {
+  cursor: pointer;
+  user-select: none;
+  background: transparent;
+  font-family: var(--mono);
+  transition: transform 100ms ease, box-shadow 100ms ease;
+}
+.verdict-badge:hover { filter: brightness(1.15); }
+.verdict-badge .verdict-chev {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 9px;
+  transition: transform 150ms ease;
+  opacity: 0.8;
+}
+.signal-row.checks-open .verdict-badge .verdict-chev { transform: rotate(180deg); }
+
+/* Click-to-reveal check panel */
+.signal-checks {
+  margin-top: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 11.5px;
+}
+.check-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed var(--line);
+}
+.check-row:last-child { border-bottom: none; padding-bottom: 0; }
+.check-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+.check-icon {
+  font-size: 13px;
+  font-weight: 600;
+  width: 14px;
+  display: inline-block;
+  text-align: center;
+}
+.check-row.check-pass .check-icon { color: var(--signal); }
+.check-row.check-warn .check-icon { color: #ffd37a; }
+.check-row.check-fail .check-icon { color: var(--bad); }
+.check-row.check-unknown .check-icon { color: var(--text-faint); }
+.check-name {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  min-width: 80px;
+}
+.check-value {
+  font-family: var(--mono);
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+.check-note {
+  color: var(--text-dim);
+  font-family: var(--sans);
+  line-height: 1.4;
+  padding-left: 22px;
+}
+.check-note .muted { color: var(--text-faint); }
+.check-note .muted.small { font-size: 10px; }
