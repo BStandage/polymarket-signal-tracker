@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=14" />
+  <link rel="stylesheet" href="style.css?v=15" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
-  <script src="app.js?v=14" defer></script>
+  <script src="app.js?v=15" defer></script>
 </head>
 <body>
   <canvas id="particle-field" aria-hidden="true"></canvas>
@@ -73,7 +73,7 @@
     <section class="section section--primary">
       <div class="section-head">
         <h2 class="accent">Live signals</h2>
-        <p class="section-caption">Trades from watchlisted wallets (last 12h). ENTER = price still near whale's entry + real size. LATE = 3–7% drift (edge partly priced in). SKIP = &gt;7% drift OR size &lt; $500. Age doesn't downgrade if price hasn't moved.</p>
+        <p class="section-caption">Trades from watchlisted wallets (last 12h). ENTER = price near whale's entry + real size + payoff worth the risk. LATE = drift 3–7% OR entry 0.75–0.90 (modest upside). SKIP = drift &gt;7% OR size &lt; $500. Entries ≥0.90 dropped entirely (max +11% if right, -100% if wrong — not worth fees).</p>
       </div>
       <div class="signals-feed" id="signals-feed">
         <div class="signal-empty">Loading…</div>

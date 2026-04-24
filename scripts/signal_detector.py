@@ -42,6 +42,12 @@ class SignalConfig:
     hard_min_size_usdc: float = 100.0     # noise threshold
     min_size_usdc: float = 500.0          # conviction threshold (below = SKIP verdict)
 
+    # Entry-price gate — high-priced bets have tiny payoff (buy at 0.85 = max
+    # +17% if you win, -100% if you lose). Not worth tailing through fees.
+    hard_max_entry_price: float = 0.90    # entry >= this → DROP entirely (not even SKIP)
+    warn_entry_price: float = 0.80        # 0.80-0.90 → downgrade to LATE
+    payoff_good_max: float = 0.75         # < 0.75 = ENTER-eligible payoff
+
     # Drift is the primary gate — if price hasn't moved, opportunity still exists
     max_drift_for_enter: float = 0.03     # within 3% of whale's entry → ENTER
     max_drift_for_late: float = 0.07      # 3–7% → LATE; > 7% → SKIP
@@ -179,7 +185,36 @@ def classify_signal(trade: dict, current_price: float | None) -> dict:
             "note": "Below conviction threshold — likely noise/partial-fill",
         })
 
-    # --- Check 3: AGE (informational only — doesn't downgrade unless very stale) ---
+    # --- Check 3: PAYOFF (entry price — how much can you actually make?) ---
+    max_return_pct = ((1 - entry) / entry * 100) if entry > 0 else 0
+    if entry >= CFG.warn_entry_price:
+        if verdict == "ENTER":
+            verdict = "LATE"
+        checks.append({
+            "name": "Payoff",
+            "status": "warn" if entry < CFG.hard_max_entry_price else "fail",
+            "value": f"{entry:.3f} (max +{max_return_pct:.0f}%)",
+            "threshold": f"< {CFG.payoff_good_max:.2f}",
+            "note": f"Entry too high — max {max_return_pct:.0f}% gain if right, -100% if wrong. Asymmetric risk.",
+        })
+    elif entry >= CFG.payoff_good_max:
+        checks.append({
+            "name": "Payoff",
+            "status": "warn",
+            "value": f"{entry:.3f} (max +{max_return_pct:.0f}%)",
+            "threshold": f"< {CFG.payoff_good_max:.2f}",
+            "note": f"Modest payoff — +{max_return_pct:.0f}% on win, small cushion over costs.",
+        })
+    else:
+        checks.append({
+            "name": "Payoff",
+            "status": "pass",
+            "value": f"{entry:.3f} (max +{max_return_pct:.0f}%)",
+            "threshold": f"< {CFG.payoff_good_max:.2f}",
+            "note": f"Good payoff — +{max_return_pct:.0f}% upside on a correct call.",
+        })
+
+    # --- Check 4: AGE (informational only — doesn't downgrade unless very stale) ---
     if age_min <= CFG.fresh_minutes:
         checks.append({
             "name": "Age",
@@ -249,6 +284,10 @@ def run() -> dict:
             # Hard noise filter — drop anything below hard_min_size_usdc before
             # even classifying. These are partial fills / boredom trades.
             if safe_float(t.get("usdcSize")) < CFG.hard_min_size_usdc:
+                continue
+            # Hard payoff filter — drop entries at/above hard_max_entry_price.
+            # Max upside on a 0.90+ entry is <11%, not worth fees/slippage/risk.
+            if safe_float(t.get("price")) >= CFG.hard_max_entry_price:
                 continue
             cid = t.get("conditionId")
             outcome_idx = t.get("outcomeIndex")
