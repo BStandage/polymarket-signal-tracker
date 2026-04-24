@@ -153,6 +153,46 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 700px) {
   :root { --page-pad: 18px; }
+
+  /* Signal row: grid layout so nothing overlaps */
+  .signal-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto auto;
+    gap: 6px 10px;
+    padding: 12px 14px;
+    align-items: center;
+  }
+  .signal-row .signal-side {
+    grid-column: 1; grid-row: 1;
+    align-self: flex-start;
+    padding-top: 2px;
+  }
+  .signal-row .signal-body {
+    grid-column: 2; grid-row: 1 / span 2;
+    min-width: 0;
+  }
+  .signal-row .trigger-link {
+    grid-column: 3; grid-row: 1;
+    align-self: flex-start;
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+  .signal-row .signal-time {
+    grid-column: 1 / -1; grid-row: 3;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    text-align: left;
+    min-width: 0;
+    font-size: 10px;
+    gap: 12px;
+    padding-top: 4px;
+    border-top: 1px dashed var(--line);
+    margin-top: 4px;
+  }
+  .signal-row .signal-title { font-size: 13px; }
+  .signal-row .signal-stats { font-size: 10.5px; gap: 3px 6px; }
 }
 
 /* Stats strip ----------------------------------------------------- */
@@ -219,11 +259,21 @@ a { color: inherit; text-decoration: none; }
 
 .backtest-grid {
   display: grid;
-  grid-template-columns: 110px 90px 100px 130px 110px 130px 130px;
+  grid-template-columns: 180px 70px 60px 1.3fr 90px 1.4fr 130px;
   font-size: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
+}
+.backtest-grid .bt-cell { line-height: 1.4; }
+.backtest-grid .bt-cell .small { display: block; margin-top: 2px; font-size: 10px; }
+.backtest-grid .bt-cell.warn { color: #ffd37a; }
+.backtest-grid .bt-span-muted { color: var(--text-faint); padding: 11px 12px; border-bottom: 1px solid var(--line); }
+.backtest-grid .bt-strat {
+  color: var(--text);
+  font-weight: 500;
+  font-family: var(--sans);
+  font-size: 12.5px;
 }
 .backtest-grid .bt-head {
   padding: 10px 12px;

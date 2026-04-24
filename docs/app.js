@@ -563,7 +563,7 @@
   function renderBacktest() {
     const panel = document.getElementById("backtest-panel");
     const b = state.backtest;
-    if (!b || !b.summary) { panel.hidden = true; return; }
+    if (!b) { panel.hidden = true; return; }
     panel.hidden = false;
 
     const vEl = document.getElementById("backtest-verdict");
@@ -572,60 +572,87 @@
     vEl.textContent = b.verdict || "";
 
     const grid = document.getElementById("backtest-grid");
-    const s = b.summary;
-    const baseline = (s.baseline_win_rate != null)
-      ? `${(s.baseline_win_rate * 100).toFixed(1)}%`
-      : "—";
+    const strategies = b.strategies || [];
 
-    const headerCells = `
-      <div class="bt-head">Follow top</div>
-      <div class="bt-head">Signals</div>
-      <div class="bt-head">Hit rate</div>
-      <div class="bt-head">vs base (${baseline})</div>
-      <div class="bt-head">Gross ROI</div>
-      <div class="bt-head">Net ROI (costs)</div>
-      <div class="bt-head">Net PnL</div>
+    if (!strategies.length) {
+      grid.innerHTML = `<div class="bt-meta" style="grid-column:1/-1">No strategy results yet — run the pipeline + backtest.</div>`;
+      return;
+    }
+
+    const header = `
+      <div class="bt-head">Strategy</div>
+      <div class="bt-head">K</div>
+      <div class="bt-head">N</div>
+      <div class="bt-head">Hit rate (95% CI)</div>
+      <div class="bt-head">p-value</div>
+      <div class="bt-head">Net ROI (95% CI)</div>
+      <div class="bt-head">OOS ROI</div>
     `;
 
-    const rows = (s.top_k || []).map((t) => {
-      if (!t.observations) {
-        return `
-          <div class="bt-cell muted">K=${t.k}</div>
-          <div class="bt-cell muted">—</div>
-          <div class="bt-cell muted">—</div>
-          <div class="bt-cell muted">—</div>
-          <div class="bt-cell muted">—</div>
-          <div class="bt-cell muted">—</div>
-          <div class="bt-cell muted">—</div>
-        `;
+    const strategyLabels = {
+      broad:             "All bets",
+      hard_bets:         "Hard bets (30–70%)",
+      hard_conv:         "Hard + ≥$5k",
+      hard_conv_decorr:  "Hard + ≥$5k + 1×/mkt",
+    };
+
+    const rows = strategies.flatMap((s) => {
+      const label = strategyLabels[s.name] || s.name;
+      const baseline = (s.baseline_win_rate != null)
+        ? `${(s.baseline_win_rate * 100).toFixed(1)}%`
+        : "—";
+      const tks = (s.top_k || []).filter((t) => t.observations > 0);
+      if (!tks.length) {
+        return [`
+          <div class="bt-cell bt-strat">${label}</div>
+          <div class="bt-cell bt-span-muted" style="grid-column: 2 / -1; text-align: center;">—</div>
+        `];
       }
-      const edge = t.edge_vs_baseline_pp;
-      const edgeClass = edge > 2 ? "pos" : edge < -2 ? "neg" : "muted";
-      const netClass = t.net_roi_after_costs > 0 ? "pos" : "neg";
-      return `
-        <div class="bt-cell bt-k">K=${t.k}</div>
-        <div class="bt-cell">${t.observations}</div>
-        <div class="bt-cell">${(t.hit_rate * 100).toFixed(1)}%</div>
-        <div class="bt-cell ${edgeClass}">${edge > 0 ? "+" : ""}${edge.toFixed(1)}pp</div>
-        <div class="bt-cell ${t.gross_roi > 0 ? "pos" : "neg"}">${(t.gross_roi * 100).toFixed(1)}%</div>
-        <div class="bt-cell ${netClass}"><b>${(t.net_roi_after_costs * 100).toFixed(1)}%</b></div>
-        <div class="bt-cell ${netClass}">${fmtMoney(t.net_pnl_usdc, true)}</div>
-      `;
-    }).join("");
+      return tks.map((t, i) => {
+        const p = t.p_value_one_sided;
+        const sigClass = p < 0.05 ? "pos" : p < 0.10 ? "warn" : "muted";
+        const netClass = t.net_roi_after_costs > 0.01 ? "pos"
+                       : t.net_roi_after_costs < -0.01 ? "neg" : "muted";
+        const wci = t.hit_rate_ci95 || [0, 0];
+        const nci = t.net_roi_ci95  || [0, 0];
+        const oos = t.out_of_sample;
+        const oosCell = oos
+          ? `<span class="${oos.net_roi > 0 ? 'pos' : oos.net_roi < 0 ? 'neg' : 'muted'}">${(oos.net_roi*100).toFixed(1)}% <span class="muted small">(${oos.observations})</span></span>`
+          : `<span class="muted">—</span>`;
+        return `
+          <div class="bt-cell bt-strat">${i === 0 ? `${label}<br><span class="muted small">base ${baseline}</span>` : ""}</div>
+          <div class="bt-cell bt-k">K=${t.k}</div>
+          <div class="bt-cell">${t.observations}</div>
+          <div class="bt-cell">
+            <b>${(t.hit_rate * 100).toFixed(1)}%</b>
+            <span class="muted small">${(wci[0]*100).toFixed(0)}–${(wci[1]*100).toFixed(0)}%</span>
+          </div>
+          <div class="bt-cell ${sigClass}">${p < 0.001 ? "<0.001" : p.toFixed(3)}</div>
+          <div class="bt-cell ${netClass}">
+            <b>${(t.net_roi_after_costs * 100).toFixed(1)}%</b>
+            <span class="muted small">${(nci[0]*100).toFixed(0)} to ${(nci[1]*100).toFixed(0)}%</span>
+          </div>
+          <div class="bt-cell">${oosCell}</div>
+        `;
+      });
+    });
 
-    grid.innerHTML = headerCells + rows;
+    grid.innerHTML = header + rows.join("");
 
-    // Footer meta
-    if (s.n_events != null) {
-      const meta = document.createElement("div");
-      meta.className = "bt-meta";
-      meta.textContent = `Corpus: ${s.n_events} (wallet × resolved-market) observations across ${s.baseline_total || 0} rank-eligible events.`;
-      grid.appendChild(meta);
-    }
+    const meta = document.createElement("div");
+    meta.className = "bt-meta";
+    meta.innerHTML = `
+      <b>Corpus:</b> ${b.n_events || 0} (wallet × resolved-market) observations.
+      <b>Verdict requires:</b> n ≥ 50, p &lt; 0.05, net ROI &gt; 3%.
+      <b>Costs:</b> 2% fee + 0.5–3% slippage by size.
+      <b>OOS:</b> last 30% of events, ranked using only prior data.
+    `;
+    grid.appendChild(meta);
   }
 
   function classifyVerdict(text) {
     if (/TRADEABLE SIGNAL/i.test(text)) return "verdict-good";
+    if (/NO TRADEABLE SIGNAL/i.test(text)) return "verdict-warn";
     if (/WEAK SIGNAL/i.test(text))      return "verdict-warn";
     if (/NO SIGNAL/i.test(text))        return "verdict-bad";
     return "verdict-muted";
