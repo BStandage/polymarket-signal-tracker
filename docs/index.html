@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>Polymarket Whale Tracker</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <canvas id="particle-field" aria-hidden="true"></canvas>
+
+  <div class="app">
+    <header class="page-header">
+      <span class="eyebrow">Live · Polymarket observatory</span>
+      <h1 class="page-title">
+        <span class="title-accent">Whale</span>
+        <em>Tracker</em>
+        <video
+          class="title-video"
+          autoplay muted loop playsinline
+          preload="auto"
+          aria-hidden="true">
+          <source src="media/whale_shark_rot.mp4" type="video/mp4" />
+        </video>
+      </h1>
+      <p class="page-tagline">
+        A personal trading terminal: watch what the top-ranked Polymarket wallets
+        just did, and piggyback if you agree. Refreshed every 30 minutes.
+      </p>
+    </header>
+
+    <div class="stat-strip">
+      <div class="stat">
+        <span class="stat__label">Whales tracked</span>
+        <span class="stat__value" id="whale-count">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Open signals</span>
+        <span class="stat__value" id="signal-count">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Last updated</span>
+        <span class="stat__value" id="last-updated">—</span>
+      </div>
+      <div class="stat">
+        <span class="stat__label">Next refresh</span>
+        <span class="stat__value" id="refresh-countdown">—</span>
+      </div>
+    </div>
+
+    <!-- Backtest verdict — is the ranking actually predictive? -->
+    <section class="section backtest-panel" id="backtest-panel" hidden>
+      <div class="section-head">
+        <h2>Backtest</h2>
+        <p class="section-caption">
+          Walk-forward test: rank wallets using only data before each resolved market,
+          check if the top-K predicted the outcome. Costs applied (2% fee + size-based slippage).
+        </p>
+      </div>
+      <div class="backtest-verdict" id="backtest-verdict">—</div>
+      <div class="backtest-grid" id="backtest-grid"></div>
+    </section>
+
+    <!-- PRIMARY: Smart money -->
+    <section class="section section--primary">
+      <div class="section-head">
+        <h2 class="accent">Smart money</h2>
+        <p class="section-caption">Top-ranked whales' current positions in active markets. Each row is a potential piggyback — weigh drift and size before acting.</p>
+      </div>
+      <div class="signals-feed" id="signals-feed">
+        <div class="signal-empty">Loading…</div>
+      </div>
+    </section>
+
+    <!-- Consensus markets -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Consensus markets</h2>
+        <p class="section-caption">Markets where ≥2 tracked whales are on the same side with no dissent. Higher conviction setups.</p>
+      </div>
+      <div class="consensus-table" id="consensus-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Market</th>
+              <th>Side</th>
+              <th class="numeric">Whales</th>
+              <th class="numeric">Avg entry</th>
+              <th class="numeric">Now</th>
+              <th class="numeric">Capital</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="consensus-body">
+            <tr><td colspan="7" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Filters + Leaderboard (reference) -->
+    <section class="section">
+      <div class="section-head">
+        <h2>Leaderboard</h2>
+        <p class="section-caption">Reference ranking of whales by composite skill score. Click a row to inspect their full positions and history.</p>
+      </div>
+
+      <div class="controls">
+        <div class="control">
+          <label for="min-score">Min score</label>
+          <input id="min-score" type="number" min="0" max="100" step="1" value="0" />
+        </div>
+        <div class="control">
+          <label for="min-winrate">Min win rate</label>
+          <input id="min-winrate" type="number" min="0" max="1" step="0.05" value="0" />
+        </div>
+        <div class="control">
+          <label for="min-volume">Min volume USDC</label>
+          <input id="min-volume" type="number" min="0" step="1000" value="0" />
+        </div>
+        <div class="control">
+          <label for="search">Search</label>
+          <input id="search" type="text" placeholder="0x… or label" />
+        </div>
+        <button id="reset-filters" class="btn ghost">Reset</button>
+      </div>
+
+      <div class="leaderboard-wrap">
+        <table id="leaderboard-table">
+          <thead>
+            <tr>
+              <th data-sort="rank" class="sortable">#</th>
+              <th data-sort="address">Wallet</th>
+              <th data-sort="final_score" class="sortable numeric">Score</th>
+              <th data-sort="total_pnl_usdc" class="sortable sortable-desc numeric">Total PnL</th>
+              <th data-sort="overall_roi" class="sortable numeric">ROI</th>
+              <th data-sort="win_rate" class="sortable numeric">Win rate</th>
+              <th data-sort="resolved_markets" class="sortable numeric">Resolved</th>
+              <th data-sort="capital_deployed_usdc" class="sortable numeric">Capital</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="leaderboard-body">
+            <tr><td colspan="9" class="empty">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Score breakdown (shown when a whale is selected) -->
+    <section class="section radar-panel">
+      <div class="section-head">
+        <h2>Score breakdown</h2>
+        <p class="section-caption" id="radar-caption">Select a whale in the leaderboard to inspect their scoring profile.</p>
+      </div>
+      <div class="radar-wrap" id="radar-wrap" hidden>
+        <canvas id="radar-chart"></canvas>
+      </div>
+    </section>
+
+    <footer class="app-footer">
+      Data from public Polymarket APIs · Not financial advice · Personal use
+    </footer>
+  </div>
+
+  <template id="expanded-row-template">
+    <tr class="expanded-row">
+      <td colspan="9">
+        <div class="expanded-grid">
+          <div>
+            <h3>Open positions <span class="count" data-slot="open-count"></span></h3>
+            <div class="subtable positions"></div>
+          </div>
+          <div>
+            <h3>Resolved history <span class="count" data-slot="resolved-count"></span></h3>
+            <div class="subtable resolved"></div>
+          </div>
+          <div>
+            <h3>Category mix</h3>
+            <div class="category-mix"></div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </template>
+</body>
+</html>
