@@ -500,32 +500,20 @@
 
       const vCls = {ENTER: "verdict-enter", LATE: "verdict-late", SKIP: "verdict-skip"}[s.verdict] || "";
 
-      // Build a text tooltip summary (for desktop hover) + a structured popover (for click)
+      // Inline always-visible rationale: icon + short note per check
       const checks = s.checks || [];
-      const tipText = checks.length
-        ? checks.map(c => `${c.name}: ${c.value}  (${c.note})`).join("\n")
-        : "Click for details";
-      const checksHtml = checks.map(c => `
-        <div class="check-row check-${c.status}">
-          <div class="check-head">
-            <span class="check-icon">${c.status === "pass" ? "✓" : c.status === "warn" ? "⚠" : c.status === "fail" ? "✗" : "·"}</span>
-            <span class="check-name">${escapeHtml(c.name)}</span>
-            <span class="check-value">${escapeHtml(c.value)}</span>
-          </div>
-          <div class="check-note">${escapeHtml(c.note)} <span class="muted small">(threshold: ${escapeHtml(c.threshold)})</span></div>
-        </div>
-      `).join("");
+      const explainInline = checks.map(c => {
+        const icon = c.status === "pass" ? "✓" : c.status === "warn" ? "⚠" : c.status === "fail" ? "✗" : "·";
+        const shortNote = (c.note || "").split("—")[0].trim() || c.note || "";
+        return `<span class="explain-${c.status}" title="${escapeHtml(c.name + ': ' + c.value + ' — ' + c.note + ' (threshold: ' + c.threshold + ')')}">${icon} ${escapeHtml(c.name)} ${escapeHtml(c.value)}</span>`;
+      }).join(`<span class="sep">·</span>`);
 
-      // eslint-disable-next-line
       return `<div class="signal-row ${vCls}" data-sig="${escapeHtml(s.signal_id || "")}">
         <span class="signal-side ${sideCls}">${escapeHtml(s.side || "?")}</span>
         <div class="signal-body">
           <div class="signal-top">
             ${titleEl}
-            <button type="button" class="verdict-badge ${vCls}" title="${escapeHtml(tipText)}" data-act="toggle-checks">
-              ${s.verdict}
-              <span class="verdict-chev">▾</span>
-            </button>
+            <span class="verdict-badge ${vCls}" title="${escapeHtml(checks.map(c => c.name + ': ' + c.note).join(' | '))}">${s.verdict}</span>
           </div>
           <div class="signal-stats">
             <span>Entry <b>${fmt(s.entry_price, 3)}</b></span>
@@ -543,26 +531,11 @@
               ${recent ? ` · <span class="muted">${recent}</span>` : ""}
             </span>
           </div>
-          <div class="signal-checks" hidden>${checksHtml}</div>
+          <div class="signal-explain">${explainInline}</div>
         </div>
         ${href ? `<a class="trigger-link" href="${href}" target="_blank" rel="noopener">Trade →</a>` : ""}
       </div>`;
     }).join("");
-
-    // Wire up click-to-toggle on verdict badges (works for both mouse + touch)
-    feed.querySelectorAll("[data-act='toggle-checks']").forEach((btn) => {
-      btn.addEventListener("click", (ev) => {
-        ev.stopPropagation();
-        const row = btn.closest(".signal-row");
-        if (!row) return;
-        const panel = row.querySelector(".signal-checks");
-        if (!panel) return;
-        const open = !panel.hasAttribute("hidden");
-        if (open) panel.setAttribute("hidden", "");
-        else      panel.removeAttribute("hidden");
-        row.classList.toggle("checks-open", !open);
-      });
-    });
   }
 
   function renderWatchlist() {
