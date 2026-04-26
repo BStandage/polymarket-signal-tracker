@@ -18,7 +18,8 @@
     expandedAddr: null,
     selectedAddr: null,
     radar: null,
-    refreshDeadline: Date.now() + REFRESH_MS,
+    refreshDeadline: null,
+    reloadTimer: null,
   };
 
   // --------------------------------------------------------------------
@@ -30,7 +31,6 @@
     initObservation();
     load();
     setInterval(tickCountdown, 1000);
-    setTimeout(() => window.location.reload(), REFRESH_MS);
   });
 
   // --------------------------------------------------------------------
@@ -923,11 +923,21 @@
     const d = new Date(ts);
     if (isNaN(d.getTime())) { el.textContent = ts; return; }
     el.textContent = d.toLocaleString();
+    state.refreshDeadline = d.getTime() + REFRESH_MS;
+    scheduleReload();
+  }
+
+  function scheduleReload() {
+    if (state.reloadTimer) clearTimeout(state.reloadTimer);
+    // Reload at the deadline; if we're already past it, wait 60s to avoid loop-reloading on stale data.
+    const wait = Math.max(60_000, state.refreshDeadline - Date.now());
+    state.reloadTimer = setTimeout(() => window.location.reload(), wait);
   }
 
   function tickCountdown() {
-    const remain = state.refreshDeadline - Date.now();
     const el = document.getElementById("refresh-countdown");
+    if (state.refreshDeadline == null) { el.textContent = "—"; return; }
+    const remain = state.refreshDeadline - Date.now();
     if (remain <= 0) { el.textContent = "now…"; return; }
     const h = Math.floor(remain / 3_600_000);
     const m = Math.floor((remain % 3_600_000) / 60_000);
