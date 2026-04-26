@@ -29,6 +29,7 @@
     bindControls();
     initParticles();
     initObservation();
+    bindSignalsModal();
     load();
     setInterval(tickCountdown, 1000);
   });
@@ -460,6 +461,43 @@
   // A "signal" is an open position held by one of our top-ranked whales,
   // scored by (whale.final_score × size × freshness).
   // --------------------------------------------------------------------
+  // Combine same-wallet+same-market+same-side signals into one logical bet.
+  // Whales often split a single conviction across many orders for slippage; rendering
+  // each as its own card buries the actual decision count.
+  function groupSignals(signals) {
+    const groups = new Map();
+    for (const s of signals) {
+      const wallet = (s.whale && s.whale.address) || "?";
+      const market = s.market_id || s.market_slug || s.market_title || "?";
+      const key = `${wallet}|${market}|${s.side}`;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(s);
+    }
+    const out = [];
+    for (const items of groups.values()) {
+      items.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+      const latest = items[0];
+      const totalSize = items.reduce((a, b) => a + (b.size_usdc || 0), 0);
+      const totalShares = items.reduce((a, b) => a + (b.shares || 0), 0);
+      const weightedEntry = totalSize > 0
+        ? items.reduce((a, b) => a + (b.entry_price || 0) * (b.size_usdc || 0), 0) / totalSize
+        : latest.entry_price;
+      const drift = (weightedEntry != null && latest.current_price != null)
+        ? (latest.current_price - weightedEntry)
+        : null;
+      out.push({
+        ...latest,
+        size_usdc: totalSize,
+        shares: totalShares,
+        entry_price: weightedEntry,
+        drift,
+        orders_count: items.length,
+      });
+    }
+    out.sort((a, b) => (b.ts || 0) - (a.ts || 0));
+    return out;
+  }
+
   function renderLiveSignals() {
     const feed = document.getElementById("signals-feed");
     const ls = state.liveSignals;
@@ -473,7 +511,8 @@
       return;
     }
 
-    feed.innerHTML = signals.map((s) => {
+    const grouped = groupSignals(signals);
+    feed.innerHTML = grouped.map((s) => {
       const slug = s.market_slug;
       const href = slug ? `${POLYMARKET_BASE}${slug}` : null;
       const title = escapeHtml(s.market_title || s.market_id || "—");
@@ -508,11 +547,16 @@
         return `<span class="explain-${c.status}" title="${escapeHtml(c.name + ': ' + c.value + ' — ' + c.note + ' (threshold: ' + c.threshold + ')')}">${icon} ${escapeHtml(c.name)} ${escapeHtml(c.value)}</span>`;
       }).join(`<span class="sep">·</span>`);
 
-      return `<div class="signal-row ${vCls}" data-sig="${escapeHtml(s.signal_id || "")}">
+      const ordersBadge = s.orders_count > 1
+        ? `<span class="orders-badge" title="${s.orders_count} orders combined into one position. Size and entry are size-weighted across all of them.">${s.orders_count} orders</span>`
+        : "";
+
+      return `<div class="signal-row ${vCls}" data-sig="${escapeHtml(s.signal_id || "")}" data-wallet="${escapeHtml(w.address || "")}" tabindex="0" role="button" aria-label="Show open positions for this wallet">
         <span class="signal-side ${sideCls}">${escapeHtml(s.side || "?")}</span>
         <div class="signal-body">
           <div class="signal-top">
             ${titleEl}
+            ${ordersBadge}
             <span class="verdict-badge ${vCls}" title="${escapeHtml(checks.map(c => c.name + ': ' + c.note).join(' | '))}">${s.verdict}</span>
           </div>
           <div class="signal-stats">
@@ -943,6 +987,95 @@
     // Reload at the deadline; if we're already past it, wait 60s to avoid loop-reloading on stale data.
     const wait = Math.max(60_000, state.refreshDeadline - Date.now());
     state.reloadTimer = setTimeout(() => window.location.reload(), wait);
+  }
+
+  // --------------------------------------------------------------------
+  // Wallet positions modal (click a signal → see that wallet's open bets)
+  // --------------------------------------------------------------------
+  function bindSignalsModal() {
+    const feed = document.getElementById("signals-feed");
+    if (!feed) return;
+
+    feed.addEventListener("click", (ev) => {
+      // Don't intercept clicks on inner links/buttons (market title, Trade →, etc.)
+      if (ev.target.closest("a, button")) return;
+      const row = ev.target.closest(".signal-row");
+      if (!row) return;
+      const addr = row.getAttribute("data-wallet");
+      if (addr) openWalletModal(addr);
+    });
+
+    feed.addEventListener("keydown", (ev) => {
+      if (ev.key !== "Enter" && ev.key !== " ") return;
+      const row = ev.target.closest(".signal-row");
+      if (!row) return;
+      ev.preventDefault();
+      const addr = row.getAttribute("data-wallet");
+      if (addr) openWalletModal(addr);
+    });
+
+    document.addEventListener("keydown", (ev) => {
+      if (ev.key === "Escape") closeWalletModal();
+    });
+  }
+
+  function openWalletModal(addr) {
+    const wallet = state.wallets.find((w) => w.address === addr);
+    closeWalletModal();
+
+    const overlay = document.createElement("div");
+    overlay.className = "modal-overlay";
+    overlay.id = "wallet-modal";
+    overlay.addEventListener("click", (ev) => {
+      if (ev.target === overlay) closeWalletModal();
+    });
+
+    const open = (wallet && wallet.open_positions) || [];
+    const short = `${addr.slice(0, 8)}…${addr.slice(-6)}`;
+    const totalOpen = open.reduce((a, b) => a + (b.size_usdc || 0), 0);
+    const unreal = open.reduce((a, b) => a + (b.unrealized_pnl || 0), 0);
+    const unrealCls = signClass(unreal);
+
+    let header;
+    if (wallet) {
+      const winRate = (wallet.raw_win_rate || 0) * 100;
+      header = `
+        <div class="modal-stats">
+          <div class="modal-stat"><span class="k">Record</span><span class="v">${wallet.total_wins ?? "?"}/${wallet.n_total ?? "?"} <span class="muted">(${winRate.toFixed(0)}%)</span></span></div>
+          <div class="modal-stat"><span class="k">Lifetime PnL</span><span class="v pos">${fmtMoney(wallet.total_pnl_usdc)}</span></div>
+          <div class="modal-stat"><span class="k">Open positions</span><span class="v">${open.length}</span></div>
+          <div class="modal-stat"><span class="k">Open exposure</span><span class="v">${fmtMoney(totalOpen)}</span></div>
+          <div class="modal-stat"><span class="k">Unrealized</span><span class="v ${unrealCls}">${fmtMoney(unreal, true)}</span></div>
+        </div>`;
+    } else {
+      header = `<p class="muted small">Wallet not in current snapshot — open positions unavailable.</p>`;
+    }
+
+    overlay.innerHTML = `
+      <div class="modal" role="dialog" aria-modal="true" aria-label="Wallet open positions">
+        <div class="modal-head">
+          <div>
+            <div class="modal-eyebrow">Wallet</div>
+            <h3 class="mono">${escapeHtml(short)}</h3>
+          </div>
+          <button class="modal-close" aria-label="Close">×</button>
+        </div>
+        ${header}
+        <div class="modal-body">
+          <h4>Currently open positions</h4>
+          <div class="subtable positions">${renderPositionsTable(open)}</div>
+        </div>
+      </div>`;
+
+    overlay.querySelector(".modal-close").addEventListener("click", closeWalletModal);
+    document.body.appendChild(overlay);
+    document.body.classList.add("modal-open");
+  }
+
+  function closeWalletModal() {
+    const existing = document.getElementById("wallet-modal");
+    if (existing) existing.remove();
+    document.body.classList.remove("modal-open");
   }
 
   function tickCountdown() {
