@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-26T06:27:06.880065Z",
+  "updated_at": "2026-04-26T08:02:42.439414Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,89 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 5,
-  "signal_count": 17,
-  "enter_count": 5,
+  "signal_count": 10,
+  "enter_count": 1,
   "signals": [
     {
-      "signal_id": "0x2a2C53bD_0xa67f7052",
-      "ts": 1777175130.0,
-      "timestamp_iso": "2026-04-26T03:45:30Z",
+      "signal_id": "0x2a2C53bD_0xfd89df79",
+      "ts": 1777189250.0,
+      "timestamp_iso": "2026-04-26T07:40:50Z",
       "market_id": "0x15562dc4833b16e4d3773805c4e530e9d839316815c0f3f3c234e40bd77016b9",
       "market_title": "LoL: T1 vs BNK FEARX (BO3) - LCK Rounds 1-2",
       "market_slug": "lol-t1-fox1-2026-04-26",
-      "outcome": "T1",
+      "outcome": "BNK FEARX",
+      "outcome_idx": 1,
+      "side": "BNK FEARX",
+      "entry_price": 0.27,
+      "current_price": 0.285,
+      "shares": 1646.75,
+      "size_usdc": 444.62,
+      "tx_hash": "0xfd89df797b90d010dc3728f7cc0bd67dbee92a9b329f9569d32ce53e4e2958d7",
+      "whale": {
+        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
+        "pseudonym": "Dishonest-Bloom",
+        "raw_win_rate": 0.8267,
+        "lifetime_pnl": 857044.69,
+        "roi": 0.3255,
+        "recent_wins": 62,
+        "recent_n": 75,
+        "recent_win_rate": 0.8267,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 62
+      },
+      "verdict": "SKIP",
+      "age_min": 21.9,
+      "drift": 0.015,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+5.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$445",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.270 (max +270%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +270% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "22m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x2a2C53bD_0x1212e858",
+      "ts": 1777189146.0,
+      "timestamp_iso": "2026-04-26T07:39:06Z",
+      "market_id": "0xe72a3469d23572bc51cb00df2ebc43f00764ea0693f13b44cc0611f2b5697989",
+      "market_title": "Madrid Open: Linda Noskova vs Liudmila Samsonova",
+      "market_slug": "wta-noskova-samsono-2026-04-26",
+      "outcome": "Linda Noskova",
       "outcome_idx": 0,
-      "side": "T1",
-      "entry_price": 0.69,
-      "current_price": 0.725,
-      "shares": 87822.47,
-      "size_usdc": 60597.5,
-      "tx_hash": "0xa67f7052be4c88d6fe8b21a70bab6e5acbcad91fcc39f653d672e895558a38d9",
+      "side": "LINDA NOSKOVA",
+      "entry_price": 0.54,
+      "current_price": 0.505,
+      "shares": 1136.0,
+      "size_usdc": 613.44,
+      "tx_hash": "0x1212e858965c4a07a0437652800154f0d21f2d0655c2108a0f0b77cd2e7e781d",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -39,58 +104,57 @@
         "total_wins": 62
       },
       "verdict": "LATE",
-      "age_min": 161.6,
-      "drift": 0.035,
+      "age_min": 23.6,
+      "drift": -0.035,
       "checks": [
         {
           "name": "Drift",
           "status": "warn",
-          "value": "+5.1%",
+          "value": "-6.5%",
           "threshold": "> 3%",
-          "note": "Line moved +5.1% — part of the edge is already priced in"
+          "note": "Line moved -6.5% — part of the edge is already priced in"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$60,598",
+          "value": "$613",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.690 (max +45%)",
+          "value": "0.540 (max +85%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +45% upside on a correct call."
+          "note": "Good payoff — +85% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "162m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "pass",
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Line moved +5.1% — part of the edge is already priced in",
-        "Aging — but OK to tail if drift still small"
+        "Line moved -6.5% — part of the edge is already priced in"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0x42855a14",
-      "ts": 1777174866.0,
-      "timestamp_iso": "2026-04-26T03:41:06Z",
-      "market_id": "0x15562dc4833b16e4d3773805c4e530e9d839316815c0f3f3c234e40bd77016b9",
-      "market_title": "LoL: T1 vs BNK FEARX (BO3) - LCK Rounds 1-2",
-      "market_slug": "lol-t1-fox1-2026-04-26",
-      "outcome": "T1",
+      "signal_id": "0x2a2C53bD_0x96658ed1",
+      "ts": 1777189146.0,
+      "timestamp_iso": "2026-04-26T07:39:06Z",
+      "market_id": "0xe72a3469d23572bc51cb00df2ebc43f00764ea0693f13b44cc0611f2b5697989",
+      "market_title": "Madrid Open: Linda Noskova vs Liudmila Samsonova",
+      "market_slug": "wta-noskova-samsono-2026-04-26",
+      "outcome": "Linda Noskova",
       "outcome_idx": 0,
-      "side": "T1",
-      "entry_price": 0.69,
-      "current_price": 0.725,
-      "shares": 2136.8,
-      "size_usdc": 1474.39,
-      "tx_hash": "0x42855a14d8c8600dacc2af1c38be29a73f77ecc059b475f944ca778090896334",
+      "side": "LINDA NOSKOVA",
+      "entry_price": 0.56,
+      "current_price": 0.505,
+      "shares": 15000.0,
+      "size_usdc": 8400.0,
+      "tx_hash": "0x96658ed108b69a98086e3103e7f60ac8f2a673b6c4de87ca735cce40ecda4ec0",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -105,188 +169,57 @@
         "total_wins": 62
       },
       "verdict": "LATE",
-      "age_min": 166.0,
-      "drift": 0.035,
+      "age_min": 23.6,
+      "drift": -0.055,
       "checks": [
         {
           "name": "Drift",
           "status": "warn",
-          "value": "+5.1%",
+          "value": "-9.8%",
           "threshold": "> 3%",
-          "note": "Line moved +5.1% — part of the edge is already priced in"
+          "note": "Line moved -9.8% — part of the edge is already priced in"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$1,474",
+          "value": "$8,400",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.690 (max +45%)",
+          "value": "0.560 (max +79%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +45% upside on a correct call."
+          "note": "Good payoff — +79% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "166m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "pass",
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Line moved +5.1% — part of the edge is already priced in",
-        "Aging — but OK to tail if drift still small"
+        "Line moved -9.8% — part of the edge is already priced in"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0x42855a14",
-      "ts": 1777174866.0,
-      "timestamp_iso": "2026-04-26T03:41:06Z",
-      "market_id": "0x15562dc4833b16e4d3773805c4e530e9d839316815c0f3f3c234e40bd77016b9",
-      "market_title": "LoL: T1 vs BNK FEARX (BO3) - LCK Rounds 1-2",
-      "market_slug": "lol-t1-fox1-2026-04-26",
-      "outcome": "T1",
+      "signal_id": "0x2a2C53bD_0xd1d0c64d",
+      "ts": 1777189126.0,
+      "timestamp_iso": "2026-04-26T07:38:46Z",
+      "market_id": "0xe72a3469d23572bc51cb00df2ebc43f00764ea0693f13b44cc0611f2b5697989",
+      "market_title": "Madrid Open: Linda Noskova vs Liudmila Samsonova",
+      "market_slug": "wta-noskova-samsono-2026-04-26",
+      "outcome": "Linda Noskova",
       "outcome_idx": 0,
-      "side": "T1",
-      "entry_price": 0.71,
-      "current_price": 0.725,
-      "shares": 22048.8,
-      "size_usdc": 15654.65,
-      "tx_hash": "0x42855a14d8c8600dacc2af1c38be29a73f77ecc059b475f944ca778090896334",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "ENTER",
-      "age_min": 166.0,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$15,655",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "166m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x160c09b5",
-      "ts": 1777174848.0,
-      "timestamp_iso": "2026-04-26T03:40:48Z",
-      "market_id": "0x15562dc4833b16e4d3773805c4e530e9d839316815c0f3f3c234e40bd77016b9",
-      "market_title": "LoL: T1 vs BNK FEARX (BO3) - LCK Rounds 1-2",
-      "market_slug": "lol-t1-fox1-2026-04-26",
-      "outcome": "T1",
-      "outcome_idx": 0,
-      "side": "T1",
-      "entry_price": 0.71,
-      "current_price": 0.725,
-      "shares": 1049.48,
-      "size_usdc": 745.13,
-      "tx_hash": "0x160c09b5ae12ba924cff4f6a75fa71a5501cba4b18335f8427e000bf404d2d66",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "ENTER",
-      "age_min": 166.3,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$745",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "166m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xcb030946",
-      "ts": 1777174848.0,
-      "timestamp_iso": "2026-04-26T03:40:48Z",
-      "market_id": "0x15562dc4833b16e4d3773805c4e530e9d839316815c0f3f3c234e40bd77016b9",
-      "market_title": "LoL: T1 vs BNK FEARX (BO3) - LCK Rounds 1-2",
-      "market_slug": "lol-t1-fox1-2026-04-26",
-      "outcome": "T1",
-      "outcome_idx": 0,
-      "side": "T1",
-      "entry_price": 0.71,
-      "current_price": 0.725,
-      "shares": 332.66,
-      "size_usdc": 236.19,
-      "tx_hash": "0xcb03094634eddebe460cfcc6796df3e6289691a08a7645e3312ffb2318717109",
+      "side": "LINDA NOSKOVA",
+      "entry_price": 0.56,
+      "current_price": 0.505,
+      "shares": 226.77,
+      "size_usdc": 126.99,
+      "tx_hash": "0xd1d0c64ddb0058fd70c282161f06b4bca5cfdc66491e9bccb412df6611f040d8",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -301,255 +234,58 @@
         "total_wins": 62
       },
       "verdict": "SKIP",
-      "age_min": 166.3,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$236",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "166m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xb73a3b7a",
-      "ts": 1777174848.0,
-      "timestamp_iso": "2026-04-26T03:40:48Z",
-      "market_id": "0x15562dc4833b16e4d3773805c4e530e9d839316815c0f3f3c234e40bd77016b9",
-      "market_title": "LoL: T1 vs BNK FEARX (BO3) - LCK Rounds 1-2",
-      "market_slug": "lol-t1-fox1-2026-04-26",
-      "outcome": "T1",
-      "outcome_idx": 0,
-      "side": "T1",
-      "entry_price": 0.71,
-      "current_price": 0.725,
-      "shares": 25862.07,
-      "size_usdc": 18362.07,
-      "tx_hash": "0xb73a3b7ae77d1a90f11fd96160bd6631220c035993e746baa4b2120e821d3579",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "ENTER",
-      "age_min": 166.3,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$18,362",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "166m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x41fa8df4",
-      "ts": 1777174844.0,
-      "timestamp_iso": "2026-04-26T03:40:44Z",
-      "market_id": "0x15562dc4833b16e4d3773805c4e530e9d839316815c0f3f3c234e40bd77016b9",
-      "market_title": "LoL: T1 vs BNK FEARX (BO3) - LCK Rounds 1-2",
-      "market_slug": "lol-t1-fox1-2026-04-26",
-      "outcome": "T1",
-      "outcome_idx": 0,
-      "side": "T1",
-      "entry_price": 0.71,
-      "current_price": 0.725,
-      "shares": 100681.75,
-      "size_usdc": 71484.05,
-      "tx_hash": "0x41fa8df4019eb382aba5e8b93b431ae9d43c8c16fa7ef9f51194bb698a1d1065",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "ENTER",
-      "age_min": 166.4,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$71,484",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "166m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xf1d8df0a",
-      "ts": 1777173646.0,
-      "timestamp_iso": "2026-04-26T03:20:46Z",
-      "market_id": "0xfdb45395c827f1205a77a0804967f49dfe2c2ea42363900552893fb6dff5c631",
-      "market_title": "UFC Fight Night: Aljamain Sterling vs. Youssef Zalal (Featherweight, Main Card)",
-      "market_slug": "ufc-alj-you-2026-04-25",
-      "outcome": "Youssef Zalal",
-      "outcome_idx": 1,
-      "side": "YOUSSEF ZALAL",
-      "entry_price": 0.07,
-      "current_price": 0.0005,
-      "shares": 4860.5,
-      "size_usdc": 350.0,
-      "tx_hash": "0xf1d8df0ae08d96cbd4599f0d576f1f4b0120615245e1822570d58898c09bb8ce",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 186.3,
-      "drift": -0.0695,
+      "age_min": 23.9,
+      "drift": -0.055,
       "checks": [
         {
           "name": "Drift",
           "status": "warn",
-          "value": "-99.3%",
+          "value": "-9.8%",
           "threshold": "> 3%",
-          "note": "Line moved -99.3% — part of the edge is already priced in"
+          "note": "Line moved -9.8% — part of the edge is already priced in"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$350",
+          "value": "$127",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.070 (max +1329%)",
+          "value": "0.560 (max +79%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +1329% upside on a correct call."
+          "note": "Good payoff — +79% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "186m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "pass",
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Line moved -99.3% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Line moved -9.8% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0x9ebd9de0",
-      "ts": 1777173644.0,
-      "timestamp_iso": "2026-04-26T03:20:44Z",
-      "market_id": "0xfdb45395c827f1205a77a0804967f49dfe2c2ea42363900552893fb6dff5c631",
-      "market_title": "UFC Fight Night: Aljamain Sterling vs. Youssef Zalal (Featherweight, Main Card)",
-      "market_slug": "ufc-alj-you-2026-04-25",
-      "outcome": "Youssef Zalal",
-      "outcome_idx": 1,
-      "side": "YOUSSEF ZALAL",
-      "entry_price": 0.07,
-      "current_price": 0.0005,
-      "shares": 4860.5,
-      "size_usdc": 350.0,
-      "tx_hash": "0x9ebd9de05a30415cf9400317250dc77687249b1ba0661f01a70c0377d278537a",
+      "signal_id": "0x2a2C53bD_0x7ae860c4",
+      "ts": 1777189126.0,
+      "timestamp_iso": "2026-04-26T07:38:46Z",
+      "market_id": "0xe72a3469d23572bc51cb00df2ebc43f00764ea0693f13b44cc0611f2b5697989",
+      "market_title": "Madrid Open: Linda Noskova vs Liudmila Samsonova",
+      "market_slug": "wta-noskova-samsono-2026-04-26",
+      "outcome": "Linda Noskova",
+      "outcome_idx": 0,
+      "side": "LINDA NOSKOVA",
+      "entry_price": 0.59,
+      "current_price": 0.505,
+      "shares": 15000.0,
+      "size_usdc": 8850.0,
+      "tx_hash": "0x7ae860c473672d9cfd779d572bf470ce1514b2bdd7f2949a7754e05cee2ae431",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -564,192 +300,57 @@
         "total_wins": 62
       },
       "verdict": "SKIP",
-      "age_min": 186.4,
-      "drift": -0.0695,
+      "age_min": 23.9,
+      "drift": -0.085,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "-99.3%",
-          "threshold": "> 3%",
-          "note": "Line moved -99.3% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
           "status": "fail",
-          "value": "$350",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.070 (max +1329%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +1329% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "186m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -99.3% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xcc3c404f",
-      "ts": 1777173640.0,
-      "timestamp_iso": "2026-04-26T03:20:40Z",
-      "market_id": "0xfdb45395c827f1205a77a0804967f49dfe2c2ea42363900552893fb6dff5c631",
-      "market_title": "UFC Fight Night: Aljamain Sterling vs. Youssef Zalal (Featherweight, Main Card)",
-      "market_slug": "ufc-alj-you-2026-04-25",
-      "outcome": "Youssef Zalal",
-      "outcome_idx": 1,
-      "side": "YOUSSEF ZALAL",
-      "entry_price": 0.07,
-      "current_price": 0.0005,
-      "shares": 4860.5,
-      "size_usdc": 350.0,
-      "tx_hash": "0xcc3c404fd0fd125c930e994b6a32f9c84324fe948260ab0d41f8e76dbdf2f6e0",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 186.4,
-      "drift": -0.0695,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "-99.3%",
-          "threshold": "> 3%",
-          "note": "Line moved -99.3% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$350",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.070 (max +1329%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +1329% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "186m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -99.3% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x2ff07412",
-      "ts": 1777172808.0,
-      "timestamp_iso": "2026-04-26T03:06:48Z",
-      "market_id": "0xeb4b5d1390278a728cea8024a464c2ed8f69c615e60325f1735ad961b0b6ed51",
-      "market_title": "Nuggets vs. Timberwolves",
-      "market_slug": "nba-den-min-2026-04-25",
-      "outcome": "Timberwolves",
-      "outcome_idx": 1,
-      "side": "TIMBERWOLVES",
-      "entry_price": 0.84,
-      "current_price": null,
-      "shares": 689.17,
-      "size_usdc": 578.9,
-      "tx_hash": "0x2ff074129acb554f9dfdb6f5b79d57f9a8d9b73cb1202efaf211219df2afd244",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "LATE",
-      "age_min": 200.3,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
+          "value": "-14.4%",
+          "threshold": "> 7%",
+          "note": "Line moved -14.4% — the move already happened"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$579",
+          "value": "$8,850",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
-          "status": "warn",
-          "value": "0.840 (max +19%)",
+          "status": "pass",
+          "value": "0.590 (max +69%)",
           "threshold": "< 0.75",
-          "note": "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk."
+          "note": "Good payoff — +69% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "200m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "pass",
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Line moved -14.4% — the move already happened"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0xb12f468b",
-      "ts": 1777172736.0,
-      "timestamp_iso": "2026-04-26T03:05:36Z",
-      "market_id": "0xeb4b5d1390278a728cea8024a464c2ed8f69c615e60325f1735ad961b0b6ed51",
-      "market_title": "Nuggets vs. Timberwolves",
-      "market_slug": "nba-den-min-2026-04-25",
-      "outcome": "Timberwolves",
-      "outcome_idx": 1,
-      "side": "TIMBERWOLVES",
-      "entry_price": 0.88,
-      "current_price": null,
-      "shares": 207.64,
-      "size_usdc": 182.72,
-      "tx_hash": "0xb12f468b5bc2b551bc86fc4f34b855b7668e67257b1d47e24b4770ccf0c2e92f",
+      "signal_id": "0x2a2C53bD_0x062cf311",
+      "ts": 1777189112.0,
+      "timestamp_iso": "2026-04-26T07:38:32Z",
+      "market_id": "0xe72a3469d23572bc51cb00df2ebc43f00764ea0693f13b44cc0611f2b5697989",
+      "market_title": "Madrid Open: Linda Noskova vs Liudmila Samsonova",
+      "market_slug": "wta-noskova-samsono-2026-04-26",
+      "outcome": "Linda Noskova",
+      "outcome_idx": 0,
+      "side": "LINDA NOSKOVA",
+      "entry_price": 0.6,
+      "current_price": 0.505,
+      "shares": 589.0,
+      "size_usdc": 353.4,
+      "tx_hash": "0x062cf31101ceefd6eb624657fb92f93ee29836d85162539330249d3dc2bc97cf",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -764,191 +365,58 @@
         "total_wins": 62
       },
       "verdict": "SKIP",
-      "age_min": 201.5,
-      "drift": null,
+      "age_min": 24.2,
+      "drift": -0.095,
       "checks": [
         {
           "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
+          "status": "fail",
+          "value": "-15.8%",
+          "threshold": "> 7%",
+          "note": "Line moved -15.8% — the move already happened"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$183",
+          "value": "$353",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "warn",
-          "value": "0.880 (max +14%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "201m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x8b7b940a",
-      "ts": 1777172732.0,
-      "timestamp_iso": "2026-04-26T03:05:32Z",
-      "market_id": "0xeb4b5d1390278a728cea8024a464c2ed8f69c615e60325f1735ad961b0b6ed51",
-      "market_title": "Nuggets vs. Timberwolves",
-      "market_slug": "nba-den-min-2026-04-25",
-      "outcome": "Timberwolves",
-      "outcome_idx": 1,
-      "side": "TIMBERWOLVES",
-      "entry_price": 0.88,
-      "current_price": null,
-      "shares": 8459.22,
-      "size_usdc": 7444.11,
-      "tx_hash": "0x8b7b940a608a8e27ed5576269e9d12f29efab438ed22cf87e17fd3041b216676",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "LATE",
-      "age_min": 201.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
           "status": "pass",
-          "value": "$7,444",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.880 (max +14%)",
+          "value": "0.600 (max +67%)",
           "threshold": "< 0.75",
-          "note": "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
+          "note": "Good payoff — +67% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "202m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xda8f27c9",
-      "ts": 1777172624.0,
-      "timestamp_iso": "2026-04-26T03:03:44Z",
-      "market_id": "0xeb4b5d1390278a728cea8024a464c2ed8f69c615e60325f1735ad961b0b6ed51",
-      "market_title": "Nuggets vs. Timberwolves",
-      "market_slug": "nba-den-min-2026-04-25",
-      "outcome": "Timberwolves",
-      "outcome_idx": 1,
-      "side": "TIMBERWOLVES",
-      "entry_price": 0.82,
-      "current_price": null,
-      "shares": 1123.97,
-      "size_usdc": 921.66,
-      "tx_hash": "0xda8f27c914b4e0b813911831ffc2e18e25a3a52c2ac01b6fb3ecfaeba26bb34f",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "LATE",
-      "age_min": 203.4,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
           "status": "pass",
-          "value": "$922",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.820 (max +22%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "203m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Line moved -15.8% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0x168c30e1",
-      "ts": 1777172612.0,
-      "timestamp_iso": "2026-04-26T03:03:32Z",
-      "market_id": "0xeb4b5d1390278a728cea8024a464c2ed8f69c615e60325f1735ad961b0b6ed51",
-      "market_title": "Nuggets vs. Timberwolves",
-      "market_slug": "nba-den-min-2026-04-25",
-      "outcome": "Timberwolves",
-      "outcome_idx": 1,
-      "side": "TIMBERWOLVES",
-      "entry_price": 0.82,
-      "current_price": null,
-      "shares": 231.17,
-      "size_usdc": 189.56,
-      "tx_hash": "0x168c30e1c43e845e39037764790696f65f6da5b64817525443d6583a1441e7db",
+      "signal_id": "0x2a2C53bD_0x8cdd834f",
+      "ts": 1777189112.0,
+      "timestamp_iso": "2026-04-26T07:38:32Z",
+      "market_id": "0xe72a3469d23572bc51cb00df2ebc43f00764ea0693f13b44cc0611f2b5697989",
+      "market_title": "Madrid Open: Linda Noskova vs Liudmila Samsonova",
+      "market_slug": "wta-noskova-samsono-2026-04-26",
+      "outcome": "Linda Noskova",
+      "outcome_idx": 0,
+      "side": "LINDA NOSKOVA",
+      "entry_price": 0.6,
+      "current_price": 0.505,
+      "shares": 609.0,
+      "size_usdc": 365.4,
+      "tx_hash": "0x8cdd834f9c64e4447a74d29b67d36d192b3d1d4f6286172c7ba53bd33063476d",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -963,42 +431,171 @@
         "total_wins": 62
       },
       "verdict": "SKIP",
-      "age_min": 203.6,
-      "drift": null,
+      "age_min": 24.2,
+      "drift": -0.095,
       "checks": [
         {
           "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
+          "status": "fail",
+          "value": "-15.8%",
+          "threshold": "> 7%",
+          "note": "Line moved -15.8% — the move already happened"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$190",
+          "value": "$365",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "warn",
-          "value": "0.820 (max +22%)",
+          "status": "pass",
+          "value": "0.600 (max +67%)",
           "threshold": "< 0.75",
-          "note": "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
+          "note": "Good payoff — +67% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "204m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "pass",
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Line moved -15.8% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x2a2C53bD_0x181bfdb6",
+      "ts": 1777189110.0,
+      "timestamp_iso": "2026-04-26T07:38:30Z",
+      "market_id": "0xe72a3469d23572bc51cb00df2ebc43f00764ea0693f13b44cc0611f2b5697989",
+      "market_title": "Madrid Open: Linda Noskova vs Liudmila Samsonova",
+      "market_slug": "wta-noskova-samsono-2026-04-26",
+      "outcome": "Linda Noskova",
+      "outcome_idx": 0,
+      "side": "LINDA NOSKOVA",
+      "entry_price": 0.6,
+      "current_price": 0.505,
+      "shares": 851.4,
+      "size_usdc": 510.84,
+      "tx_hash": "0x181bfdb6dcdb8bd82e21c593fbf2ea463fc3f50ea55bbef080c07af7e6d19e0b",
+      "whale": {
+        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
+        "pseudonym": "Dishonest-Bloom",
+        "raw_win_rate": 0.8267,
+        "lifetime_pnl": 857044.69,
+        "roi": 0.3255,
+        "recent_wins": 62,
+        "recent_n": 75,
+        "recent_win_rate": 0.8267,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 62
+      },
+      "verdict": "SKIP",
+      "age_min": 24.2,
+      "drift": -0.095,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-15.8%",
+          "threshold": "> 7%",
+          "note": "Line moved -15.8% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$511",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.600 (max +67%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +67% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -15.8% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0xEB6789cA_0xb54e8860",
+      "ts": 1777188860.0,
+      "timestamp_iso": "2026-04-26T07:34:20Z",
+      "market_id": "0x350b4923d63cfab3b3a3cdfd8711886992431232191020aa7984def370d53497",
+      "market_title": "Gensyn FDV above $600M one day after launch?",
+      "market_slug": "gensyn-fdv-above-one-day-after-launch",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.66,
+      "current_price": 0.69,
+      "shares": 549.67,
+      "size_usdc": 362.78,
+      "tx_hash": "0xb54e88608031aac297917b4b4fb0c3cdec1122949b738eef24b113f80317934e",
+      "whale": {
+        "address": "0xEB6789cA6b1425fF908a69a2a5469C38532Cd696",
+        "pseudonym": "Red-Dissonance",
+        "raw_win_rate": 0.8413,
+        "lifetime_pnl": 80260.88,
+        "roi": 0.3483,
+        "recent_wins": 41,
+        "recent_n": 47,
+        "recent_win_rate": 0.8723,
+        "z_score": 0.0,
+        "n_total": 63,
+        "total_wins": 53
+      },
+      "verdict": "SKIP",
+      "age_min": 28.3,
+      "drift": 0.03,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+4.5%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$363",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.660 (max +52%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +52% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "28m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
       ]
     },
     {
@@ -1030,7 +627,7 @@
         "total_wins": 53
       },
       "verdict": "ENTER",
-      "age_min": 239.7,
+      "age_min": 335.3,
       "drift": 0.0,
       "checks": [
         {
@@ -1057,79 +654,12 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "240m ago",
+          "value": "335m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x441D5822_0xbab25a37",
-      "ts": 1777163506.0,
-      "timestamp_iso": "2026-04-26T00:31:46Z",
-      "market_id": "0xbe90ac83f055a7997fd67410b9a96504d5eddfb3eb36ff74e9028f5c569502ee",
-      "market_title": "Will Portland Timbers win on 2026-04-25?",
-      "market_slug": "mls-sdg-por-2026-04-25",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.22,
-      "current_price": 0.9995,
-      "shares": 510.0,
-      "size_usdc": 112.2,
-      "tx_hash": "0xbab25a372517a58d08c89871d4a5c1219b804d180e93a242744de6e3edafe0a0",
-      "whale": {
-        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
-        "pseudonym": "Sick-Shoulder",
-        "raw_win_rate": 0.8561,
-        "lifetime_pnl": 28521.84,
-        "roi": 0.5354,
-        "recent_wins": 113,
-        "recent_n": 132,
-        "recent_win_rate": 0.8561,
-        "z_score": 0.0,
-        "n_total": 132,
-        "total_wins": 113
-      },
-      "verdict": "SKIP",
-      "age_min": 355.3,
-      "drift": 0.7795,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+354.3%",
-          "threshold": "> 7%",
-          "note": "Line moved +354.3% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$112",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.220 (max +355%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +355% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "355m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +354.3% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
     }
