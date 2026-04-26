@@ -670,6 +670,37 @@ th.numeric, td.numeric { text-align: right; }
 .subtable a { color: var(--text); border-bottom: 1px dotted var(--text-ghost); }
 .subtable a:hover { color: var(--signal); border-bottom-color: var(--signal-dim); }
 
+/* Live positions table — grouped by market with both-sides net summary */
+.subtable .positions-live tbody tr.group-head td {
+  padding: 9px 10px 6px;
+  background: rgba(255,255,255,0.025);
+  border-top: 1px solid var(--line-strong);
+  border-bottom: 1px solid var(--line);
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: var(--text-dim);
+}
+.subtable .positions-live tbody tr.group-head:first-child td {
+  border-top: none;
+}
+.subtable .positions-live tbody tr.group-head a { color: var(--text); }
+.subtable .positions-live .net-badge {
+  margin-left: 10px;
+  display: inline-block;
+  padding: 1px 7px;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  border-radius: 3px;
+  border: 1px solid rgba(255,211,122,0.35);
+  background: rgba(255,211,122,0.06);
+  color: #ffd37a;
+  vertical-align: middle;
+}
+.subtable .positions-live tbody tr:not(.group-head) td:first-child {
+  padding-left: 22px;
+  font-weight: 500;
+}
+
 .category-mix {
   display: flex;
   flex-wrap: wrap;

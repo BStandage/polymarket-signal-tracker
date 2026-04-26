@@ -990,12 +990,9 @@
       if (ev.target === overlay) closeWalletModal();
     });
 
-    const open = (wallet && wallet.open_positions) || [];
     const short = `${addr.slice(0, 8)}…${addr.slice(-6)}`;
     const profileUrl = `https://polymarket.com/profile/${encodeURIComponent(addr)}`;
 
-    // Stats panel — start with placeholders, fill in once Polymarket APIs respond.
-    // Numbers come live from lb-api/data-api so they always match the profile page.
     const recordStr = (() => {
       if (!wallet) return null;
       const wins = wallet.wins ?? wallet.total_wins;
@@ -1010,10 +1007,6 @@
       }
       return null;
     })();
-
-    const positionsHtml = (wallet && open.length)
-      ? renderPositionsTable(open)
-      : `<div class="empty muted small">Open positions not in our snapshot yet — check the live profile link above.</div>`;
 
     overlay.innerHTML = `
       <div class="modal" role="dialog" aria-modal="true" aria-label="Wallet open positions">
@@ -1032,8 +1025,10 @@
           <div class="modal-stat"><span class="k">Current open value</span><span class="v" data-slot="value">…</span></div>
         </div>
         <div class="modal-body">
-          <h4>Currently open positions ${open.length ? `<span class="muted small">(${open.length} from snapshot)</span>` : ""}</h4>
-          <div class="subtable positions">${positionsHtml}</div>
+          <h4>Currently open positions <span class="muted small" data-slot="pos-count"></span></h4>
+          <div class="subtable positions" data-slot="positions">
+            <div class="empty muted small">Loading live positions…</div>
+          </div>
         </div>
       </div>`;
 
@@ -1042,6 +1037,104 @@
     document.body.classList.add("modal-open");
 
     fetchPolymarketStats(addr, overlay);
+    fetchLivePositions(addr, overlay);
+  }
+
+  // Fetch open positions live from data-api/positions and render grouped by
+  // conditionId. Surfaces both-sides bets on the same market with a net summary.
+  async function fetchLivePositions(addr, overlay) {
+    const slot = overlay.querySelector('[data-slot="positions"]');
+    const countSlot = overlay.querySelector('[data-slot="pos-count"]');
+    let positions;
+    try {
+      const u = `https://data-api.polymarket.com/positions?user=${encodeURIComponent(addr)}&limit=500`;
+      const resp = await fetch(u);
+      positions = resp.ok ? await resp.json() : null;
+    } catch {
+      positions = null;
+    }
+    if (!Array.isArray(positions) || !positions.length) {
+      slot.innerHTML = `<div class="empty muted small">No open positions on Polymarket.</div>`;
+      return;
+    }
+
+    // Filter out resolved/redeemable positions — those are awaiting payout, not open.
+    const live = positions.filter((p) => !p.redeemable && (p.size || 0) > 0);
+    if (!live.length) {
+      slot.innerHTML = `<div class="empty muted small">All positions are settled (redeemable). No live exposure.</div>`;
+      return;
+    }
+
+    // Group by conditionId
+    const groups = new Map();
+    for (const p of live) {
+      const key = p.conditionId || p.asset;
+      if (!groups.has(key)) groups.set(key, []);
+      groups.get(key).push(p);
+    }
+
+    // Sort groups by total cost basis (largest first), then sort sides within group
+    const groupArr = [...groups.values()];
+    const groupCost = (g) => g.reduce((a, b) => a + (b.initialValue || 0), 0);
+    groupArr.sort((a, b) => groupCost(b) - groupCost(a));
+    for (const g of groupArr) g.sort((a, b) => (b.initialValue || 0) - (a.initialValue || 0));
+
+    if (countSlot) {
+      const totalSides = live.length;
+      const totalMarkets = groupArr.length;
+      countSlot.textContent = totalMarkets === totalSides
+        ? `(${totalMarkets})`
+        : `(${totalMarkets} markets · ${totalSides} positions)`;
+    }
+
+    const rows = groupArr.flatMap((g) => {
+      const first = g[0];
+      const slug = first.eventSlug || first.slug;
+      const href = slug ? `${POLYMARKET_BASE}${slug}` : null;
+      const title = first.title || "—";
+      const titleCell = href
+        ? `<a href="${href}" target="_blank" rel="noopener">${escapeHtml(title)}</a>`
+        : escapeHtml(title);
+
+      let netBadge = "";
+      if (g.length > 1) {
+        // Compute net side by cost basis: which outcome has the most $ in
+        const sorted = [...g].sort((a, b) => (b.initialValue || 0) - (a.initialValue || 0));
+        const top = sorted[0];
+        const rest = sorted.slice(1).reduce((a, b) => a + (b.initialValue || 0), 0);
+        const net = (top.initialValue || 0) - rest;
+        if (net > 0) {
+          netBadge = `<span class="net-badge">↔ both sides · net <b>${fmtMoney(net)}</b> ${escapeHtml(top.outcome || "")}</span>`;
+        } else {
+          netBadge = `<span class="net-badge">↔ both sides · balanced</span>`;
+        }
+      }
+
+      const head = `<tr class="group-head"><td colspan="6">${titleCell}${netBadge}</td></tr>`;
+      const sideRows = g.map((p) => {
+        const pnl = p.cashPnl || 0;
+        const pct = p.percentPnl;
+        const pnlCls = signClass(pnl);
+        const outcomeCls = (p.outcome || "").toLowerCase() === "yes" ? "pos"
+                         : (p.outcome || "").toLowerCase() === "no" ? "neg" : "muted";
+        return `<tr>
+          <td class="${outcomeCls}">${escapeHtml(p.outcome || "—")}</td>
+          <td>${fmtMoney(p.initialValue)}</td>
+          <td>${fmt(p.avgPrice, 3)}</td>
+          <td>${fmt(p.curPrice, 3)}</td>
+          <td>${fmtMoney(p.currentValue)}</td>
+          <td class="${pnlCls}"><b>${fmtMoney(pnl, true)}</b> <span class="muted small">${pct != null ? fmtPct(pct/100) : ""}</span></td>
+        </tr>`;
+      }).join("");
+      return [head + sideRows];
+    });
+
+    slot.innerHTML = `<table class="positions-live">
+      <thead><tr>
+        <th>Side</th><th>Cost basis</th><th>Avg entry</th><th>Now</th><th>Current value</th><th>PnL</th>
+      </tr></thead>
+      <tbody>${rows.join("")}</tbody>
+    </table>`;
   }
 
   // Polymarket's profile page is powered by these public CORS-open endpoints.
