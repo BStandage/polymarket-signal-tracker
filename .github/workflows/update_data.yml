@@ -39,6 +39,12 @@ jobs:
         working-directory: scripts
         run: python fetch_whales.py
 
+      - name: Refresh whale watchlist
+        id: selector
+        continue-on-error: true
+        working-directory: scripts
+        run: python whale_selector.py
+
       - name: Score and rank wallets
         id: score
         continue-on-error: true
@@ -50,12 +56,6 @@ jobs:
         continue-on-error: true
         working-directory: scripts
         run: python backtest.py
-
-      - name: Refresh whale watchlist
-        id: selector
-        continue-on-error: true
-        working-directory: scripts
-        run: python whale_selector.py
 
       - name: Commit updated data if changed
         env:

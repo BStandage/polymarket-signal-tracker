@@ -142,7 +142,7 @@
       state.liveSignals = liveSignals;
       state.watchlist = watchlist;
       setLastUpdated(pickFreshest([liveSignals, lastUpdated, whales, watchlist]));
-      document.getElementById("whale-count").textContent = state.wallets.length;
+      document.getElementById("whale-count").textContent = state.wallets.filter((w) => !w.watchlist_only).length;
       const sigCount = (liveSignals && liveSignals.enter_count != null)
         ? liveSignals.enter_count : (liveSignals && liveSignals.signal_count) || 0;
       document.getElementById("signal-count").textContent = sigCount;
@@ -202,6 +202,7 @@
     const q = document.getElementById("search").value.trim().toLowerCase();
 
     state.filtered = state.wallets.filter((w) => {
+      if (w.watchlist_only) return false;
       if ((w.final_score || 0) < minScore) return false;
       if ((w.win_rate || 0) < minWin) return false;
       if ((w.total_volume_usdc || 0) < minVol) return false;
@@ -554,7 +555,7 @@
       const recentPct = m.recent_n > 0 ? ((m.recent_wins / m.recent_n) * 100).toFixed(0) + "%" : "";
       const daysAgo = m.days_since_last_trade;
       const activeTag = daysAgo < 2 ? "active" : daysAgo < 7 ? "recent" : "stale";
-      return `<div class="watch-card ${activeTag}">
+      return `<div class="watch-card ${activeTag}" data-wallet="${escapeHtml(r.address)}" tabindex="0" role="button" aria-label="Show open positions for this wallet">
         <div class="watch-rank">#${i + 1}</div>
         <div class="watch-addr mono">${r.address.slice(0, 10)}…${r.address.slice(-4)}</div>
         <div class="watch-stats">
@@ -950,26 +951,28 @@
   // Wallet positions modal (click a signal → see that wallet's open bets)
   // --------------------------------------------------------------------
   function bindSignalsModal() {
-    const feed = document.getElementById("signals-feed");
-    if (!feed) return;
-
-    feed.addEventListener("click", (ev) => {
-      // Don't intercept clicks on inner links/buttons (market title, Trade →, etc.)
-      if (ev.target.closest("a, button")) return;
-      const row = ev.target.closest(".signal-row");
-      if (!row) return;
-      const addr = row.getAttribute("data-wallet");
-      if (addr) openWalletModal(addr);
-    });
-
-    feed.addEventListener("keydown", (ev) => {
-      if (ev.key !== "Enter" && ev.key !== " ") return;
-      const row = ev.target.closest(".signal-row");
-      if (!row) return;
-      ev.preventDefault();
-      const addr = row.getAttribute("data-wallet");
-      if (addr) openWalletModal(addr);
-    });
+    const targets = [
+      { el: document.getElementById("signals-feed"), selector: ".signal-row" },
+      { el: document.getElementById("watchlist-grid"), selector: ".watch-card" },
+    ];
+    for (const { el, selector } of targets) {
+      if (!el) continue;
+      el.addEventListener("click", (ev) => {
+        if (ev.target.closest("a, button")) return;
+        const card = ev.target.closest(selector);
+        if (!card) return;
+        const addr = card.getAttribute("data-wallet");
+        if (addr) openWalletModal(addr);
+      });
+      el.addEventListener("keydown", (ev) => {
+        if (ev.key !== "Enter" && ev.key !== " ") return;
+        const card = ev.target.closest(selector);
+        if (!card) return;
+        ev.preventDefault();
+        const addr = card.getAttribute("data-wallet");
+        if (addr) openWalletModal(addr);
+      });
+    }
 
     document.addEventListener("keydown", (ev) => {
       if (ev.key === "Escape") closeWalletModal();
@@ -1001,10 +1004,18 @@
           <p class="muted small">View on Polymarket: <a href="https://polymarket.com/profile/${encodeURIComponent(addr)}" target="_blank" rel="noopener">profile/${escapeHtml(short)}</a></p>
         </div>`;
     } else {
-      const winRate = (wallet.raw_win_rate || 0) * 100;
+      const wins = wallet.wins ?? wallet.total_wins;
+      const losses = wallet.losses;
+      const resolved = wallet.resolved_markets ?? wallet.n_total;
+      const winRate = ((wallet.win_rate ?? wallet.raw_win_rate) || 0) * 100;
+      const recordStr = (wins != null && resolved != null)
+        ? `${wins}/${resolved} <span class="muted">(${winRate.toFixed(0)}%)</span>`
+        : (wins != null && losses != null)
+          ? `${wins}-${losses} <span class="muted">(${winRate.toFixed(0)}%)</span>`
+          : `<span class="muted">—</span>`;
       const stats = `
         <div class="modal-stats">
-          <div class="modal-stat"><span class="k">Record</span><span class="v">${wallet.total_wins ?? "?"}/${wallet.n_total ?? "?"} <span class="muted">(${winRate.toFixed(0)}%)</span></span></div>
+          <div class="modal-stat"><span class="k">Record</span><span class="v">${recordStr}</span></div>
           <div class="modal-stat"><span class="k">Lifetime PnL</span><span class="v pos">${fmtMoney(wallet.total_pnl_usdc)}</span></div>
           <div class="modal-stat"><span class="k">Open positions</span><span class="v">${open.length}</span></div>
           <div class="modal-stat"><span class="k">Open exposure</span><span class="v">${fmtMoney(totalOpen)}</span></div>

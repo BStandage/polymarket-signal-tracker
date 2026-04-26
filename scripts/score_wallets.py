@@ -214,6 +214,29 @@ def run() -> int:
     for i, w in enumerate(top, start=1):
         w["rank"] = i
 
+    # Always include watchlisted wallets so the frontend can look up their open
+    # positions even if they fail score-rank eligibility (e.g. brand-new
+    # accounts that pass the watchlist's skill criteria but fail min_account_age).
+    top_addrs = {w["address"].lower() for w in top}
+    by_addr = {w.get("address", "").lower(): w for w in wallets}
+    watchlist_payload = read_json(DATA_DIR / "watchlist.json", default={}) or {}
+    watchlist_entries = watchlist_payload.get("watchlist", []) if isinstance(watchlist_payload, dict) else []
+
+    extras: list[dict] = []
+    for entry in watchlist_entries:
+        addr_l = entry.get("address", "").lower()
+        if not addr_l or addr_l in top_addrs:
+            continue
+        raw = by_addr.get(addr_l)
+        if not raw:
+            continue
+        record = score_wallet(raw)
+        record["watchlist_only"] = True
+        extras.append(record)
+    if extras:
+        log.info("Including %d watchlist-only wallets (passed selector but not score-rank)",
+                 len(extras))
+
     output: dict[str, Any] = {
         "updated_at": dt.datetime.now(dt.timezone.utc).isoformat().replace("+00:00", "Z"),
         "scoring_weights": {
@@ -228,10 +251,10 @@ def run() -> int:
             "min_account_age_days": CFG.min_account_age_days,
             "require_positive_pnl": CFG.require_positive_pnl,
         },
-        "wallets": top,
+        "wallets": top + extras,
     }
     write_json(DATA_DIR / "whales.json", output)
-    log.info("Wrote %d ranked wallets to whales.json", len(top))
+    log.info("Wrote %d ranked + %d watchlist-only wallets to whales.json", len(top), len(extras))
     return 0
 
 
