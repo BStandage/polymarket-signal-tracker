@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=15" />
+  <link rel="stylesheet" href="style.css?v=16" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js" defer></script>
-  <script src="app.js?v=16" defer></script>
+  <script src="app.js?v=17" defer></script>
 </head>
 <body>
   <canvas id="particle-field" aria-hidden="true"></canvas>
@@ -55,19 +55,6 @@
         <span class="stat__value" id="refresh-countdown">—</span>
       </div>
     </div>
-
-    <!-- Backtest verdict — is the ranking actually predictive? -->
-    <section class="section backtest-panel" id="backtest-panel" hidden>
-      <div class="section-head">
-        <h2>Backtest</h2>
-        <p class="section-caption">
-          Walk-forward test: rank wallets using only data before each resolved market,
-          check if the top-K predicted the outcome. Costs applied (2% fee + size-based slippage).
-        </p>
-      </div>
-      <div class="backtest-verdict" id="backtest-verdict">—</div>
-      <div class="backtest-grid" id="backtest-grid"></div>
-    </section>
 
     <!-- PRIMARY: Live signals from watchlisted whales -->
     <section class="section section--primary">
@@ -173,6 +160,19 @@
       <div class="radar-wrap" id="radar-wrap" hidden>
         <canvas id="radar-chart"></canvas>
       </div>
+    </section>
+
+    <!-- Backtest verdict — is the ranking actually predictive? -->
+    <section class="section backtest-panel" id="backtest-panel" hidden>
+      <div class="section-head">
+        <h2>Backtest</h2>
+        <p class="section-caption">
+          Walk-forward test: rank wallets using only data before each resolved market,
+          check if the top-K predicted the outcome. Costs applied (2% fee + size-based slippage).
+        </p>
+      </div>
+      <div class="backtest-verdict" id="backtest-verdict">—</div>
+      <div class="backtest-grid" id="backtest-grid"></div>
     </section>
 
     <footer class="app-footer">
