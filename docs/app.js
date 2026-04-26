@@ -992,57 +992,100 @@
 
     const open = (wallet && wallet.open_positions) || [];
     const short = `${addr.slice(0, 8)}…${addr.slice(-6)}`;
-    const totalOpen = open.reduce((a, b) => a + (b.size_usdc || 0), 0);
-    const unreal = open.reduce((a, b) => a + (b.unrealized_pnl || 0), 0);
-    const unrealCls = signClass(unreal);
+    const profileUrl = `https://polymarket.com/profile/${encodeURIComponent(addr)}`;
 
-    let body;
-    if (!wallet) {
-      body = `
-        <div class="modal-empty">
-          <p>This wallet generated a signal but isn't in the current whale snapshot, so open positions can't be displayed here.</p>
-          <p class="muted small">View on Polymarket: <a href="https://polymarket.com/profile/${encodeURIComponent(addr)}" target="_blank" rel="noopener">profile/${escapeHtml(short)}</a></p>
-        </div>`;
-    } else {
+    // Stats panel — start with placeholders, fill in once Polymarket APIs respond.
+    // Numbers come live from lb-api/data-api so they always match the profile page.
+    const recordStr = (() => {
+      if (!wallet) return null;
       const wins = wallet.wins ?? wallet.total_wins;
       const losses = wallet.losses;
       const resolved = wallet.resolved_markets ?? wallet.n_total;
       const winRate = ((wallet.win_rate ?? wallet.raw_win_rate) || 0) * 100;
-      const recordStr = (wins != null && resolved != null)
-        ? `${wins}/${resolved} <span class="muted">(${winRate.toFixed(0)}%)</span>`
-        : (wins != null && losses != null)
-          ? `${wins}-${losses} <span class="muted">(${winRate.toFixed(0)}%)</span>`
-          : `<span class="muted">—</span>`;
-      const stats = `
-        <div class="modal-stats">
-          <div class="modal-stat"><span class="k">Record</span><span class="v">${recordStr}</span></div>
-          <div class="modal-stat"><span class="k">Lifetime PnL</span><span class="v pos">${fmtMoney(wallet.total_pnl_usdc)}</span></div>
-          <div class="modal-stat"><span class="k">Open positions</span><span class="v">${open.length}</span></div>
-          <div class="modal-stat"><span class="k">Open exposure</span><span class="v">${fmtMoney(totalOpen)}</span></div>
-          <div class="modal-stat"><span class="k">Unrealized</span><span class="v ${unrealCls}">${fmtMoney(unreal, true)}</span></div>
-        </div>`;
-      body = `${stats}
-        <div class="modal-body">
-          <h4>Currently open positions</h4>
-          <div class="subtable positions">${renderPositionsTable(open)}</div>
-        </div>`;
-    }
+      if (wins != null && resolved != null) {
+        return `${wins}/${resolved} <span class="muted">(${winRate.toFixed(0)}%)</span>`;
+      }
+      if (wins != null && losses != null) {
+        return `${wins}-${losses} <span class="muted">(${winRate.toFixed(0)}%)</span>`;
+      }
+      return null;
+    })();
+
+    const positionsHtml = (wallet && open.length)
+      ? renderPositionsTable(open)
+      : `<div class="empty muted small">Open positions not in our snapshot yet — check the live profile link above.</div>`;
 
     overlay.innerHTML = `
       <div class="modal" role="dialog" aria-modal="true" aria-label="Wallet open positions">
         <div class="modal-head">
           <div>
-            <div class="modal-eyebrow">Wallet</div>
+            <div class="modal-eyebrow">Wallet · <a href="${profileUrl}" target="_blank" rel="noopener">profile ↗</a></div>
             <h3 class="mono">${escapeHtml(short)}</h3>
           </div>
           <button class="modal-close" aria-label="Close">×</button>
         </div>
-        ${body}
+        <div class="modal-stats">
+          ${recordStr ? `<div class="modal-stat"><span class="k">Record</span><span class="v">${recordStr}</span></div>` : ""}
+          <div class="modal-stat"><span class="k">All-time PnL</span><span class="v" data-slot="pnl-all">…</span></div>
+          <div class="modal-stat"><span class="k">PnL · 24h</span><span class="v" data-slot="pnl-1d">…</span></div>
+          <div class="modal-stat"><span class="k">All-time volume</span><span class="v" data-slot="volume">…</span></div>
+          <div class="modal-stat"><span class="k">Current open value</span><span class="v" data-slot="value">…</span></div>
+        </div>
+        <div class="modal-body">
+          <h4>Currently open positions ${open.length ? `<span class="muted small">(${open.length} from snapshot)</span>` : ""}</h4>
+          <div class="subtable positions">${positionsHtml}</div>
+        </div>
       </div>`;
 
     overlay.querySelector(".modal-close").addEventListener("click", closeWalletModal);
     document.body.appendChild(overlay);
     document.body.classList.add("modal-open");
+
+    fetchPolymarketStats(addr, overlay);
+  }
+
+  // Polymarket's profile page is powered by these public CORS-open endpoints.
+  // /profit and /volume default to all-time. /value is current open-position market value.
+  async function fetchPolymarketStats(addr, overlay) {
+    const setSlot = (slot, html, cls) => {
+      const el = overlay.querySelector(`[data-slot="${slot}"]`);
+      if (!el) return;
+      el.innerHTML = html;
+      if (cls) el.classList.add(cls);
+    };
+    const fail = (slot) => setSlot(slot, `<span class="muted">—</span>`);
+
+    const url = (host, path, params) => {
+      const q = new URLSearchParams(params).toString();
+      return `https://${host}/${path}?${q}`;
+    };
+    const get = (u) => fetch(u).then((r) => r.ok ? r.json() : null).catch(() => null);
+
+    const [pnlAll, pnl1d, volAll, value] = await Promise.all([
+      get(url("lb-api.polymarket.com", "profit", { address: addr })),
+      get(url("lb-api.polymarket.com", "profit", { window: "1d", address: addr })),
+      get(url("lb-api.polymarket.com", "volume", { address: addr })),
+      get(url("data-api.polymarket.com", "value", { user: addr })),
+    ]);
+
+    const amt = (rows) => Array.isArray(rows) && rows[0] && typeof rows[0].amount === "number"
+      ? rows[0].amount : null;
+
+    const pnlAllVal = amt(pnlAll);
+    if (pnlAllVal != null) setSlot("pnl-all", `<b>${fmtMoney(pnlAllVal, true)}</b>`, signClass(pnlAllVal));
+    else fail("pnl-all");
+
+    const pnl1dVal = amt(pnl1d);
+    if (pnl1dVal != null) setSlot("pnl-1d", `<b>${fmtMoney(pnl1dVal, true)}</b>`, signClass(pnl1dVal));
+    else fail("pnl-1d");
+
+    const volVal = amt(volAll);
+    if (volVal != null) setSlot("volume", fmtMoney(volVal));
+    else fail("volume");
+
+    const valueVal = (Array.isArray(value) && value[0] && typeof value[0].value === "number") ? value[0].value : null;
+    if (valueVal != null) setSlot("value", fmtMoney(valueVal));
+    else fail("value");
   }
 
   function closeWalletModal() {
