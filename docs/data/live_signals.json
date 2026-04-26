@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-04-26T16:59:45.065159Z",
+  "updated_at": "2026-04-26T17:50:59.881479Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 5,
-  "signal_count": 22,
-  "enter_count": 2,
+  "signal_count": 13,
+  "enter_count": 1,
   "signals": [
     {
-      "signal_id": "0x2a2C53bD_0x56b23922",
-      "ts": 1777222708.0,
-      "timestamp_iso": "2026-04-26T16:58:28Z",
+      "signal_id": "0x2a2C53bD_0x169db74a",
+      "ts": 1777225670.0,
+      "timestamp_iso": "2026-04-26T17:47:50Z",
       "market_id": "0xdb674ff2130b012177d1815a9cafec8887393d7d8e50bf721c01dfd6b8dcbb76",
       "market_title": "Indian Premier League: Lucknow Super Giants vs Kolkata Knight Riders",
       "market_slug": "cricipl-luc-kol-2026-04-26",
       "outcome": "Lucknow Super Giants",
       "outcome_idx": 0,
       "side": "LUCKNOW SUPER GIANTS",
-      "entry_price": 0.54,
-      "current_price": 0.585,
-      "shares": 10000.0,
-      "size_usdc": 5400.0,
-      "tx_hash": "0x56b2392289595c8ef7880b79453d9a07c5262b15f8a2fc1006823af27103f042",
+      "entry_price": 0.24,
+      "current_price": 0.09,
+      "shares": 889.0,
+      "size_usdc": 213.36,
+      "tx_hash": "0x169db74a7bb1d43fa85d90303c90b2ea1b4fc8e4748a2f5d35d0fed3c2f3eed2",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -38,58 +38,124 @@
         "n_total": 75,
         "total_wins": 62
       },
-      "verdict": "LATE",
-      "age_min": 1.2,
-      "drift": 0.045,
+      "verdict": "SKIP",
+      "age_min": 3.1,
+      "drift": -0.15,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "+8.3%",
-          "threshold": "> 3%",
-          "note": "Line moved +8.3% — part of the edge is already priced in"
+          "status": "fail",
+          "value": "-62.5%",
+          "threshold": "> 7%",
+          "note": "Line moved -62.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$213",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.240 (max +317%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +317% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "3m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -62.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x2a2C53bD_0xb06cb437",
+      "ts": 1777225656.0,
+      "timestamp_iso": "2026-04-26T17:47:36Z",
+      "market_id": "0xdb674ff2130b012177d1815a9cafec8887393d7d8e50bf721c01dfd6b8dcbb76",
+      "market_title": "Indian Premier League: Lucknow Super Giants vs Kolkata Knight Riders",
+      "market_slug": "cricipl-luc-kol-2026-04-26",
+      "outcome": "Lucknow Super Giants",
+      "outcome_idx": 0,
+      "side": "LUCKNOW SUPER GIANTS",
+      "entry_price": 0.24,
+      "current_price": 0.09,
+      "shares": 3508.94,
+      "size_usdc": 842.15,
+      "tx_hash": "0xb06cb437a94872a15ad078ce3b03a5771914039375c637a755dda9ebdc6ab59a",
+      "whale": {
+        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
+        "pseudonym": "Dishonest-Bloom",
+        "raw_win_rate": 0.8267,
+        "lifetime_pnl": 857044.69,
+        "roi": 0.3255,
+        "recent_wins": 62,
+        "recent_n": 75,
+        "recent_win_rate": 0.8267,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 62
+      },
+      "verdict": "SKIP",
+      "age_min": 3.4,
+      "drift": -0.15,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-62.5%",
+          "threshold": "> 7%",
+          "note": "Line moved -62.5% — the move already happened"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$5,400",
+          "value": "$842",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.540 (max +85%)",
+          "value": "0.240 (max +317%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +85% upside on a correct call."
+          "note": "Good payoff — +317% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "1m ago",
+          "value": "3m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Line moved +8.3% — part of the edge is already priced in"
+        "Line moved -62.5% — the move already happened"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0xaf0b5f23",
-      "ts": 1777222336.0,
-      "timestamp_iso": "2026-04-26T16:52:16Z",
+      "signal_id": "0x2a2C53bD_0x8ddb3c44",
+      "ts": 1777225544.0,
+      "timestamp_iso": "2026-04-26T17:45:44Z",
       "market_id": "0xdb674ff2130b012177d1815a9cafec8887393d7d8e50bf721c01dfd6b8dcbb76",
       "market_title": "Indian Premier League: Lucknow Super Giants vs Kolkata Knight Riders",
       "market_slug": "cricipl-luc-kol-2026-04-26",
       "outcome": "Kolkata Knight Riders",
       "outcome_idx": 1,
       "side": "KOLKATA KNIGHT RIDERS",
-      "entry_price": 0.29,
-      "current_price": 0.415,
-      "shares": 8545.76,
-      "size_usdc": 2478.27,
-      "tx_hash": "0xaf0b5f23fd5d6dc34cfdc2d8335a3aaeb13a716fb4d564ff4891a7ea73de43fd",
+      "entry_price": 0.82,
+      "current_price": 0.91,
+      "shares": 2260.61,
+      "size_usdc": 1853.7,
+      "tx_hash": "0x8ddb3c44427e01aa8cc5d50aebf7d1af931928981c1a10c697d3db1ba5b6b61b",
       "whale": {
         "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
         "pseudonym": "Dishonest-Bloom",
@@ -104,160 +170,355 @@
         "total_wins": 62
       },
       "verdict": "SKIP",
-      "age_min": 7.4,
-      "drift": 0.125,
+      "age_min": 5.2,
+      "drift": 0.09,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "+43.1%",
+          "value": "+11.0%",
           "threshold": "> 7%",
-          "note": "Line moved +43.1% — the move already happened"
+          "note": "Line moved +11.0% — the move already happened"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$2,478",
+          "value": "$1,854",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.820 (max +22%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +11.0% — the move already happened",
+        "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x2a2C53bD_0x39ce825f",
+      "ts": 1777225380.0,
+      "timestamp_iso": "2026-04-26T17:43:00Z",
+      "market_id": "0x8e12fec953e831f0e3371a331899202dacc11b6679201a2407e1b2a549268608",
+      "market_title": "Will FC Internazionale Milano win on 2026-04-26?",
+      "market_slug": "sea-tor-int-2026-04-26",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.25,
+      "current_price": 0.1705,
+      "shares": 9134.67,
+      "size_usdc": 2283.67,
+      "tx_hash": "0x39ce825f0b77fc64a0b7b9153799586f4f4a66b7c591c60cc7b9b0a1ce2ee5a3",
+      "whale": {
+        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
+        "pseudonym": "Dishonest-Bloom",
+        "raw_win_rate": 0.8267,
+        "lifetime_pnl": 857044.69,
+        "roi": 0.3255,
+        "recent_wins": 62,
+        "recent_n": 75,
+        "recent_win_rate": 0.8267,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 62
+      },
+      "verdict": "SKIP",
+      "age_min": 8.0,
+      "drift": -0.0795,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-31.8%",
+          "threshold": "> 7%",
+          "note": "Line moved -31.8% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$2,284",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.290 (max +245%)",
+          "value": "0.250 (max +300%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +245% upside on a correct call."
+          "note": "Good payoff — +300% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "7m ago",
+          "value": "8m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Line moved +43.1% — the move already happened"
+        "Line moved -31.8% — the move already happened"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0xbb50eda1",
-      "ts": 1777221914.0,
-      "timestamp_iso": "2026-04-26T16:45:14Z",
-      "market_id": "0xe827af5fe9380789b9efa0b6d0af394e5ba3c89b0ab7bad860cef1cd63ff5f85",
-      "market_title": "Madrid Open: Cameron Norrie vs Thiago Agustin Tirante",
-      "market_slug": "atp-norrie-tirante-2026-04-26",
-      "outcome": "Thiago Agustin Tirante",
-      "outcome_idx": 1,
-      "side": "THIAGO AGUSTIN TIRANTE",
-      "entry_price": 0.41,
-      "current_price": 0.505,
-      "shares": 944.86,
-      "size_usdc": 387.39,
-      "tx_hash": "0xbb50eda191baeff53639bd0c8d27fdc6662add4ab203f285b229b6c2deb134a4",
+      "signal_id": "0x441D5822_0x77fce4d1",
+      "ts": 1777225208.0,
+      "timestamp_iso": "2026-04-26T17:40:08Z",
+      "market_id": "0x40b334f13685a263d752fc733fa2efb213edc9bd727a55812d49910b4fae2f54",
+      "market_title": "Will Juventus FC win on 2026-04-26?",
+      "market_slug": "sea-mil-juv-2026-04-26",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.35,
+      "current_price": 0.345,
+      "shares": 361.89,
+      "size_usdc": 126.66,
+      "tx_hash": "0x77fce4d190c6586e24b0d3a0811314fff3f91e77f251f637fca0262ef4aefda0",
       "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
+        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
+        "pseudonym": "Sick-Shoulder",
+        "raw_win_rate": 0.8561,
+        "lifetime_pnl": 28521.84,
+        "roi": 0.5354,
+        "recent_wins": 113,
+        "recent_n": 132,
+        "recent_win_rate": 0.8561,
         "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
+        "n_total": 132,
+        "total_wins": 113
       },
       "verdict": "SKIP",
-      "age_min": 14.5,
-      "drift": 0.095,
+      "age_min": 10.8,
+      "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
-          "status": "fail",
-          "value": "+23.2%",
-          "threshold": "> 7%",
-          "note": "Line moved +23.2% — the move already happened"
+          "status": "pass",
+          "value": "-1.4%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$387",
+          "value": "$127",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.410 (max +144%)",
+          "value": "0.350 (max +186%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +144% upside on a correct call."
+          "note": "Good payoff — +186% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "14m ago",
+          "value": "11m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Line moved +23.2% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill"
       ]
     },
     {
-      "signal_id": "0x2a2C53bD_0x06c1c458",
-      "ts": 1777221874.0,
-      "timestamp_iso": "2026-04-26T16:44:34Z",
-      "market_id": "0xfb97c172b4c2c33d317cc4df7e36ad35cb55acc80c9eba40156df0e030fbcaee",
-      "market_title": "Will Stade Rennais FC 1901 vs. FC Nantes end in a draw?",
-      "market_slug": "fl1-ren-nan-2026-04-26",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.55,
-      "current_price": 0.37,
-      "shares": 430.44,
-      "size_usdc": 236.74,
-      "tx_hash": "0x06c1c458d4abbe2c69fa955498faf0157157e1be5d572638cc73a6444d659954",
+      "signal_id": "0x441D5822_0xd06fa001",
+      "ts": 1777225208.0,
+      "timestamp_iso": "2026-04-26T17:40:08Z",
+      "market_id": "0x40b334f13685a263d752fc733fa2efb213edc9bd727a55812d49910b4fae2f54",
+      "market_title": "Will Juventus FC win on 2026-04-26?",
+      "market_slug": "sea-mil-juv-2026-04-26",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.35,
+      "current_price": 0.345,
+      "shares": 485.85,
+      "size_usdc": 170.05,
+      "tx_hash": "0xd06fa001a38bb389ce051858d495490a5757bf0ad03434132db3ad5cb6ad3f21",
       "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
+        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
+        "pseudonym": "Sick-Shoulder",
+        "raw_win_rate": 0.8561,
+        "lifetime_pnl": 28521.84,
+        "roi": 0.5354,
+        "recent_wins": 113,
+        "recent_n": 132,
+        "recent_win_rate": 0.8561,
         "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
+        "n_total": 132,
+        "total_wins": 113
       },
       "verdict": "SKIP",
-      "age_min": 15.1,
-      "drift": -0.18,
+      "age_min": 10.8,
+      "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
-          "status": "fail",
-          "value": "-32.7%",
-          "threshold": "> 7%",
-          "note": "Line moved -32.7% — the move already happened"
+          "status": "pass",
+          "value": "-1.4%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$237",
+          "value": "$170",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.550 (max +82%)",
+          "value": "0.350 (max +186%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +82% upside on a correct call."
+          "note": "Good payoff — +186% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "11m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x441D5822_0x51e96199",
+      "ts": 1777225190.0,
+      "timestamp_iso": "2026-04-26T17:39:50Z",
+      "market_id": "0x40b334f13685a263d752fc733fa2efb213edc9bd727a55812d49910b4fae2f54",
+      "market_title": "Will Juventus FC win on 2026-04-26?",
+      "market_slug": "sea-mil-juv-2026-04-26",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.35,
+      "current_price": 0.345,
+      "shares": 381.78,
+      "size_usdc": 133.62,
+      "tx_hash": "0x51e961993dfd5784cb8d65de6802cb2bea4c574ad115b8da1a46369b4efa2f6b",
+      "whale": {
+        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
+        "pseudonym": "Sick-Shoulder",
+        "raw_win_rate": 0.8561,
+        "lifetime_pnl": 28521.84,
+        "roi": 0.5354,
+        "recent_wins": 113,
+        "recent_n": 132,
+        "recent_win_rate": 0.8561,
+        "z_score": 0.0,
+        "n_total": 132,
+        "total_wins": 113
+      },
+      "verdict": "SKIP",
+      "age_min": 11.2,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-1.4%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$134",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.350 (max +186%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +186% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "11m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x441D5822_0xd640b265",
+      "ts": 1777224950.0,
+      "timestamp_iso": "2026-04-26T17:35:50Z",
+      "market_id": "0xbc6b729fd180086f27de7a1509f6e7393db5d0b9ac7d21b1c8390831bbc5e46c",
+      "market_title": "Spread: Olympique de Marseille (-1.5)",
+      "market_slug": "fl1-olm-ogc-2026-04-26-more-markets",
+      "outcome": "OGC Nice",
+      "outcome_idx": 1,
+      "side": "OGC NICE",
+      "entry_price": 0.64,
+      "current_price": 0.645,
+      "shares": 694.0,
+      "size_usdc": 444.16,
+      "tx_hash": "0xd640b265982750a3417bd29766cb6cbea021d33a79235358b9bd4461ec91d0b6",
+      "whale": {
+        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
+        "pseudonym": "Sick-Shoulder",
+        "raw_win_rate": 0.8561,
+        "lifetime_pnl": 28521.84,
+        "roi": 0.5354,
+        "recent_wins": 113,
+        "recent_n": 132,
+        "recent_win_rate": 0.8561,
+        "z_score": 0.0,
+        "n_total": 132,
+        "total_wins": 113
+      },
+      "verdict": "SKIP",
+      "age_min": 15.2,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$444",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
         },
         {
           "name": "Age",
@@ -268,534 +529,7 @@
         }
       ],
       "skip_reasons": [
-        "Line moved -32.7% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xd984dcbc",
-      "ts": 1777221596.0,
-      "timestamp_iso": "2026-04-26T16:39:56Z",
-      "market_id": "0xdb674ff2130b012177d1815a9cafec8887393d7d8e50bf721c01dfd6b8dcbb76",
-      "market_title": "Indian Premier League: Lucknow Super Giants vs Kolkata Knight Riders",
-      "market_slug": "cricipl-luc-kol-2026-04-26",
-      "outcome": "Lucknow Super Giants",
-      "outcome_idx": 0,
-      "side": "LUCKNOW SUPER GIANTS",
-      "entry_price": 0.65,
-      "current_price": 0.585,
-      "shares": 378.0,
-      "size_usdc": 245.7,
-      "tx_hash": "0xd984dcbc29536101c15c460bf2d338883b946c7d6d509be3d6b625d8de213f43",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 19.8,
-      "drift": -0.065,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "-10.0%",
-          "threshold": "> 3%",
-          "note": "Line moved -10.0% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$246",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.650 (max +54%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +54% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "20m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -10.0% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x199c6666",
-      "ts": 1777220868.0,
-      "timestamp_iso": "2026-04-26T16:27:48Z",
-      "market_id": "0xdb674ff2130b012177d1815a9cafec8887393d7d8e50bf721c01dfd6b8dcbb76",
-      "market_title": "Indian Premier League: Lucknow Super Giants vs Kolkata Knight Riders",
-      "market_slug": "cricipl-luc-kol-2026-04-26",
-      "outcome": "Kolkata Knight Riders",
-      "outcome_idx": 1,
-      "side": "KOLKATA KNIGHT RIDERS",
-      "entry_price": 0.29,
-      "current_price": 0.415,
-      "shares": 1370.0,
-      "size_usdc": 397.3,
-      "tx_hash": "0x199c6666be57eb162804e521ac959c633365f717822d4f3c35eca7e2fe8cfce9",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 31.9,
-      "drift": 0.125,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+43.1%",
-          "threshold": "> 7%",
-          "note": "Line moved +43.1% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$397",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.290 (max +245%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +245% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "32m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +43.1% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xfc56388c",
-      "ts": 1777219956.0,
-      "timestamp_iso": "2026-04-26T16:12:36Z",
-      "market_id": "0xdb674ff2130b012177d1815a9cafec8887393d7d8e50bf721c01dfd6b8dcbb76",
-      "market_title": "Indian Premier League: Lucknow Super Giants vs Kolkata Knight Riders",
-      "market_slug": "cricipl-luc-kol-2026-04-26",
-      "outcome": "Lucknow Super Giants",
-      "outcome_idx": 0,
-      "side": "LUCKNOW SUPER GIANTS",
-      "entry_price": 0.67,
-      "current_price": 0.585,
-      "shares": 529.82,
-      "size_usdc": 354.98,
-      "tx_hash": "0xfc56388c46ec8e1c2ffff3358e07366dfd815f70e89f630e0e5dfec3fde2a7ef",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 47.1,
-      "drift": -0.085,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-12.7%",
-          "threshold": "> 7%",
-          "note": "Line moved -12.7% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$355",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.670 (max +49%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +49% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "47m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -12.7% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xb793c3b7",
-      "ts": 1777219940.0,
-      "timestamp_iso": "2026-04-26T16:12:20Z",
-      "market_id": "0xee5c82ebcdb8e3ed08de4df91c286a41c70e3254ded2d10cb72c41bba90922ee",
-      "market_title": "Dota 2: Nigma Galaxy vs Zero Tenacity (BO3) - DreamLeague Division 2 Playoffs",
-      "market_slug": "dota2-ngx-z10-2026-04-26",
-      "outcome": "Nigma Galaxy",
-      "outcome_idx": 0,
-      "side": "NIGMA GALAXY",
-      "entry_price": 0.72,
-      "current_price": 0.735,
-      "shares": 150000.0,
-      "size_usdc": 108000.0,
-      "tx_hash": "0xb793c3b704dcb2b9ef656f16044875be1e5030102bad5a18f629695bb2bb1aab",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "ENTER",
-      "age_min": 47.4,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$108,000",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.720 (max +39%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +39% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "47m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xaaf846e1",
-      "ts": 1777219680.0,
-      "timestamp_iso": "2026-04-26T16:08:00Z",
-      "market_id": "0x8e12fec953e831f0e3371a331899202dacc11b6679201a2407e1b2a549268608",
-      "market_title": "Will FC Internazionale Milano win on 2026-04-26?",
-      "market_slug": "sea-tor-int-2026-04-26",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.68,
-      "current_price": 0.835,
-      "shares": 6905.83,
-      "size_usdc": 4695.96,
-      "tx_hash": "0xaaf846e127fa0a622cf5dc1ddfa0e89bdc20aadfc445ea3c2732dcd39d8023eb",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 51.7,
-      "drift": 0.155,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+22.8%",
-          "threshold": "> 7%",
-          "note": "Line moved +22.8% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$4,696",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.680 (max +47%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +47% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "52m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +22.8% — the move already happened"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x6ea0d7e9",
-      "ts": 1777219160.0,
-      "timestamp_iso": "2026-04-26T15:59:20Z",
-      "market_id": "0x8e12fec953e831f0e3371a331899202dacc11b6679201a2407e1b2a549268608",
-      "market_title": "Will FC Internazionale Milano win on 2026-04-26?",
-      "market_slug": "sea-tor-int-2026-04-26",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.71,
-      "current_price": 0.835,
-      "shares": 344.83,
-      "size_usdc": 244.83,
-      "tx_hash": "0x6ea0d7e999b32cb42483b4aa039852d1d0ceac31947ea40000ded0b65c3f75a1",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 60.4,
-      "drift": 0.125,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+17.6%",
-          "threshold": "> 7%",
-          "note": "Line moved +17.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$245",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "60m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +17.6% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x0a4bc042",
-      "ts": 1777219150.0,
-      "timestamp_iso": "2026-04-26T15:59:10Z",
-      "market_id": "0x8e12fec953e831f0e3371a331899202dacc11b6679201a2407e1b2a549268608",
-      "market_title": "Will FC Internazionale Milano win on 2026-04-26?",
-      "market_slug": "sea-tor-int-2026-04-26",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.71,
-      "current_price": 0.835,
-      "shares": 171.28,
-      "size_usdc": 121.61,
-      "tx_hash": "0x0a4bc042179f3cf768eb4387251786bd0d0a28c23c87538bbaec5be19ad3d583",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 60.5,
-      "drift": 0.125,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+17.6%",
-          "threshold": "> 7%",
-          "note": "Line moved +17.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$122",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "61m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +17.6% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x83108cd2",
-      "ts": 1777219112.0,
-      "timestamp_iso": "2026-04-26T15:58:32Z",
-      "market_id": "0x8e12fec953e831f0e3371a331899202dacc11b6679201a2407e1b2a549268608",
-      "market_title": "Will FC Internazionale Milano win on 2026-04-26?",
-      "market_slug": "sea-tor-int-2026-04-26",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.71,
-      "current_price": 0.835,
-      "shares": 25332.67,
-      "size_usdc": 18144.05,
-      "tx_hash": "0x83108cd2b6b8a751a936c69d383841b05f5007801d30bb88cc9ccdb8cd00fc8d",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 61.2,
-      "drift": 0.125,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+17.6%",
-          "threshold": "> 7%",
-          "note": "Line moved +17.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$18,144",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.710 (max +41%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +41% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "61m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +17.6% — the move already happened",
-        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -827,7 +561,7 @@
         "total_wins": 230
       },
       "verdict": "ENTER",
-      "age_min": 73.4,
+      "age_min": 124.7,
       "drift": -0.015,
       "checks": [
         {
@@ -854,346 +588,12 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "73m ago",
+          "value": "125m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xf2d8bb3b",
-      "ts": 1777216788.0,
-      "timestamp_iso": "2026-04-26T15:19:48Z",
-      "market_id": "0x1c38457aa65379c26a02082ec70b61331bc43bc1ad0afbb48e2b95b68e39c49f",
-      "market_title": "Madrid Open: Arthur Fils vs Emilio Nava",
-      "market_slug": "atp-fils-nava-2026-04-26",
-      "outcome": "Emilio Nava",
-      "outcome_idx": 1,
-      "side": "EMILIO NAVA",
-      "entry_price": 0.22,
-      "current_price": 0.0005,
-      "shares": 4632.64,
-      "size_usdc": 1019.18,
-      "tx_hash": "0xf2d8bb3b6eeab05a7ce47b823c4fc88ce06d12646cc7d168b172ec7bfe3e89da",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 99.9,
-      "drift": -0.2195,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-99.8%",
-          "threshold": "> 7%",
-          "note": "Line moved -99.8% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,019",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.220 (max +355%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +355% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "100m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -99.8% — the move already happened",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x2dbaa6a8",
-      "ts": 1777216630.0,
-      "timestamp_iso": "2026-04-26T15:17:10Z",
-      "market_id": "0x1c38457aa65379c26a02082ec70b61331bc43bc1ad0afbb48e2b95b68e39c49f",
-      "market_title": "Madrid Open: Arthur Fils vs Emilio Nava",
-      "market_slug": "atp-fils-nava-2026-04-26",
-      "outcome": "Arthur Fils",
-      "outcome_idx": 0,
-      "side": "ARTHUR FILS",
-      "entry_price": 0.79,
-      "current_price": 0.9995,
-      "shares": 4019.81,
-      "size_usdc": 3175.65,
-      "tx_hash": "0x2dbaa6a8d9712129f5283f5a3fa45cfbb045e2c83c50d212661aab6772b56ded",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 102.6,
-      "drift": 0.2095,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+26.5%",
-          "threshold": "> 7%",
-          "note": "Line moved +26.5% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$3,176",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.790 (max +27%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +27% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "103m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +26.5% — the move already happened",
-        "Modest payoff — +27% on win, small cushion over costs.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xb3a0362f",
-      "ts": 1777216532.0,
-      "timestamp_iso": "2026-04-26T15:15:32Z",
-      "market_id": "0x1772b4816641e1d1ed5892304ea1912f9782be58efad3a2ad70c59a713b5d111",
-      "market_title": "Will VfB Stuttgart win on 2026-04-26?",
-      "market_slug": "bun-stu-wer-2026-04-26",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.27,
-      "current_price": 0.0005,
-      "shares": 375.25,
-      "size_usdc": 101.32,
-      "tx_hash": "0xb3a0362f4fcfa8046c82005b983030ef0e7b5a75d7c3cb217c89fdb5530c429b",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 104.2,
-      "drift": -0.2695,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-99.8%",
-          "threshold": "> 7%",
-          "note": "Line moved -99.8% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$101",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.270 (max +270%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +270% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "104m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -99.8% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0xcab11b84",
-      "ts": 1777216488.0,
-      "timestamp_iso": "2026-04-26T15:14:48Z",
-      "market_id": "0x1772b4816641e1d1ed5892304ea1912f9782be58efad3a2ad70c59a713b5d111",
-      "market_title": "Will VfB Stuttgart win on 2026-04-26?",
-      "market_slug": "bun-stu-wer-2026-04-26",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.29,
-      "current_price": 0.0005,
-      "shares": 757.68,
-      "size_usdc": 219.73,
-      "tx_hash": "0xcab11b84a2246664afaa240e7ca0cdddad787fa1f58743aadfea6f2a64cf02b3",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 104.9,
-      "drift": -0.2895,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-99.8%",
-          "threshold": "> 7%",
-          "note": "Line moved -99.8% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$220",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.290 (max +245%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +245% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "105m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -99.8% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x2a2C53bD_0x173b9e79",
-      "ts": 1777216086.0,
-      "timestamp_iso": "2026-04-26T15:08:06Z",
-      "market_id": "0x26e5ca57d0c56dd4a60f36f9f76e5d08250ca727e41dfb4aceb70257f5011a98",
-      "market_title": "Will VfB Stuttgart vs. SV Werder Bremen end in a draw?",
-      "market_slug": "bun-stu-wer-2026-04-26",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.49,
-      "current_price": 0.0005,
-      "shares": 571.27,
-      "size_usdc": 279.92,
-      "tx_hash": "0x173b9e79dc61f79ecb78050dd83e21b7738674698456ccd3d00fc3b036edd57f",
-      "whale": {
-        "address": "0x2a2C53bD278c04DA9962Fcf96490E17F3DfB9Bc1",
-        "pseudonym": "Dishonest-Bloom",
-        "raw_win_rate": 0.8267,
-        "lifetime_pnl": 857044.69,
-        "roi": 0.3255,
-        "recent_wins": 62,
-        "recent_n": 75,
-        "recent_win_rate": 0.8267,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 62
-      },
-      "verdict": "SKIP",
-      "age_min": 111.6,
-      "drift": -0.4895,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-99.9%",
-          "threshold": "> 7%",
-          "note": "Line moved -99.9% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$280",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "112m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -99.9% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -1226,7 +626,7 @@
         "total_wins": 230
       },
       "verdict": "LATE",
-      "age_min": 417.9,
+      "age_min": 469.1,
       "drift": -0.0005,
       "checks": [
         {
@@ -1253,7 +653,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "418m ago",
+          "value": "469m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1291,7 +691,7 @@
         "total_wins": 230
       },
       "verdict": "SKIP",
-      "age_min": 421.4,
+      "age_min": 472.6,
       "drift": 0.005,
       "checks": [
         {
@@ -1318,7 +718,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "421m ago",
+          "value": "473m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1357,7 +757,7 @@
         "total_wins": 230
       },
       "verdict": "SKIP",
-      "age_min": 422.1,
+      "age_min": 473.3,
       "drift": -0.0024,
       "checks": [
         {
@@ -1384,7 +784,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "422m ago",
+          "value": "473m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1423,7 +823,7 @@
         "total_wins": 53
       },
       "verdict": "SKIP",
-      "age_min": 565.4,
+      "age_min": 616.6,
       "drift": -0.025,
       "checks": [
         {
@@ -1450,7 +850,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "565m ago",
+          "value": "617m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
