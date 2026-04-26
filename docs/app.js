@@ -140,7 +140,7 @@
       state.backtest = backtest;
       state.liveSignals = liveSignals;
       state.watchlist = watchlist;
-      setLastUpdated(lastUpdated || liveSignals || whales);
+      setLastUpdated(pickFreshest([liveSignals, lastUpdated, whales, watchlist]));
       document.getElementById("whale-count").textContent = state.wallets.length;
       const sigCount = (liveSignals && liveSignals.enter_count != null)
         ? liveSignals.enter_count : (liveSignals && liveSignals.signal_count) || 0;
@@ -914,6 +914,17 @@
     if (hrs < 48) return `${hrs}h ago`;
     const days = Math.round(hrs / 24);
     return `${days}d ago`;
+  }
+
+  function pickFreshest(metas) {
+    let best = null, bestT = -Infinity;
+    for (const m of metas) {
+      const ts = m && (m.updated_at || m.timestamp);
+      if (!ts) continue;
+      const t = Date.parse(ts);
+      if (!isNaN(t) && t > bestT) { bestT = t; best = m; }
+    }
+    return best;
   }
 
   function setLastUpdated(meta) {
