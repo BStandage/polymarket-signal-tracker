@@ -47,8 +47,11 @@ jobs:
           git add docs/data/live_signals.json 2>/dev/null || true
           if git diff --staged --quiet; then
             echo "No signal changes."
+            # Discard the timestamp-only bump so we don't leave a dirty workspace.
+            git checkout -- docs/data/last_updated.json 2>/dev/null || true
             exit 0
           fi
+          git add docs/data/last_updated.json 2>/dev/null || true
           git pull --rebase origin master || true
           git commit -m "chore(signals): refresh at $(date -u +'%Y-%m-%dT%H:%MZ')"
           git push

@@ -360,6 +360,7 @@ def run() -> dict:
         "signals": signals,
     }
     write_json(DATA_DIR / "live_signals.json", output)
+    _touch_last_updated(output["updated_at"])
     log.info("Wrote %d signals (%d ENTER) from %d watchlisted wallets",
              len(signals), output["enter_count"], len(watchlist))
     return output
@@ -372,7 +373,16 @@ def _write_empty() -> dict:
         "signals": [],
     }
     write_json(DATA_DIR / "live_signals.json", output)
+    _touch_last_updated(output["updated_at"])
     return output
+
+
+def _touch_last_updated(ts: str) -> None:
+    # Bump only the timestamp; preserve counters written by the heavier whale-snapshot pipeline.
+    path = DATA_DIR / "last_updated.json"
+    meta = read_json(path, default={}) or {}
+    meta["updated_at"] = ts
+    write_json(path, meta)
 
 
 if __name__ == "__main__":
