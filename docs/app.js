@@ -491,12 +491,6 @@
         ? `${w.recent_wins}/${w.recent_n} last 30d`
         : "";
 
-      const drift = s.drift;
-      const driftStr = drift == null ? "—" :
-        `${drift >= 0 ? "+" : ""}${(drift * 100).toFixed(1)}%`;
-      const driftClass = drift == null ? "muted"
-        : drift > 0.03 ? "drift-neg" : drift < 0 ? "drift-pos" : "muted";
-
       const age = s.age_min;
       const ageClass = age < 10 ? "pos" : age < 30 ? "warn" : "muted";
 
@@ -521,8 +515,6 @@
             <span>Entry <b>${fmt(s.entry_price, 3)}</b></span>
             <span class="sep">·</span>
             <span>Now <b>${fmt(s.current_price, 3)}</b></span>
-            <span class="sep">·</span>
-            <span class="${driftClass}">drift <b>${driftStr}</b></span>
             <span class="sep">·</span>
             <span class="size">${fmtMoney(s.size_usdc)}</span>
             <span class="sep">·</span>
