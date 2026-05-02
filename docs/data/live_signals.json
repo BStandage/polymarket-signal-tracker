@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-02T19:46:05.370016Z",
+  "updated_at": "2026-05-02T20:26:32.236499Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 12,
-  "signal_count": 18,
-  "enter_count": 4,
+  "signal_count": 20,
+  "enter_count": 2,
   "signals": [
     {
-      "signal_id": "0x84CffFC3_0x24f41564",
-      "ts": 1777750998.0,
-      "timestamp_iso": "2026-05-02T19:43:18Z",
-      "market_id": "0x5159f1aeb43719d812fd7bdde72da589fafe0ab0cff7a861d9a20b2511571d96",
-      "market_title": "76ers vs. Celtics",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "76ers",
-      "outcome_idx": 0,
-      "side": "76ERS",
-      "entry_price": 0.32,
-      "current_price": 0.325,
-      "shares": 1244.0,
-      "size_usdc": 406.2,
-      "tx_hash": "0x24f41564d0833329cc43251e803f9dcfce0b17004fdb1deea99ac48f4f0e0d2b",
+      "signal_id": "0x84CffFC3_0x4ddcf854",
+      "ts": 1777753566.0,
+      "timestamp_iso": "2026-05-02T20:26:06Z",
+      "market_id": "0x3dd8308802cb2b335d3df6cba97acccd54d0cf19bc0dc9e3dfc8b6539e894604",
+      "market_title": "Will Inter Miami CF vs. Orlando City SC end in a draw?",
+      "market_slug": "mls-mia-orl-2026-05-02",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.87,
+      "current_price": 0.86,
+      "shares": 243.82,
+      "size_usdc": 212.95,
+      "tx_hash": "0x4ddcf854ae5022f64cecdeb75c5016a4272b9e4abfbb725b3d4daef26454b723",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -39,29 +39,162 @@
         "total_wins": 32
       },
       "verdict": "SKIP",
-      "age_min": 2.7,
-      "drift": 0.005,
+      "age_min": 0.4,
+      "drift": -0.01,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+1.6%",
+          "value": "-1.1%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$406",
+          "value": "$213",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.320 (max +212%)",
+          "status": "warn",
+          "value": "0.870 (max +15%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +212% upside on a correct call."
+          "note": "Entry too high — max 15% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "0m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 15% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xea1ccf46",
+      "ts": 1777753454.0,
+      "timestamp_iso": "2026-05-02T20:24:14Z",
+      "market_id": "0x88ee8cfc3a2b410ccf05cc788e3e9a5d839ba4673ae633d3b5952f1a038d65ff",
+      "market_title": "Milwaukee Brewers vs. Washington Nationals",
+      "market_slug": "mlb-mil-wsh-2026-05-02",
+      "outcome": "Milwaukee Brewers",
+      "outcome_idx": 0,
+      "side": "MILWAUKEE BREWERS",
+      "entry_price": 0.78,
+      "current_price": 0.835,
+      "shares": 259.05,
+      "size_usdc": 202.06,
+      "tx_hash": "0xea1ccf46de20bd1eadeef6ba35bff4db2f0759729c3f6e4f36a3d6b9e1c20dd0",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9412,
+        "lifetime_pnl": 250927.78,
+        "roi": 5.7755,
+        "recent_wins": 32,
+        "recent_n": 34,
+        "recent_win_rate": 0.9412,
+        "z_score": 0.0,
+        "n_total": 34,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 2.2,
+      "drift": 0.055,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+7.1%",
+          "threshold": "> 3%",
+          "note": "Line moved +7.1% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$202",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "2m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +7.1% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x04509d1b",
+      "ts": 1777753408.0,
+      "timestamp_iso": "2026-05-02T20:23:28Z",
+      "market_id": "0x88ee8cfc3a2b410ccf05cc788e3e9a5d839ba4673ae633d3b5952f1a038d65ff",
+      "market_title": "Milwaukee Brewers vs. Washington Nationals",
+      "market_slug": "mlb-mil-wsh-2026-05-02",
+      "outcome": "Milwaukee Brewers",
+      "outcome_idx": 0,
+      "side": "MILWAUKEE BREWERS",
+      "entry_price": 0.78,
+      "current_price": 0.835,
+      "shares": 336.0,
+      "size_usdc": 262.08,
+      "tx_hash": "0x04509d1b45dbfb0215e5eff24e8ee547f8c3c94b1565c93a59d7957818451869",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9412,
+        "lifetime_pnl": 250927.78,
+        "roi": 5.7755,
+        "recent_wins": 32,
+        "recent_n": 34,
+        "recent_win_rate": 0.9412,
+        "z_score": 0.0,
+        "n_total": 34,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 3.0,
+      "drift": 0.055,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+7.1%",
+          "threshold": "> 3%",
+          "note": "Line moved +7.1% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$262",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
         },
         {
           "name": "Age",
@@ -72,24 +205,26 @@
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Line moved +7.1% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
       ]
     },
     {
-      "signal_id": "0x84CffFC3_0x0d00af51",
-      "ts": 1777750872.0,
-      "timestamp_iso": "2026-05-02T19:41:12Z",
-      "market_id": "0xd7f31747be7738c6b238a6b947428b14b5fa9a3a3b5a593981e45c0951ffb390",
-      "market_title": "Philadelphia Phillies vs. Miami Marlins: O/U 8.5",
-      "market_slug": "mlb-phi-mia-2026-05-02",
-      "outcome": "Over",
+      "signal_id": "0x84CffFC3_0x6ef1c50e",
+      "ts": 1777753406.0,
+      "timestamp_iso": "2026-05-02T20:23:26Z",
+      "market_id": "0x88ee8cfc3a2b410ccf05cc788e3e9a5d839ba4673ae633d3b5952f1a038d65ff",
+      "market_title": "Milwaukee Brewers vs. Washington Nationals",
+      "market_slug": "mlb-mil-wsh-2026-05-02",
+      "outcome": "Milwaukee Brewers",
       "outcome_idx": 0,
-      "side": "OVER",
-      "entry_price": 0.53,
-      "current_price": 0.525,
-      "shares": 333.49,
-      "size_usdc": 179.24,
-      "tx_hash": "0x0d00af513561a7194a4c2bc2c36bfd37dfaacde3a5efa584b1db010d5e60b770",
+      "side": "MILWAUKEE BREWERS",
+      "entry_price": 0.78,
+      "current_price": 0.835,
+      "shares": 160.69,
+      "size_usdc": 125.34,
+      "tx_hash": "0x6ef1c50e3c883d6fd2b2f9a93b863ab69a915d84a1025ec82e28b045b3aa033b",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -104,40 +239,242 @@
         "total_wins": 32
       },
       "verdict": "SKIP",
-      "age_min": 4.8,
-      "drift": -0.005,
+      "age_min": 3.0,
+      "drift": 0.055,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "-0.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "+7.1%",
+          "threshold": "> 3%",
+          "note": "Line moved +7.1% — part of the edge is already priced in"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$179",
+          "value": "$125",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.530 (max +89%)",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +89% upside on a correct call."
+          "note": "Modest payoff — +28% on win, small cushion over costs."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "5m ago",
+          "value": "3m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Line moved +7.1% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xb9d259d0",
+      "ts": 1777753406.0,
+      "timestamp_iso": "2026-05-02T20:23:26Z",
+      "market_id": "0x88ee8cfc3a2b410ccf05cc788e3e9a5d839ba4673ae633d3b5952f1a038d65ff",
+      "market_title": "Milwaukee Brewers vs. Washington Nationals",
+      "market_slug": "mlb-mil-wsh-2026-05-02",
+      "outcome": "Milwaukee Brewers",
+      "outcome_idx": 0,
+      "side": "MILWAUKEE BREWERS",
+      "entry_price": 0.78,
+      "current_price": 0.835,
+      "shares": 160.69,
+      "size_usdc": 125.34,
+      "tx_hash": "0xb9d259d001cd799191885e2c185e92c1f9735ba065463593ddebdbba69f86643",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9412,
+        "lifetime_pnl": 250927.78,
+        "roi": 5.7755,
+        "recent_wins": 32,
+        "recent_n": 34,
+        "recent_win_rate": 0.9412,
+        "z_score": 0.0,
+        "n_total": 34,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 3.0,
+      "drift": 0.055,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+7.1%",
+          "threshold": "> 3%",
+          "note": "Line moved +7.1% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$125",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "3m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +7.1% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xf06d4d83",
+      "ts": 1777753406.0,
+      "timestamp_iso": "2026-05-02T20:23:26Z",
+      "market_id": "0x88ee8cfc3a2b410ccf05cc788e3e9a5d839ba4673ae633d3b5952f1a038d65ff",
+      "market_title": "Milwaukee Brewers vs. Washington Nationals",
+      "market_slug": "mlb-mil-wsh-2026-05-02",
+      "outcome": "Milwaukee Brewers",
+      "outcome_idx": 0,
+      "side": "MILWAUKEE BREWERS",
+      "entry_price": 0.78,
+      "current_price": 0.835,
+      "shares": 2240.0,
+      "size_usdc": 1747.2,
+      "tx_hash": "0xf06d4d832ad702db38da59df996ecfe51f8f42e3c70cb17780ad5ff78912acee",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9412,
+        "lifetime_pnl": 250927.78,
+        "roi": 5.7755,
+        "recent_wins": 32,
+        "recent_n": 34,
+        "recent_win_rate": 0.9412,
+        "z_score": 0.0,
+        "n_total": 34,
+        "total_wins": 32
+      },
+      "verdict": "LATE",
+      "age_min": 3.0,
+      "drift": 0.055,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+7.1%",
+          "threshold": "> 3%",
+          "note": "Line moved +7.1% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,747",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "3m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +7.1% — part of the edge is already priced in",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xb4e27d1b",
+      "ts": 1777753372.0,
+      "timestamp_iso": "2026-05-02T20:22:52Z",
+      "market_id": "0x88ee8cfc3a2b410ccf05cc788e3e9a5d839ba4673ae633d3b5952f1a038d65ff",
+      "market_title": "Milwaukee Brewers vs. Washington Nationals",
+      "market_slug": "mlb-mil-wsh-2026-05-02",
+      "outcome": "Milwaukee Brewers",
+      "outcome_idx": 0,
+      "side": "MILWAUKEE BREWERS",
+      "entry_price": 0.78,
+      "current_price": 0.835,
+      "shares": 188.0,
+      "size_usdc": 147.61,
+      "tx_hash": "0xb4e27d1b95dd087eb0321052a9990f582280f078da0701dab172a5f44f44d2c6",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9412,
+        "lifetime_pnl": 250927.78,
+        "roi": 5.7755,
+        "recent_wins": 32,
+        "recent_n": 34,
+        "recent_win_rate": 0.9412,
+        "z_score": 0.0,
+        "n_total": 34,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 3.6,
+      "drift": 0.055,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+7.1%",
+          "threshold": "> 3%",
+          "note": "Line moved +7.1% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$148",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "4m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +7.1% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
       ]
     },
     {
@@ -151,7 +488,7 @@
       "outcome_idx": 0,
       "side": "76ERS",
       "entry_price": 0.33,
-      "current_price": 0.325,
+      "current_price": 0.315,
       "shares": 11910.0,
       "size_usdc": 4009.3,
       "tx_hash": "0xb1023d324f1fddd97183e89a2d6faaac6975d574dc5f6f49901e6091c0b229ea",
@@ -169,13 +506,13 @@
         "total_wins": 42
       },
       "verdict": "ENTER",
-      "age_min": 6.4,
-      "drift": -0.005,
+      "age_min": 46.8,
+      "drift": -0.015,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.5%",
+          "value": "-4.5%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -196,70 +533,7 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "6m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x84CffFC3_0xe19d2678",
-      "ts": 1777750686.0,
-      "timestamp_iso": "2026-05-02T19:38:06Z",
-      "market_id": "0x5159f1aeb43719d812fd7bdde72da589fafe0ab0cff7a861d9a20b2511571d96",
-      "market_title": "76ers vs. Celtics",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "76ers",
-      "outcome_idx": 0,
-      "side": "76ERS",
-      "entry_price": 0.32,
-      "current_price": 0.325,
-      "shares": 100000.0,
-      "size_usdc": 32000.0,
-      "tx_hash": "0xe19d2678088f37e8cf7038f7e00cb6129c314c4ef5aa64a5678d5b5aded048cb",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9412,
-        "lifetime_pnl": 250927.78,
-        "roi": 5.7755,
-        "recent_wins": 32,
-        "recent_n": 34,
-        "recent_win_rate": 0.9412,
-        "z_score": 0.0,
-        "n_total": 34,
-        "total_wins": 32
-      },
-      "verdict": "ENTER",
-      "age_min": 7.9,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.6%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$32,000",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.320 (max +212%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +212% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "8m ago",
+          "value": "47m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -277,7 +551,7 @@
       "outcome_idx": 0,
       "side": "TORONTO BLUE JAYS",
       "entry_price": 0.3286,
-      "current_price": 0.355,
+      "current_price": 0.995,
       "shares": 4565.08,
       "size_usdc": 1530.21,
       "tx_hash": "0x29efc454e6607037785fd90a67b29f52f0256eb74d1346108ac403f7c133ce82",
@@ -294,16 +568,16 @@
         "n_total": 45,
         "total_wins": 42
       },
-      "verdict": "ENTER",
-      "age_min": 12.3,
-      "drift": 0.0264,
+      "verdict": "SKIP",
+      "age_min": 52.8,
+      "drift": 0.6664,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+8.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "+202.8%",
+          "threshold": "> 7%",
+          "note": "Line moved +202.8% — the move already happened"
         },
         {
           "name": "Size",
@@ -322,12 +596,14 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "12m ago",
+          "value": "53m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Line moved +202.8% — the move already happened"
+      ]
     },
     {
       "signal_id": "0x92b5f14c_0x9634e676",
@@ -358,7 +634,7 @@
         "total_wins": 42
       },
       "verdict": "ENTER",
-      "age_min": 13.5,
+      "age_min": 54.0,
       "drift": -0.025,
       "checks": [
         {
@@ -385,7 +661,7 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "14m ago",
+          "value": "54m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -421,7 +697,7 @@
         "total_wins": 42
       },
       "verdict": "SKIP",
-      "age_min": 16.4,
+      "age_min": 56.8,
       "drift": null,
       "checks": [
         {
@@ -448,7 +724,7 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "16m ago",
+          "value": "57m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -486,7 +762,7 @@
         "total_wins": 42
       },
       "verdict": "SKIP",
-      "age_min": 16.4,
+      "age_min": 56.9,
       "drift": null,
       "checks": [
         {
@@ -513,7 +789,7 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "16m ago",
+          "value": "57m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -551,7 +827,7 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 40.3,
+      "age_min": 80.7,
       "drift": -0.005,
       "checks": [
         {
@@ -577,14 +853,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "40m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "81m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -598,7 +875,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.88,
-      "current_price": 0.905,
+      "current_price": 0.935,
       "shares": 272.0,
       "size_usdc": 240.22,
       "tx_hash": "0x49cb19f79a4ac174923712fa28eec9f250347e0ef91ae275398c593ec354280d",
@@ -616,15 +893,15 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 53.1,
-      "drift": 0.025,
+      "age_min": 93.5,
+      "drift": 0.055,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+2.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "+6.3%",
+          "threshold": "> 3%",
+          "note": "Line moved +6.3% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -642,15 +919,17 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "53m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "94m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved +6.3% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
+        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -664,7 +943,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.88,
-      "current_price": 0.905,
+      "current_price": 0.935,
       "shares": 199.0,
       "size_usdc": 175.75,
       "tx_hash": "0x9df3d2a6388051bb573d4441debdc3783b961ece723542dc0cccd27619e78825",
@@ -682,15 +961,15 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 53.5,
-      "drift": 0.025,
+      "age_min": 93.9,
+      "drift": 0.055,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+2.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "+6.3%",
+          "threshold": "> 3%",
+          "note": "Line moved +6.3% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -708,15 +987,17 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "53m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "94m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved +6.3% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
+        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -748,7 +1029,7 @@
         "total_wins": 178
       },
       "verdict": "SKIP",
-      "age_min": 118.6,
+      "age_min": 159.1,
       "drift": -0.0055,
       "checks": [
         {
@@ -775,7 +1056,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "119m ago",
+          "value": "159m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -796,7 +1077,7 @@
       "outcome_idx": 0,
       "side": "BALTIMORE ORIOLES",
       "entry_price": 0.37,
-      "current_price": 0.0755,
+      "current_price": 0.003,
       "shares": 270.27,
       "size_usdc": 101.89,
       "tx_hash": "0x698307f214b8d686f26a3236bb35f4dbded6628d6081ee067bd91d420b2de7a6",
@@ -814,15 +1095,15 @@
         "total_wins": 178
       },
       "verdict": "SKIP",
-      "age_min": 120.9,
-      "drift": -0.2945,
+      "age_min": 161.4,
+      "drift": -0.367,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "-79.6%",
+          "value": "-99.2%",
           "threshold": "> 7%",
-          "note": "Line moved -79.6% — the move already happened"
+          "note": "Line moved -99.2% — the move already happened"
         },
         {
           "name": "Size",
@@ -841,13 +1122,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "121m ago",
+          "value": "161m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved -79.6% — the move already happened",
+        "Line moved -99.2% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
@@ -881,7 +1162,7 @@
         "total_wins": 178
       },
       "verdict": "SKIP",
-      "age_min": 127.0,
+      "age_min": 167.4,
       "drift": -0.01,
       "checks": [
         {
@@ -908,146 +1189,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "127m ago",
+          "value": "167m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x38E59B36_0xf6837086",
-      "ts": 1777742854.0,
-      "timestamp_iso": "2026-05-02T17:27:34Z",
-      "market_id": "0xcba24842ceac7a40d2a8b9adde1f4407999b6505193b9fd68156ae76fbffa706",
-      "market_title": "Will Arsenal win the 2025–26 English Premier League?",
-      "market_slug": "english-premier-league-winner",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.3632,
-      "current_price": 0.375,
-      "shares": 290.0,
-      "size_usdc": 107.35,
-      "tx_hash": "0xf6837086f9887df1d2467da4c47198b118368f60a3c950dca0fa6c7a4be76f01",
-      "whale": {
-        "address": "0x38E59B36Aae31b164200d0Cad7C3fE5e0eE795E7",
-        "pseudonym": "Our-Dough",
-        "raw_win_rate": 0.8864,
-        "lifetime_pnl": 48035.95,
-        "roi": 1.1116,
-        "recent_wins": 39,
-        "recent_n": 44,
-        "recent_win_rate": 0.8864,
-        "z_score": 0.0,
-        "n_total": 44,
-        "total_wins": 39
-      },
-      "verdict": "SKIP",
-      "age_min": 138.5,
-      "drift": 0.0118,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+3.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$107",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.363 (max +175%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +175% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "138m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x38E59B36_0x70dbe6c6",
-      "ts": 1777742270.0,
-      "timestamp_iso": "2026-05-02T17:17:50Z",
-      "market_id": "0x33c330cf5c0a952237e359c23579957d8252ccd77267bb7d8e17144ae2084b97",
-      "market_title": "Will Scottie Scheffler win the 2026 Cadillac Championship?",
-      "market_slug": "2026-cadillac-championship-winner",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.88,
-      "current_price": 0.905,
-      "shares": 500.0,
-      "size_usdc": 441.58,
-      "tx_hash": "0x70dbe6c64a50e10a0cdc89f48a132107e8f16d1fcef35c33dbc4c0a6d727d1e8",
-      "whale": {
-        "address": "0x38E59B36Aae31b164200d0Cad7C3fE5e0eE795E7",
-        "pseudonym": "Our-Dough",
-        "raw_win_rate": 0.8864,
-        "lifetime_pnl": 48035.95,
-        "roi": 1.1116,
-        "recent_wins": 39,
-        "recent_n": 44,
-        "recent_win_rate": 0.8864,
-        "z_score": 0.0,
-        "n_total": 44,
-        "total_wins": 39
-      },
-      "verdict": "SKIP",
-      "age_min": 148.2,
-      "drift": 0.025,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$442",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.880 (max +14%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "148m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk.",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -1080,7 +1228,7 @@
         "total_wins": 45
       },
       "verdict": "SKIP",
-      "age_min": 372.6,
+      "age_min": 413.0,
       "drift": 0.005,
       "checks": [
         {
@@ -1107,7 +1255,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "373m ago",
+          "value": "413m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1146,7 +1294,7 @@
         "total_wins": 76
       },
       "verdict": "SKIP",
-      "age_min": 628.0,
+      "age_min": 668.5,
       "drift": -0.0124,
       "checks": [
         {
@@ -1173,7 +1321,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "628m ago",
+          "value": "668m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
