@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-02T23:30:24.855046Z",
+  "updated_at": "2026-05-03T00:11:15.267236Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 12,
-  "signal_count": 28,
-  "enter_count": 7,
+  "signal_count": 29,
+  "enter_count": 2,
   "signals": [
     {
-      "signal_id": "0x84CffFC3_0xf6bd34c7",
-      "ts": 1777764572.0,
-      "timestamp_iso": "2026-05-02T23:29:32Z",
-      "market_id": "0x83f1ce290608197126a42bd105c989b47147e5b9cd230121057113334855e001",
-      "market_title": "76ers vs. Celtics: O/U 204.5",
+      "signal_id": "0x84CffFC3_0x2c857912",
+      "ts": 1777767048.0,
+      "timestamp_iso": "2026-05-03T00:10:48Z",
+      "market_id": "0x5159f1aeb43719d812fd7bdde72da589fafe0ab0cff7a861d9a20b2511571d96",
+      "market_title": "76ers vs. Celtics",
       "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "Over",
-      "outcome_idx": 0,
-      "side": "OVER",
-      "entry_price": 0.52,
-      "current_price": 0.515,
-      "shares": 5129.4,
-      "size_usdc": 2705.7,
-      "tx_hash": "0xf6bd34c7f3c060b0e5bced8675954a5fbbf40111cc0d4a33b4ba6e62d1fffa0f",
+      "outcome": "Celtics",
+      "outcome_idx": 1,
+      "side": "CELTICS",
+      "entry_price": 0.41,
+      "current_price": 0.335,
+      "shares": 302.25,
+      "size_usdc": 126.12,
+      "tx_hash": "0x2c8579126111b6a09ba3a54c9e47aa8b8ed1471a43fef2f22a3a54b6f6c7583e",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -38,40 +38,504 @@
         "n_total": 34,
         "total_wins": 32
       },
-      "verdict": "ENTER",
-      "age_min": 0.8,
+      "verdict": "SKIP",
+      "age_min": 0.4,
+      "drift": -0.075,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-18.3%",
+          "threshold": "> 7%",
+          "note": "Line moved -18.3% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$126",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.410 (max +144%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +144% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "0m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -18.3% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x5deaca6b",
+      "ts": 1777766936.0,
+      "timestamp_iso": "2026-05-03T00:08:56Z",
+      "market_id": "0x13be45229a1fd50cd1e75f1568f90df7b3f6106e2eeff8f59c1a2e2891835c2e",
+      "market_title": "Atlanta Braves vs. Colorado Rockies",
+      "market_slug": "mlb-atl-col-2026-05-02",
+      "outcome": "Colorado Rockies",
+      "outcome_idx": 1,
+      "side": "COLORADO ROCKIES",
+      "entry_price": 0.34,
+      "current_price": 0.335,
+      "shares": 572.85,
+      "size_usdc": 198.63,
+      "tx_hash": "0x5deaca6bfcf67137061f5b18cefede1e1fe52abcf553dbd106f6d0d41719d934",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9412,
+        "lifetime_pnl": 250927.78,
+        "roi": 5.7755,
+        "recent_wins": 32,
+        "recent_n": 34,
+        "recent_win_rate": 0.9412,
+        "z_score": 0.0,
+        "n_total": 34,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 2.2,
       "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.0%",
+          "value": "-1.5%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$199",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.340 (max +194%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +194% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "2m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xd5a2dc08",
+      "ts": 1777766820.0,
+      "timestamp_iso": "2026-05-03T00:07:00Z",
+      "market_id": "0xe2f47217facd6632583f232e694ccd91642766210d6aecdbb96841943a84c014",
+      "market_title": "Will San Diego FC win on 2026-05-02?",
+      "market_slug": "mls-sdg-laf-2026-05-02",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.38,
+      "current_price": 0.375,
+      "shares": 958.77,
+      "size_usdc": 371.11,
+      "tx_hash": "0xd5a2dc080fcba555c9c2ceb206720bde201ac8071839d87962cdf96d2c38722c",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9412,
+        "lifetime_pnl": 250927.78,
+        "roi": 5.7755,
+        "recent_wins": 32,
+        "recent_n": 34,
+        "recent_win_rate": 0.9412,
+        "z_score": 0.0,
+        "n_total": 34,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 4.2,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-1.3%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$371",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.380 (max +163%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +163% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "4m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x014c4e7A_0xdbc75f51",
+      "ts": 1777766444.0,
+      "timestamp_iso": "2026-05-03T00:00:44Z",
+      "market_id": "0x9954b4eef49a268b810bc260ee9278361e29a8f6f4ad816a804dd613ef73a968",
+      "market_title": "Will the Philadelphia 76ers win the NBA Eastern Conference Finals?",
+      "market_slug": "nba-playoffs-eastern-conference-champion",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.876,
+      "current_price": 0.8545,
+      "shares": 895.55,
+      "size_usdc": 784.5,
+      "tx_hash": "0xdbc75f51340ffd463b5f268bd210de1425e8582f90b1f864dc852811558a9eb7",
+      "whale": {
+        "address": "0x014c4e7Ae2145992861C2d1B124aF633a97f820c",
+        "pseudonym": "Pristine-Business",
+        "raw_win_rate": 0.8085,
+        "lifetime_pnl": 276145.28,
+        "roi": 0.4375,
+        "recent_wins": 52,
+        "recent_n": 63,
+        "recent_win_rate": 0.8254,
+        "z_score": 0.0,
+        "n_total": 94,
+        "total_wins": 76
+      },
+      "verdict": "LATE",
+      "age_min": 10.4,
+      "drift": -0.0215,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-2.5%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$2,706",
+          "value": "$785",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.520 (max +92%)",
+          "status": "warn",
+          "value": "0.876 (max +14%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +92% upside on a correct call."
+          "note": "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "1m ago",
+          "value": "10m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x014c4e7A_0x91d1b880",
+      "ts": 1777765824.0,
+      "timestamp_iso": "2026-05-02T23:50:24Z",
+      "market_id": "0x9954b4eef49a268b810bc260ee9278361e29a8f6f4ad816a804dd613ef73a968",
+      "market_title": "Will the Philadelphia 76ers win the NBA Eastern Conference Finals?",
+      "market_slug": "nba-playoffs-eastern-conference-champion",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.895,
+      "current_price": 0.8545,
+      "shares": 193.06,
+      "size_usdc": 172.79,
+      "tx_hash": "0x91d1b880564945a9a579e60eedc16ffb09d4a3754fc08e229490878f3c6cca3b",
+      "whale": {
+        "address": "0x014c4e7Ae2145992861C2d1B124aF633a97f820c",
+        "pseudonym": "Pristine-Business",
+        "raw_win_rate": 0.8085,
+        "lifetime_pnl": 276145.28,
+        "roi": 0.4375,
+        "recent_wins": 52,
+        "recent_n": 63,
+        "recent_win_rate": 0.8254,
+        "z_score": 0.0,
+        "n_total": 94,
+        "total_wins": 76
+      },
+      "verdict": "SKIP",
+      "age_min": 20.8,
+      "drift": -0.0405,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "-4.5%",
+          "threshold": "> 3%",
+          "note": "Line moved -4.5% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$173",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.895 (max +12%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "21m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -4.5% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x014c4e7A_0xd3a75ded",
+      "ts": 1777765492.0,
+      "timestamp_iso": "2026-05-02T23:44:52Z",
+      "market_id": "0x9954b4eef49a268b810bc260ee9278361e29a8f6f4ad816a804dd613ef73a968",
+      "market_title": "Will the Philadelphia 76ers win the NBA Eastern Conference Finals?",
+      "market_slug": "nba-playoffs-eastern-conference-champion",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.895,
+      "current_price": 0.8545,
+      "shares": 1392.98,
+      "size_usdc": 1246.72,
+      "tx_hash": "0xd3a75ded2957e506e10425d3deb7be9554e4b7bb9b496884aeda7e225b82f62c",
+      "whale": {
+        "address": "0x014c4e7Ae2145992861C2d1B124aF633a97f820c",
+        "pseudonym": "Pristine-Business",
+        "raw_win_rate": 0.8085,
+        "lifetime_pnl": 276145.28,
+        "roi": 0.4375,
+        "recent_wins": 52,
+        "recent_n": 63,
+        "recent_win_rate": 0.8254,
+        "z_score": 0.0,
+        "n_total": 94,
+        "total_wins": 76
+      },
+      "verdict": "LATE",
+      "age_min": 26.3,
+      "drift": -0.0405,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "-4.5%",
+          "threshold": "> 3%",
+          "note": "Line moved -4.5% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,247",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.895 (max +12%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "26m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -4.5% — part of the edge is already priced in",
+        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x014c4e7A_0xa857d25a",
+      "ts": 1777765306.0,
+      "timestamp_iso": "2026-05-02T23:41:46Z",
+      "market_id": "0x9954b4eef49a268b810bc260ee9278361e29a8f6f4ad816a804dd613ef73a968",
+      "market_title": "Will the Philadelphia 76ers win the NBA Eastern Conference Finals?",
+      "market_slug": "nba-playoffs-eastern-conference-champion",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.895,
+      "current_price": 0.8545,
+      "shares": 413.94,
+      "size_usdc": 370.48,
+      "tx_hash": "0xa857d25ac95fa4c8546af899038030e30bdec7e5054406ba42abf0291a0999ee",
+      "whale": {
+        "address": "0x014c4e7Ae2145992861C2d1B124aF633a97f820c",
+        "pseudonym": "Pristine-Business",
+        "raw_win_rate": 0.8085,
+        "lifetime_pnl": 276145.28,
+        "roi": 0.4375,
+        "recent_wins": 52,
+        "recent_n": 63,
+        "recent_win_rate": 0.8254,
+        "z_score": 0.0,
+        "n_total": 94,
+        "total_wins": 76
+      },
+      "verdict": "SKIP",
+      "age_min": 29.4,
+      "drift": -0.0405,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "-4.5%",
+          "threshold": "> 3%",
+          "note": "Line moved -4.5% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$370",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.895 (max +12%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "29m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -4.5% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x4483C26C_0xc2be8465",
+      "ts": 1777764634.0,
+      "timestamp_iso": "2026-05-02T23:30:34Z",
+      "market_id": "0x5159f1aeb43719d812fd7bdde72da589fafe0ab0cff7a861d9a20b2511571d96",
+      "market_title": "76ers vs. Celtics",
+      "market_slug": "nba-phi-bos-2026-05-02",
+      "outcome": "Celtics",
+      "outcome_idx": 1,
+      "side": "CELTICS",
+      "entry_price": 0.61,
+      "current_price": 0.335,
+      "shares": 360.66,
+      "size_usdc": 222.57,
+      "tx_hash": "0xc2be8465e09af0cb154cfa603c5cbd6d9357e82e16e8d8343503221db9a50da8",
+      "whale": {
+        "address": "0x4483C26CdF27496Cf32fB244972fca3F9eE5c565",
+        "pseudonym": "",
+        "raw_win_rate": 0.8279,
+        "lifetime_pnl": 46418.42,
+        "roi": 0.6332,
+        "recent_wins": 110,
+        "recent_n": 123,
+        "recent_win_rate": 0.8943,
+        "z_score": 0.0,
+        "n_total": 215,
+        "total_wins": 178
+      },
+      "verdict": "SKIP",
+      "age_min": 40.6,
+      "drift": -0.275,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-45.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -45.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$223",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.610 (max +64%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +64% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "41m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -45.1% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
     },
     {
       "signal_id": "0x4483C26C_0xecf1c0d6",
@@ -84,7 +548,7 @@
       "outcome_idx": 1,
       "side": "CELTICS",
       "entry_price": 0.61,
-      "current_price": 0.605,
+      "current_price": 0.335,
       "shares": 344.26,
       "size_usdc": 212.46,
       "tx_hash": "0xecf1c0d620d1d2b5ae52cb00dd283a7f9aacd598c1fc717cc0d66467c004dd9f",
@@ -102,15 +566,15 @@
         "total_wins": 178
       },
       "verdict": "SKIP",
-      "age_min": 1.2,
-      "drift": -0.005,
+      "age_min": 42.0,
+      "drift": -0.275,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "-0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-45.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -45.1% — the move already happened"
         },
         {
           "name": "Size",
@@ -129,400 +593,15 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "1m ago",
+          "value": "42m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
+        "Line moved -45.1% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill"
       ]
-    },
-    {
-      "signal_id": "0x84CffFC3_0xc6486d47",
-      "ts": 1777764544.0,
-      "timestamp_iso": "2026-05-02T23:29:04Z",
-      "market_id": "0xa425eab4de77d36b831bad895970e5c663581d9bca05a35c658ab4f095024a76",
-      "market_title": "Spread: Celtics (-8.5)",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "76ers",
-      "outcome_idx": 1,
-      "side": "76ERS",
-      "entry_price": 0.66,
-      "current_price": 0.655,
-      "shares": 335.25,
-      "size_usdc": 223.52,
-      "tx_hash": "0xc6486d4717286c1066b866dc52449bb16dee77fc76fcad8d0a782bc34e9369a7",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9412,
-        "lifetime_pnl": 250927.78,
-        "roi": 5.7755,
-        "recent_wins": 32,
-        "recent_n": 34,
-        "recent_win_rate": 0.9412,
-        "z_score": 0.0,
-        "n_total": 34,
-        "total_wins": 32
-      },
-      "verdict": "SKIP",
-      "age_min": 1.3,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$224",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.660 (max +52%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +52% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "1m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x84CffFC3_0xda449d1a",
-      "ts": 1777764438.0,
-      "timestamp_iso": "2026-05-02T23:27:18Z",
-      "market_id": "0xa425eab4de77d36b831bad895970e5c663581d9bca05a35c658ab4f095024a76",
-      "market_title": "Spread: Celtics (-8.5)",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "76ers",
-      "outcome_idx": 1,
-      "side": "76ERS",
-      "entry_price": 0.66,
-      "current_price": 0.655,
-      "shares": 328.2,
-      "size_usdc": 218.82,
-      "tx_hash": "0xda449d1a35a1184cfedc5e772c0974897ccb25e37fbbb3d797c98c453cd6d59b",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9412,
-        "lifetime_pnl": 250927.78,
-        "roi": 5.7755,
-        "recent_wins": 32,
-        "recent_n": 34,
-        "recent_win_rate": 0.9412,
-        "z_score": 0.0,
-        "n_total": 34,
-        "total_wins": 32
-      },
-      "verdict": "SKIP",
-      "age_min": 3.0,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$219",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.660 (max +52%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +52% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "3m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x84CffFC3_0xeb88882b",
-      "ts": 1777764390.0,
-      "timestamp_iso": "2026-05-02T23:26:30Z",
-      "market_id": "0xa425eab4de77d36b831bad895970e5c663581d9bca05a35c658ab4f095024a76",
-      "market_title": "Spread: Celtics (-8.5)",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "76ers",
-      "outcome_idx": 1,
-      "side": "76ERS",
-      "entry_price": 0.66,
-      "current_price": 0.655,
-      "shares": 151.01,
-      "size_usdc": 100.68,
-      "tx_hash": "0xeb88882b8381c6606bf015513c278f7c5a7c561afb65a3ffc15ebdc3e3c8606b",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9412,
-        "lifetime_pnl": 250927.78,
-        "roi": 5.7755,
-        "recent_wins": 32,
-        "recent_n": 34,
-        "recent_win_rate": 0.9412,
-        "z_score": 0.0,
-        "n_total": 34,
-        "total_wins": 32
-      },
-      "verdict": "SKIP",
-      "age_min": 3.8,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$101",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.660 (max +52%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +52% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "4m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x84CffFC3_0x67756954",
-      "ts": 1777764380.0,
-      "timestamp_iso": "2026-05-02T23:26:20Z",
-      "market_id": "0xa425eab4de77d36b831bad895970e5c663581d9bca05a35c658ab4f095024a76",
-      "market_title": "Spread: Celtics (-8.5)",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "76ers",
-      "outcome_idx": 1,
-      "side": "76ERS",
-      "entry_price": 0.66,
-      "current_price": 0.655,
-      "shares": 1419.55,
-      "size_usdc": 946.46,
-      "tx_hash": "0x67756954f295f09b2b41001fe393771fe4c24603cbe46a8899ed4da9d2d6d589",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9412,
-        "lifetime_pnl": 250927.78,
-        "roi": 5.7755,
-        "recent_wins": 32,
-        "recent_n": 34,
-        "recent_win_rate": 0.9412,
-        "z_score": 0.0,
-        "n_total": 34,
-        "total_wins": 32
-      },
-      "verdict": "ENTER",
-      "age_min": 4.0,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$946",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.660 (max +52%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +52% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "4m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x84CffFC3_0x6415e4a4",
-      "ts": 1777764374.0,
-      "timestamp_iso": "2026-05-02T23:26:14Z",
-      "market_id": "0x83f1ce290608197126a42bd105c989b47147e5b9cd230121057113334855e001",
-      "market_title": "76ers vs. Celtics: O/U 204.5",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "Under",
-      "outcome_idx": 1,
-      "side": "UNDER",
-      "entry_price": 0.49,
-      "current_price": 0.485,
-      "shares": 446.34,
-      "size_usdc": 222.05,
-      "tx_hash": "0x6415e4a42437d80d47133029ff70c7f0a6fac8684176c157dda5bcd6dd60cdbb",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9412,
-        "lifetime_pnl": 250927.78,
-        "roi": 5.7755,
-        "recent_wins": 32,
-        "recent_n": 34,
-        "recent_win_rate": 0.9412,
-        "z_score": 0.0,
-        "n_total": 34,
-        "total_wins": 32
-      },
-      "verdict": "SKIP",
-      "age_min": 4.1,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$222",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "4m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x84CffFC3_0xff1f67cf",
-      "ts": 1777764374.0,
-      "timestamp_iso": "2026-05-02T23:26:14Z",
-      "market_id": "0x83f1ce290608197126a42bd105c989b47147e5b9cd230121057113334855e001",
-      "market_title": "76ers vs. Celtics: O/U 204.5",
-      "market_slug": "nba-phi-bos-2026-05-02",
-      "outcome": "Under",
-      "outcome_idx": 1,
-      "side": "UNDER",
-      "entry_price": 0.49,
-      "current_price": 0.485,
-      "shares": 1697.72,
-      "size_usdc": 844.61,
-      "tx_hash": "0xff1f67cfe6022117a7b15b42d1d90b033cda98b54002b15f2762198ab3acfa1a",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9412,
-        "lifetime_pnl": 250927.78,
-        "roi": 5.7755,
-        "recent_wins": 32,
-        "recent_n": 34,
-        "recent_win_rate": 0.9412,
-        "z_score": 0.0,
-        "n_total": 34,
-        "total_wins": 32
-      },
-      "verdict": "ENTER",
-      "age_min": 4.1,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$845",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "4m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
     },
     {
       "signal_id": "0x92b5f14c_0x2c63f58b",
@@ -535,7 +614,7 @@
       "outcome_idx": 0,
       "side": "76ERS",
       "entry_price": 0.39,
-      "current_price": 0.395,
+      "current_price": 0.665,
       "shares": 2564.1,
       "size_usdc": 1018.3,
       "tx_hash": "0x2c63f58b6c5319881ae2063e112ff688ee0d67e3f053d8c531b13d3732d6797f",
@@ -552,16 +631,16 @@
         "n_total": 45,
         "total_wins": 42
       },
-      "verdict": "ENTER",
-      "age_min": 28.4,
-      "drift": 0.005,
+      "verdict": "SKIP",
+      "age_min": 69.2,
+      "drift": 0.275,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.3%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "+70.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +70.5% — the move already happened"
         },
         {
           "name": "Size",
@@ -579,13 +658,16 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "28m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "69m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Line moved +70.5% — the move already happened",
+        "Aging — but OK to tail if drift still small"
+      ]
     },
     {
       "signal_id": "0x92b5f14c_0xbe28c013",
@@ -598,7 +680,7 @@
       "outcome_idx": 0,
       "side": "76ERS",
       "entry_price": 0.39,
-      "current_price": 0.395,
+      "current_price": 0.665,
       "shares": 2564.1,
       "size_usdc": 1018.3,
       "tx_hash": "0xbe28c013fd830851a494ad83234168e3c0090f1d3704d5bfc05dc00bb3f3367d",
@@ -615,16 +697,16 @@
         "n_total": 45,
         "total_wins": 42
       },
-      "verdict": "ENTER",
-      "age_min": 28.6,
-      "drift": 0.005,
+      "verdict": "SKIP",
+      "age_min": 69.4,
+      "drift": 0.275,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.3%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "+70.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +70.5% — the move already happened"
         },
         {
           "name": "Size",
@@ -642,13 +724,16 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "29m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "69m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Line moved +70.5% — the move already happened",
+        "Aging — but OK to tail if drift still small"
+      ]
     },
     {
       "signal_id": "0x92b5f14c_0x9a1bdefa",
@@ -679,7 +764,7 @@
         "total_wins": 42
       },
       "verdict": "SKIP",
-      "age_min": 130.4,
+      "age_min": 171.2,
       "drift": -0.2995,
       "checks": [
         {
@@ -706,7 +791,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "130m ago",
+          "value": "171m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -745,7 +830,7 @@
         "total_wins": 42
       },
       "verdict": "SKIP",
-      "age_min": 130.9,
+      "age_min": 171.7,
       "drift": -0.3234,
       "checks": [
         {
@@ -772,7 +857,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "131m ago",
+          "value": "172m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -793,7 +878,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.8519,
-      "current_price": 0.999,
+      "current_price": 0.9985,
       "shares": 1231.7,
       "size_usdc": 1053.96,
       "tx_hash": "0xdd567b6a3f98cda554d835f988f561b815472ca5974681ef69bbdd35b28856aa",
@@ -811,15 +896,15 @@
         "total_wins": 256
       },
       "verdict": "SKIP",
-      "age_min": 152.5,
-      "drift": 0.1471,
+      "age_min": 193.3,
+      "drift": 0.1466,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "+17.3%",
+          "value": "+17.2%",
           "threshold": "> 7%",
-          "note": "Line moved +17.3% — the move already happened"
+          "note": "Line moved +17.2% — the move already happened"
         },
         {
           "name": "Size",
@@ -838,13 +923,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "152m ago",
+          "value": "193m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +17.3% — the move already happened",
+        "Line moved +17.2% — the move already happened",
         "Entry too high — max 17% gain if right, -100% if wrong. Asymmetric risk.",
         "Aging — but OK to tail if drift still small"
       ]
@@ -860,7 +945,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.85,
-      "current_price": 0.999,
+      "current_price": 0.9985,
       "shares": 242.12,
       "size_usdc": 205.8,
       "tx_hash": "0xf84b2acdbdccaf5805f94b6ad3d800ceaa6c974b4ca8c008d546ce9be604d0b9",
@@ -878,8 +963,8 @@
         "total_wins": 256
       },
       "verdict": "SKIP",
-      "age_min": 152.6,
-      "drift": 0.149,
+      "age_min": 193.5,
+      "drift": 0.1485,
       "checks": [
         {
           "name": "Drift",
@@ -905,7 +990,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "153m ago",
+          "value": "193m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -928,7 +1013,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.86,
-      "current_price": 0.999,
+      "current_price": 0.9985,
       "shares": 214.28,
       "size_usdc": 185.05,
       "tx_hash": "0x1cbe8d82bb165e602a66bcb90f39331fe11704d01555f38d9c5ea76dab5f9d54",
@@ -946,15 +1031,15 @@
         "total_wins": 256
       },
       "verdict": "SKIP",
-      "age_min": 152.8,
-      "drift": 0.139,
+      "age_min": 193.6,
+      "drift": 0.1385,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "+16.2%",
+          "value": "+16.1%",
           "threshold": "> 7%",
-          "note": "Line moved +16.2% — the move already happened"
+          "note": "Line moved +16.1% — the move already happened"
         },
         {
           "name": "Size",
@@ -973,13 +1058,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "153m ago",
+          "value": "194m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +16.2% — the move already happened",
+        "Line moved +16.1% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk.",
         "Aging — but OK to tail if drift still small"
@@ -996,7 +1081,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.85,
-      "current_price": 0.999,
+      "current_price": 0.9985,
       "shares": 1351.0,
       "size_usdc": 1148.35,
       "tx_hash": "0x8804c67d8e5e7deefcc834e7efedd3e2e4b14c614784059f1aa893a5e86a97b4",
@@ -1014,8 +1099,8 @@
         "total_wins": 256
       },
       "verdict": "SKIP",
-      "age_min": 152.8,
-      "drift": 0.149,
+      "age_min": 193.6,
+      "drift": 0.1485,
       "checks": [
         {
           "name": "Drift",
@@ -1041,7 +1126,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "153m ago",
+          "value": "194m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -1063,7 +1148,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.8494,
-      "current_price": 0.999,
+      "current_price": 0.9985,
       "shares": 250.0,
       "size_usdc": 213.31,
       "tx_hash": "0x3ace792fd16b15e7f04cfc2375632d3e47fb7b4f7a44f611cd8186fb962e92c8",
@@ -1081,8 +1166,8 @@
         "total_wins": 256
       },
       "verdict": "SKIP",
-      "age_min": 152.9,
-      "drift": 0.1496,
+      "age_min": 193.7,
+      "drift": 0.1491,
       "checks": [
         {
           "name": "Drift",
@@ -1108,7 +1193,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "153m ago",
+          "value": "194m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -1131,7 +1216,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.8,
-      "current_price": 0.999,
+      "current_price": 0.9985,
       "shares": 1247.5,
       "size_usdc": 1003.99,
       "tx_hash": "0xe6fe1e9dd7ace4d184e13c0a7099a611ed1c9ea675b2272a11e07e2ba6ddc09e",
@@ -1149,15 +1234,15 @@
         "total_wins": 256
       },
       "verdict": "SKIP",
-      "age_min": 152.9,
-      "drift": 0.199,
+      "age_min": 193.8,
+      "drift": 0.1985,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "+24.9%",
+          "value": "+24.8%",
           "threshold": "> 7%",
-          "note": "Line moved +24.9% — the move already happened"
+          "note": "Line moved +24.8% — the move already happened"
         },
         {
           "name": "Size",
@@ -1176,13 +1261,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "153m ago",
+          "value": "194m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +24.9% — the move already happened",
+        "Line moved +24.8% — the move already happened",
         "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk.",
         "Aging — but OK to tail if drift still small"
       ]
@@ -1198,7 +1283,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.8,
-      "current_price": 0.84,
+      "current_price": 0.85,
       "shares": 2140.33,
       "size_usdc": 1736.92,
       "tx_hash": "0xa99c2d684a31ca17e06fd17cf13e84d9f21f5fa264a15c87b31e961cd401a0e2",
@@ -1216,15 +1301,15 @@
         "total_wins": 76
       },
       "verdict": "LATE",
-      "age_min": 159.8,
-      "drift": 0.04,
+      "age_min": 200.6,
+      "drift": 0.05,
       "checks": [
         {
           "name": "Drift",
           "status": "warn",
-          "value": "+5.0%",
+          "value": "+6.2%",
           "threshold": "> 3%",
-          "note": "Line moved +5.0% — part of the edge is already priced in"
+          "note": "Line moved +6.2% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -1243,13 +1328,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "160m ago",
+          "value": "201m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +5.0% — part of the edge is already priced in",
+        "Line moved +6.2% — part of the edge is already priced in",
         "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk.",
         "Aging — but OK to tail if drift still small"
       ]
@@ -1265,7 +1350,7 @@
       "outcome_idx": 0,
       "side": "76ERS",
       "entry_price": 0.33,
-      "current_price": 0.395,
+      "current_price": 0.665,
       "shares": 11910.0,
       "size_usdc": 4009.3,
       "tx_hash": "0xb1023d324f1fddd97183e89a2d6faaac6975d574dc5f6f49901e6091c0b229ea",
@@ -1282,16 +1367,16 @@
         "n_total": 45,
         "total_wins": 42
       },
-      "verdict": "LATE",
-      "age_min": 230.7,
-      "drift": 0.065,
+      "verdict": "SKIP",
+      "age_min": 271.5,
+      "drift": 0.335,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "+19.7%",
-          "threshold": "> 3%",
-          "note": "Line moved +19.7% — part of the edge is already priced in"
+          "status": "fail",
+          "value": "+101.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +101.5% — the move already happened"
         },
         {
           "name": "Size",
@@ -1310,13 +1395,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "231m ago",
+          "value": "272m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +19.7% — part of the edge is already priced in",
+        "Line moved +101.5% — the move already happened",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -1349,7 +1434,7 @@
         "total_wins": 42
       },
       "verdict": "ENTER",
-      "age_min": 236.7,
+      "age_min": 277.5,
       "drift": null,
       "checks": [
         {
@@ -1376,7 +1461,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "237m ago",
+          "value": "278m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -1414,7 +1499,7 @@
         "total_wins": 42
       },
       "verdict": "ENTER",
-      "age_min": 237.8,
+      "age_min": 278.7,
       "drift": null,
       "checks": [
         {
@@ -1441,7 +1526,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "238m ago",
+          "value": "279m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -1479,7 +1564,7 @@
         "total_wins": 42
       },
       "verdict": "SKIP",
-      "age_min": 240.7,
+      "age_min": 281.5,
       "drift": null,
       "checks": [
         {
@@ -1506,7 +1591,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "241m ago",
+          "value": "282m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -1545,7 +1630,7 @@
         "total_wins": 42
       },
       "verdict": "SKIP",
-      "age_min": 240.7,
+      "age_min": 281.6,
       "drift": null,
       "checks": [
         {
@@ -1572,7 +1657,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "241m ago",
+          "value": "282m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -1611,7 +1696,7 @@
         "total_wins": 178
       },
       "verdict": "SKIP",
-      "age_min": 343.0,
+      "age_min": 383.8,
       "drift": -0.01,
       "checks": [
         {
@@ -1637,15 +1722,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "343m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "384m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -1677,7 +1762,7 @@
         "total_wins": 178
       },
       "verdict": "SKIP",
-      "age_min": 345.3,
+      "age_min": 386.1,
       "drift": null,
       "checks": [
         {
@@ -1703,15 +1788,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "345m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "386m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -1743,7 +1828,7 @@
         "total_wins": 178
       },
       "verdict": "SKIP",
-      "age_min": 351.3,
+      "age_min": 392.1,
       "drift": -0.015,
       "checks": [
         {
@@ -1769,15 +1854,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "351m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "392m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -1791,7 +1876,7 @@
       "outcome_idx": 0,
       "side": "HURRICANES",
       "entry_price": 0.43,
-      "current_price": 0.445,
+      "current_price": 0.465,
       "shares": 457.68,
       "size_usdc": 196.8,
       "tx_hash": "0x6c1f7adb561bcb07c691f8faac3536fc72461795676e7c96f70380cdb582c0c4",
@@ -1809,15 +1894,15 @@
         "total_wins": 45
       },
       "verdict": "SKIP",
-      "age_min": 596.9,
-      "drift": 0.015,
+      "age_min": 637.7,
+      "drift": 0.035,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+3.5%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "+8.1%",
+          "threshold": "> 3%",
+          "note": "Line moved +8.1% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -1836,12 +1921,13 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "597m ago",
+          "value": "638m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
+        "Line moved +8.1% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill",
         "Very stale — even if price is near entry, you have less time to profit"
       ]
