@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-10T18:05:14.847506Z",
+  "updated_at": "2026-05-10T19:20:13.887858Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 7,
-  "signal_count": 17,
-  "enter_count": 0,
+  "signal_count": 33,
+  "enter_count": 2,
   "signals": [
     {
-      "signal_id": "0xA66790e2_0x262fc35b",
-      "ts": 1778435667.0,
-      "timestamp_iso": "2026-05-10T17:54:27Z",
-      "market_id": "0x5db999fad322cea2914535aae5517060c3f80ad6d8c0231cde2124a434d16846",
-      "market_title": "Will the U.S. invade Iran before 2027?",
-      "market_slug": "will-the-us-invade-iran-before-2027",
+      "signal_id": "0xA66790e2_0x4ffa538d",
+      "ts": 1778439942.0,
+      "timestamp_iso": "2026-05-10T19:05:42Z",
+      "market_id": "0xfaa433e162e020c56c522acb2f9f7215ce6e4e4391c4fb42beba14275c0a43fe",
+      "market_title": "New pandemic in 2026?",
+      "market_slug": "new-pandemic-in-2026",
       "outcome": "No",
       "outcome_idx": 1,
       "side": "NO",
-      "entry_price": 0.8,
-      "current_price": 0.785,
-      "shares": 2221.36,
-      "size_usdc": 1777.09,
-      "tx_hash": "0x262fc35b0d99f380282b7a4abc581912174e8ac1feca221d85e20354a0ccda5a",
+      "entry_price": 0.87,
+      "current_price": 0.875,
+      "shares": 115.38,
+      "size_usdc": 100.38,
+      "tx_hash": "0x4ffa538db96282ffe97c5a7f2d7b15a3333ae099a472ed9eb731fe798179ca6a",
       "whale": {
         "address": "0xA66790e2b0075E73c3781DDAF1d0b875a3AACEb3",
         "pseudonym": "Arctic-Kickoff",
@@ -38,41 +38,1806 @@
         "n_total": 145,
         "total_wins": 138
       },
-      "verdict": "LATE",
-      "age_min": 10.7,
-      "drift": -0.015,
+      "verdict": "SKIP",
+      "age_min": 14.5,
+      "drift": 0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.9%",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$100",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.870 (max +15%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 15% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "14m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 15% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x5ffc0111",
+      "ts": 1778439550.0,
+      "timestamp_iso": "2026-05-10T18:59:10Z",
+      "market_id": "0xef78d4d0e98a5ed351e257561eed958afeca282a9a1cca1d52c19e7c8cc909e1",
+      "market_title": "Will Olympique de Marseille win on 2026-05-10?",
+      "market_slug": "fl1-hac-olm-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.48,
+      "current_price": 0.525,
+      "shares": 928.7,
+      "size_usdc": 445.78,
+      "tx_hash": "0x5ffc0111cdbd42af82b6e68c0c857db0682755c1cdd0299cb9ec5e13ebc642f4",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 21.0,
+      "drift": 0.045,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+9.4%",
+          "threshold": "> 3%",
+          "note": "Line moved +9.4% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$446",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.480 (max +108%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +108% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "21m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +9.4% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x5ffc0111",
+      "ts": 1778439550.0,
+      "timestamp_iso": "2026-05-10T18:59:10Z",
+      "market_id": "0xef78d4d0e98a5ed351e257561eed958afeca282a9a1cca1d52c19e7c8cc909e1",
+      "market_title": "Will Olympique de Marseille win on 2026-05-10?",
+      "market_slug": "fl1-hac-olm-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.48,
+      "current_price": 0.525,
+      "shares": 20000.0,
+      "size_usdc": 9600.0,
+      "tx_hash": "0x5ffc0111cdbd42af82b6e68c0c857db0682755c1cdd0299cb9ec5e13ebc642f4",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "LATE",
+      "age_min": 21.0,
+      "drift": 0.045,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+9.4%",
+          "threshold": "> 3%",
+          "note": "Line moved +9.4% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$9,600",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.480 (max +108%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +108% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "21m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +9.4% — part of the edge is already priced in"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x0ef7268c",
+      "ts": 1778439550.0,
+      "timestamp_iso": "2026-05-10T18:59:10Z",
+      "market_id": "0xfb7f57b0468c34ffa0333c4df7fb9bf5ca26e1f4c5fb32ac9f248d9a8c73abe1",
+      "market_title": "Will AJ Auxerre win on 2026-05-10?",
+      "market_slug": "fl1-aja-ogc-2026-05-10",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.39,
+      "current_price": 0.175,
+      "shares": 12500.0,
+      "size_usdc": 4875.0,
+      "tx_hash": "0x0ef7268c5124d231fe33a89f0429874f28c159cadbc998415edc6424165decdf",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 21.0,
+      "drift": -0.215,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-55.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -55.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$4,875",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.390 (max +156%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +156% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "21m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -55.1% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x358bf836",
+      "ts": 1778439519.0,
+      "timestamp_iso": "2026-05-10T18:58:39Z",
+      "market_id": "0x293462a19b231b1046d1ad644b2169d3c1dc9dd4712fd4fcd5da5919f26826eb",
+      "market_title": "Marcus Rashford: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.64,
+      "current_price": 0.005,
+      "shares": 1388.89,
+      "size_usdc": 888.89,
+      "tx_hash": "0x358bf8362a3b3da66cd6e1d43d489474a6891c6b3667991d2f37793b781aeae0",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 21.5,
+      "drift": -0.635,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-99.2%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.2% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$889",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "21m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -99.2% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x4f58e453",
+      "ts": 1778439496.0,
+      "timestamp_iso": "2026-05-10T18:58:16Z",
+      "market_id": "0xef78d4d0e98a5ed351e257561eed958afeca282a9a1cca1d52c19e7c8cc909e1",
+      "market_title": "Will Olympique de Marseille win on 2026-05-10?",
+      "market_slug": "fl1-hac-olm-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.48,
+      "current_price": 0.525,
+      "shares": 1064.44,
+      "size_usdc": 510.93,
+      "tx_hash": "0x4f58e453b1fd457014426748897f578a7ae273d77f38353ceea901b19ed7757a",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "LATE",
+      "age_min": 21.9,
+      "drift": 0.045,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+9.4%",
+          "threshold": "> 3%",
+          "note": "Line moved +9.4% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$511",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.480 (max +108%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +108% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "22m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +9.4% — part of the edge is already priced in"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0xf3afeeee",
+      "ts": 1778439489.0,
+      "timestamp_iso": "2026-05-10T18:58:09Z",
+      "market_id": "0x3895c2c45fb8af426fc209872dda2474582f275ac8dd4bfa4004154658d2df6f",
+      "market_title": "Will Toulouse FC win on 2026-05-10?",
+      "market_slug": "fl1-tou-lyo-2026-05-10",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.22,
+      "current_price": 0.425,
+      "shares": 1706.1,
+      "size_usdc": 375.34,
+      "tx_hash": "0xf3afeeeec213b56270455d4d7ea77f4c102059a6256762313ac9c91004f82331",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 22.0,
+      "drift": 0.205,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+93.2%",
+          "threshold": "> 7%",
+          "note": "Line moved +93.2% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$375",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.220 (max +355%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +355% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "22m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +93.2% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0xaecda949",
+      "ts": 1778439473.0,
+      "timestamp_iso": "2026-05-10T18:57:53Z",
+      "market_id": "0x3895c2c45fb8af426fc209872dda2474582f275ac8dd4bfa4004154658d2df6f",
+      "market_title": "Will Toulouse FC win on 2026-05-10?",
+      "market_slug": "fl1-tou-lyo-2026-05-10",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.22,
+      "current_price": 0.425,
+      "shares": 3246.15,
+      "size_usdc": 714.15,
+      "tx_hash": "0xaecda949e8da08ae1f6537827585077a513e839b57062f052dcc129c49122d3a",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 22.3,
+      "drift": 0.205,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+93.2%",
+          "threshold": "> 7%",
+          "note": "Line moved +93.2% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$714",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.220 (max +355%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +355% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "22m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +93.2% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x4390156f",
+      "ts": 1778439473.0,
+      "timestamp_iso": "2026-05-10T18:57:53Z",
+      "market_id": "0xc63fd14dc6044eac09c5e5f700248d7907c0427b5270f9de916c284da231c9db",
+      "market_title": "Will Stade Rennais FC 1901 win on 2026-05-10?",
+      "market_slug": "fl1-ren-pfc-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.36,
+      "current_price": 0.365,
+      "shares": 5000.0,
+      "size_usdc": 1800.0,
+      "tx_hash": "0x4390156ff6c487b82a88a32023254fbb9e9cdd7b0c9ab383b93ee063fa65f415",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "ENTER",
+      "age_min": 22.3,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+1.4%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$1,777",
+          "value": "$1,800",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.360 (max +178%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +178% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "22m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0xf68A2819_0x4390156f",
+      "ts": 1778439473.0,
+      "timestamp_iso": "2026-05-10T18:57:53Z",
+      "market_id": "0xc63fd14dc6044eac09c5e5f700248d7907c0427b5270f9de916c284da231c9db",
+      "market_title": "Will Stade Rennais FC 1901 win on 2026-05-10?",
+      "market_slug": "fl1-ren-pfc-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.36,
+      "current_price": 0.365,
+      "shares": 15000.0,
+      "size_usdc": 5400.0,
+      "tx_hash": "0x4390156ff6c487b82a88a32023254fbb9e9cdd7b0c9ab383b93ee063fa65f415",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "ENTER",
+      "age_min": 22.3,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+1.4%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$5,400",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.360 (max +178%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +178% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "22m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0xA66790e2_0xcefd0eb8",
+      "ts": 1778439328.0,
+      "timestamp_iso": "2026-05-10T18:55:28Z",
+      "market_id": "0x0443a503a38b90446c8a3826db5ee1323144197ef2b4ed09bcdf545ac104dfcb",
+      "market_title": "Will Crude Oil (CL) hit (HIGH) $140 by end of June?",
+      "market_slug": "cl-hit-jun-2026",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.83,
+      "current_price": 0.83,
+      "shares": 457.72,
+      "size_usdc": 379.91,
+      "tx_hash": "0xcefd0eb8798fa007a286227b66d93fb0c0f04325ee06bd49dc2b7e60884cae3a",
+      "whale": {
+        "address": "0xA66790e2b0075E73c3781DDAF1d0b875a3AACEb3",
+        "pseudonym": "Arctic-Kickoff",
+        "raw_win_rate": 0.9517,
+        "lifetime_pnl": 134506.5,
+        "roi": 6.2413,
+        "recent_wins": 138,
+        "recent_n": 145,
+        "recent_win_rate": 0.9517,
+        "z_score": 0.0,
+        "n_total": 145,
+        "total_wins": 138
+      },
+      "verdict": "SKIP",
+      "age_min": 24.7,
+      "drift": 0.0,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.0%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$380",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.830 (max +20%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "25m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0xbe152d50",
+      "ts": 1778439295.0,
+      "timestamp_iso": "2026-05-10T18:54:55Z",
+      "market_id": "0xd5843271627aa3efdf1e33ca777d2ffc6c48c9744ce71b4ff37cf83201b6ea5d",
+      "market_title": "Ferran Torres: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.54,
+      "current_price": 0.41,
+      "shares": 1086.96,
+      "size_usdc": 586.96,
+      "tx_hash": "0xbe152d5030d6ae5ffccf303579a034137d49538c034417644d280847db861045",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 25.2,
+      "drift": -0.13,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-24.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -24.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$587",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.540 (max +85%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +85% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "25m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -24.1% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x082da3d8",
+      "ts": 1778439256.0,
+      "timestamp_iso": "2026-05-10T18:54:16Z",
+      "market_id": "0x293462a19b231b1046d1ad644b2169d3c1dc9dd4712fd4fcd5da5919f26826eb",
+      "market_title": "Marcus Rashford: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.64,
+      "current_price": 0.005,
+      "shares": 275.0,
+      "size_usdc": 176.0,
+      "tx_hash": "0x082da3d8918090665a697694d7c0294c5b0e4077dbc7c7f500284acce4263c37",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 25.9,
+      "drift": -0.635,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-99.2%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.2% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$176",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "26m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -99.2% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x5ff389a6",
+      "ts": 1778439193.0,
+      "timestamp_iso": "2026-05-10T18:53:13Z",
+      "market_id": "0x4ad8fd3e8ec4efcc378cc15ab8da7eb71cece5cb30ad4495b515ce9bcc2b325f",
+      "market_title": "Will FC Barcelona win on 2026-05-10?",
+      "market_slug": "lal-bar-rea-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.4,
+      "current_price": 0.275,
+      "shares": 20000.0,
+      "size_usdc": 8000.0,
+      "tx_hash": "0x5ff389a6d95b88a15290dc582399c11c06fddf90bb4846aad972e0d9a052b2fa",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 27.0,
+      "drift": -0.125,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-31.2%",
+          "threshold": "> 7%",
+          "note": "Line moved -31.2% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$8,000",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.400 (max +150%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +150% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "27m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -31.2% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x08749d9d",
+      "ts": 1778438989.0,
+      "timestamp_iso": "2026-05-10T18:49:49Z",
+      "market_id": "0x293462a19b231b1046d1ad644b2169d3c1dc9dd4712fd4fcd5da5919f26826eb",
+      "market_title": "Marcus Rashford: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.64,
+      "current_price": 0.005,
+      "shares": 277.78,
+      "size_usdc": 177.78,
+      "tx_hash": "0x08749d9dea2427b2c91d07b9c67ac9f2d006d4cb6303feee8b27313a1cf0568d",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 30.3,
+      "drift": -0.635,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-99.2%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.2% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$178",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "30m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -99.2% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0xc7e9a35c",
+      "ts": 1778438878.0,
+      "timestamp_iso": "2026-05-10T18:47:58Z",
+      "market_id": "0xd9aff987172a477f3241549bf162e1221c0679b9d07d90b9b42287645ea32f75",
+      "market_title": "Vinicius Junior: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.61,
+      "current_price": 0.41,
+      "shares": 660.99,
+      "size_usdc": 403.2,
+      "tx_hash": "0xc7e9a35c7d66668836823597e3a0b6e84edb10e1d6c8faefdc1fa0f698417dfd",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 32.2,
+      "drift": -0.2,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-32.8%",
+          "threshold": "> 7%",
+          "note": "Line moved -32.8% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$403",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.610 (max +64%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +64% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "32m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -32.8% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x360cdba9",
+      "ts": 1778438563.0,
+      "timestamp_iso": "2026-05-10T18:42:43Z",
+      "market_id": "0xbd742110c6d87bdcf389b81b31847fde08f33da556eedbfc54c7bcc666544866",
+      "market_title": "Raphinha: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.62,
+      "current_price": 0.505,
+      "shares": 263.16,
+      "size_usdc": 163.16,
+      "tx_hash": "0x360cdba9124469f9db9f27d78f6676d336f9a0d3835417349f1b632c39d1b47e",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 37.4,
+      "drift": -0.115,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-18.5%",
+          "threshold": "> 7%",
+          "note": "Line moved -18.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$163",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.620 (max +61%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +61% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "37m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -18.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x9dc97213",
+      "ts": 1778438376.0,
+      "timestamp_iso": "2026-05-10T18:39:36Z",
+      "market_id": "0xc6fd1706a9214393b2bb53bb45f23ff00e5fb04e62ed99a005d42f90f7d55f82",
+      "market_title": "LoL: Movistar KOI vs G2 Esports (BO3) - LEC Regular Season",
+      "market_slug": "lol-mkoi-g2-2026-05-10",
+      "outcome": "Movistar KOI",
+      "outcome_idx": 0,
+      "side": "MOVISTAR KOI",
+      "entry_price": 0.37,
+      "current_price": 0.635,
+      "shares": 5435.19,
+      "size_usdc": 2011.02,
+      "tx_hash": "0x9dc9721371a022042d88c91f86ced139d7005b6dff958a6c49b93b4e0230726f",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 40.6,
+      "drift": 0.265,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+71.6%",
+          "threshold": "> 7%",
+          "note": "Line moved +71.6% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$2,011",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.370 (max +170%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +170% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "41m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +71.6% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0xec83dbf2",
+      "ts": 1778438369.0,
+      "timestamp_iso": "2026-05-10T18:39:29Z",
+      "market_id": "0xc6fd1706a9214393b2bb53bb45f23ff00e5fb04e62ed99a005d42f90f7d55f82",
+      "market_title": "LoL: Movistar KOI vs G2 Esports (BO3) - LEC Regular Season",
+      "market_slug": "lol-mkoi-g2-2026-05-10",
+      "outcome": "Movistar KOI",
+      "outcome_idx": 0,
+      "side": "MOVISTAR KOI",
+      "entry_price": 0.37,
+      "current_price": 0.635,
+      "shares": 2206.81,
+      "size_usdc": 816.52,
+      "tx_hash": "0xec83dbf2b3f2301dbe58d47e334a67978b2e7598c85eaa169c8d5efa8558041e",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 40.7,
+      "drift": 0.265,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+71.6%",
+          "threshold": "> 7%",
+          "note": "Line moved +71.6% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$817",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.370 (max +170%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +170% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "41m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +71.6% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x6347ac06",
+      "ts": 1778438366.0,
+      "timestamp_iso": "2026-05-10T18:39:26Z",
+      "market_id": "0xc6fd1706a9214393b2bb53bb45f23ff00e5fb04e62ed99a005d42f90f7d55f82",
+      "market_title": "LoL: Movistar KOI vs G2 Esports (BO3) - LEC Regular Season",
+      "market_slug": "lol-mkoi-g2-2026-05-10",
+      "outcome": "Movistar KOI",
+      "outcome_idx": 0,
+      "side": "MOVISTAR KOI",
+      "entry_price": 0.37,
+      "current_price": 0.635,
+      "shares": 600.0,
+      "size_usdc": 222.0,
+      "tx_hash": "0x6347ac06ca3043902df942ac6b4232d280e2104fe66307d6821dd3e8edd8f538",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 40.8,
+      "drift": 0.265,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+71.6%",
+          "threshold": "> 7%",
+          "note": "Line moved +71.6% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$222",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.370 (max +170%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +170% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "41m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +71.6% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x51873075",
+      "ts": 1778438364.0,
+      "timestamp_iso": "2026-05-10T18:39:24Z",
+      "market_id": "0xc6fd1706a9214393b2bb53bb45f23ff00e5fb04e62ed99a005d42f90f7d55f82",
+      "market_title": "LoL: Movistar KOI vs G2 Esports (BO3) - LEC Regular Season",
+      "market_slug": "lol-mkoi-g2-2026-05-10",
+      "outcome": "Movistar KOI",
+      "outcome_idx": 0,
+      "side": "MOVISTAR KOI",
+      "entry_price": 0.37,
+      "current_price": 0.635,
+      "shares": 1471.0,
+      "size_usdc": 544.27,
+      "tx_hash": "0x51873075d56b1aa3baedde46ffd8c615f76d7effecf8ba38ae25e963cf1bf819",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 40.8,
+      "drift": 0.265,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+71.6%",
+          "threshold": "> 7%",
+          "note": "Line moved +71.6% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$544",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.370 (max +170%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +170% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "41m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +71.6% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x6a3bab8b",
+      "ts": 1778438217.0,
+      "timestamp_iso": "2026-05-10T18:36:57Z",
+      "market_id": "0xd9aff987172a477f3241549bf162e1221c0679b9d07d90b9b42287645ea32f75",
+      "market_title": "Vinicius Junior: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.61,
+      "current_price": 0.41,
+      "shares": 284.38,
+      "size_usdc": 173.47,
+      "tx_hash": "0x6a3bab8b156103b80bd98aa11af44d393a318322f2c3b53da093521987fa343a",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 43.2,
+      "drift": -0.2,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-32.8%",
+          "threshold": "> 7%",
+          "note": "Line moved -32.8% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$173",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.610 (max +64%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +64% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "43m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -32.8% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0x5f152f23",
+      "ts": 1778438066.0,
+      "timestamp_iso": "2026-05-10T18:34:26Z",
+      "market_id": "0x4ad8fd3e8ec4efcc378cc15ab8da7eb71cece5cb30ad4495b515ce9bcc2b325f",
+      "market_title": "Will FC Barcelona win on 2026-05-10?",
+      "market_slug": "lal-bar-rea-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.41,
+      "current_price": 0.275,
+      "shares": 12500.0,
+      "size_usdc": 5125.0,
+      "tx_hash": "0x5f152f23206a628302cb870a5af824e904a11a286b35f4d49fb5e960a3542f20",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8625,
+        "lifetime_pnl": 225430.81,
+        "roi": 0.764,
+        "recent_wins": 69,
+        "recent_n": 80,
+        "recent_win_rate": 0.8625,
+        "z_score": 0.0,
+        "n_total": 80,
+        "total_wins": 69
+      },
+      "verdict": "SKIP",
+      "age_min": 45.8,
+      "drift": -0.135,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-32.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -32.9% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$5,125",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.410 (max +144%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +144% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "46m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -32.9% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0xf5198Df6_0x39dfff66",
+      "ts": 1778437904.0,
+      "timestamp_iso": "2026-05-10T18:31:44Z",
+      "market_id": "0xb93d6d258dba111e5a7e64aea7082d80d4e66191de67c9195d22126aeed25988",
+      "market_title": "Will 1. FSV Mainz 05 win on 2026-05-10?",
+      "market_slug": "bun-mai-uni-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.77,
+      "current_price": 0.7,
+      "shares": 8605.56,
+      "size_usdc": 6626.28,
+      "tx_hash": "0x39dfff669c7e0ce1b3c227b42c018ab98f3064d1e5806c79bfff3cb60bdccb94",
+      "whale": {
+        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
+        "pseudonym": "Practical-Advent",
+        "raw_win_rate": 0.9737,
+        "lifetime_pnl": 104825.44,
+        "roi": 0.6381,
+        "recent_wins": 37,
+        "recent_n": 38,
+        "recent_win_rate": 0.9737,
+        "z_score": 0.0,
+        "n_total": 38,
+        "total_wins": 37
+      },
+      "verdict": "SKIP",
+      "age_min": 48.5,
+      "drift": -0.07,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-9.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -9.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$6,626",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "warn",
-          "value": "0.800 (max +25%)",
+          "value": "0.770 (max +30%)",
           "threshold": "< 0.75",
-          "note": "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+          "note": "Modest payoff — +30% on win, small cushion over costs."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "11m ago",
+          "value": "48m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+        "Line moved -9.1% — the move already happened",
+        "Modest payoff — +30% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0xf5198Df6_0xc625b1ef",
+      "ts": 1778437830.0,
+      "timestamp_iso": "2026-05-10T18:30:30Z",
+      "market_id": "0xb93d6d258dba111e5a7e64aea7082d80d4e66191de67c9195d22126aeed25988",
+      "market_title": "Will 1. FSV Mainz 05 win on 2026-05-10?",
+      "market_slug": "bun-mai-uni-2026-05-10",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.77,
+      "current_price": 0.7,
+      "shares": 1330.74,
+      "size_usdc": 1024.67,
+      "tx_hash": "0xc625b1ef6698a037a73d16601bd4c7472e815bc2161919c408ce7a6f3182b6b7",
+      "whale": {
+        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
+        "pseudonym": "Practical-Advent",
+        "raw_win_rate": 0.9737,
+        "lifetime_pnl": 104825.44,
+        "roi": 0.6381,
+        "recent_wins": 37,
+        "recent_n": 38,
+        "recent_win_rate": 0.9737,
+        "z_score": 0.0,
+        "n_total": 38,
+        "total_wins": 37
+      },
+      "verdict": "SKIP",
+      "age_min": 49.7,
+      "drift": -0.07,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-9.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -9.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,025",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.770 (max +30%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +30% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "50m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -9.1% — the move already happened",
+        "Modest payoff — +30% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0xb8598997",
+      "ts": 1778437526.0,
+      "timestamp_iso": "2026-05-10T18:25:26Z",
+      "market_id": "0xd9aff987172a477f3241549bf162e1221c0679b9d07d90b9b42287645ea32f75",
+      "market_title": "Vinicius Junior: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.61,
+      "current_price": 0.41,
+      "shares": 204.26,
+      "size_usdc": 124.6,
+      "tx_hash": "0xb8598997ec1bb3c2ee5ac46bb7f67a3770becdd4e0fc5a9f467c9d2a4ad32f23",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 54.7,
+      "drift": -0.2,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-32.8%",
+          "threshold": "> 7%",
+          "note": "Line moved -32.8% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$125",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.610 (max +64%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +64% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "55m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -32.8% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0xb8598997",
+      "ts": 1778437526.0,
+      "timestamp_iso": "2026-05-10T18:25:26Z",
+      "market_id": "0xd9aff987172a477f3241549bf162e1221c0679b9d07d90b9b42287645ea32f75",
+      "market_title": "Vinicius Junior: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.63,
+      "current_price": 0.41,
+      "shares": 2398.37,
+      "size_usdc": 1510.97,
+      "tx_hash": "0xb8598997ec1bb3c2ee5ac46bb7f67a3770becdd4e0fc5a9f467c9d2a4ad32f23",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 54.7,
+      "drift": -0.22,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-34.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -34.9% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,511",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.630 (max +59%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +59% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "55m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -34.9% — the move already happened"
+      ]
+    },
+    {
+      "signal_id": "0x336bf6f9_0x850e45f2",
+      "ts": 1778437394.0,
+      "timestamp_iso": "2026-05-10T18:23:14Z",
+      "market_id": "0xd5843271627aa3efdf1e33ca777d2ffc6c48c9744ce71b4ff37cf83201b6ea5d",
+      "market_title": "Ferran Torres: Anytime Goalscorer",
+      "market_slug": "lal-bar-rea-2026-05-10-player-props",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.54,
+      "current_price": 0.41,
+      "shares": 543.48,
+      "size_usdc": 293.48,
+      "tx_hash": "0x850e45f2bc8f1cc863cb88676477f0849d40d72afe3430d0e87534c0788f8113",
+      "whale": {
+        "address": "0x336bf6f91A4619d54f0711a20fE468aDf4D71233",
+        "pseudonym": "Calm-Gossip",
+        "raw_win_rate": 0.878,
+        "lifetime_pnl": 60638.38,
+        "roi": 0.6569,
+        "recent_wins": 36,
+        "recent_n": 41,
+        "recent_win_rate": 0.878,
+        "z_score": 0.0,
+        "n_total": 41,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 56.9,
+      "drift": -0.13,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-24.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -24.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$293",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.540 (max +85%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +85% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "57m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -24.1% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
       ]
     },
     {
@@ -86,7 +1851,7 @@
       "outcome_idx": 1,
       "side": "G2 ESPORTS",
       "entry_price": 0.64,
-      "current_price": 0.33,
+      "current_price": 0.9995,
       "shares": 11721.1,
       "size_usdc": 7582.52,
       "tx_hash": "0x660416810ce3389939d6450e1585ad32184c0b0478ca0dc0243c9f55b1b50be1",
@@ -104,15 +1869,15 @@
         "total_wins": 69
       },
       "verdict": "SKIP",
-      "age_min": 21.3,
-      "drift": -0.31,
+      "age_min": 96.3,
+      "drift": 0.3595,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "-48.4%",
+          "value": "+56.2%",
           "threshold": "> 7%",
-          "note": "Line moved -48.4% — the move already happened"
+          "note": "Line moved +56.2% — the move already happened"
         },
         {
           "name": "Size",
@@ -130,14 +1895,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "21m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "96m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved -48.4% — the move already happened"
+        "Line moved +56.2% — the move already happened",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -151,7 +1917,7 @@
       "outcome_idx": 1,
       "side": "G2 ESPORTS",
       "entry_price": 0.64,
-      "current_price": 0.33,
+      "current_price": 0.9995,
       "shares": 737.0,
       "size_usdc": 476.77,
       "tx_hash": "0xb1943b9c7611ad8befb971b2d091bbc085562dd5d65d89b10e93bcb3ce11d5a7",
@@ -169,15 +1935,15 @@
         "total_wins": 69
       },
       "verdict": "SKIP",
-      "age_min": 21.4,
-      "drift": -0.31,
+      "age_min": 96.4,
+      "drift": 0.3595,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "-48.4%",
+          "value": "+56.2%",
           "threshold": "> 7%",
-          "note": "Line moved -48.4% — the move already happened"
+          "note": "Line moved +56.2% — the move already happened"
         },
         {
           "name": "Size",
@@ -195,15 +1961,16 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "21m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "96m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved -48.4% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill"
+        "Line moved +56.2% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -217,7 +1984,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.42,
-      "current_price": 0.545,
+      "current_price": 0.7,
       "shares": 5000.0,
       "size_usdc": 2100.0,
       "tx_hash": "0xb5896167c0026120290e119755e4852fc5434cb19961a6f585f88568f1371209",
@@ -235,15 +2002,15 @@
         "total_wins": 69
       },
       "verdict": "SKIP",
-      "age_min": 41.0,
-      "drift": 0.125,
+      "age_min": 116.0,
+      "drift": 0.28,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "+29.8%",
+          "value": "+66.7%",
           "threshold": "> 7%",
-          "note": "Line moved +29.8% — the move already happened"
+          "note": "Line moved +66.7% — the move already happened"
         },
         {
           "name": "Size",
@@ -261,147 +2028,14 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "41m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +29.8% — the move already happened"
-      ]
-    },
-    {
-      "signal_id": "0xf5198Df6_0xc7a99e01",
-      "ts": 1778430779.0,
-      "timestamp_iso": "2026-05-10T16:32:59Z",
-      "market_id": "0x9df495a416820c808be8e808a60ce835e4cdf86dcd370440d3223b0504a5ab62",
-      "market_title": "Will Arsenal FC win on 2026-05-10?",
-      "market_slug": "epl-wes-ars-2026-05-10",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.45,
-      "current_price": 0.0005,
-      "shares": 448.24,
-      "size_usdc": 201.71,
-      "tx_hash": "0xc7a99e01dbf0a5bf6a4a0bce10e89614844f06d3a12223b9523ded6a54701737",
-      "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.9737,
-        "lifetime_pnl": 104825.44,
-        "roi": 0.6381,
-        "recent_wins": 37,
-        "recent_n": 38,
-        "recent_win_rate": 0.9737,
-        "z_score": 0.0,
-        "n_total": 38,
-        "total_wins": 37
-      },
-      "verdict": "SKIP",
-      "age_min": 92.3,
-      "drift": -0.4495,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-99.9%",
-          "threshold": "> 7%",
-          "note": "Line moved -99.9% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$202",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.450 (max +122%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +122% upside on a correct call."
-        },
-        {
-          "name": "Age",
           "status": "warn",
-          "value": "92m ago",
+          "value": "116m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved -99.9% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xf5198Df6_0xfc3a86f1",
-      "ts": 1778430762.0,
-      "timestamp_iso": "2026-05-10T16:32:42Z",
-      "market_id": "0x9df495a416820c808be8e808a60ce835e4cdf86dcd370440d3223b0504a5ab62",
-      "market_title": "Will Arsenal FC win on 2026-05-10?",
-      "market_slug": "epl-wes-ars-2026-05-10",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.45,
-      "current_price": 0.0005,
-      "shares": 232.73,
-      "size_usdc": 104.73,
-      "tx_hash": "0xfc3a86f150bf5074f62edf0e0fb829422d26be3969aa8a1b5c26d54e8ce0b163",
-      "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.9737,
-        "lifetime_pnl": 104825.44,
-        "roi": 0.6381,
-        "recent_wins": 37,
-        "recent_n": 38,
-        "recent_win_rate": 0.9737,
-        "z_score": 0.0,
-        "n_total": 38,
-        "total_wins": 37
-      },
-      "verdict": "SKIP",
-      "age_min": 92.5,
-      "drift": -0.4495,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-99.9%",
-          "threshold": "> 7%",
-          "note": "Line moved -99.9% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.450 (max +122%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +122% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "93m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -99.9% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
+        "Line moved +66.7% — the move already happened",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -434,7 +2068,7 @@
         "total_wins": 69
       },
       "verdict": "SKIP",
-      "age_min": 93.9,
+      "age_min": 168.9,
       "drift": 0.6695,
       "checks": [
         {
@@ -461,7 +2095,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "94m ago",
+          "value": "169m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -500,7 +2134,7 @@
         "total_wins": 69
       },
       "verdict": "SKIP",
-      "age_min": 94.6,
+      "age_min": 169.7,
       "drift": 0.6595,
       "checks": [
         {
@@ -527,7 +2161,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "95m ago",
+          "value": "170m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -536,600 +2170,6 @@
         "Line moved +194.0% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0x1639bc5c",
-      "ts": 1778430631.0,
-      "timestamp_iso": "2026-05-10T16:30:31Z",
-      "market_id": "0xfc64a85a7b3f583d4fc17b6bffe965f368d9b7be4ab25e1706d04cd9bb713fc6",
-      "market_title": "LoL: Movistar KOI vs G2 Esports - Game 1 Winner",
-      "market_slug": "lol-mkoi-g2-2026-05-10",
-      "outcome": "Movistar KOI",
-      "outcome_idx": 0,
-      "side": "MOVISTAR KOI",
-      "entry_price": 0.34,
-      "current_price": 0.9995,
-      "shares": 454.55,
-      "size_usdc": 154.55,
-      "tx_hash": "0x1639bc5c26dc865f777e4bfc91b68753487223a9b5ee8df6b6d85dfc864c163d",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "SKIP",
-      "age_min": 94.7,
-      "drift": 0.6595,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+194.0%",
-          "threshold": "> 7%",
-          "note": "Line moved +194.0% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$155",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.340 (max +194%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +194% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "95m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +194.0% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0x848d0caf",
-      "ts": 1778430627.0,
-      "timestamp_iso": "2026-05-10T16:30:27Z",
-      "market_id": "0xfc64a85a7b3f583d4fc17b6bffe965f368d9b7be4ab25e1706d04cd9bb713fc6",
-      "market_title": "LoL: Movistar KOI vs G2 Esports - Game 1 Winner",
-      "market_slug": "lol-mkoi-g2-2026-05-10",
-      "outcome": "Movistar KOI",
-      "outcome_idx": 0,
-      "side": "MOVISTAR KOI",
-      "entry_price": 0.34,
-      "current_price": 0.9995,
-      "shares": 3395.39,
-      "size_usdc": 1154.43,
-      "tx_hash": "0x848d0cafa5e6c420780a991b8999d06a3f44501bf1128f6a0c9cd9c72966fd7e",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "SKIP",
-      "age_min": 94.8,
-      "drift": 0.6595,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+194.0%",
-          "threshold": "> 7%",
-          "note": "Line moved +194.0% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,154",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.340 (max +194%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +194% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "95m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +194.0% — the move already happened",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0xf413c274",
-      "ts": 1778430578.0,
-      "timestamp_iso": "2026-05-10T16:29:38Z",
-      "market_id": "0xfc64a85a7b3f583d4fc17b6bffe965f368d9b7be4ab25e1706d04cd9bb713fc6",
-      "market_title": "LoL: Movistar KOI vs G2 Esports - Game 1 Winner",
-      "market_slug": "lol-mkoi-g2-2026-05-10",
-      "outcome": "Movistar KOI",
-      "outcome_idx": 0,
-      "side": "MOVISTAR KOI",
-      "entry_price": 0.29,
-      "current_price": 0.9995,
-      "shares": 7500.0,
-      "size_usdc": 2175.0,
-      "tx_hash": "0xf413c27431167ae2c1e42a01dbf65da8c05247c257e4b7b3e7e084e340e9f5bf",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "SKIP",
-      "age_min": 95.6,
-      "drift": 0.7095,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+244.7%",
-          "threshold": "> 7%",
-          "note": "Line moved +244.7% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,175",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.290 (max +245%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +245% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "96m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +244.7% — the move already happened",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0x457d7bdf",
-      "ts": 1778412009.0,
-      "timestamp_iso": "2026-05-10T11:20:09Z",
-      "market_id": "0xdf9a9139eacb87540143580a7272bd70ff1eb13b045f573fa98ae6732d8371fd",
-      "market_title": "LoL: Kiwoom DRX vs Hanwha Life Esports - Game 2 Winner",
-      "market_slug": "lol-drx-hle1-2026-05-10",
-      "outcome": "Hanwha Life Esports",
-      "outcome_idx": 1,
-      "side": "HANWHA LIFE ESPORTS",
-      "entry_price": 0.86,
-      "current_price": null,
-      "shares": 1428.57,
-      "size_usdc": 1228.57,
-      "tx_hash": "0x457d7bdf663a514118528c5258721f07b115ec761d84aed9f2267e2665e203d9",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "LATE",
-      "age_min": 405.1,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,229",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.860 (max +16%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "405m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0x3b9314d8",
-      "ts": 1778412009.0,
-      "timestamp_iso": "2026-05-10T11:20:09Z",
-      "market_id": "0xdf9a9139eacb87540143580a7272bd70ff1eb13b045f573fa98ae6732d8371fd",
-      "market_title": "LoL: Kiwoom DRX vs Hanwha Life Esports - Game 2 Winner",
-      "market_slug": "lol-drx-hle1-2026-05-10",
-      "outcome": "Hanwha Life Esports",
-      "outcome_idx": 1,
-      "side": "HANWHA LIFE ESPORTS",
-      "entry_price": 0.86,
-      "current_price": null,
-      "shares": 497.0,
-      "size_usdc": 427.42,
-      "tx_hash": "0x3b9314d8f23883235cc9b0f493d93365b3061515c8483a69e90f41e3661902f9",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "SKIP",
-      "age_min": 405.1,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$427",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.860 (max +16%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "405m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0x553743e2",
-      "ts": 1778411993.0,
-      "timestamp_iso": "2026-05-10T11:19:53Z",
-      "market_id": "0xdf9a9139eacb87540143580a7272bd70ff1eb13b045f573fa98ae6732d8371fd",
-      "market_title": "LoL: Kiwoom DRX vs Hanwha Life Esports - Game 2 Winner",
-      "market_slug": "lol-drx-hle1-2026-05-10",
-      "outcome": "Hanwha Life Esports",
-      "outcome_idx": 1,
-      "side": "HANWHA LIFE ESPORTS",
-      "entry_price": 0.86,
-      "current_price": null,
-      "shares": 10692.8,
-      "size_usdc": 9234.43,
-      "tx_hash": "0x553743e22fd5f9fc3ba3e273d1fae7d1dafc4e31c21a4e5f418849a23f771c92",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "LATE",
-      "age_min": 405.3,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$9,234",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.860 (max +16%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "405m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0x7d998c47",
-      "ts": 1778411981.0,
-      "timestamp_iso": "2026-05-10T11:19:41Z",
-      "market_id": "0x47a4675a95370fcd4f26eeace4813d759498c5d2159e5b3c195f9134950bb8b7",
-      "market_title": "Internazionali BNL d'Italia: Ugo Humbert vs Dino Prizmic",
-      "market_slug": "atp-humbert-prizmic-2026-05-10",
-      "outcome": "Dino Prizmic",
-      "outcome_idx": 1,
-      "side": "DINO PRIZMIC",
-      "entry_price": 0.73,
-      "current_price": null,
-      "shares": 10000.0,
-      "size_usdc": 7359.13,
-      "tx_hash": "0x7d998c4739e4e1aa7ba61d11cd0fd05748b02f4129300ed9312fc86232218e0f",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "LATE",
-      "age_min": 405.5,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$7,359",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.730 (max +37%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +37% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "406m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0x4d65e3e6",
-      "ts": 1778409258.0,
-      "timestamp_iso": "2026-05-10T10:34:18Z",
-      "market_id": "0x5fecb1e5b8631296736ab37784846fed37f0c4b3307ab5a84921876caf2ba863",
-      "market_title": "LoL: Kiwoom DRX vs Hanwha Life Esports - Game 1 Winner",
-      "market_slug": "lol-drx-hle1-2026-05-10",
-      "outcome": "Kiwoom DRX",
-      "outcome_idx": 0,
-      "side": "KIWOOM DRX",
-      "entry_price": 0.11,
-      "current_price": null,
-      "shares": 1235.96,
-      "size_usdc": 135.96,
-      "tx_hash": "0x4d65e3e67389180b2fd538351434cc80f29a44f3542cb615afa084a4a8d33f0e",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "SKIP",
-      "age_min": 450.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$136",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.110 (max +809%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +809% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "451m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xf68A2819_0xd7c2bb94",
-      "ts": 1778409258.0,
-      "timestamp_iso": "2026-05-10T10:34:18Z",
-      "market_id": "0x5fecb1e5b8631296736ab37784846fed37f0c4b3307ab5a84921876caf2ba863",
-      "market_title": "LoL: Kiwoom DRX vs Hanwha Life Esports - Game 1 Winner",
-      "market_slug": "lol-drx-hle1-2026-05-10",
-      "outcome": "Kiwoom DRX",
-      "outcome_idx": 0,
-      "side": "KIWOOM DRX",
-      "entry_price": 0.11,
-      "current_price": null,
-      "shares": 5165.2,
-      "size_usdc": 568.17,
-      "tx_hash": "0xd7c2bb949f5d0c92f2652d6ec57251f828b30ddaef5a7ed2f69e450fde9b8146",
-      "whale": {
-        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
-        "pseudonym": "Corrupt-Poisoning",
-        "raw_win_rate": 0.8625,
-        "lifetime_pnl": 225430.81,
-        "roi": 0.764,
-        "recent_wins": 69,
-        "recent_n": 80,
-        "recent_win_rate": 0.8625,
-        "z_score": 0.0,
-        "n_total": 80,
-        "total_wins": 69
-      },
-      "verdict": "LATE",
-      "age_min": 450.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$568",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.110 (max +809%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +809% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "451m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
       ]
     }
   ]
