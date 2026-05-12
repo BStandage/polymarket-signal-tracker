@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-12T18:01:37.555506Z",
+  "updated_at": "2026-05-12T20:05:12.989645Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,87 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 13,
-  "signal_count": 51,
-  "enter_count": 16,
+  "signal_count": 48,
+  "enter_count": 3,
   "signals": [
     {
-      "signal_id": "0x84CffFC3_0x31b0dcbc",
-      "ts": 1778608838.0,
-      "timestamp_iso": "2026-05-12T18:00:38Z",
-      "market_id": "0x571fa709d492b70b4d6d126fc8e153e799e756f2629778363ab461a7d5949c24",
-      "market_title": "Spread: Pittsburgh Pirates (-1.5)",
-      "market_slug": "mlb-col-pit-2026-05-12",
-      "outcome": "Pittsburgh Pirates",
+      "signal_id": "0x84CffFC3_0x137eff32",
+      "ts": 1778616257.0,
+      "timestamp_iso": "2026-05-12T20:04:17Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Timberwolves",
       "outcome_idx": 0,
-      "side": "PITTSBURGH PIRATES",
-      "entry_price": 0.57,
-      "current_price": 0.56,
-      "shares": 552.05,
-      "size_usdc": 318.73,
-      "tx_hash": "0x31b0dcbc0be9bb4a10b1b98a7fd7a55e1b05f063084cfc5c2fcfe516b1f2ab01",
+      "side": "TIMBERWOLVES",
+      "entry_price": 0.21,
+      "current_price": 0.215,
+      "shares": 5063.29,
+      "size_usdc": 1063.29,
+      "tx_hash": "0x137eff32d99d1e2a740ce3a878b1f1e3d7f0cca537d9c579decb1725e6484c24",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "ENTER",
+      "age_min": 0.8,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+2.4%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,063",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.210 (max +376%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +376% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "1m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0x84CffFC3_0xc829d42e",
+      "ts": 1778616232.0,
+      "timestamp_iso": "2026-05-12T20:03:52Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 372.0,
+      "size_usdc": 290.16,
+      "tx_hash": "0xc829d42e13f9fdda1ad717d337bf8c2fa9326b226304cd85ff765a80ab1f99cf",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -39,29 +102,29 @@
         "total_wins": 54
       },
       "verdict": "SKIP",
-      "age_min": 0.8,
-      "drift": -0.01,
+      "age_min": 1.2,
+      "drift": 0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.8%",
+          "value": "+0.6%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$319",
+          "value": "$290",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.570 (max +75%)",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +75% upside on a correct call."
+          "note": "Modest payoff — +28% on win, small cushion over costs."
         },
         {
           "name": "Age",
@@ -72,276 +135,25 @@
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
       ]
     },
     {
-      "signal_id": "0x84CffFC3_0xe7bbef62",
-      "ts": 1778608782.0,
-      "timestamp_iso": "2026-05-12T17:59:42Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "No",
+      "signal_id": "0x84CffFC3_0xfeee4dc6",
+      "ts": 1778616141.0,
+      "timestamp_iso": "2026-05-12T20:02:21Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
       "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.41,
-      "current_price": 0.405,
-      "shares": 1523.05,
-      "size_usdc": 635.5,
-      "tx_hash": "0xe7bbef6234012f77c067e77e97f8a904a76de4d21b6c7c3f59e150872c68bca7",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 1.0,
-        "lifetime_pnl": 369750.89,
-        "roi": 4.9067,
-        "recent_wins": 54,
-        "recent_n": 54,
-        "recent_win_rate": 1.0,
-        "z_score": 0.0,
-        "n_total": 54,
-        "total_wins": 54
-      },
-      "verdict": "ENTER",
-      "age_min": 1.7,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-1.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$636",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.410 (max +144%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +144% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "2m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x84CffFC3_0x42b785bf",
-      "ts": 1778608782.0,
-      "timestamp_iso": "2026-05-12T17:59:42Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.41,
-      "current_price": 0.405,
-      "shares": 3420.82,
-      "size_usdc": 1427.36,
-      "tx_hash": "0x42b785bf7e5cf066e5e1c69d110d20f8a41b43f65a899ea7dc9fd920bfa21496",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 1.0,
-        "lifetime_pnl": 369750.89,
-        "roi": 4.9067,
-        "recent_wins": 54,
-        "recent_n": 54,
-        "recent_win_rate": 1.0,
-        "z_score": 0.0,
-        "n_total": 54,
-        "total_wins": 54
-      },
-      "verdict": "ENTER",
-      "age_min": 1.7,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-1.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,427",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.410 (max +144%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +144% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "2m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0xf5198Df6_0xe7bbef62",
-      "ts": 1778608782.0,
-      "timestamp_iso": "2026-05-12T17:59:42Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.59,
-      "current_price": 0.595,
-      "shares": 1523.05,
-      "size_usdc": 898.6,
-      "tx_hash": "0xe7bbef6234012f77c067e77e97f8a904a76de4d21b6c7c3f59e150872c68bca7",
-      "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.973,
-        "lifetime_pnl": 97654.76,
-        "roi": 0.5043,
-        "recent_wins": 36,
-        "recent_n": 37,
-        "recent_win_rate": 0.973,
-        "z_score": 0.0,
-        "n_total": 37,
-        "total_wins": 36
-      },
-      "verdict": "ENTER",
-      "age_min": 1.8,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$899",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.590 (max +69%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +69% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "2m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0xf5198Df6_0x42b785bf",
-      "ts": 1778608782.0,
-      "timestamp_iso": "2026-05-12T17:59:42Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.59,
-      "current_price": 0.595,
-      "shares": 3420.82,
-      "size_usdc": 2018.28,
-      "tx_hash": "0x42b785bf7e5cf066e5e1c69d110d20f8a41b43f65a899ea7dc9fd920bfa21496",
-      "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.973,
-        "lifetime_pnl": 97654.76,
-        "roi": 0.5043,
-        "recent_wins": 36,
-        "recent_n": 37,
-        "recent_win_rate": 0.973,
-        "z_score": 0.0,
-        "n_total": 37,
-        "total_wins": 36
-      },
-      "verdict": "ENTER",
-      "age_min": 1.8,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,018",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.590 (max +69%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +69% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "2m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x84CffFC3_0xda5c6837",
-      "ts": 1778608774.0,
-      "timestamp_iso": "2026-05-12T17:59:34Z",
-      "market_id": "0x7cebcda1d84a906a7093d3b67c2ddd618c7f342713864a9a454c2f475df9b1ec",
-      "market_title": "Ducks vs. Golden Knights",
-      "market_slug": "nhl-ana-las-2026-05-12",
-      "outcome": "Ducks",
-      "outcome_idx": 0,
-      "side": "DUCKS",
-      "entry_price": 0.4,
-      "current_price": 0.395,
-      "shares": 581.18,
-      "size_usdc": 236.66,
-      "tx_hash": "0xda5c6837aabf05bcbb1f709a09f56df9093871fdc6502cda99573f813eba1362",
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 363.0,
+      "size_usdc": 283.14,
+      "tx_hash": "0xfeee4dc68bd96b6e455cc45230c337f4f28288768a2d6e30a91584f1bf507c90",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -356,7 +168,270 @@
         "total_wins": 54
       },
       "verdict": "SKIP",
-      "age_min": 1.9,
+      "age_min": 2.7,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$283",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "3m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xb885eb80",
+      "ts": 1778616080.0,
+      "timestamp_iso": "2026-05-12T20:01:20Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 338.0,
+      "size_usdc": 263.64,
+      "tx_hash": "0xb885eb8023a53dcc6a6e08de50cd25508c7cb41a19611a7567d2b4d21e0b86b1",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "SKIP",
+      "age_min": 3.7,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$264",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "4m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x4f0d67b4",
+      "ts": 1778616017.0,
+      "timestamp_iso": "2026-05-12T20:00:17Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 454.55,
+      "size_usdc": 354.55,
+      "tx_hash": "0x4f0d67b49757fe251e074b64fdff9fb621812bba07e4f96012fad89aa2f6dc7d",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "SKIP",
+      "age_min": 4.8,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$355",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0xE542aFD3_0x4b7cf494",
+      "ts": 1778616012.0,
+      "timestamp_iso": "2026-05-12T20:00:12Z",
+      "market_id": "0x7382a5e41b0fec7ba5fd4d62191fc1cf4504d3768970c46d4c9185615c416872",
+      "market_title": "Will Greece win Eurovision 2026?",
+      "market_slug": "eurovision-winner-2026",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.853,
+      "current_price": 0.8445,
+      "shares": 2139.76,
+      "size_usdc": 1838.63,
+      "tx_hash": "0x4b7cf4949b02118bbc63ea93ed7036ccfd5e8a2e4a0173b7e4aeb14c91a28511",
+      "whale": {
+        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
+        "pseudonym": "Lonely-Bog",
+        "raw_win_rate": 0.8636,
+        "lifetime_pnl": 22076.59,
+        "roi": 0.6289,
+        "recent_wins": 57,
+        "recent_n": 66,
+        "recent_win_rate": 0.8636,
+        "z_score": 0.0,
+        "n_total": 66,
+        "total_wins": 57
+      },
+      "verdict": "LATE",
+      "age_min": 5.0,
+      "drift": -0.0085,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-1.0%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,839",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.853 (max +17%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 17% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 17% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0xf5198Df6_0x62dabf65",
+      "ts": 1778615998.0,
+      "timestamp_iso": "2026-05-12T19:59:58Z",
+      "market_id": "0x00c2a3302d7c29f79f1acc4f9db349378f55209220d6d7ebadfa2e6246220085",
+      "market_title": "Will Southampton FC vs. Middlesbrough FC end in a draw?",
+      "market_slug": "elc-sot-mid-2026-05-12",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.39,
+      "current_price": 0.385,
+      "shares": 654.61,
+      "size_usdc": 255.3,
+      "tx_hash": "0x62dabf65e7dfd36bd8c5d3ef98cd17ddc5d34ec430f027b3b86426eb31f76626",
+      "whale": {
+        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
+        "pseudonym": "Practical-Advent",
+        "raw_win_rate": 0.973,
+        "lifetime_pnl": 97654.76,
+        "roi": 0.5043,
+        "recent_wins": 36,
+        "recent_n": 37,
+        "recent_win_rate": 0.973,
+        "z_score": 0.0,
+        "n_total": 37,
+        "total_wins": 36
+      },
+      "verdict": "SKIP",
+      "age_min": 5.2,
       "drift": -0.005,
       "checks": [
         {
@@ -369,21 +444,21 @@
         {
           "name": "Size",
           "status": "fail",
-          "value": "$237",
+          "value": "$255",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.400 (max +150%)",
+          "value": "0.390 (max +156%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +150% upside on a correct call."
+          "note": "Good payoff — +156% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "2m ago",
+          "value": "5m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -393,20 +468,20 @@
       ]
     },
     {
-      "signal_id": "0x84CffFC3_0xe5ed1832",
-      "ts": 1778608670.0,
-      "timestamp_iso": "2026-05-12T17:57:50Z",
+      "signal_id": "0x84CffFC3_0xe600f7dc",
+      "ts": 1778615989.0,
+      "timestamp_iso": "2026-05-12T19:59:49Z",
       "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
       "market_title": "Timberwolves vs. Spurs",
       "market_slug": "nba-min-sas-2026-05-12",
-      "outcome": "Timberwolves",
-      "outcome_idx": 0,
-      "side": "TIMBERWOLVES",
-      "entry_price": 0.21,
-      "current_price": 0.215,
-      "shares": 1400.0,
-      "size_usdc": 294.0,
-      "tx_hash": "0xe5ed1832c8cdc26f472b07f7ff534a27cead3a0c768e6e2cc3186af67c7b173c",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 279.0,
+      "size_usdc": 217.62,
+      "tx_hash": "0xe600f7dc08a165e274f6da855bc464f94fd8d743d4d71cb4e046113218d03161",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -421,7 +496,331 @@
         "total_wins": 54
       },
       "verdict": "SKIP",
-      "age_min": 3.6,
+      "age_min": 5.2,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$218",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0xf5198Df6_0x0cbffc41",
+      "ts": 1778615989.0,
+      "timestamp_iso": "2026-05-12T19:59:49Z",
+      "market_id": "0x00c2a3302d7c29f79f1acc4f9db349378f55209220d6d7ebadfa2e6246220085",
+      "market_title": "Will Southampton FC vs. Middlesbrough FC end in a draw?",
+      "market_slug": "elc-sot-mid-2026-05-12",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.39,
+      "current_price": 0.385,
+      "shares": 5028.26,
+      "size_usdc": 1961.02,
+      "tx_hash": "0x0cbffc41ef0dd038dff7197e89348b8d2bf6910adde7f43330931ebdb94adff5",
+      "whale": {
+        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
+        "pseudonym": "Practical-Advent",
+        "raw_win_rate": 0.973,
+        "lifetime_pnl": 97654.76,
+        "roi": 0.5043,
+        "recent_wins": 36,
+        "recent_n": 37,
+        "recent_win_rate": 0.973,
+        "z_score": 0.0,
+        "n_total": 37,
+        "total_wins": 36
+      },
+      "verdict": "ENTER",
+      "age_min": 5.3,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-1.3%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,961",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.390 (max +156%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +156% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0xf5198Df6_0xbfddf3c5",
+      "ts": 1778615984.0,
+      "timestamp_iso": "2026-05-12T19:59:44Z",
+      "market_id": "0x00c2a3302d7c29f79f1acc4f9db349378f55209220d6d7ebadfa2e6246220085",
+      "market_title": "Will Southampton FC vs. Middlesbrough FC end in a draw?",
+      "market_slug": "elc-sot-mid-2026-05-12",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.39,
+      "current_price": 0.385,
+      "shares": 4276.51,
+      "size_usdc": 1698.36,
+      "tx_hash": "0xbfddf3c5995c6d6feae7d18698c2549fca005d9ecc3eec6912cbfc602395179b",
+      "whale": {
+        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
+        "pseudonym": "Practical-Advent",
+        "raw_win_rate": 0.973,
+        "lifetime_pnl": 97654.76,
+        "roi": 0.5043,
+        "recent_wins": 36,
+        "recent_n": 37,
+        "recent_win_rate": 0.973,
+        "z_score": 0.0,
+        "n_total": 37,
+        "total_wins": 36
+      },
+      "verdict": "ENTER",
+      "age_min": 5.4,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-1.3%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,698",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.390 (max +156%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +156% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0x84CffFC3_0x18bac43a",
+      "ts": 1778615891.0,
+      "timestamp_iso": "2026-05-12T19:58:11Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 227.27,
+      "size_usdc": 177.27,
+      "tx_hash": "0x18bac43aeff7ced18d5decf96500a1687d872446e6e460700040133e995204ea",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "SKIP",
+      "age_min": 6.9,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$177",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "7m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x2cdb831d",
+      "ts": 1778615872.0,
+      "timestamp_iso": "2026-05-12T19:57:52Z",
+      "market_id": "0x09086e7fa2ac4a2da3026a4f3dcafdffee9bbf04df9307d3a3f91413824b33d3",
+      "market_title": "Will Real Betis Balompié win on 2026-05-17?",
+      "market_slug": "lal-bar-bet-2026-05-17",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.88,
+      "current_price": 0.875,
+      "shares": 183.58,
+      "size_usdc": 162.13,
+      "tx_hash": "0x2cdb831d783139f3af5cd5a85012edad84628666afd4d624a8ad2651d96729ea",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "SKIP",
+      "age_min": 7.2,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$162",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.880 (max +14%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "7m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xfb638ba6",
+      "ts": 1778615870.0,
+      "timestamp_iso": "2026-05-12T19:57:50Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Timberwolves",
+      "outcome_idx": 0,
+      "side": "TIMBERWOLVES",
+      "entry_price": 0.21,
+      "current_price": 0.215,
+      "shares": 1590.54,
+      "size_usdc": 334.01,
+      "tx_hash": "0xfb638ba641d585be22e6875783c59aa4c7c4eb53561682d12d532db60d1982e7",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "SKIP",
+      "age_min": 7.3,
       "drift": 0.005,
       "checks": [
         {
@@ -434,7 +833,7 @@
         {
           "name": "Size",
           "status": "fail",
-          "value": "$294",
+          "value": "$334",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
@@ -448,7 +847,7 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "4m ago",
+          "value": "7m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -458,20 +857,20 @@
       ]
     },
     {
-      "signal_id": "0x84CffFC3_0x18382723",
-      "ts": 1778608625.0,
-      "timestamp_iso": "2026-05-12T17:57:05Z",
-      "market_id": "0x2c4cb0ca128e639c7d94463b557699797f2773926a6c9a52294606979e3cdaec",
-      "market_title": "Will FC Barcelona win on 2026-05-13?",
-      "market_slug": "lal-ala-bar-2026-05-13",
-      "outcome": "No",
+      "signal_id": "0x84CffFC3_0x8a341840",
+      "ts": 1778615868.0,
+      "timestamp_iso": "2026-05-12T19:57:48Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
       "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.54,
-      "current_price": 0.535,
-      "shares": 1097.17,
-      "size_usdc": 600.65,
-      "tx_hash": "0x18382723e208ed1b9cd36a7fb4ac76a7cc099ff69c7255b404ba1b52e3dceba8",
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 374.0,
+      "size_usdc": 291.72,
+      "tx_hash": "0x8a341840f9920e1325300c860d208e8757ce6f7150b77e18996b5276ddf1bdad",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -485,298 +884,1107 @@
         "n_total": 54,
         "total_wins": 54
       },
-      "verdict": "ENTER",
-      "age_min": 4.3,
-      "drift": -0.005,
+      "verdict": "SKIP",
+      "age_min": 7.3,
+      "drift": 0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.9%",
+          "value": "+0.6%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
+          "status": "fail",
+          "value": "$292",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
           "status": "pass",
-          "value": "$601",
+          "value": "7m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x04b20072",
+      "ts": 1778615837.0,
+      "timestamp_iso": "2026-05-12T19:57:17Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 255.0,
+      "size_usdc": 198.9,
+      "tx_hash": "0x04b200724baba5eb7f64d6bcb08534b6b488305e1b62f2b457d7db8bf39005fe",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "SKIP",
+      "age_min": 7.8,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$199",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "8m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x090dc82a",
+      "ts": 1778615807.0,
+      "timestamp_iso": "2026-05-12T19:56:47Z",
+      "market_id": "0xe9e3d24aaeb9a3cadc276f2696b916d8c9b47b6737c0112d9699899880acda1d",
+      "market_title": "Timberwolves vs. Spurs",
+      "market_slug": "nba-min-sas-2026-05-12",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 561.0,
+      "size_usdc": 437.58,
+      "tx_hash": "0x090dc82a995ca449a3b1028a763f8725e6878fd84c00aeeaf6f1ae7418178b28",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 369750.89,
+        "roi": 4.9067,
+        "recent_wins": 54,
+        "recent_n": 54,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 54,
+        "total_wins": 54
+      },
+      "verdict": "SKIP",
+      "age_min": 8.3,
+      "drift": 0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$438",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "8m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs."
+      ]
+    },
+    {
+      "signal_id": "0xf68A2819_0xffcf3987",
+      "ts": 1778614174.0,
+      "timestamp_iso": "2026-05-12T19:29:34Z",
+      "market_id": "0x4490a70012673cd905f6f112bdba3727c83dc4f9aafb2b0e32f25730373a2dac",
+      "market_title": "CA Osasuna vs. Club Atlético de Madrid: O/U 2.5",
+      "market_slug": "lal-osa-mad-2026-05-12-more-markets",
+      "outcome": "Under",
+      "outcome_idx": 1,
+      "side": "UNDER",
+      "entry_price": 0.46,
+      "current_price": 0.345,
+      "shares": 250.22,
+      "size_usdc": 115.1,
+      "tx_hash": "0xffcf398703b7fb044e28c836542e6757e86eeea2c241d2757c9c6ecfe089f01b",
+      "whale": {
+        "address": "0xf68A281980f8c13828e84e147e3822381d6e5B1B",
+        "pseudonym": "Corrupt-Poisoning",
+        "raw_win_rate": 0.8723,
+        "lifetime_pnl": 248219.82,
+        "roi": 0.742,
+        "recent_wins": 82,
+        "recent_n": 94,
+        "recent_win_rate": 0.8723,
+        "z_score": 0.0,
+        "n_total": 94,
+        "total_wins": 82
+      },
+      "verdict": "SKIP",
+      "age_min": 35.5,
+      "drift": -0.115,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-25.0%",
+          "threshold": "> 7%",
+          "note": "Line moved -25.0% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$115",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.460 (max +117%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +117% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "36m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -25.0% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xE542aFD3_0xd9149335",
+      "ts": 1778614101.0,
+      "timestamp_iso": "2026-05-12T19:28:21Z",
+      "market_id": "0x435f0cf3af2ef5c3312603cf568afa6c5ad63799f655bb08769bc7b4d40c8ded",
+      "market_title": "Will Greece win the first Eurovision Semi-Final?",
+      "market_slug": "eurovision-2026-first-semi-final-winner",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.7396,
+      "current_price": 0.82,
+      "shares": 1099.0,
+      "size_usdc": 823.39,
+      "tx_hash": "0xd9149335c0a8ab91d3265d6ecae99dcedacaf65fce26888c72e5e2c84111211a",
+      "whale": {
+        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
+        "pseudonym": "Lonely-Bog",
+        "raw_win_rate": 0.8636,
+        "lifetime_pnl": 22076.59,
+        "roi": 0.6289,
+        "recent_wins": 57,
+        "recent_n": 66,
+        "recent_win_rate": 0.8636,
+        "z_score": 0.0,
+        "n_total": 66,
+        "total_wins": 57
+      },
+      "verdict": "SKIP",
+      "age_min": 36.8,
+      "drift": 0.0804,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+10.9%",
+          "threshold": "> 7%",
+          "note": "Line moved +10.9% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$823",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.540 (max +85%)",
+          "value": "0.740 (max +35%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +85% upside on a correct call."
+          "note": "Good payoff — +35% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "4m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0xf5198Df6_0xae2a1315",
-      "ts": 1778608229.0,
-      "timestamp_iso": "2026-05-12T17:50:29Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.59,
-      "current_price": 0.595,
-      "shares": 612.2,
-      "size_usdc": 361.2,
-      "tx_hash": "0xae2a13153bff9b10b030de9e69c8b348282539376e44a34a5baf8f6286877f25",
-      "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.973,
-        "lifetime_pnl": 97654.76,
-        "roi": 0.5043,
-        "recent_wins": 36,
-        "recent_n": 37,
-        "recent_win_rate": 0.973,
-        "z_score": 0.0,
-        "n_total": 37,
-        "total_wins": 36
-      },
-      "verdict": "SKIP",
-      "age_min": 11.0,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$361",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.590 (max +69%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +69% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "11m ago",
+          "value": "37m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Line moved +10.9% — the move already happened"
       ]
     },
     {
-      "signal_id": "0xf5198Df6_0xefda905b",
-      "ts": 1778608184.0,
-      "timestamp_iso": "2026-05-12T17:49:44Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.59,
-      "current_price": 0.595,
-      "shares": 612.2,
-      "size_usdc": 361.2,
-      "tx_hash": "0xefda905bc0a137586c15285b109c5884898b8e3218621ba983135488d4925a51",
+      "signal_id": "0x56c9fbde_0x6f290a60",
+      "ts": 1778613091.0,
+      "timestamp_iso": "2026-05-12T19:11:31Z",
+      "market_id": "0x64c212ec52ec6aa456a6b2ac09a31a5387fe0f9823b379bfac33ff3624980e72",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality (BO3) - IEM Atlanta Group A",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "Vitality",
+      "outcome_idx": 1,
+      "side": "VITALITY",
+      "entry_price": 0.8,
+      "current_price": 0.805,
+      "shares": 7682.64,
+      "size_usdc": 6182.99,
+      "tx_hash": "0x6f290a60f885bd51d955a18a0aa937b54a7056e183959d1febf33e6f42656b35",
       "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.973,
-        "lifetime_pnl": 97654.76,
-        "roi": 0.5043,
-        "recent_wins": 36,
-        "recent_n": 37,
-        "recent_win_rate": 0.973,
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
         "z_score": 0.0,
-        "n_total": 37,
-        "total_wins": 36
+        "n_total": 65,
+        "total_wins": 58
       },
-      "verdict": "SKIP",
-      "age_min": 11.8,
+      "verdict": "LATE",
+      "age_min": 53.6,
       "drift": 0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+0.8%",
+          "value": "+0.6%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
-          "status": "fail",
-          "value": "$361",
+          "status": "pass",
+          "value": "$6,183",
           "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
+          "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.590 (max +69%)",
+          "status": "warn",
+          "value": "0.800 (max +25%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +69% upside on a correct call."
+          "note": "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "12m ago",
+          "value": "54m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
       ]
     },
     {
-      "signal_id": "0xf5198Df6_0xd69a9bcc",
-      "ts": 1778607860.0,
-      "timestamp_iso": "2026-05-12T17:44:20Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.59,
-      "current_price": 0.595,
-      "shares": 365.85,
-      "size_usdc": 215.85,
-      "tx_hash": "0xd69a9bcce81d3204ab65d44fd4982d997b7a8d4cbda358865ad5c43b33b4d66b",
+      "signal_id": "0x56c9fbde_0xbd461fed",
+      "ts": 1778612926.0,
+      "timestamp_iso": "2026-05-12T19:08:46Z",
+      "market_id": "0x0e7f698cc672e0b913b4ea4304ad374477d865f82b005c86123a7040c4866794",
+      "market_title": "Will Southampton FC win on 2026-05-12?",
+      "market_slug": "elc-sot-mid-2026-05-12",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.84,
+      "current_price": 0.655,
+      "shares": 4604.95,
+      "size_usdc": 3886.73,
+      "tx_hash": "0xbd461fed248af9dffcf463c390a31c3ad1d549d21f8291cc2bf6f7cbf11768f2",
       "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.973,
-        "lifetime_pnl": 97654.76,
-        "roi": 0.5043,
-        "recent_wins": 36,
-        "recent_n": 37,
-        "recent_win_rate": 0.973,
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
         "z_score": 0.0,
-        "n_total": 37,
-        "total_wins": 36
+        "n_total": 65,
+        "total_wins": 58
       },
       "verdict": "SKIP",
-      "age_min": 17.2,
-      "drift": 0.005,
+      "age_min": 56.4,
+      "drift": -0.185,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-22.0%",
+          "threshold": "> 7%",
+          "note": "Line moved -22.0% — the move already happened"
         },
         {
           "name": "Size",
-          "status": "fail",
-          "value": "$216",
+          "status": "pass",
+          "value": "$3,887",
           "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
+          "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.590 (max +69%)",
+          "status": "warn",
+          "value": "0.840 (max +19%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +69% upside on a correct call."
+          "note": "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "17m ago",
+          "value": "56m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Line moved -22.0% — the move already happened",
+        "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk."
       ]
     },
     {
-      "signal_id": "0xf5198Df6_0xd763cd34",
-      "ts": 1778607148.0,
-      "timestamp_iso": "2026-05-12T17:32:28Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.59,
-      "current_price": 0.595,
-      "shares": 975.61,
-      "size_usdc": 575.61,
-      "tx_hash": "0xd763cd342c2a3a1db84e2cadea84bdc4943c10868d93a51b0583faddcdc86dcd",
+      "signal_id": "0x56c9fbde_0xf4cfd464",
+      "ts": 1778612925.0,
+      "timestamp_iso": "2026-05-12T19:08:45Z",
+      "market_id": "0x0e7f698cc672e0b913b4ea4304ad374477d865f82b005c86123a7040c4866794",
+      "market_title": "Will Southampton FC win on 2026-05-12?",
+      "market_slug": "elc-sot-mid-2026-05-12",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.83,
+      "current_price": 0.655,
+      "shares": 2645.68,
+      "size_usdc": 2195.91,
+      "tx_hash": "0xf4cfd464f22b82ab526823d395dfe12d5f68c60132f4b31f73ba84e5cfaa36fc",
       "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.973,
-        "lifetime_pnl": 97654.76,
-        "roi": 0.5043,
-        "recent_wins": 36,
-        "recent_n": 37,
-        "recent_win_rate": 0.973,
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
         "z_score": 0.0,
-        "n_total": 37,
-        "total_wins": 36
+        "n_total": 65,
+        "total_wins": 58
       },
-      "verdict": "ENTER",
-      "age_min": 29.0,
-      "drift": 0.005,
+      "verdict": "SKIP",
+      "age_min": 56.4,
+      "drift": -0.175,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-21.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -21.1% — the move already happened"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$576",
+          "value": "$2,196",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.830 (max +20%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "56m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -21.1% — the move already happened",
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0x0c6afe16",
+      "ts": 1778612904.0,
+      "timestamp_iso": "2026-05-12T19:08:24Z",
+      "market_id": "0x0e7f698cc672e0b913b4ea4304ad374477d865f82b005c86123a7040c4866794",
+      "market_title": "Will Southampton FC win on 2026-05-12?",
+      "market_slug": "elc-sot-mid-2026-05-12",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.83,
+      "current_price": 0.655,
+      "shares": 574.42,
+      "size_usdc": 479.2,
+      "tx_hash": "0x0c6afe169b5b1b088a154853e9da18b3bceb6f6addacce296e5f61a5445ea501",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 56.8,
+      "drift": -0.175,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-21.1%",
+          "threshold": "> 7%",
+          "note": "Line moved -21.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$479",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.830 (max +20%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "57m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -21.1% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0x4da31b9e",
+      "ts": 1778611857.0,
+      "timestamp_iso": "2026-05-12T18:50:57Z",
+      "market_id": "0x734433e88ac5e3bd3f821740c4c170fea4f1aba1963260266d6c5a7e6370eb12",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality - Map 1 Winner",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "BetBoom Team",
+      "outcome_idx": 0,
+      "side": "BETBOOM TEAM",
+      "entry_price": 0.666,
+      "current_price": 0.9995,
+      "shares": 2222.0,
+      "size_usdc": 1494.77,
+      "tx_hash": "0x4da31b9e7c208fe081e4552b94f5dbd97dbbbaebeb2732cb62076a9c979151fc",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 74.2,
+      "drift": 0.3335,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+50.1%",
+          "threshold": "> 7%",
+          "note": "Line moved +50.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,495",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.590 (max +69%)",
+          "value": "0.666 (max +50%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +69% upside on a correct call."
+          "note": "Good payoff — +50% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "29m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "74m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Line moved +50.1% — the move already happened",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0x8a60d446",
+      "ts": 1778610800.0,
+      "timestamp_iso": "2026-05-12T18:33:20Z",
+      "market_id": "0x2174ce80a1ed255d3464a3c7876544d53a1a782074150c12a2ecd9bd29c54fbf",
+      "market_title": "Counter-Strike: paiN vs FUT Esports - Map 1 Winner",
+      "market_slug": "cs2-pain-fut-2026-05-12",
+      "outcome": "paiN",
+      "outcome_idx": 0,
+      "side": "PAIN",
+      "entry_price": 0.8817,
+      "current_price": 0.9995,
+      "shares": 3777.51,
+      "size_usdc": 3342.44,
+      "tx_hash": "0x8a60d446af55576e1cc765e2338adbc80cf7275e4b66365b9286557ccb8d9f84",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 91.8,
+      "drift": 0.1178,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+13.4%",
+          "threshold": "> 7%",
+          "note": "Line moved +13.4% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$3,342",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.882 (max +13%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 13% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "92m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +13.4% — the move already happened",
+        "Entry too high — max 13% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0xabd39e50",
+      "ts": 1778610611.0,
+      "timestamp_iso": "2026-05-12T18:30:11Z",
+      "market_id": "0x734433e88ac5e3bd3f821740c4c170fea4f1aba1963260266d6c5a7e6370eb12",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality - Map 1 Winner",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "BetBoom Team",
+      "outcome_idx": 0,
+      "side": "BETBOOM TEAM",
+      "entry_price": 0.74,
+      "current_price": 0.9995,
+      "shares": 415.86,
+      "size_usdc": 307.74,
+      "tx_hash": "0xabd39e508af0011c47f178d101f72c6b084eb927876ea11bd8897cf990c51d3f",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 95.0,
+      "drift": 0.2595,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+35.1%",
+          "threshold": "> 7%",
+          "note": "Line moved +35.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$308",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.740 (max +35%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +35% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "95m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +35.1% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0xabd39e50",
+      "ts": 1778610611.0,
+      "timestamp_iso": "2026-05-12T18:30:11Z",
+      "market_id": "0x734433e88ac5e3bd3f821740c4c170fea4f1aba1963260266d6c5a7e6370eb12",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality - Map 1 Winner",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "BetBoom Team",
+      "outcome_idx": 0,
+      "side": "BETBOOM TEAM",
+      "entry_price": 0.75,
+      "current_price": 0.9995,
+      "shares": 934.14,
+      "size_usdc": 700.61,
+      "tx_hash": "0xabd39e508af0011c47f178d101f72c6b084eb927876ea11bd8897cf990c51d3f",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 95.0,
+      "drift": 0.2495,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+33.3%",
+          "threshold": "> 7%",
+          "note": "Line moved +33.3% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$701",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.750 (max +33%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +33% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "95m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +33.3% — the move already happened",
+        "Modest payoff — +33% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0x9ca73b5c",
+      "ts": 1778610611.0,
+      "timestamp_iso": "2026-05-12T18:30:11Z",
+      "market_id": "0x734433e88ac5e3bd3f821740c4c170fea4f1aba1963260266d6c5a7e6370eb12",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality - Map 1 Winner",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "BetBoom Team",
+      "outcome_idx": 0,
+      "side": "BETBOOM TEAM",
+      "entry_price": 0.74,
+      "current_price": 0.9995,
+      "shares": 1806.14,
+      "size_usdc": 1336.54,
+      "tx_hash": "0x9ca73b5c035319f45f77ac4817686e23a2d175fc00a55c1c96a0e651872b2976",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 95.0,
+      "drift": 0.2595,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+35.1%",
+          "threshold": "> 7%",
+          "note": "Line moved +35.1% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,337",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.740 (max +35%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +35% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "95m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +35.1% — the move already happened",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0xeecc65d5",
+      "ts": 1778610609.0,
+      "timestamp_iso": "2026-05-12T18:30:09Z",
+      "market_id": "0x734433e88ac5e3bd3f821740c4c170fea4f1aba1963260266d6c5a7e6370eb12",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality - Map 1 Winner",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "BetBoom Team",
+      "outcome_idx": 0,
+      "side": "BETBOOM TEAM",
+      "entry_price": 0.75,
+      "current_price": 0.9995,
+      "shares": 400.0,
+      "size_usdc": 300.0,
+      "tx_hash": "0xeecc65d558f8166d2b118cea3c953b20eb0215c9c9237499ac0e908114c5d41a",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 95.0,
+      "drift": 0.2495,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+33.3%",
+          "threshold": "> 7%",
+          "note": "Line moved +33.3% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$300",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.750 (max +33%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +33% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "95m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +33.3% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +33% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0x943226fe",
+      "ts": 1778610602.0,
+      "timestamp_iso": "2026-05-12T18:30:02Z",
+      "market_id": "0x734433e88ac5e3bd3f821740c4c170fea4f1aba1963260266d6c5a7e6370eb12",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality - Map 1 Winner",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "BetBoom Team",
+      "outcome_idx": 0,
+      "side": "BETBOOM TEAM",
+      "entry_price": 0.75,
+      "current_price": 0.9995,
+      "shares": 400.0,
+      "size_usdc": 300.0,
+      "tx_hash": "0x943226fe2eb65fbe4184b889c3d3a4eda17745c2b72a816598ddccfd2c96a4a8",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 95.1,
+      "drift": 0.2495,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+33.3%",
+          "threshold": "> 7%",
+          "note": "Line moved +33.3% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$300",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.750 (max +33%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +33% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "95m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +33.3% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +33% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x56c9fbde_0x2ec7923f",
+      "ts": 1778610597.0,
+      "timestamp_iso": "2026-05-12T18:29:57Z",
+      "market_id": "0x734433e88ac5e3bd3f821740c4c170fea4f1aba1963260266d6c5a7e6370eb12",
+      "market_title": "Counter-Strike: BetBoom Team vs Vitality - Map 1 Winner",
+      "market_slug": "cs2-bb3-vit-2026-05-12",
+      "outcome": "BetBoom Team",
+      "outcome_idx": 0,
+      "side": "BETBOOM TEAM",
+      "entry_price": 0.75,
+      "current_price": 0.9995,
+      "shares": 230.0,
+      "size_usdc": 172.5,
+      "tx_hash": "0x2ec7923f784194cf74ad233cb22e8cd5b694cf38787c927e878997e2caa6818f",
+      "whale": {
+        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
+        "pseudonym": "Wrathful-Row",
+        "raw_win_rate": 0.8923,
+        "lifetime_pnl": 103157.86,
+        "roi": 0.2107,
+        "recent_wins": 58,
+        "recent_n": 65,
+        "recent_win_rate": 0.8923,
+        "z_score": 0.0,
+        "n_total": 65,
+        "total_wins": 58
+      },
+      "verdict": "SKIP",
+      "age_min": 95.2,
+      "drift": 0.2495,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+33.3%",
+          "threshold": "> 7%",
+          "note": "Line moved +33.3% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$172",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.750 (max +33%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +33% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "95m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +33.3% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +33% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
     },
     {
       "signal_id": "0xE542aFD3_0xad2abbfe",
@@ -807,7 +2015,7 @@
         "total_wins": 57
       },
       "verdict": "SKIP",
-      "age_min": 39.4,
+      "age_min": 163.0,
       "drift": 0.3779,
       "checks": [
         {
@@ -833,79 +2041,17 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "39m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "163m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
         "Line moved +60.8% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill"
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
-    },
-    {
-      "signal_id": "0xf5198Df6_0x28a7134f",
-      "ts": 1778606317.0,
-      "timestamp_iso": "2026-05-12T17:18:37Z",
-      "market_id": "0xa367eee4cfc2c61db3d5dec9d64b606b2e273946bb24b6dfd71ccef6c3e84172",
-      "market_title": "Will Real Betis Balompié win on 2026-05-12?",
-      "market_slug": "lal-bet-elc-2026-05-12",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.59,
-      "current_price": 0.595,
-      "shares": 983.6,
-      "size_usdc": 580.32,
-      "tx_hash": "0x28a7134f60d4f0c12a481295d4059699fa0e3b9160c15bc0ed68e3272895e19e",
-      "whale": {
-        "address": "0xf5198Df69E13937a40D1c76d6F72d9Aa067d906b",
-        "pseudonym": "Practical-Advent",
-        "raw_win_rate": 0.973,
-        "lifetime_pnl": 97654.76,
-        "roi": 0.5043,
-        "recent_wins": 36,
-        "recent_n": 37,
-        "recent_win_rate": 0.973,
-        "z_score": 0.0,
-        "n_total": 37,
-        "total_wins": 36
-      },
-      "verdict": "ENTER",
-      "age_min": 42.9,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$580",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.590 (max +69%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +69% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "43m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
     },
     {
       "signal_id": "0xf68A2819_0x925ed415",
@@ -918,7 +2064,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.77,
-      "current_price": 0.785,
+      "current_price": 0.0005,
       "shares": 208.18,
       "size_usdc": 160.3,
       "tx_hash": "0x925ed41586b59d8ddaa5fd3031d7e1d74c3317a0e50042ac4dd167b7e009df1c",
@@ -936,15 +2082,15 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 61.9,
-      "drift": 0.015,
+      "age_min": 185.6,
+      "drift": -0.7695,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-99.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.9% — the move already happened"
         },
         {
           "name": "Size",
@@ -963,12 +2109,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "62m ago",
+          "value": "186m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved -99.9% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +30% on win, small cushion over costs.",
         "Aging — but OK to tail if drift still small"
@@ -985,7 +2132,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.77,
-      "current_price": 0.785,
+      "current_price": 0.0005,
       "shares": 171.29,
       "size_usdc": 131.89,
       "tx_hash": "0x8270f22cbf6d723cfdf7a919c04ea7faf6a660230877bcc886753ff751ee5ade",
@@ -1003,15 +2150,15 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 61.9,
-      "drift": 0.015,
+      "age_min": 185.6,
+      "drift": -0.7695,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-99.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.9% — the move already happened"
         },
         {
           "name": "Size",
@@ -1030,12 +2177,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "62m ago",
+          "value": "186m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved -99.9% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +30% on win, small cushion over costs.",
         "Aging — but OK to tail if drift still small"
@@ -1052,7 +2200,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.77,
-      "current_price": 0.785,
+      "current_price": 0.0005,
       "shares": 444.75,
       "size_usdc": 342.46,
       "tx_hash": "0xc5f76ff9d8e6be34b8e859da5ee4090695f09a13440d255bf21a702baa4d58f0",
@@ -1070,15 +2218,15 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 63.3,
-      "drift": 0.015,
+      "age_min": 187.0,
+      "drift": -0.7695,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-99.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.9% — the move already happened"
         },
         {
           "name": "Size",
@@ -1097,12 +2245,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "63m ago",
+          "value": "187m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved -99.9% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +30% on win, small cushion over costs.",
         "Aging — but OK to tail if drift still small"
@@ -1119,7 +2268,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.77,
-      "current_price": 0.785,
+      "current_price": 0.0005,
       "shares": 444.75,
       "size_usdc": 342.46,
       "tx_hash": "0x2422917e13a7cc822215064f9b56b47e2fcf56924f0b65933d1d76d1f633dc7b",
@@ -1137,15 +2286,15 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 63.5,
-      "drift": 0.015,
+      "age_min": 187.2,
+      "drift": -0.7695,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-99.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.9% — the move already happened"
         },
         {
           "name": "Size",
@@ -1164,12 +2313,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "64m ago",
+          "value": "187m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved -99.9% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +30% on win, small cushion over costs.",
         "Aging — but OK to tail if drift still small"
@@ -1186,7 +2336,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.77,
-      "current_price": 0.785,
+      "current_price": 0.0005,
       "shares": 2000.0,
       "size_usdc": 1540.0,
       "tx_hash": "0x0569821de62055ba16e436c638939c207a36a387b92d663d3082f873eac61443",
@@ -1203,16 +2353,16 @@
         "n_total": 94,
         "total_wins": 82
       },
-      "verdict": "ENTER",
-      "age_min": 63.8,
-      "drift": 0.015,
+      "verdict": "SKIP",
+      "age_min": 187.5,
+      "drift": -0.7695,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-99.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.9% — the move already happened"
         },
         {
           "name": "Size",
@@ -1231,12 +2381,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "64m ago",
+          "value": "187m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved -99.9% — the move already happened",
         "Modest payoff — +30% on win, small cushion over costs.",
         "Aging — but OK to tail if drift still small"
       ]
@@ -1252,7 +2403,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.77,
-      "current_price": 0.785,
+      "current_price": 0.0005,
       "shares": 391.04,
       "size_usdc": 301.1,
       "tx_hash": "0x8c3c4798de0dfe7fa27b5b862a2c60edf119090bbe0fc9b4e38876ac36a3d676",
@@ -1270,15 +2421,15 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 63.8,
-      "drift": 0.015,
+      "age_min": 187.5,
+      "drift": -0.7695,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+1.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "fail",
+          "value": "-99.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.9% — the move already happened"
         },
         {
           "name": "Size",
@@ -1297,12 +2448,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "64m ago",
+          "value": "187m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved -99.9% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +30% on win, small cushion over costs.",
         "Aging — but OK to tail if drift still small"
@@ -1319,7 +2471,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.364,
-      "current_price": 0.382,
+      "current_price": 0.384,
       "shares": 750.0,
       "size_usdc": 273.0,
       "tx_hash": "0x714030f14841d7c6b756340ffa6bab322f0c64aed61b5f54ac21d78aa746c369",
@@ -1337,13 +2489,13 @@
         "total_wins": 64
       },
       "verdict": "SKIP",
-      "age_min": 64.7,
-      "drift": 0.018,
+      "age_min": 188.3,
+      "drift": 0.02,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+4.9%",
+          "value": "+5.5%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -1364,282 +2516,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "65m ago",
+          "value": "188m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x56c9fbde_0x9b289efd",
-      "ts": 1778604770.0,
-      "timestamp_iso": "2026-05-12T16:52:50Z",
-      "market_id": "0x037d3093ef575687565071efecc48aa29ad162efd848274fcd9715e40008c80f",
-      "market_title": "Counter-Strike: B8 vs BC.Game Esports - Map 2 Winner",
-      "market_slug": "cs2-b8-bcg-2026-05-12",
-      "outcome": "B8",
-      "outcome_idx": 0,
-      "side": "B8",
-      "entry_price": 0.88,
-      "current_price": 0.9995,
-      "shares": 329.11,
-      "size_usdc": 289.62,
-      "tx_hash": "0x9b289efd72edafa322ff3afa34bee3ae778dd83bf396ae268ee3ce49bba1f8f0",
-      "whale": {
-        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
-        "pseudonym": "Wrathful-Row",
-        "raw_win_rate": 0.8923,
-        "lifetime_pnl": 103157.86,
-        "roi": 0.2107,
-        "recent_wins": 58,
-        "recent_n": 65,
-        "recent_win_rate": 0.8923,
-        "z_score": 0.0,
-        "n_total": 65,
-        "total_wins": 58
-      },
-      "verdict": "SKIP",
-      "age_min": 68.7,
-      "drift": 0.1195,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+13.6%",
-          "threshold": "> 7%",
-          "note": "Line moved +13.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$290",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.880 (max +14%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "69m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +13.6% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x56c9fbde_0xaff4b275",
-      "ts": 1778604770.0,
-      "timestamp_iso": "2026-05-12T16:52:50Z",
-      "market_id": "0x037d3093ef575687565071efecc48aa29ad162efd848274fcd9715e40008c80f",
-      "market_title": "Counter-Strike: B8 vs BC.Game Esports - Map 2 Winner",
-      "market_slug": "cs2-b8-bcg-2026-05-12",
-      "outcome": "B8",
-      "outcome_idx": 0,
-      "side": "B8",
-      "entry_price": 0.8447,
-      "current_price": 0.9995,
-      "shares": 902.55,
-      "size_usdc": 765.97,
-      "tx_hash": "0xaff4b27536a9de207e9482e486f58c10111f1eb8cd41959d24ae6f54b201219f",
-      "whale": {
-        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
-        "pseudonym": "Wrathful-Row",
-        "raw_win_rate": 0.8923,
-        "lifetime_pnl": 103157.86,
-        "roi": 0.2107,
-        "recent_wins": 58,
-        "recent_n": 65,
-        "recent_win_rate": 0.8923,
-        "z_score": 0.0,
-        "n_total": 65,
-        "total_wins": 58
-      },
-      "verdict": "SKIP",
-      "age_min": 68.7,
-      "drift": 0.1548,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+18.3%",
-          "threshold": "> 7%",
-          "note": "Line moved +18.3% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$766",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.845 (max +18%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "69m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +18.3% — the move already happened",
-        "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x56c9fbde_0xf5f24ee7",
-      "ts": 1778604764.0,
-      "timestamp_iso": "2026-05-12T16:52:44Z",
-      "market_id": "0x037d3093ef575687565071efecc48aa29ad162efd848274fcd9715e40008c80f",
-      "market_title": "Counter-Strike: B8 vs BC.Game Esports - Map 2 Winner",
-      "market_slug": "cs2-b8-bcg-2026-05-12",
-      "outcome": "B8",
-      "outcome_idx": 0,
-      "side": "B8",
-      "entry_price": 0.88,
-      "current_price": 0.9995,
-      "shares": 2222.0,
-      "size_usdc": 1962.34,
-      "tx_hash": "0xf5f24ee77c306c4b2018c56480337e810b12c3eb5264605555f66e8134e5303e",
-      "whale": {
-        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
-        "pseudonym": "Wrathful-Row",
-        "raw_win_rate": 0.8923,
-        "lifetime_pnl": 103157.86,
-        "roi": 0.2107,
-        "recent_wins": 58,
-        "recent_n": 65,
-        "recent_win_rate": 0.8923,
-        "z_score": 0.0,
-        "n_total": 65,
-        "total_wins": 58
-      },
-      "verdict": "SKIP",
-      "age_min": 68.8,
-      "drift": 0.1195,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+13.6%",
-          "threshold": "> 7%",
-          "note": "Line moved +13.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,962",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.880 (max +14%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "69m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +13.6% — the move already happened",
-        "Entry too high — max 14% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x56c9fbde_0x9886cbc6",
-      "ts": 1778604693.0,
-      "timestamp_iso": "2026-05-12T16:51:33Z",
-      "market_id": "0x037d3093ef575687565071efecc48aa29ad162efd848274fcd9715e40008c80f",
-      "market_title": "Counter-Strike: B8 vs BC.Game Esports - Map 2 Winner",
-      "market_slug": "cs2-b8-bcg-2026-05-12",
-      "outcome": "B8",
-      "outcome_idx": 0,
-      "side": "B8",
-      "entry_price": 0.8443,
-      "current_price": 0.9995,
-      "shares": 2020.0,
-      "size_usdc": 1713.47,
-      "tx_hash": "0x9886cbc622ed3830ec250ee390ce25e4caa8fd94ee2e4600dd7030d7500f8089",
-      "whale": {
-        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
-        "pseudonym": "Wrathful-Row",
-        "raw_win_rate": 0.8923,
-        "lifetime_pnl": 103157.86,
-        "roi": 0.2107,
-        "recent_wins": 58,
-        "recent_n": 65,
-        "recent_win_rate": 0.8923,
-        "z_score": 0.0,
-        "n_total": 65,
-        "total_wins": 58
-      },
-      "verdict": "SKIP",
-      "age_min": 70.0,
-      "drift": 0.1552,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+18.4%",
-          "threshold": "> 7%",
-          "note": "Line moved +18.4% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,713",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.844 (max +18%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "70m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +18.4% — the move already happened",
-        "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk.",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -1672,7 +2555,7 @@
         "total_wins": 76
       },
       "verdict": "SKIP",
-      "age_min": 130.9,
+      "age_min": 254.5,
       "drift": -0.0005,
       "checks": [
         {
@@ -1699,1066 +2582,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "131m ago",
+          "value": "255m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x56c9fbde_0x1cbd3ca3",
-      "ts": 1778599829.0,
-      "timestamp_iso": "2026-05-12T15:30:29Z",
-      "market_id": "0x3a26ca6425e2d98f14935670bc22cdb0744defc6f6d83c65f8c413a921c5c70c",
-      "market_title": "Will Switzerland win the 2026 FIFA World Cup?",
-      "market_slug": "2026-fifa-world-cup-winner-595",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.012,
-      "current_price": 0.0115,
-      "shares": 50000.0,
-      "size_usdc": 617.78,
-      "tx_hash": "0x1cbd3ca35f910453bb21cd12de99099a10fcdc90c07f9c11445a0ff457ebde50",
-      "whale": {
-        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
-        "pseudonym": "Wrathful-Row",
-        "raw_win_rate": 0.8923,
-        "lifetime_pnl": 103157.86,
-        "roi": 0.2107,
-        "recent_wins": 58,
-        "recent_n": 65,
-        "recent_win_rate": 0.8923,
-        "z_score": 0.0,
-        "n_total": 65,
-        "total_wins": 58
-      },
-      "verdict": "ENTER",
-      "age_min": 151.0,
-      "drift": -0.0005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-4.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$618",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.012 (max +8233%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +8233% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "151m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0xcd0b1304",
-      "ts": 1778599663.0,
-      "timestamp_iso": "2026-05-12T15:27:43Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 4994.12,
-      "size_usdc": 2447.12,
-      "tx_hash": "0xcd0b1304b8b4d0785c118f1488503bc25779536dd21b80d1b94831ceebd6c6cd",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "ENTER",
-      "age_min": 153.8,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,447",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "154m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x56c9fbde_0xa3f51c52",
-      "ts": 1778599647.0,
-      "timestamp_iso": "2026-05-12T15:27:27Z",
-      "market_id": "0xc60022fe066abd6f96c375adb09f38d92c4931f09c10b805354581b4e5465e93",
-      "market_title": "Fed rate cut by December 2026 meeting?",
-      "market_slug": "fed-rate-cut-by-629",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.64,
-      "current_price": 0.685,
-      "shares": 312.5,
-      "size_usdc": 203.6,
-      "tx_hash": "0xa3f51c52528de3fb650c7316be0ed3a7bf4ec91220ef68ff6976313fc2945f97",
-      "whale": {
-        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
-        "pseudonym": "Wrathful-Row",
-        "raw_win_rate": 0.8923,
-        "lifetime_pnl": 103157.86,
-        "roi": 0.2107,
-        "recent_wins": 58,
-        "recent_n": 65,
-        "recent_win_rate": 0.8923,
-        "z_score": 0.0,
-        "n_total": 65,
-        "total_wins": 58
-      },
-      "verdict": "SKIP",
-      "age_min": 154.1,
-      "drift": 0.045,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+7.0%",
-          "threshold": "> 3%",
-          "note": "Line moved +7.0% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$204",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.640 (max +56%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +56% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "154m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +7.0% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x56c9fbde_0xf27eb520",
-      "ts": 1778599644.0,
-      "timestamp_iso": "2026-05-12T15:27:24Z",
-      "market_id": "0xc60022fe066abd6f96c375adb09f38d92c4931f09c10b805354581b4e5465e93",
-      "market_title": "Fed rate cut by December 2026 meeting?",
-      "market_slug": "fed-rate-cut-by-629",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.6265,
-      "current_price": 0.685,
-      "shares": 1244.57,
-      "size_usdc": 794.24,
-      "tx_hash": "0xf27eb52079351ea84accbdda5e253627d9ab3ba5b6958a3379f0616dcd1807d0",
-      "whale": {
-        "address": "0x56c9fbdecCF198f1F5aD95ace39b24F5F7fB0d9e",
-        "pseudonym": "Wrathful-Row",
-        "raw_win_rate": 0.8923,
-        "lifetime_pnl": 103157.86,
-        "roi": 0.2107,
-        "recent_wins": 58,
-        "recent_n": 65,
-        "recent_win_rate": 0.8923,
-        "z_score": 0.0,
-        "n_total": 65,
-        "total_wins": 58
-      },
-      "verdict": "LATE",
-      "age_min": 154.1,
-      "drift": 0.0585,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+9.3%",
-          "threshold": "> 3%",
-          "note": "Line moved +9.3% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$794",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.626 (max +60%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +60% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "154m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +9.3% — part of the edge is already priced in",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x1a7d6fa2",
-      "ts": 1778599444.0,
-      "timestamp_iso": "2026-05-12T15:24:04Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 3155.53,
-      "size_usdc": 1546.21,
-      "tx_hash": "0x1a7d6fa2181d56ec9328fc1f5da030e73cf9968c663c1586037c2e94a3e0004e",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "ENTER",
-      "age_min": 157.5,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,546",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "157m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x1a7d6fa2",
-      "ts": 1778599444.0,
-      "timestamp_iso": "2026-05-12T15:24:04Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 2040.55,
-      "size_usdc": 999.87,
-      "tx_hash": "0x1a7d6fa2181d56ec9328fc1f5da030e73cf9968c663c1586037c2e94a3e0004e",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "ENTER",
-      "age_min": 157.5,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,000",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "157m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x2a3ebb3a",
-      "ts": 1778599196.0,
-      "timestamp_iso": "2026-05-12T15:19:56Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 5392.16,
-      "size_usdc": 2642.16,
-      "tx_hash": "0x2a3ebb3a73ed6b5ed74bf94bbb7e06020edc272b5c6c9c1affec9abcf13a821b",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "ENTER",
-      "age_min": 161.6,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,642",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "162m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x71569e68",
-      "ts": 1778599110.0,
-      "timestamp_iso": "2026-05-12T15:18:30Z",
-      "market_id": "0xb386750ed7f6ca2a155848e7055ef4d5c78e82dc1824d3ce4fcc0d5ec5468fe1",
-      "market_title": "Will Jon Rahm win the 2026 PGA Championship?",
-      "market_slug": "pga-championship-winner-2026",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.89,
-      "current_price": 0.945,
-      "shares": 3000.0,
-      "size_usdc": 2670.0,
-      "tx_hash": "0x71569e684985e3e1d927870696c75d63c5aaadc4d36a11add9833512e780e9b1",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "LATE",
-      "age_min": 163.1,
-      "drift": 0.055,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+6.2%",
-          "threshold": "> 3%",
-          "note": "Line moved +6.2% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,670",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.890 (max +12%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "163m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +6.2% — part of the edge is already priced in",
-        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x7f7467d5",
-      "ts": 1778598807.0,
-      "timestamp_iso": "2026-05-12T15:13:27Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 5682.35,
-      "size_usdc": 2784.35,
-      "tx_hash": "0x7f7467d523c4f4d840b651a180ca5047826b00879417d9e2246c79f11371ad9a",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "ENTER",
-      "age_min": 168.1,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,784",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "168m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x0a6d26d3_0xff912c7d",
-      "ts": 1778598667.0,
-      "timestamp_iso": "2026-05-12T15:11:07Z",
-      "market_id": "0x2053d8515f1b8cbeea4ccdb56e60e89c2617e43a8660d95166b8e71d27865277",
-      "market_title": "Will Marco Rubio win the 2028 US Presidential Election?",
-      "market_slug": "presidential-election-winner-2028",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.857,
-      "current_price": 0.8575,
-      "shares": 375.0,
-      "size_usdc": 321.38,
-      "tx_hash": "0xff912c7d29bfae058e5618d21b2dcce81b407a97a224d0fe31dcf123b5439b9b",
-      "whale": {
-        "address": "0x0a6d26d31b28fD5a84C301F8b27296612f3B1d0A",
-        "pseudonym": "Terrible-Ordinary",
-        "raw_win_rate": 0.9697,
-        "lifetime_pnl": 12738.16,
-        "roi": 1.2249,
-        "recent_wins": 64,
-        "recent_n": 66,
-        "recent_win_rate": 0.9697,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 64
-      },
-      "verdict": "SKIP",
-      "age_min": 170.5,
-      "drift": 0.0005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$321",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.857 (max +17%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 17% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "170m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 17% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0xe62079f2",
-      "ts": 1778598480.0,
-      "timestamp_iso": "2026-05-12T15:08:00Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 352.94,
-      "size_usdc": 172.94,
-      "tx_hash": "0xe62079f2bdbd4389981e3f4919b7ac5e0676dc9e6a8e9d440afdd811181ba367",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "SKIP",
-      "age_min": 173.6,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$173",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "174m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x802f6506",
-      "ts": 1778598358.0,
-      "timestamp_iso": "2026-05-12T15:05:58Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 555.0,
-      "size_usdc": 271.95,
-      "tx_hash": "0x802f650651d36e200f91dbac3effb15d97382e7389969a975dd05ffb591f22a3",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "SKIP",
-      "age_min": 175.6,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$272",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "176m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x0a6d26d3_0x7929d124",
-      "ts": 1778598305.0,
-      "timestamp_iso": "2026-05-12T15:05:05Z",
-      "market_id": "0x23aa3e82120d658df2a2f077a7a88207a5a54589c839b54651ce601a6b86a7e0",
-      "market_title": "Will Portugal advance through the first Eurovision Semi-Final?",
-      "market_slug": "eurovision-2026-first-semi-final",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.46,
-      "current_price": 0.545,
-      "shares": 225.0,
-      "size_usdc": 103.5,
-      "tx_hash": "0x7929d1246f530050524016423e9268fa21971930d4945a3596925f68c7faa563",
-      "whale": {
-        "address": "0x0a6d26d31b28fD5a84C301F8b27296612f3B1d0A",
-        "pseudonym": "Terrible-Ordinary",
-        "raw_win_rate": 0.9697,
-        "lifetime_pnl": 12738.16,
-        "roi": 1.2249,
-        "recent_wins": 64,
-        "recent_n": 66,
-        "recent_win_rate": 0.9697,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 64
-      },
-      "verdict": "SKIP",
-      "age_min": 176.5,
-      "drift": 0.085,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+18.5%",
-          "threshold": "> 7%",
-          "note": "Line moved +18.5% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.460 (max +117%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +117% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "177m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +18.5% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x5ce40a05",
-      "ts": 1778598141.0,
-      "timestamp_iso": "2026-05-12T15:02:21Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 2976.98,
-      "size_usdc": 1458.72,
-      "tx_hash": "0x5ce40a0570b4c19a35aa9abda3e0fcd9f05c535370651c9deede7983ad93c84b",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "ENTER",
-      "age_min": 179.2,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,459",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "179m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xE542aFD3_0x5ce40a05",
-      "ts": 1778598141.0,
-      "timestamp_iso": "2026-05-12T15:02:21Z",
-      "market_id": "0xb7787cbc070d7a311e90182cfe775199f2f61ae6ed0c3cbac495fa04b8c6ea45",
-      "market_title": "UFC Fight Night: Trey Ogden vs. Tommy Gantt (Lightweight, Prelims)",
-      "market_slug": "ufc-tre4-tom17-2026-05-16",
-      "outcome": "Trey Ogden",
-      "outcome_idx": 0,
-      "side": "TREY OGDEN",
-      "entry_price": 0.49,
-      "current_price": 0.495,
-      "shares": 1023.02,
-      "size_usdc": 501.28,
-      "tx_hash": "0x5ce40a0570b4c19a35aa9abda3e0fcd9f05c535370651c9deede7983ad93c84b",
-      "whale": {
-        "address": "0xE542aFD3881c4c330ba0eBbb603bB470B2ba0A37",
-        "pseudonym": "Lonely-Bog",
-        "raw_win_rate": 0.8636,
-        "lifetime_pnl": 22076.59,
-        "roi": 0.6289,
-        "recent_wins": 57,
-        "recent_n": 66,
-        "recent_win_rate": 0.8636,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 57
-      },
-      "verdict": "ENTER",
-      "age_min": 179.2,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$501",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.490 (max +104%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +104% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "179m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x0a6d26d3_0x020d3e9e",
-      "ts": 1778597654.0,
-      "timestamp_iso": "2026-05-12T14:54:14Z",
-      "market_id": "0x2053d8515f1b8cbeea4ccdb56e60e89c2617e43a8660d95166b8e71d27865277",
-      "market_title": "Will Marco Rubio win the 2028 US Presidential Election?",
-      "market_slug": "presidential-election-winner-2028",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.861,
-      "current_price": 0.8575,
-      "shares": 250.0,
-      "size_usdc": 215.25,
-      "tx_hash": "0x020d3e9e47bbb028089188f4807380b7ab0f7b3b20724666fc58999a91315293",
-      "whale": {
-        "address": "0x0a6d26d31b28fD5a84C301F8b27296612f3B1d0A",
-        "pseudonym": "Terrible-Ordinary",
-        "raw_win_rate": 0.9697,
-        "lifetime_pnl": 12738.16,
-        "roi": 1.2249,
-        "recent_wins": 64,
-        "recent_n": 66,
-        "recent_win_rate": 0.9697,
-        "z_score": 0.0,
-        "n_total": 66,
-        "total_wins": 64
-      },
-      "verdict": "SKIP",
-      "age_min": 187.4,
-      "drift": -0.0035,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$215",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.861 (max +16%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "187m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 16% gain if right, -100% if wrong. Asymmetric risk.",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -2791,7 +2621,7 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 355.1,
+      "age_min": 478.8,
       "drift": null,
       "checks": [
         {
@@ -2817,16 +2647,16 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "355m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "479m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
         "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -2858,7 +2688,7 @@
         "total_wins": 82
       },
       "verdict": "LATE",
-      "age_min": 355.7,
+      "age_min": 479.4,
       "drift": null,
       "checks": [
         {
@@ -2884,15 +2714,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "356m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "479m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -2924,7 +2754,7 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 477.6,
+      "age_min": 601.3,
       "drift": null,
       "checks": [
         {
@@ -2951,7 +2781,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "601m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -2990,7 +2820,7 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 477.7,
+      "age_min": 601.3,
       "drift": null,
       "checks": [
         {
@@ -3017,7 +2847,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "601m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -3056,7 +2886,7 @@
         "total_wins": 82
       },
       "verdict": "LATE",
-      "age_min": 477.7,
+      "age_min": 601.3,
       "drift": null,
       "checks": [
         {
@@ -3083,7 +2913,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "601m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -3121,7 +2951,7 @@
         "total_wins": 82
       },
       "verdict": "LATE",
-      "age_min": 477.8,
+      "age_min": 601.4,
       "drift": null,
       "checks": [
         {
@@ -3148,7 +2978,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "601m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -3186,7 +3016,7 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 477.8,
+      "age_min": 601.5,
       "drift": null,
       "checks": [
         {
@@ -3213,7 +3043,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "601m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -3252,7 +3082,7 @@
         "total_wins": 82
       },
       "verdict": "SKIP",
-      "age_min": 477.9,
+      "age_min": 601.6,
       "drift": null,
       "checks": [
         {
@@ -3279,7 +3109,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "602m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -3318,7 +3148,7 @@
         "total_wins": 82
       },
       "verdict": "LATE",
-      "age_min": 478.0,
+      "age_min": 601.7,
       "drift": null,
       "checks": [
         {
@@ -3345,7 +3175,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "602m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
