@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-14T01:32:57.384930Z",
+  "updated_at": "2026-05-14T05:30:30.763005Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,87 +7,221 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 7,
-  "signal_count": 11,
-  "enter_count": 2,
+  "signal_count": 10,
+  "enter_count": 3,
   "signals": [
     {
-      "signal_id": "0x441D5822_0xb6d7b868",
-      "ts": 1778720023.0,
-      "timestamp_iso": "2026-05-14T00:53:43Z",
-      "market_id": "0x14dbdb6274de6bcc65ce2b628c6636ff210fd452d095b0f14fdb1d376b31cecf",
-      "market_title": "Will the Detroit Pistons win the NBA Eastern Conference Finals?",
-      "market_slug": "nba-playoffs-eastern-conference-champion",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.2391,
-      "current_price": 0.257,
-      "shares": 2314.34,
-      "size_usdc": 565.96,
-      "tx_hash": "0xb6d7b868ef7d956c22831af228cba6b7913231589a8923d4011332f7833c9f32",
+      "signal_id": "0x014c4e7A_0x5ec4d242",
+      "ts": 1778728628.0,
+      "timestamp_iso": "2026-05-14T03:17:08Z",
+      "market_id": "0xb0dafd2efe994270384d6265f1c62dbfe10880bba15dfda68974898617b5cee8",
+      "market_title": "Metamask FDV above $1B one day after launch?",
+      "market_slug": "metamask-fdv-above-one-day-after-launch",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.78,
+      "current_price": 0.785,
+      "shares": 514.36,
+      "size_usdc": 407.38,
+      "tx_hash": "0x5ec4d2427f3629851c09e5e98035e155aad35fdf6db5a1da1a839e306e84e11f",
       "whale": {
-        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
-        "pseudonym": "Sick-Shoulder",
-        "raw_win_rate": 0.8235,
-        "lifetime_pnl": 16580.83,
-        "roi": 0.3572,
-        "recent_wins": 56,
-        "recent_n": 68,
-        "recent_win_rate": 0.8235,
+        "address": "0x014c4e7Ae2145992861C2d1B124aF633a97f820c",
+        "pseudonym": "Pristine-Business",
+        "raw_win_rate": 0.81,
+        "lifetime_pnl": 331810.61,
+        "roi": 0.6092,
+        "recent_wins": 61,
+        "recent_n": 76,
+        "recent_win_rate": 0.8026,
         "z_score": 0.0,
-        "n_total": 68,
-        "total_wins": 56
+        "n_total": 100,
+        "total_wins": 81
       },
-      "verdict": "ENTER",
-      "age_min": 39.2,
-      "drift": 0.0179,
+      "verdict": "SKIP",
+      "age_min": 133.3,
+      "drift": 0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+7.5%",
+          "value": "+0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$407",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.780 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "133m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xE21eCFE8_0xb84892fb",
+      "ts": 1778728416.0,
+      "timestamp_iso": "2026-05-14T03:13:36Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.143,
+      "current_price": 0.14,
+      "shares": 5519.0,
+      "size_usdc": 809.51,
+      "tx_hash": "0xb84892fbf8fe426712553cd55380073fca79c891a0346ceb7bdf1aba1b30aaea",
+      "whale": {
+        "address": "0xE21eCFE8F6FC76C955Caca1667c00bE973c5F216",
+        "pseudonym": "Studious-Stealth",
+        "raw_win_rate": 0.8644,
+        "lifetime_pnl": 44803.97,
+        "roi": 0.5226,
+        "recent_wins": 24,
+        "recent_n": 29,
+        "recent_win_rate": 0.8276,
+        "z_score": 0.0,
+        "n_total": 59,
+        "total_wins": 51
+      },
+      "verdict": "ENTER",
+      "age_min": 136.9,
+      "drift": -0.003,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-2.1%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$566",
+          "value": "$810",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.239 (max +318%)",
+          "value": "0.143 (max +599%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +318% upside on a correct call."
+          "note": "Good payoff — +599% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "39m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "137m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Aging — but OK to tail if drift still small"
+      ]
     },
     {
-      "signal_id": "0x441D5822_0xf5a14ffa",
-      "ts": 1778718439.0,
-      "timestamp_iso": "2026-05-14T00:27:19Z",
-      "market_id": "0x94925153d4ee1cf28ea905df8f37fffb52ea32ea7c758b84088510593671e698",
-      "market_title": "Will Los Angeles FC win on 2026-05-13?",
-      "market_slug": "mls-stl-laf-2026-05-13",
+      "signal_id": "0xE21eCFE8_0xd0cd0ea9",
+      "ts": 1778728348.0,
+      "timestamp_iso": "2026-05-14T03:12:28Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.39,
-      "current_price": 0.165,
-      "shares": 529.03,
-      "size_usdc": 206.32,
-      "tx_hash": "0xf5a14ffa1c3e3198c06e67a3be90c600fa592448055756cf0c175861112e9483",
+      "entry_price": 0.1413,
+      "current_price": 0.14,
+      "shares": 15941.25,
+      "size_usdc": 2309.85,
+      "tx_hash": "0xd0cd0ea9662d7eedabd7c8828011f5eddc09fbcec38c44d51378bc7b714cdf20",
+      "whale": {
+        "address": "0xE21eCFE8F6FC76C955Caca1667c00bE973c5F216",
+        "pseudonym": "Studious-Stealth",
+        "raw_win_rate": 0.8644,
+        "lifetime_pnl": 44803.97,
+        "roi": 0.5226,
+        "recent_wins": 24,
+        "recent_n": 29,
+        "recent_win_rate": 0.8276,
+        "z_score": 0.0,
+        "n_total": 59,
+        "total_wins": 51
+      },
+      "verdict": "ENTER",
+      "age_min": 138.0,
+      "drift": -0.0013,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.9%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$2,310",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.141 (max +608%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +608% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "138m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x441D5822_0xcf95c8cd",
+      "ts": 1778727996.0,
+      "timestamp_iso": "2026-05-14T03:06:36Z",
+      "market_id": "0xf8f63bb47b2a7c2e0c1be3cedf4075079b11c07476d76a9469065b0c4791961a",
+      "market_title": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "market_slug": "2026-nhl-stanley-cup-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.4,
+      "current_price": 0.397,
+      "shares": 340.0,
+      "size_usdc": 136.0,
+      "tx_hash": "0xcf95c8cd658219ca38a60ea73a8885a2caa8ee42cad71fd7e2bc353b212d877e",
       "whale": {
         "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
         "pseudonym": "Sick-Shoulder",
@@ -102,40 +236,171 @@
         "total_wins": 56
       },
       "verdict": "SKIP",
-      "age_min": 65.6,
-      "drift": -0.225,
+      "age_min": 143.9,
+      "drift": -0.003,
       "checks": [
         {
           "name": "Drift",
-          "status": "fail",
-          "value": "-57.7%",
-          "threshold": "> 7%",
-          "note": "Line moved -57.7% — the move already happened"
+          "status": "pass",
+          "value": "-0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$206",
+          "value": "$136",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.390 (max +156%)",
+          "value": "0.400 (max +150%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +156% upside on a correct call."
+          "note": "Good payoff — +150% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "warn",
-          "value": "66m ago",
+          "value": "144m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved -57.7% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x441D5822_0xed250bb6",
+      "ts": 1778727996.0,
+      "timestamp_iso": "2026-05-14T03:06:36Z",
+      "market_id": "0xf8f63bb47b2a7c2e0c1be3cedf4075079b11c07476d76a9469065b0c4791961a",
+      "market_title": "Will the Colorado Avalanche win the 2026 NHL Stanley Cup?",
+      "market_slug": "2026-nhl-stanley-cup-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.3978,
+      "current_price": 0.397,
+      "shares": 13149.95,
+      "size_usdc": 5325.61,
+      "tx_hash": "0xed250bb638993cc933bb405859310ca0396ac2ef1c79f9c92c853e6da4554896",
+      "whale": {
+        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
+        "pseudonym": "Sick-Shoulder",
+        "raw_win_rate": 0.8235,
+        "lifetime_pnl": 16580.83,
+        "roi": 0.3572,
+        "recent_wins": 56,
+        "recent_n": 68,
+        "recent_win_rate": 0.8235,
+        "z_score": 0.0,
+        "n_total": 68,
+        "total_wins": 56
+      },
+      "verdict": "ENTER",
+      "age_min": 143.9,
+      "drift": -0.0008,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.2%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$5,326",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.398 (max +151%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +151% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "144m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x441D5822_0xd0905fe4",
+      "ts": 1778726942.0,
+      "timestamp_iso": "2026-05-14T02:49:02Z",
+      "market_id": "0x85f3e001ffe2a24f985b939460d0cc22041d47107ed8c681f75abb6a5bd1d1d7",
+      "market_title": "Will the Cleveland Cavaliers win the NBA Eastern Conference Finals?",
+      "market_slug": "nba-playoffs-eastern-conference-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.1697,
+      "current_price": 0.255,
+      "shares": 2138.14,
+      "size_usdc": 371.95,
+      "tx_hash": "0xd0905fe4feefccfe52d24cbcf671014b4bb679c9c917f8cf08c2e96d8757adc6",
+      "whale": {
+        "address": "0x441D58226C2ba9ca4B36A0987e8c69D5D3E2544D",
+        "pseudonym": "Sick-Shoulder",
+        "raw_win_rate": 0.8235,
+        "lifetime_pnl": 16580.83,
+        "roi": 0.3572,
+        "recent_wins": 56,
+        "recent_n": 68,
+        "recent_win_rate": 0.8235,
+        "z_score": 0.0,
+        "n_total": 68,
+        "total_wins": 56
+      },
+      "verdict": "SKIP",
+      "age_min": 161.5,
+      "drift": 0.0853,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+50.2%",
+          "threshold": "> 7%",
+          "note": "Line moved +50.2% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$372",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.170 (max +489%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +489% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "161m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +50.2% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
@@ -151,7 +416,7 @@
       "outcome_idx": 0,
       "side": "CAVALIERS",
       "entry_price": 0.39,
-      "current_price": 0.235,
+      "current_price": null,
       "shares": 8063.71,
       "size_usdc": 3202.4,
       "tx_hash": "0xa2fead24077135dddcdde1e854d319f5a9e3930aeb62b57e73c9747a3d5f4393",
@@ -168,16 +433,16 @@
         "n_total": 59,
         "total_wins": 51
       },
-      "verdict": "SKIP",
-      "age_min": 206.0,
-      "drift": -0.155,
+      "verdict": "LATE",
+      "age_min": 443.6,
+      "drift": null,
       "checks": [
         {
           "name": "Drift",
-          "status": "fail",
-          "value": "-39.7%",
-          "threshold": "> 7%",
-          "note": "Line moved -39.7% — the move already happened"
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
         },
         {
           "name": "Size",
@@ -195,15 +460,14 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "206m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "444m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Line moved -39.7% — the move already happened",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -235,7 +499,7 @@
         "total_wins": 42
       },
       "verdict": "LATE",
-      "age_min": 293.6,
+      "age_min": 531.2,
       "drift": -0.005,
       "checks": [
         {
@@ -261,15 +525,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "294m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "531m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Entry too high — max 15% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -283,7 +547,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.84,
-      "current_price": 0.845,
+      "current_price": 0.835,
       "shares": 980.14,
       "size_usdc": 823.32,
       "tx_hash": "0xfa44680a059879b114f2af0882b7c18e1e1be407a9d46e3365feaf1472ce6174",
@@ -301,13 +565,13 @@
         "total_wins": 42
       },
       "verdict": "LATE",
-      "age_min": 296.0,
-      "drift": 0.005,
+      "age_min": 533.5,
+      "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+0.6%",
+          "value": "-0.6%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -327,15 +591,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "296m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "534m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -349,7 +613,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.64,
-      "current_price": 0.625,
+      "current_price": 0.615,
       "shares": 1500.0,
       "size_usdc": 960.0,
       "tx_hash": "0x79efb282c4d0c2bc68048c5a4ffbba3b5dc02e3d46da03e1a91f8126d13129ed",
@@ -366,14 +630,14 @@
         "n_total": 50,
         "total_wins": 42
       },
-      "verdict": "ENTER",
-      "age_min": 296.3,
-      "drift": -0.015,
+      "verdict": "LATE",
+      "age_min": 533.8,
+      "drift": -0.025,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-2.3%",
+          "value": "-3.9%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -393,344 +657,13 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "296m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x54A78f8C_0xf3b30318",
-      "ts": 1778701788.0,
-      "timestamp_iso": "2026-05-13T19:49:48Z",
-      "market_id": "0x3733a1b647e7364095736ab0966465d896a84cf3b6bc1695ca1f26c3239b3868",
-      "market_title": "MicroStrategy sells any Bitcoin by May 31, 2026?",
-      "market_slug": "microstrategy-sell-any-bitcoin-in-2025",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.57,
-      "current_price": 0.605,
-      "shares": 1834.0,
-      "size_usdc": 1045.38,
-      "tx_hash": "0xf3b303180c4b8525902a549dd0af0d7888c6bd9e6bf1b77d152f2c8c118a02de",
-      "whale": {
-        "address": "0x54A78f8C6E64572111C5683A9EFEed25a04c881B",
-        "pseudonym": "Equatorial-Textual",
-        "raw_win_rate": 0.84,
-        "lifetime_pnl": 51884.59,
-        "roi": 0.1729,
-        "recent_wins": 42,
-        "recent_n": 50,
-        "recent_win_rate": 0.84,
-        "z_score": 0.0,
-        "n_total": 50,
-        "total_wins": 42
-      },
-      "verdict": "LATE",
-      "age_min": 343.1,
-      "drift": 0.035,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+6.1%",
-          "threshold": "> 3%",
-          "note": "Line moved +6.1% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,045",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.570 (max +75%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +75% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "343m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +6.1% — part of the edge is already priced in",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x54A78f8C_0xecf7620f",
-      "ts": 1778699618.0,
-      "timestamp_iso": "2026-05-13T19:13:38Z",
-      "market_id": "0x4ba348328e4d4ddee9e6734c9a369b2e8138611651f9f6dc8f59dea51df6c734",
-      "market_title": "Iran closes its airspace by May 24?",
-      "market_slug": "iran-closes-its-airspace-by",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.77,
-      "current_price": 0.78,
-      "shares": 171.25,
-      "size_usdc": 131.86,
-      "tx_hash": "0xecf7620f1810fcbf5bbbcae35d08fe5a637f7db04edea20f7b504d83fb527a9d",
-      "whale": {
-        "address": "0x54A78f8C6E64572111C5683A9EFEed25a04c881B",
-        "pseudonym": "Equatorial-Textual",
-        "raw_win_rate": 0.84,
-        "lifetime_pnl": 51884.59,
-        "roi": 0.1729,
-        "recent_wins": 42,
-        "recent_n": 50,
-        "recent_win_rate": 0.84,
-        "z_score": 0.0,
-        "n_total": 50,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 379.3,
-      "drift": 0.01,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.3%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
           "status": "fail",
-          "value": "$132",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.770 (max +30%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +30% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "379m ago",
+          "value": "534m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Modest payoff — +30% on win, small cushion over costs.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x54A78f8C_0xbb1df92a",
-      "ts": 1778699147.0,
-      "timestamp_iso": "2026-05-13T19:05:47Z",
-      "market_id": "0xbd5922eed56186e904c4f327658e8c0cbd88cd854114d0906208f8b65cce6718",
-      "market_title": "Iran closes its airspace by May 18?",
-      "market_slug": "iran-closes-its-airspace-by",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.85,
-      "current_price": 0.875,
-      "shares": 663.9,
-      "size_usdc": 564.32,
-      "tx_hash": "0xbb1df92a3a34f66ef0ab53df440399a284f9e9967d77aa57411b693ce3f2fd3a",
-      "whale": {
-        "address": "0x54A78f8C6E64572111C5683A9EFEed25a04c881B",
-        "pseudonym": "Equatorial-Textual",
-        "raw_win_rate": 0.84,
-        "lifetime_pnl": 51884.59,
-        "roi": 0.1729,
-        "recent_wins": 42,
-        "recent_n": 50,
-        "recent_win_rate": 0.84,
-        "z_score": 0.0,
-        "n_total": 50,
-        "total_wins": 42
-      },
-      "verdict": "LATE",
-      "age_min": 387.2,
-      "drift": 0.025,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$564",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.850 (max +18%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "387m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x54A78f8C_0x86f12f9f",
-      "ts": 1778698447.0,
-      "timestamp_iso": "2026-05-13T18:54:07Z",
-      "market_id": "0x098afead2c41677b0f09ae9d0013ca520eacdb3f0d7c8985c6581de7a0e9ac37",
-      "market_title": "Iran closes its airspace by May 21?",
-      "market_slug": "iran-closes-its-airspace-by",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.85,
-      "current_price": 0.845,
-      "shares": 1452.84,
-      "size_usdc": 1234.91,
-      "tx_hash": "0x86f12f9f2f691c06c701f719187ed14e9e936e0d1c49bc440d195bd187838fdd",
-      "whale": {
-        "address": "0x54A78f8C6E64572111C5683A9EFEed25a04c881B",
-        "pseudonym": "Equatorial-Textual",
-        "raw_win_rate": 0.84,
-        "lifetime_pnl": 51884.59,
-        "roi": 0.1729,
-        "recent_wins": 42,
-        "recent_n": 50,
-        "recent_win_rate": 0.84,
-        "z_score": 0.0,
-        "n_total": 50,
-        "total_wins": 42
-      },
-      "verdict": "LATE",
-      "age_min": 398.8,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.6%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,235",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.850 (max +18%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "399m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Entry too high — max 18% gain if right, -100% if wrong. Asymmetric risk.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x014c4e7A_0xfb9f47c1",
-      "ts": 1778689557.0,
-      "timestamp_iso": "2026-05-13T16:25:57Z",
-      "market_id": "0x55d178c850d0cb2b9a4b9461bef3ea1821fe4076a0b65a2d120d6d35d1fbd708",
-      "market_title": "Will Atlanta Braves win the 2026 NL East title?",
-      "market_slug": "mlb-2026-nl-east-champion",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.74,
-      "current_price": 0.8,
-      "shares": 1040.0,
-      "size_usdc": 775.6,
-      "tx_hash": "0xfb9f47c1b758af36bde0a284e38fe770c05738752ebf64a3b025eeed534740d5",
-      "whale": {
-        "address": "0x014c4e7Ae2145992861C2d1B124aF633a97f820c",
-        "pseudonym": "Pristine-Business",
-        "raw_win_rate": 0.81,
-        "lifetime_pnl": 331810.61,
-        "roi": 0.6092,
-        "recent_wins": 61,
-        "recent_n": 76,
-        "recent_win_rate": 0.8026,
-        "z_score": 0.0,
-        "n_total": 100,
-        "total_wins": 81
-      },
-      "verdict": "LATE",
-      "age_min": 547.0,
-      "drift": 0.06,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+8.1%",
-          "threshold": "> 3%",
-          "note": "Line moved +8.1% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$776",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.740 (max +35%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +35% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "547m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +8.1% — part of the edge is already priced in",
         "Very stale — even if price is near entry, you have less time to profit"
       ]
     }
