@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-03T18:56:31.941336Z",
+  "updated_at": "2026-06-03T21:49:28.664001Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 10,
-  "signal_count": 9,
-  "enter_count": 2,
+  "signal_count": 16,
+  "enter_count": 3,
   "signals": [
     {
-      "signal_id": "0x84CffFC3_0x95dbb421",
-      "ts": 1780512873.0,
-      "timestamp_iso": "2026-06-03T18:54:33Z",
-      "market_id": "0xa62c61469d17ea1c4b31f591ef1da3aa7185f6d3d12a8fa1b59b4f75338c725b",
-      "market_title": "Kansas City Royals vs. Cincinnati Reds: O/U 8.5",
-      "market_slug": "mlb-kc-cin-2026-06-03",
-      "outcome": "Over",
-      "outcome_idx": 0,
-      "side": "OVER",
-      "entry_price": 0.45,
-      "current_price": 0.445,
-      "shares": 398.96,
-      "size_usdc": 182.49,
-      "tx_hash": "0x95dbb421ea4224b941dd202296fec39510e66f9d91449fb50987e01bbaa5a831",
+      "signal_id": "0x84CffFC3_0x82835e8f",
+      "ts": 1780523359.0,
+      "timestamp_iso": "2026-06-03T21:49:19Z",
+      "market_id": "0x1f271e68d41a39dc4e6ac8365428e3e166f95fdd72cd5beca69d20bd352a5a0e",
+      "market_title": "Spread: Spurs (-5.5)",
+      "market_slug": "nba-nyk-sas-2026-06-03",
+      "outcome": "Knicks",
+      "outcome_idx": 1,
+      "side": "KNICKS",
+      "entry_price": 0.53,
+      "current_price": 0.525,
+      "shares": 370.77,
+      "size_usdc": 199.28,
+      "tx_hash": "0x82835e8f3ac230fde633d748b6879c185a7c721927e0bb37e1a8331a3ef79a4e",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -39,29 +39,543 @@
         "total_wins": 73
       },
       "verdict": "SKIP",
-      "age_min": 1.9,
+      "age_min": 0.1,
       "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.1%",
+          "value": "-0.9%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$182",
+          "value": "$199",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.450 (max +122%)",
+          "value": "0.530 (max +89%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +122% upside on a correct call."
+          "note": "Good payoff — +89% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "0m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xea10487c",
+      "ts": 1780523355.0,
+      "timestamp_iso": "2026-06-03T21:49:15Z",
+      "market_id": "0x9bb9f7c70674e2043580bf634753858eded9b360252c06f891688b95a542ac46",
+      "market_title": "Knicks vs. Spurs",
+      "market_slug": "nba-nyk-sas-2026-06-03",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.64,
+      "current_price": 0.635,
+      "shares": 1203.31,
+      "size_usdc": 778.44,
+      "tx_hash": "0xea10487c9c31315f619d72bc60d6b570a54d2249a5c981f7018d4ae627a74e19",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "ENTER",
+      "age_min": 0.2,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$778",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "0m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0x84CffFC3_0x00c330a7",
+      "ts": 1780523355.0,
+      "timestamp_iso": "2026-06-03T21:49:15Z",
+      "market_id": "0x9bb9f7c70674e2043580bf634753858eded9b360252c06f891688b95a542ac46",
+      "market_title": "Knicks vs. Spurs",
+      "market_slug": "nba-nyk-sas-2026-06-03",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.64,
+      "current_price": 0.635,
+      "shares": 1887.04,
+      "size_usdc": 1220.75,
+      "tx_hash": "0x00c330a7e88fb65c9848fcddba7e92676278021a9c86fe9a6d0320a12506923f",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "ENTER",
+      "age_min": 0.2,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,221",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "0m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0x84CffFC3_0xbd86ce18",
+      "ts": 1780523346.0,
+      "timestamp_iso": "2026-06-03T21:49:06Z",
+      "market_id": "0xf3ca9b1b7e8f1ce4b0423d30a5d4879a4d3beb3a45e114d7a9e5f2c43e401fc0",
+      "market_title": "Kansas City Royals vs. Cincinnati Reds",
+      "market_slug": "mlb-kc-cin-2026-06-03",
+      "outcome": "Cincinnati Reds",
+      "outcome_idx": 1,
+      "side": "CINCINNATI REDS",
+      "entry_price": 0.59,
+      "current_price": 0.585,
+      "shares": 204.48,
+      "size_usdc": 122.13,
+      "tx_hash": "0xbd86ce18c2588c3329f327aed6e6d6ee2bb96c912846b67201c9d2a3cba1298f",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "SKIP",
+      "age_min": 0.3,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$122",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.590 (max +69%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +69% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "0m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xf1112396",
+      "ts": 1780523334.0,
+      "timestamp_iso": "2026-06-03T21:48:54Z",
+      "market_id": "0x936cc94f97f011e334f3624b3a706db3bfdbe46937e4d41b06e96b750a052cdb",
+      "market_title": "Baltimore Orioles vs. Boston Red Sox",
+      "market_slug": "mlb-bal-bos-2026-06-03",
+      "outcome": "Boston Red Sox",
+      "outcome_idx": 1,
+      "side": "BOSTON RED SOX",
+      "entry_price": 0.58,
+      "current_price": 0.575,
+      "shares": 1700.42,
+      "size_usdc": 998.67,
+      "tx_hash": "0xf1112396c3d47672462868c103e6e28a38d321ac07ed0a448fe2d58659ab6a6f",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "ENTER",
+      "age_min": 0.5,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.9%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$999",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.580 (max +72%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +72% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "1m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": []
+    },
+    {
+      "signal_id": "0x84CffFC3_0xf548f33b",
+      "ts": 1780523322.0,
+      "timestamp_iso": "2026-06-03T21:48:42Z",
+      "market_id": "0x8dd4113db9cb24ea4a875c0c5f15715325025aa29cd2e3f8cc12e520a15511d4",
+      "market_title": "Knicks vs. Spurs: O/U 216.5",
+      "market_slug": "nba-nyk-sas-2026-06-03",
+      "outcome": "Over",
+      "outcome_idx": 0,
+      "side": "OVER",
+      "entry_price": 0.51,
+      "current_price": 0.495,
+      "shares": 416.11,
+      "size_usdc": 215.34,
+      "tx_hash": "0xf548f33bbb5c48935bff56da0f2a821a9f9e8b7bc349c5302fd12a7b3e524bbd",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "SKIP",
+      "age_min": 0.7,
+      "drift": -0.015,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-2.9%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$215",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "1m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x4df31919",
+      "ts": 1780523301.0,
+      "timestamp_iso": "2026-06-03T21:48:21Z",
+      "market_id": "0x9bb9f7c70674e2043580bf634753858eded9b360252c06f891688b95a542ac46",
+      "market_title": "Knicks vs. Spurs",
+      "market_slug": "nba-nyk-sas-2026-06-03",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.64,
+      "current_price": 0.635,
+      "shares": 180.24,
+      "size_usdc": 116.6,
+      "tx_hash": "0x4df319191773d615147c080f8287038c6daf49cb9606577463d5bf56dc323c87",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "SKIP",
+      "age_min": 1.1,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$117",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "1m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0x9deb892e",
+      "ts": 1780523298.0,
+      "timestamp_iso": "2026-06-03T21:48:18Z",
+      "market_id": "0xf3ca9b1b7e8f1ce4b0423d30a5d4879a4d3beb3a45e114d7a9e5f2c43e401fc0",
+      "market_title": "Kansas City Royals vs. Cincinnati Reds",
+      "market_slug": "mlb-kc-cin-2026-06-03",
+      "outcome": "Cincinnati Reds",
+      "outcome_idx": 1,
+      "side": "CINCINNATI REDS",
+      "entry_price": 0.59,
+      "current_price": 0.585,
+      "shares": 255.85,
+      "size_usdc": 152.81,
+      "tx_hash": "0x9deb892ef109889bef55ef0e5ec9572b9e3b46dad92d7289d86793ea211f4914",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "SKIP",
+      "age_min": 1.1,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$153",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.590 (max +69%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +69% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "1m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x84CffFC3_0xe4ab63f3",
+      "ts": 1780523259.0,
+      "timestamp_iso": "2026-06-03T21:47:39Z",
+      "market_id": "0x9bb9f7c70674e2043580bf634753858eded9b360252c06f891688b95a542ac46",
+      "market_title": "Knicks vs. Spurs",
+      "market_slug": "nba-nyk-sas-2026-06-03",
+      "outcome": "Spurs",
+      "outcome_idx": 1,
+      "side": "SPURS",
+      "entry_price": 0.64,
+      "current_price": 0.635,
+      "shares": 162.12,
+      "size_usdc": 104.88,
+      "tx_hash": "0xe4ab63f3b462376fbc81ee03223ef2057c48d9798a06da0fb2d45d7e9723f605",
+      "whale": {
+        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
+        "pseudonym": "Agitated-Bricklaying",
+        "raw_win_rate": 0.9733,
+        "lifetime_pnl": 368026.08,
+        "roi": 20.1707,
+        "recent_wins": 73,
+        "recent_n": 75,
+        "recent_win_rate": 0.9733,
+        "z_score": 0.0,
+        "n_total": 75,
+        "total_wins": 73
+      },
+      "verdict": "SKIP",
+      "age_min": 1.8,
+      "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$105",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.640 (max +56%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +56% upside on a correct call."
         },
         {
           "name": "Age",
@@ -76,20 +590,20 @@
       ]
     },
     {
-      "signal_id": "0x84CffFC3_0x4759dd9a",
-      "ts": 1780512801.0,
-      "timestamp_iso": "2026-06-03T18:53:21Z",
-      "market_id": "0x1f271e68d41a39dc4e6ac8365428e3e166f95fdd72cd5beca69d20bd352a5a0e",
-      "market_title": "Spread: Spurs (-5.5)",
+      "signal_id": "0x84CffFC3_0xa64d3fba",
+      "ts": 1780523248.0,
+      "timestamp_iso": "2026-06-03T21:47:28Z",
+      "market_id": "0x9bb9f7c70674e2043580bf634753858eded9b360252c06f891688b95a542ac46",
+      "market_title": "Knicks vs. Spurs",
       "market_slug": "nba-nyk-sas-2026-06-03",
-      "outcome": "Knicks",
+      "outcome": "Spurs",
       "outcome_idx": 1,
-      "side": "KNICKS",
-      "entry_price": 0.53,
-      "current_price": 0.525,
-      "shares": 683.1,
-      "size_usdc": 367.15,
-      "tx_hash": "0x4759dd9ae9f2f3350a5cd70c73103db13ad00fc3cbdf491021719c343d09c001",
+      "side": "SPURS",
+      "entry_price": 0.64,
+      "current_price": 0.635,
+      "shares": 272.88,
+      "size_usdc": 176.53,
+      "tx_hash": "0xa64d3fba28999eaa48b31c982647368c6bb9f339871a0908279ad433761d4570",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -104,34 +618,34 @@
         "total_wins": 73
       },
       "verdict": "SKIP",
-      "age_min": 3.1,
+      "age_min": 2.0,
       "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.9%",
+          "value": "-0.8%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$367",
+          "value": "$177",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.530 (max +89%)",
+          "value": "0.640 (max +56%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +89% upside on a correct call."
+          "note": "Good payoff — +56% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "3m ago",
+          "value": "2m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -141,20 +655,20 @@
       ]
     },
     {
-      "signal_id": "0x84CffFC3_0x867b3ef0",
-      "ts": 1780512799.0,
-      "timestamp_iso": "2026-06-03T18:53:19Z",
-      "market_id": "0x1f271e68d41a39dc4e6ac8365428e3e166f95fdd72cd5beca69d20bd352a5a0e",
-      "market_title": "Spread: Spurs (-5.5)",
-      "market_slug": "nba-nyk-sas-2026-06-03",
-      "outcome": "Knicks",
+      "signal_id": "0x84CffFC3_0xa7f389fd",
+      "ts": 1780523239.0,
+      "timestamp_iso": "2026-06-03T21:47:19Z",
+      "market_id": "0xf3ca9b1b7e8f1ce4b0423d30a5d4879a4d3beb3a45e114d7a9e5f2c43e401fc0",
+      "market_title": "Kansas City Royals vs. Cincinnati Reds",
+      "market_slug": "mlb-kc-cin-2026-06-03",
+      "outcome": "Cincinnati Reds",
       "outcome_idx": 1,
-      "side": "KNICKS",
-      "entry_price": 0.53,
-      "current_price": 0.525,
-      "shares": 199.49,
-      "size_usdc": 107.22,
-      "tx_hash": "0x867b3ef09251bddb2be78290916052fd628b98f647633e81fee5c2445972463d",
+      "side": "CINCINNATI REDS",
+      "entry_price": 0.59,
+      "current_price": 0.585,
+      "shares": 250.82,
+      "size_usdc": 149.8,
+      "tx_hash": "0xa7f389fdf5dafb2040f246b13f91190305958dea1e453ddc2db6c743ba200043",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -169,34 +683,34 @@
         "total_wins": 73
       },
       "verdict": "SKIP",
-      "age_min": 3.2,
+      "age_min": 2.1,
       "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.9%",
+          "value": "-0.8%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$107",
+          "value": "$150",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.530 (max +89%)",
+          "value": "0.590 (max +69%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +89% upside on a correct call."
+          "note": "Good payoff — +69% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "3m ago",
+          "value": "2m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -206,20 +720,20 @@
       ]
     },
     {
-      "signal_id": "0x84CffFC3_0x65ac22d3",
-      "ts": 1780512795.0,
-      "timestamp_iso": "2026-06-03T18:53:15Z",
-      "market_id": "0x1f271e68d41a39dc4e6ac8365428e3e166f95fdd72cd5beca69d20bd352a5a0e",
-      "market_title": "Spread: Spurs (-5.5)",
+      "signal_id": "0x84CffFC3_0x44201d1e",
+      "ts": 1780523236.0,
+      "timestamp_iso": "2026-06-03T21:47:16Z",
+      "market_id": "0x9bb9f7c70674e2043580bf634753858eded9b360252c06f891688b95a542ac46",
+      "market_title": "Knicks vs. Spurs",
       "market_slug": "nba-nyk-sas-2026-06-03",
-      "outcome": "Knicks",
+      "outcome": "Spurs",
       "outcome_idx": 1,
-      "side": "KNICKS",
-      "entry_price": 0.53,
-      "current_price": 0.525,
-      "shares": 1007.52,
-      "size_usdc": 541.51,
-      "tx_hash": "0x65ac22d35379aee32645f69a6bbf72576f74e98e98816f72f194f19bfa1d69d8",
+      "side": "SPURS",
+      "entry_price": 0.64,
+      "current_price": 0.635,
+      "shares": 275.9,
+      "size_usdc": 178.48,
+      "tx_hash": "0x44201d1efb1d961310d2ecde4f706ac8999f8236607ff6d6021189b210997c1a",
       "whale": {
         "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
         "pseudonym": "Agitated-Bricklaying",
@@ -233,103 +747,42 @@
         "n_total": 75,
         "total_wins": 73
       },
-      "verdict": "ENTER",
-      "age_min": 3.2,
+      "verdict": "SKIP",
+      "age_min": 2.2,
       "drift": -0.005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.9%",
+          "value": "-0.8%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
-          "status": "pass",
-          "value": "$542",
+          "status": "fail",
+          "value": "$178",
           "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
+          "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.530 (max +89%)",
+          "value": "0.640 (max +56%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +89% upside on a correct call."
+          "note": "Good payoff — +56% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "3m ago",
+          "value": "2m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x84CffFC3_0x99a25d55",
-      "ts": 1780512706.0,
-      "timestamp_iso": "2026-06-03T18:51:46Z",
-      "market_id": "0x1f271e68d41a39dc4e6ac8365428e3e166f95fdd72cd5beca69d20bd352a5a0e",
-      "market_title": "Spread: Spurs (-5.5)",
-      "market_slug": "nba-nyk-sas-2026-06-03",
-      "outcome": "Knicks",
-      "outcome_idx": 1,
-      "side": "KNICKS",
-      "entry_price": 0.53,
-      "current_price": 0.525,
-      "shares": 1807.5,
-      "size_usdc": 971.48,
-      "tx_hash": "0x99a25d55a1ce8326e3bcbf9a3d4ac979c248f8d55f498a5092ac0ba9d1a6a080",
-      "whale": {
-        "address": "0x84CffFC3f16dcc353094De30d4a45226Eccd2F63",
-        "pseudonym": "Agitated-Bricklaying",
-        "raw_win_rate": 0.9733,
-        "lifetime_pnl": 368026.08,
-        "roi": 20.1707,
-        "recent_wins": 73,
-        "recent_n": 75,
-        "recent_win_rate": 0.9733,
-        "z_score": 0.0,
-        "n_total": 75,
-        "total_wins": 73
-      },
-      "verdict": "ENTER",
-      "age_min": 4.7,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$971",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.530 (max +89%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +89% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "5m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
     },
     {
       "signal_id": "0xF9B71663_0xf6019d5a",
@@ -342,7 +795,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.2067,
-      "current_price": 0.212,
+      "current_price": 0.2145,
       "shares": 656.91,
       "size_usdc": 140.1,
       "tx_hash": "0xf6019d5a647ca72969fa5d69849e6f807c5eb55888b2ba5da4e0fef06ee6d591",
@@ -360,13 +813,13 @@
         "total_wins": 63
       },
       "verdict": "SKIP",
-      "age_min": 128.3,
-      "drift": 0.0053,
+      "age_min": 301.3,
+      "drift": 0.0078,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+2.6%",
+          "value": "+3.8%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -387,7 +840,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "128m ago",
+          "value": "301m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -426,7 +879,7 @@
         "total_wins": 36
       },
       "verdict": "LATE",
-      "age_min": 422.6,
+      "age_min": 595.5,
       "drift": -0.0005,
       "checks": [
         {
@@ -453,7 +906,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "423m ago",
+          "value": "596m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -492,7 +945,7 @@
         "total_wins": 33
       },
       "verdict": "LATE",
-      "age_min": 509.8,
+      "age_min": 682.8,
       "drift": 0.0015,
       "checks": [
         {
@@ -519,7 +972,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "510m ago",
+          "value": "683m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -557,7 +1010,7 @@
         "total_wins": 33
       },
       "verdict": "LATE",
-      "age_min": 512.3,
+      "age_min": 685.3,
       "drift": 0.0025,
       "checks": [
         {
@@ -584,7 +1037,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "512m ago",
+          "value": "685m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
