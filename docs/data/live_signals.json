@@ -1,397 +1,134 @@
 {
-  "updated_at": "2026-06-07T06:26:25.983465Z",
+  "updated_at": "2026-06-07T09:46:24.762664Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
     "stale_minutes": 360,
     "min_size_usdc": 500.0
   },
-  "watchlist_size": 17,
-  "signal_count": 62,
-  "enter_count": 8,
+  "watchlist_size": 14,
+  "signal_count": 31,
+  "enter_count": 5,
   "signals": [
     {
-      "signal_id": "0x96CA2a99_0xb2097484",
-      "ts": 1780812025.0,
-      "timestamp_iso": "2026-06-07T06:00:25Z",
-      "market_id": "0x739e756119534672538d8df821a5b3321e2c802d80afff0c5790126be9b41281",
-      "market_title": "Will Alexander Zverev win the 2026 Men's French Open?",
-      "market_slug": "2026-mens-french-open-winner",
+      "signal_id": "0x2b3ff45c_0xdbda9aaa",
+      "ts": 1780815985.0,
+      "timestamp_iso": "2026-06-07T07:06:25Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.7819,
-      "current_price": 0.781,
-      "shares": 1151.02,
-      "size_usdc": 905.89,
-      "tx_hash": "0xb209748426f70d66e80a27c6b435181883c101387896e4e11fd3a39ca8c66f6b",
+      "entry_price": 0.784,
+      "current_price": 0.7855,
+      "shares": 258.69,
+      "size_usdc": 202.81,
+      "tx_hash": "0xdbda9aaaf3befa377eb396a6917230347cedb3067ba47ada247d0c517db1350f",
       "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
+        "address": "0x2b3ff45c91540E46fAe1e0c72f61F4B049453446",
+        "pseudonym": "Muddy-Wifi",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 2287445.11,
+        "roi": 0.5959,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
         "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
+        "n_total": 39,
+        "total_wins": 39
       },
-      "verdict": "ENTER",
-      "age_min": 25.9,
-      "drift": -0.0009,
+      "verdict": "SKIP",
+      "age_min": 160.0,
+      "drift": 0.0015,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.1%",
+          "value": "+0.2%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$203",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.784 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "160m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xaC477370_0x4eb01933",
+      "ts": 1780815310.0,
+      "timestamp_iso": "2026-06-07T06:55:10Z",
+      "market_id": "0x5ccfe1b69a582d2985db08a8481a0d74c314b1fce9b4711ae2efb2c6467fe6aa",
+      "market_title": "Will Mexico win the 2026 FIFA World Cup?",
+      "market_slug": "world-cup-winner",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.0149,
+      "current_price": 0.0135,
+      "shares": 235276.05,
+      "size_usdc": 3603.44,
+      "tx_hash": "0x4eb019339eb505e80bc4c5e026fb7460b2f9fa0f948f5ecb4524dc7fc7ea4753",
+      "whale": {
+        "address": "0xaC4773707DaDDD3792efED5A91F5Ec7651a7D234",
+        "pseudonym": "Hungry-Clavicle",
+        "raw_win_rate": 0.9444,
+        "lifetime_pnl": 290361.91,
+        "roi": 0.7716,
+        "recent_wins": 18,
+        "recent_n": 18,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 36,
+        "total_wins": 34
+      },
+      "verdict": "ENTER",
+      "age_min": 171.2,
+      "drift": -0.0014,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-9.3%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$906",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.782 (max +28%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +28% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "26m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Modest payoff — +28% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0x566a2ea8",
-      "ts": 1780804875.0,
-      "timestamp_iso": "2026-06-07T04:01:15Z",
-      "market_id": "0xf7b5491e70b477d451afe7d9c1fde4bf1a927e69ff289d294b96df164f6c10f0",
-      "market_title": "Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?",
-      "market_slug": "2026-nhl-stanley-cup-champion",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.55,
-      "current_price": 0.365,
-      "shares": 197.87,
-      "size_usdc": 110.3,
-      "tx_hash": "0x566a2ea852b7f3dfd24918d3332992fb3a75fb98d6b5d80a2dbfa6f61a34f343",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 145.0,
-      "drift": -0.185,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-33.6%",
-          "threshold": "> 7%",
-          "note": "Line moved -33.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$110",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.550 (max +82%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +82% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "145m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -33.6% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0xe876c4b6",
-      "ts": 1780804867.0,
-      "timestamp_iso": "2026-06-07T04:01:07Z",
-      "market_id": "0x89389a6b1439856a8d366234c795d72865c927a1aa3cf9d4cc04a3a400defde1",
-      "market_title": "Will the Vegas Golden Knights win the 2026 NHL Stanley Cup?",
-      "market_slug": "2026-nhl-stanley-cup-champion",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.549,
-      "current_price": 0.3625,
-      "shares": 187.48,
-      "size_usdc": 104.32,
-      "tx_hash": "0xe876c4b6a6474b9761f9ceac01f65e704681a4e464ffd0b50ca59bdd4490e05c",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 145.1,
-      "drift": -0.1865,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-34.0%",
-          "threshold": "> 7%",
-          "note": "Line moved -34.0% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.549 (max +82%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +82% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "145m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -34.0% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xf8e360b7",
-      "ts": 1780803861.0,
-      "timestamp_iso": "2026-06-07T03:44:21Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.539,
-      "current_price": null,
-      "shares": 3388.98,
-      "size_usdc": 1826.66,
-      "tx_hash": "0xf8e360b75177b5a46e7692dbcecbaf7b77eded7752a851dc23607f7a9d691a7c",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "ENTER",
-      "age_min": 162.0,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,827",
+          "value": "$3,603",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.539 (max +86%)",
+          "value": "0.015 (max +6622%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +86% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "162m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xcd7f736a",
-      "ts": 1780803832.0,
-      "timestamp_iso": "2026-06-07T03:43:52Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.539,
-      "current_price": null,
-      "shares": 433.84,
-      "size_usdc": 233.84,
-      "tx_hash": "0xcd7f736af01af184e2b9661133d30f5ebfe77a64ebd011b58a5c4fa2fefa7d4a",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 162.5,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$234",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.539 (max +86%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +86% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "162m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xd578090d",
-      "ts": 1780803340.0,
-      "timestamp_iso": "2026-06-07T03:35:40Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.535,
-      "current_price": null,
-      "shares": 5000.0,
-      "size_usdc": 2712.17,
-      "tx_hash": "0xd578090df77875eb4c69c3996b1dd2cd5414f59511a02e63ea1ee5ee30f37be6",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "ENTER",
-      "age_min": 170.7,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,712",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.535 (max +87%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +87% upside on a correct call."
+          "note": "Good payoff — +6622% upside on a correct call."
         },
         {
           "name": "Age",
@@ -406,3404 +143,447 @@
       ]
     },
     {
-      "signal_id": "0x86E99FaE_0x30549081",
-      "ts": 1780803207.0,
-      "timestamp_iso": "2026-06-07T03:33:27Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.4733,
-      "current_price": null,
-      "shares": 211.27,
-      "size_usdc": 103.69,
-      "tx_hash": "0x30549081ae842a6d14fb5ebd64c9bb440ce4c403cbf87e2fd364581d8d1e7438",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 172.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.473 (max +111%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +111% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "173m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x6e74196d",
-      "ts": 1780803207.0,
-      "timestamp_iso": "2026-06-07T03:33:27Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.4648,
-      "current_price": null,
-      "shares": 215.16,
-      "size_usdc": 103.75,
-      "tx_hash": "0x6e74196d00adb7844159bae699633f5a96458aeb3c221f7f51ba8bc2e4bf4a57",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 172.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.465 (max +115%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +115% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "173m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x06b2dabb",
-      "ts": 1780803205.0,
-      "timestamp_iso": "2026-06-07T03:33:25Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.47,
-      "current_price": null,
-      "shares": 212.77,
-      "size_usdc": 103.71,
-      "tx_hash": "0x06b2dabb2db1edb18287ecc1bc6961452187a2cc4994ff67f72d38c04c3e99f3",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 172.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.470 (max +113%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +113% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "173m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x046a8230",
-      "ts": 1780803205.0,
-      "timestamp_iso": "2026-06-07T03:33:25Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.48,
-      "current_price": null,
-      "shares": 208.33,
-      "size_usdc": 103.64,
-      "tx_hash": "0x046a823041fa4e819b3e47398fe8887fab475d5c4f99e560871c0c62ea0480e4",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 173.0,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "173m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x6c253813",
-      "ts": 1780803204.0,
-      "timestamp_iso": "2026-06-07T03:33:24Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.48,
-      "current_price": null,
-      "shares": 208.33,
-      "size_usdc": 103.64,
-      "tx_hash": "0x6c253813dc3853c351554a8de142e66f93069409aaf6299e7b4eaa4d4e465f28",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 173.0,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "173m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x1554164d",
-      "ts": 1780803204.0,
-      "timestamp_iso": "2026-06-07T03:33:24Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.48,
-      "current_price": null,
-      "shares": 208.33,
-      "size_usdc": 103.64,
-      "tx_hash": "0x1554164d1dfffe0e545bf4da848b7d1bd9e58881d64530b2ab4a4c9c73fa881b",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 173.0,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "173m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x1bbca3c9",
-      "ts": 1780803117.0,
-      "timestamp_iso": "2026-06-07T03:31:57Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.41,
-      "current_price": null,
-      "shares": 243.9,
-      "size_usdc": 104.13,
-      "tx_hash": "0x1bbca3c927f691d21d1d2bc2dc54b202c569699c98fa1198130cb04dbc194fe7",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.4,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.410 (max +144%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +144% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "174m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xd17dc940",
-      "ts": 1780803117.0,
-      "timestamp_iso": "2026-06-07T03:31:57Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3946,
-      "current_price": null,
-      "shares": 253.44,
-      "size_usdc": 104.24,
-      "tx_hash": "0xd17dc940ae5fffb2c4372c10e1db94814238dc2136840bf03e121d8faab745f4",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.4,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.395 (max +153%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +153% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "174m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x565b2566",
-      "ts": 1780803114.0,
-      "timestamp_iso": "2026-06-07T03:31:54Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3815,
-      "current_price": null,
-      "shares": 262.14,
-      "size_usdc": 104.33,
-      "tx_hash": "0x565b25663cf96786ed5f756eb8bed6fe2ec8126bb6f40d53695b8bc3a4429a46",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.5,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.381 (max +162%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +162% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "174m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x1de698b9",
-      "ts": 1780803114.0,
-      "timestamp_iso": "2026-06-07T03:31:54Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.38,
-      "current_price": null,
-      "shares": 263.16,
-      "size_usdc": 104.34,
-      "tx_hash": "0x1de698b9762f1bcf95550f0c08078c7f23502fdb444dd5eb82e324a9d7550402",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.5,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.380 (max +163%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +163% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "174m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xd5922426",
-      "ts": 1780803112.0,
-      "timestamp_iso": "2026-06-07T03:31:52Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3831,
-      "current_price": null,
-      "shares": 261.06,
-      "size_usdc": 104.32,
-      "tx_hash": "0xd5922426b5cb3c426442f1c40f680e016147d69fce9752d38e6adbddda5b49bf",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.5,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.383 (max +161%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +161% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xaa16c230",
-      "ts": 1780803112.0,
-      "timestamp_iso": "2026-06-07T03:31:52Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.38,
-      "current_price": null,
-      "shares": 263.16,
-      "size_usdc": 104.34,
-      "tx_hash": "0xaa16c23019aa304d8bc641e78606836c00e92d2d10c35d3f938d26791a64765a",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.5,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.380 (max +163%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +163% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x8345d31d",
-      "ts": 1780803109.0,
-      "timestamp_iso": "2026-06-07T03:31:49Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3451,
-      "current_price": null,
-      "shares": 289.77,
-      "size_usdc": 104.58,
-      "tx_hash": "0x8345d31d0f85f91ef37ceef3880cb25e133389edd41621dac855f75e48ba432e",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.345 (max +190%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +190% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x0c073029",
-      "ts": 1780803109.0,
-      "timestamp_iso": "2026-06-07T03:31:49Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3347,
-      "current_price": null,
-      "shares": 298.76,
-      "size_usdc": 104.66,
-      "tx_hash": "0x0c07302961ce31ca56df6e64b52c44b9e6863b93fe42aa0360e34671d3f056ed",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.335 (max +199%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +199% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xdf21ef05",
-      "ts": 1780803109.0,
-      "timestamp_iso": "2026-06-07T03:31:49Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3322,
-      "current_price": null,
-      "shares": 300.99,
-      "size_usdc": 104.67,
-      "tx_hash": "0xdf21ef05e180b3b4ea0c39416bb8761d81fa866813b3c5fc09a0ead01f18de81",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.332 (max +201%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +201% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xb4e7ef06",
-      "ts": 1780803109.0,
-      "timestamp_iso": "2026-06-07T03:31:49Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.35,
-      "current_price": null,
-      "shares": 285.71,
-      "size_usdc": 104.55,
-      "tx_hash": "0xb4e7ef06b47dd5894fb1e89a2abd53d5fe8fb52deea1e70c55e0add7ac25a1a7",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.350 (max +186%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +186% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x6b43525a",
-      "ts": 1780803108.0,
-      "timestamp_iso": "2026-06-07T03:31:48Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.33,
-      "current_price": null,
-      "shares": 303.03,
-      "size_usdc": 104.69,
-      "tx_hash": "0x6b43525ae1bb3d187f9de92f9c46e71a5246739a59b94d7792f0328098736adc",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.330 (max +203%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +203% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xe1dc5fae",
-      "ts": 1780803108.0,
-      "timestamp_iso": "2026-06-07T03:31:48Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3159,
-      "current_price": null,
-      "shares": 316.6,
-      "size_usdc": 104.79,
-      "tx_hash": "0xe1dc5fae9b519ab094f73d9023f5d792fc2dfa8b21b51e92469fbc1dff376288",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.316 (max +217%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +217% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x82b0103c",
-      "ts": 1780803106.0,
-      "timestamp_iso": "2026-06-07T03:31:46Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.3144,
-      "current_price": null,
-      "shares": 318.09,
-      "size_usdc": 104.8,
-      "tx_hash": "0x82b0103cedc1eacae7800d76d48a627b31974f0eac9adb5d711ed8598f0b502f",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.314 (max +218%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +218% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x15c104d5",
-      "ts": 1780803096.0,
-      "timestamp_iso": "2026-06-07T03:31:36Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.2215,
-      "current_price": null,
-      "shares": 451.38,
-      "size_usdc": 105.45,
-      "tx_hash": "0x15c104d5797fbdec489385c4d69bace3c50064e2adabf585696b33c84a9a7bf5",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.8,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.222 (max +351%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +351% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x32c9590a",
-      "ts": 1780803094.0,
-      "timestamp_iso": "2026-06-07T03:31:34Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.2196,
-      "current_price": null,
-      "shares": 455.4,
-      "size_usdc": 105.46,
-      "tx_hash": "0x32c9590a45e13f8793108c6300284618e47f4114fb7b164467be83f277abac16",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.220 (max +355%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +355% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xe2b80622",
-      "ts": 1780803093.0,
-      "timestamp_iso": "2026-06-07T03:31:33Z",
-      "market_id": "0x6eeadb1b7a8db7e5e0e120479216195bf761def4f239c232d04cc74b9eef090f",
-      "market_title": "Bitcoin Up or Down - June 6, 11:30PM-11:35PM ET",
-      "market_slug": "btc-updown-5m-1780803000",
-      "outcome": "Up",
-      "outcome_idx": 0,
-      "side": "UP",
-      "entry_price": 0.24,
-      "current_price": null,
-      "shares": 416.67,
-      "size_usdc": 105.32,
-      "tx_hash": "0xe2b806222c0dad62b252b0f7c4d35e5b2de1099f53f9d53e98b5aebade6738ea",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 174.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$105",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.240 (max +317%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +317% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x8e1bfb49",
-      "ts": 1780803073.0,
-      "timestamp_iso": "2026-06-07T03:31:13Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.543,
-      "current_price": null,
-      "shares": 1382.0,
-      "size_usdc": 750.43,
-      "tx_hash": "0x8e1bfb490776f7b9439efc481d797919a60691ae8c24398f642b2519f3afbbd0",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "ENTER",
-      "age_min": 175.2,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$750",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.543 (max +84%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +84% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0xc8a69d59",
-      "ts": 1780803072.0,
-      "timestamp_iso": "2026-06-07T03:31:12Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.543,
-      "current_price": null,
-      "shares": 748.0,
-      "size_usdc": 406.16,
-      "tx_hash": "0xc8a69d59bc10718668879ac21b7026bf243d13576a94a85cec4ddebfa30272cd",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 175.2,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$406",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.543 (max +84%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +84% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x4ea60d19",
-      "ts": 1780803072.0,
-      "timestamp_iso": "2026-06-07T03:31:12Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.543,
-      "current_price": null,
-      "shares": 620.0,
-      "size_usdc": 336.66,
-      "tx_hash": "0x4ea60d193b4f2e8a19996d4fa02dcf3b9776c52a82b84133862368a40a866cf7",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 175.2,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$337",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.543 (max +84%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +84% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x86E99FaE_0x1a8f0771",
-      "ts": 1780803070.0,
-      "timestamp_iso": "2026-06-07T03:31:10Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.537,
-      "current_price": null,
-      "shares": 250.0,
-      "size_usdc": 136.11,
-      "tx_hash": "0x1a8f077142208b2216c269fbe358162f34d83a25acc85a7ddf678ff7bf3540e4",
-      "whale": {
-        "address": "0x86E99FaEA12Fccd8925De5d9f052471BaF7a4CDf",
-        "pseudonym": "Mortified-Keystone",
-        "raw_win_rate": 0.875,
-        "lifetime_pnl": 192435.5,
-        "roi": 0.6424,
-        "recent_wins": 42,
-        "recent_n": 48,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 48,
-        "total_wins": 42
-      },
-      "verdict": "SKIP",
-      "age_min": 175.3,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$136",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.537 (max +86%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +86% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "175m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0x88aebf1f",
-      "ts": 1780797474.0,
-      "timestamp_iso": "2026-06-07T01:57:54Z",
-      "market_id": "0x4ca2e88db79a143ee123cb75b4fb103f35862d4f56259cb43c2743fa8d0920a2",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-09",
-      "outcome": "Golden Knights",
-      "outcome_idx": 1,
-      "side": "GOLDEN KNIGHTS",
-      "entry_price": 0.48,
-      "current_price": 0.485,
-      "shares": 332.48,
-      "size_usdc": 159.59,
-      "tx_hash": "0x88aebf1fd7b9ddeae5198b288cdaa73f009a8410301f3164674204dbdca4a93e",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 268.3,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$160",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "268m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x96CA2a99_0xa1c864e5",
-      "ts": 1780797363.0,
-      "timestamp_iso": "2026-06-07T01:56:03Z",
-      "market_id": "0xe4c35f0be9e047259312dea22f17b619e7b4af73f013b91ccfa82d929c2b337e",
-      "market_title": "UFC Fight Night: Belal Muhammad vs. Gabriel Bonfim (Welterweight, Main Card)",
-      "market_slug": "ufc-bel-gab3-2026-06-06",
-      "outcome": "Belal Muhammad",
-      "outcome_idx": 0,
-      "side": "BELAL MUHAMMAD",
-      "entry_price": 0.52,
-      "current_price": null,
-      "shares": 961.54,
-      "size_usdc": 507.2,
-      "tx_hash": "0xa1c864e582f033604ffc0a6748efb7fb5b26777bae808712d2794e9c04e0af1a",
-      "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
-        "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
-      },
-      "verdict": "ENTER",
-      "age_min": 270.3,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$507",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.520 (max +92%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +92% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "270m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0xdeeff9e0",
-      "ts": 1780796800.0,
-      "timestamp_iso": "2026-06-07T01:46:40Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.18,
-      "current_price": null,
-      "shares": 1090.44,
-      "size_usdc": 201.11,
-      "tx_hash": "0xdeeff9e089566068dd4584cfefc8a30eb916b7f6d175d1a10484d418ee1fcfe0",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "SKIP",
-      "age_min": 279.6,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$201",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.180 (max +456%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +456% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "280m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0xffbeaa4c",
-      "ts": 1780795644.0,
-      "timestamp_iso": "2026-06-07T01:27:24Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.4844,
-      "current_price": null,
-      "shares": 809.33,
-      "size_usdc": 398.06,
-      "tx_hash": "0xffbeaa4cccf46183183ab6d80a52b3a2f29b7dfac57a39f7ba2b7dfc0851e986",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "SKIP",
-      "age_min": 298.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$398",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.484 (max +106%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +106% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "299m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x96CA2a99_0x2af59450",
-      "ts": 1780793791.0,
-      "timestamp_iso": "2026-06-07T00:56:31Z",
-      "market_id": "0xe4c35f0be9e047259312dea22f17b619e7b4af73f013b91ccfa82d929c2b337e",
-      "market_title": "UFC Fight Night: Belal Muhammad vs. Gabriel Bonfim (Welterweight, Main Card)",
-      "market_slug": "ufc-bel-gab3-2026-06-06",
-      "outcome": "Belal Muhammad",
-      "outcome_idx": 0,
-      "side": "BELAL MUHAMMAD",
-      "entry_price": 0.51,
-      "current_price": null,
-      "shares": 1019.61,
-      "size_usdc": 527.64,
-      "tx_hash": "0x2af594508395ed0151bc4311e8037bfddf761d6906b13c15c34f97e9515e1f76",
-      "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
-        "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
-      },
-      "verdict": "ENTER",
-      "age_min": 329.8,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$528",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.510 (max +96%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +96% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "330m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0xacc58308",
-      "ts": 1780793532.0,
-      "timestamp_iso": "2026-06-07T00:52:12Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.51,
-      "current_price": null,
-      "shares": 764.71,
-      "size_usdc": 395.73,
-      "tx_hash": "0xacc58308e84c788cd28c0137359a8bace5cec35b80cb408b74c15105315ad56a",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "SKIP",
-      "age_min": 334.1,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$396",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.510 (max +96%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +96% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "334m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0x8c8b79a6",
-      "ts": 1780792890.0,
-      "timestamp_iso": "2026-06-07T00:41:30Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.51,
-      "current_price": null,
-      "shares": 1088.24,
-      "size_usdc": 563.16,
-      "tx_hash": "0x8c8b79a6bf7300059864644ecf402907a70b497983ace44e9d4d7c174ab7efb9",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "ENTER",
-      "age_min": 344.8,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$563",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.510 (max +96%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +96% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "345m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x96CA2a99_0xf9c511cf",
-      "ts": 1780792495.0,
-      "timestamp_iso": "2026-06-07T00:34:55Z",
-      "market_id": "0x82c9e0a5ec2bb38a44b524c8dcf3e32387bae8c3de074c0d28b7ee6e4aa7d245",
-      "market_title": "UFC Fight Night: Brendan Allen vs. Edmen Shahbazyan (Middleweight, Main Card)",
-      "market_slug": "ufc-bre1-edm-2026-06-06",
-      "outcome": "Brendan Allen",
-      "outcome_idx": 0,
-      "side": "BRENDAN ALLEN",
-      "entry_price": 0.62,
-      "current_price": null,
-      "shares": 161.29,
-      "size_usdc": 101.14,
-      "tx_hash": "0xf9c511cf626c2e047739156e0ff862caab58ec488415aa3ac11dbae9d1299072",
-      "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
-        "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
-      },
-      "verdict": "SKIP",
-      "age_min": 351.4,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$101",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.620 (max +61%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +61% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "351m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0x20653f95",
-      "ts": 1780792365.0,
-      "timestamp_iso": "2026-06-07T00:32:45Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.52,
-      "current_price": null,
-      "shares": 1015.38,
-      "size_usdc": 535.6,
-      "tx_hash": "0x20653f95888b6bc111dd27adfad920aa24a9201d85c0556bf549f350c329da1f",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "ENTER",
-      "age_min": 353.5,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$536",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.520 (max +92%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +92% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "354m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0xc9bcdb4a",
-      "ts": 1780791454.0,
-      "timestamp_iso": "2026-06-07T00:17:34Z",
-      "market_id": "0x4ca2e88db79a143ee123cb75b4fb103f35862d4f56259cb43c2743fa8d0920a2",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-09",
-      "outcome": "Golden Knights",
-      "outcome_idx": 1,
-      "side": "GOLDEN KNIGHTS",
-      "entry_price": 0.48,
-      "current_price": 0.485,
-      "shares": 2542.03,
-      "size_usdc": 1220.17,
-      "tx_hash": "0xc9bcdb4aac4bce09817d4b8ba5a70d6148f61c18dfde40251769b8ec71f3ee50",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "LATE",
-      "age_min": 368.7,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,220",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "369m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0xfb1eb4cb",
-      "ts": 1780791436.0,
-      "timestamp_iso": "2026-06-07T00:17:16Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.51,
-      "current_price": null,
-      "shares": 1613.73,
-      "size_usdc": 835.1,
-      "tx_hash": "0xfb1eb4cb58fbe8d5305303bbc25c2e5a0ec97697a5808204b69124bbbbea4b13",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "LATE",
-      "age_min": 369.0,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$835",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.510 (max +96%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +96% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "369m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0x998d2e9a",
-      "ts": 1780791381.0,
-      "timestamp_iso": "2026-06-07T00:16:21Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.51,
-      "current_price": null,
-      "shares": 1274.51,
-      "size_usdc": 659.55,
-      "tx_hash": "0x998d2e9a6d8a40bf698a3743a00d404763ab5820fadd55d9281878d4606ea1a3",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "LATE",
-      "age_min": 370.0,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$660",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.510 (max +96%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +96% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "370m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0x3b274787",
-      "ts": 1780791226.0,
-      "timestamp_iso": "2026-06-07T00:13:46Z",
-      "market_id": "0x4ca2e88db79a143ee123cb75b4fb103f35862d4f56259cb43c2743fa8d0920a2",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-09",
-      "outcome": "Golden Knights",
-      "outcome_idx": 1,
-      "side": "GOLDEN KNIGHTS",
-      "entry_price": 0.48,
-      "current_price": 0.485,
-      "shares": 661.95,
-      "size_usdc": 317.74,
-      "tx_hash": "0x3b274787d996fcc55aed33f0563095015c370739cfb6a6b922390319631c97af",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 372.5,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$318",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "372m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0xc04a463d",
-      "ts": 1780790997.0,
-      "timestamp_iso": "2026-06-07T00:09:57Z",
-      "market_id": "0x4ca2e88db79a143ee123cb75b4fb103f35862d4f56259cb43c2743fa8d0920a2",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-09",
-      "outcome": "Golden Knights",
-      "outcome_idx": 1,
-      "side": "GOLDEN KNIGHTS",
-      "entry_price": 0.48,
-      "current_price": 0.485,
-      "shares": 431.22,
-      "size_usdc": 206.99,
-      "tx_hash": "0xc04a463d69aaae0d79d7c0e913536532071e7c3014541ef80a48bba489f36596",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 376.3,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$207",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "376m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0xa2c3273f",
-      "ts": 1780790803.0,
-      "timestamp_iso": "2026-06-07T00:06:43Z",
-      "market_id": "0x4ca2e88db79a143ee123cb75b4fb103f35862d4f56259cb43c2743fa8d0920a2",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-09",
-      "outcome": "Golden Knights",
-      "outcome_idx": 1,
-      "side": "GOLDEN KNIGHTS",
-      "entry_price": 0.48,
-      "current_price": 0.485,
-      "shares": 472.53,
-      "size_usdc": 226.81,
-      "tx_hash": "0xa2c3273f533cebec245ca1f3e982069c42606e5221bf24b7b1929b40d004d9a1",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 379.5,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$227",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "380m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0x2efb5419",
-      "ts": 1780790784.0,
-      "timestamp_iso": "2026-06-07T00:06:24Z",
-      "market_id": "0x4ca2e88db79a143ee123cb75b4fb103f35862d4f56259cb43c2743fa8d0920a2",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-09",
-      "outcome": "Golden Knights",
-      "outcome_idx": 1,
-      "side": "GOLDEN KNIGHTS",
-      "entry_price": 0.48,
-      "current_price": 0.485,
-      "shares": 699.23,
-      "size_usdc": 335.63,
-      "tx_hash": "0x2efb541942c9cfbab5f89be14545493ee595c381e62e75296dcf7831211a5142",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 379.8,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$336",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "380m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0xca7895cd",
-      "ts": 1780790782.0,
-      "timestamp_iso": "2026-06-07T00:06:22Z",
-      "market_id": "0x4ca2e88db79a143ee123cb75b4fb103f35862d4f56259cb43c2743fa8d0920a2",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-09",
-      "outcome": "Golden Knights",
-      "outcome_idx": 1,
-      "side": "GOLDEN KNIGHTS",
-      "entry_price": 0.48,
-      "current_price": 0.485,
-      "shares": 1024.02,
-      "size_usdc": 491.53,
-      "tx_hash": "0xca7895cd66925ce1c0da91d8ceaca601ad60e43d41b6210107798f06a57814fc",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 379.9,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$492",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.480 (max +108%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +108% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "380m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0x718dcda2",
-      "ts": 1780790632.0,
-      "timestamp_iso": "2026-06-07T00:03:52Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.52,
-      "current_price": null,
-      "shares": 2451.92,
-      "size_usdc": 1293.36,
-      "tx_hash": "0x718dcda2f5dcd78bf6c93dd066df26b4a9087b1f48f83e576a4d8f11f370b757",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "LATE",
-      "age_min": 382.4,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,293",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.520 (max +92%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +92% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "382m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xe5047B7B_0xbdbf48d2",
-      "ts": 1780790611.0,
-      "timestamp_iso": "2026-06-07T00:03:31Z",
-      "market_id": "0xf7b5491e70b477d451afe7d9c1fde4bf1a927e69ff289d294b96df164f6c10f0",
-      "market_title": "Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?",
-      "market_slug": "2026-nhl-stanley-cup-champion",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.56,
-      "current_price": 0.365,
-      "shares": 2996.21,
-      "size_usdc": 1700.03,
-      "tx_hash": "0xbdbf48d2791c35b05d6cee69ac89ba6d05fdb8dd5747522bcf2915033e87e141",
-      "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
-      },
-      "verdict": "SKIP",
-      "age_min": 382.8,
-      "drift": -0.195,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-34.8%",
-          "threshold": "> 7%",
-          "note": "Line moved -34.8% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,700",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.560 (max +79%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +79% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "383m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -34.8% — the move already happened",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0x2c724cda",
-      "ts": 1780790062.0,
-      "timestamp_iso": "2026-06-06T23:54:22Z",
-      "market_id": "0xf7b5491e70b477d451afe7d9c1fde4bf1a927e69ff289d294b96df164f6c10f0",
-      "market_title": "Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?",
-      "market_slug": "2026-nhl-stanley-cup-champion",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.55,
-      "current_price": 0.365,
-      "shares": 12915.9,
-      "size_usdc": 7103.74,
-      "tx_hash": "0x2c724cdabec08e464f4f1125b1743020c848f57cf7aae50ab5a573f447c5f737",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 391.9,
-      "drift": -0.185,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-33.6%",
-          "threshold": "> 7%",
-          "note": "Line moved -33.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$7,104",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.550 (max +82%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +82% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "392m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -33.6% — the move already happened",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0x8680c263",
-      "ts": 1780789083.0,
-      "timestamp_iso": "2026-06-06T23:38:03Z",
-      "market_id": "0xf7b5491e70b477d451afe7d9c1fde4bf1a927e69ff289d294b96df164f6c10f0",
-      "market_title": "Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?",
-      "market_slug": "2026-nhl-stanley-cup-champion",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.55,
-      "current_price": 0.365,
-      "shares": 503.74,
-      "size_usdc": 277.06,
-      "tx_hash": "0x8680c26387a5c85e6696a926b84ad68abd1a35ed0a5559f362ff32902c33d76b",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 408.2,
-      "drift": -0.185,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-33.6%",
-          "threshold": "> 7%",
-          "note": "Line moved -33.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$277",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.550 (max +82%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +82% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "408m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -33.6% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xfEA31Bc0_0xfa920ed4",
-      "ts": 1780788126.0,
-      "timestamp_iso": "2026-06-06T23:22:06Z",
-      "market_id": "0xf7b5491e70b477d451afe7d9c1fde4bf1a927e69ff289d294b96df164f6c10f0",
-      "market_title": "Will the Carolina Hurricanes win the 2026 NHL Stanley Cup?",
-      "market_slug": "2026-nhl-stanley-cup-champion",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.55,
-      "current_price": 0.365,
-      "shares": 224.66,
-      "size_usdc": 123.56,
-      "tx_hash": "0xfa920ed4cff742dcdaae118e9ade08306e9659c29e7c19fb20d61775ce0aa229",
-      "whale": {
-        "address": "0xfEA31Bc088000Ff909be1dFD8d0e3F2C7eF2d227",
-        "pseudonym": "Tinted-Consciousness",
-        "raw_win_rate": 0.9298,
-        "lifetime_pnl": 1471016.62,
-        "roi": 0.1763,
-        "recent_wins": 53,
-        "recent_n": 57,
-        "recent_win_rate": 0.9298,
-        "z_score": 0.0,
-        "n_total": 57,
-        "total_wins": 53
-      },
-      "verdict": "SKIP",
-      "age_min": 424.1,
-      "drift": -0.185,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "-33.6%",
-          "threshold": "> 7%",
-          "note": "Line moved -33.6% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$124",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.550 (max +82%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +82% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "424m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -33.6% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x96CA2a99_0xe835da70",
-      "ts": 1780787140.0,
-      "timestamp_iso": "2026-06-06T23:05:40Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
-      "entry_price": 0.51,
-      "current_price": null,
-      "shares": 1960.78,
-      "size_usdc": 1014.7,
-      "tx_hash": "0xe835da706f180ce5c701811ac94ee0172204024a6ff0c8b06d7a7f9e4e1dbab5",
-      "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
-        "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
-      },
-      "verdict": "LATE",
-      "age_min": 440.7,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,015",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.510 (max +96%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +96% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "441m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x96CA2a99_0xa447dbfe",
-      "ts": 1780787128.0,
-      "timestamp_iso": "2026-06-06T23:05:28Z",
-      "market_id": "0x0bbc63372aaf0867db23fc361b4e37f7d3125c7acef6cc8e2d5ce40f65b7e523",
-      "market_title": "Boston Red Sox vs. New York Yankees",
-      "market_slug": "mlb-bos-nyy-2026-06-06",
-      "outcome": "New York Yankees",
-      "outcome_idx": 1,
-      "side": "NEW YORK YANKEES",
-      "entry_price": 0.52,
-      "current_price": 0.525,
-      "shares": 1923.08,
-      "size_usdc": 1014.4,
-      "tx_hash": "0xa447dbfedc7c1f349206799e3e10b07873d6676e2008f4c099b56e4414081353",
-      "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
-        "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
-      },
-      "verdict": "LATE",
-      "age_min": 440.9,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,014",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.520 (max +92%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +92% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "441m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x5D636FFD_0x9b9e907e",
-      "ts": 1780784817.0,
-      "timestamp_iso": "2026-06-06T22:26:57Z",
-      "market_id": "0x375409bc5eeeff961e82b479caeccc20f33d15738e5bce1186d628aa3d9dfb1f",
-      "market_title": "Will England win the 2026 FIFA World Cup?",
+      "signal_id": "0xaC477370_0xfed3b921",
+      "ts": 1780815306.0,
+      "timestamp_iso": "2026-06-07T06:55:06Z",
+      "market_id": "0xcdb1f0400949238a63d3e88243d2ada08cd9c2a71985ced9f0cfd5e66354cf90",
+      "market_title": "Will USA win the 2026 FIFA World Cup?",
       "market_slug": "world-cup-winner",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.111,
-      "current_price": 0.1115,
-      "shares": 8000.0,
-      "size_usdc": 888.0,
-      "tx_hash": "0x9b9e907ed279f422e171c2517a6ca44807723ce95ea8e5b5c17cdfbd79ba812b",
+      "entry_price": 0.012,
+      "current_price": 0.0115,
+      "shares": 291666.67,
+      "size_usdc": 3603.74,
+      "tx_hash": "0xfed3b92174535b5365feacec983007b84297cca710adc0a64c18383b16bd0149",
       "whale": {
-        "address": "0x5D636FFD7d0A613B8aF6D481d14DDD96bE562CBF",
-        "pseudonym": "Sad-Mention",
-        "raw_win_rate": 0.8529,
-        "lifetime_pnl": 25364.27,
-        "roi": 0.2267,
-        "recent_wins": 62,
-        "recent_n": 66,
-        "recent_win_rate": 0.9394,
+        "address": "0xaC4773707DaDDD3792efED5A91F5Ec7651a7D234",
+        "pseudonym": "Hungry-Clavicle",
+        "raw_win_rate": 0.9444,
+        "lifetime_pnl": 290361.91,
+        "roi": 0.7716,
+        "recent_wins": 18,
+        "recent_n": 18,
+        "recent_win_rate": 1.0,
         "z_score": 0.0,
-        "n_total": 170,
-        "total_wins": 145
+        "n_total": 36,
+        "total_wins": 34
       },
-      "verdict": "LATE",
-      "age_min": 479.4,
-      "drift": 0.0005,
+      "verdict": "ENTER",
+      "age_min": 171.3,
+      "drift": -0.0005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+0.5%",
+          "value": "-4.2%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$888",
+          "value": "$3,604",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.111 (max +801%)",
+          "value": "0.012 (max +8233%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +801% upside on a correct call."
+          "note": "Good payoff — +8233% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "fail",
-          "value": "479m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
+          "status": "warn",
+          "value": "171m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
-      "signal_id": "0xe5047B7B_0xb50d47a5",
-      "ts": 1780784041.0,
-      "timestamp_iso": "2026-06-06T22:14:01Z",
-      "market_id": "0x5833eb918b6df030934f699e3d477db4ededda8f4d1b7e118a91029ab2d4d152",
-      "market_title": "Hurricanes vs. Golden Knights",
-      "market_slug": "nhl-car-las-2026-06-06",
-      "outcome": "Hurricanes",
-      "outcome_idx": 0,
-      "side": "HURRICANES",
+      "signal_id": "0xbde33AC3_0x32927128",
+      "ts": 1780815189.0,
+      "timestamp_iso": "2026-06-07T06:53:09Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
       "entry_price": 0.51,
-      "current_price": null,
-      "shares": 4048.53,
-      "size_usdc": 2095.1,
-      "tx_hash": "0xb50d47a5b70bc8963c9bd9089cf5410875bd4a212a88386e4711a5c145869125",
+      "current_price": 0.895,
+      "shares": 484.72,
+      "size_usdc": 247.21,
+      "tx_hash": "0x32927128f091aa0a3aed775e86b93401a928cf1662edd9dc9a3a27c2278c2087",
       "whale": {
-        "address": "0xe5047B7B7eb66eafDc80540048c31227f641600e",
-        "pseudonym": "Crazy-Ton",
-        "raw_win_rate": 0.8404,
-        "lifetime_pnl": 297303.57,
-        "roi": 0.7956,
-        "recent_wins": 120,
-        "recent_n": 144,
-        "recent_win_rate": 0.8333,
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
         "z_score": 0.0,
-        "n_total": 213,
-        "total_wins": 179
+        "n_total": 43,
+        "total_wins": 40
       },
-      "verdict": "LATE",
-      "age_min": 492.3,
-      "drift": null,
+      "verdict": "SKIP",
+      "age_min": 173.2,
+      "drift": 0.385,
       "checks": [
         {
           "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$247",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "173m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x00623923",
+      "ts": 1780815133.0,
+      "timestamp_iso": "2026-06-07T06:52:13Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 600.0,
+      "size_usdc": 306.0,
+      "tx_hash": "0x00623923327efdd22c022be1270d0ee482d969c78496b3d369e9d30c6f3e8f63",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 174.1,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$306",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "174m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x2b3ff45c_0xbe66e0f6",
+      "ts": 1780814956.0,
+      "timestamp_iso": "2026-06-07T06:49:16Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.784,
+      "current_price": 0.7855,
+      "shares": 962.96,
+      "size_usdc": 754.96,
+      "tx_hash": "0xbe66e0f6db7cafbadc6b4fbaa024a2976e85d51141131457c2f487138f62fb24",
+      "whale": {
+        "address": "0x2b3ff45c91540E46fAe1e0c72f61F4B049453446",
+        "pseudonym": "Muddy-Wifi",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 2287445.11,
+        "roi": 0.5959,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 39,
+        "total_wins": 39
+      },
+      "verdict": "ENTER",
+      "age_min": 177.1,
+      "drift": 0.0015,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.2%",
           "threshold": "≤ 3%",
-          "note": "Current price unavailable"
+          "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$2,095",
+          "value": "$755",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.784 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "177m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x2b3ff45c_0xdb2b04c1",
+      "ts": 1780814467.0,
+      "timestamp_iso": "2026-06-07T06:41:07Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.784,
+      "current_price": 0.7855,
+      "shares": 188.61,
+      "size_usdc": 147.87,
+      "tx_hash": "0xdb2b04c1d367e4f46bbb3b1029bc1878b5704b5f1f68bfeb8a35d599ce9a486b",
+      "whale": {
+        "address": "0x2b3ff45c91540E46fAe1e0c72f61F4B049453446",
+        "pseudonym": "Muddy-Wifi",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 2287445.11,
+        "roi": 0.5959,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 39,
+        "total_wins": 39
+      },
+      "verdict": "SKIP",
+      "age_min": 185.3,
+      "drift": 0.0015,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.2%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$148",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.784 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "185m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0xa432ddc2",
+      "ts": 1780814302.0,
+      "timestamp_iso": "2026-06-07T06:38:22Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 205.57,
+      "size_usdc": 104.84,
+      "tx_hash": "0xa432ddc270150d16558c414bce8d2a17e9397dff92c11d4eb1f00fc2ebeaf1f3",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 187.9,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$105",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "188m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0xb2682a98",
+      "ts": 1780814233.0,
+      "timestamp_iso": "2026-06-07T06:37:13Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 3291.39,
+      "size_usdc": 1678.61,
+      "tx_hash": "0xb2682a98a38cb4114414012df234a7e69465830b58a66ccdf996cdf10d39743c",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 189.1,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,679",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
@@ -3816,218 +596,1089 @@
         },
         {
           "name": "Age",
-          "status": "fail",
-          "value": "492m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
+          "status": "warn",
+          "value": "189m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
+        "Line moved +75.5% — the move already happened",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
-      "signal_id": "0x96CA2a99_0xf67dd88e",
-      "ts": 1780779930.0,
-      "timestamp_iso": "2026-06-06T21:05:30Z",
-      "market_id": "0xbcb9abd670bc71312c0a4719d529df0b51b81a66f356d99c4a2506f14bcc062b",
-      "market_title": "UFC Fight Night: Junior Tafa vs. Iwo Baraniewski (Light Heavyweight, Main Card)",
-      "market_slug": "ufc-jun4-iwo-2026-06-06",
-      "outcome": "Iwo Baraniewski",
-      "outcome_idx": 1,
-      "side": "IWO BARANIEWSKI",
-      "entry_price": 0.8,
-      "current_price": null,
-      "shares": 130.0,
-      "size_usdc": 104.62,
-      "tx_hash": "0xf67dd88efcbd9e99b79e3e9b173abd520eae289f56dcc87d2367c322602cc159",
+      "signal_id": "0x2b3ff45c_0xfcd2ddd6",
+      "ts": 1780813936.0,
+      "timestamp_iso": "2026-06-07T06:32:16Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.784,
+      "current_price": 0.7855,
+      "shares": 268.91,
+      "size_usdc": 210.83,
+      "tx_hash": "0xfcd2ddd673e9c7ebaef43192f9171365bc808e32adb27fb2dc9c9c14c8cc223c",
       "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
+        "address": "0x2b3ff45c91540E46fAe1e0c72f61F4B049453446",
+        "pseudonym": "Muddy-Wifi",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 2287445.11,
+        "roi": 0.5959,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
         "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
+        "n_total": 39,
+        "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 560.8,
-      "drift": null,
+      "age_min": 194.1,
+      "drift": 0.0015,
       "checks": [
         {
           "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
+          "status": "pass",
+          "value": "+0.2%",
           "threshold": "≤ 3%",
-          "note": "Current price unavailable"
+          "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$105",
+          "value": "$211",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "warn",
-          "value": "0.800 (max +25%)",
+          "value": "0.784 (max +28%)",
           "threshold": "< 0.75",
-          "note": "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+          "note": "Modest payoff — +28% on win, small cushion over costs."
         },
         {
           "name": "Age",
-          "status": "fail",
-          "value": "561m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
+          "status": "warn",
+          "value": "194m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk.",
-        "Very stale — even if price is near entry, you have less time to profit"
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
-      "signal_id": "0x96CA2a99_0xedd5d93e",
-      "ts": 1780779871.0,
-      "timestamp_iso": "2026-06-06T21:04:31Z",
-      "market_id": "0xb762d2d8189704b5eb3506034d9dbcb281ef1e6f183c27403f50f0a93b0fb37a",
-      "market_title": "Fight to Go the Distance?",
-      "market_slug": "ufc-pri-che3-2026-06-06",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.57,
-      "current_price": null,
-      "shares": 180.0,
-      "size_usdc": 103.92,
-      "tx_hash": "0xedd5d93e98cc4bfebacde405b75b671ebda6a1e627b4311de1c5372844b226cc",
+      "signal_id": "0xbde33AC3_0x52c8ef07",
+      "ts": 1780813683.0,
+      "timestamp_iso": "2026-06-07T06:28:03Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 991.84,
+      "size_usdc": 505.84,
+      "tx_hash": "0x52c8ef07c6e8dd1f1ce873495fa050d74c3fa086be034a10c503baae0858a520",
       "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
         "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
+        "n_total": 43,
+        "total_wins": 40
       },
       "verdict": "SKIP",
-      "age_min": 561.8,
-      "drift": null,
+      "age_min": 198.3,
+      "drift": 0.385,
       "checks": [
         {
           "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
           "status": "fail",
-          "value": "$104",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.570 (max +75%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +75% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "562m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x96CA2a99_0xf931e6cd",
-      "ts": 1780776418.0,
-      "timestamp_iso": "2026-06-06T20:06:58Z",
-      "market_id": "0xa7c5e44991eec5a3c365faf7c0f5b6972239bed86e42ebb70e355f29537481c3",
-      "market_title": "Tampa Bay Rays vs. Miami Marlins",
-      "market_slug": "mlb-tb-mia-2026-06-06",
-      "outcome": "Tampa Bay Rays",
-      "outcome_idx": 0,
-      "side": "TAMPA BAY RAYS",
-      "entry_price": 0.55,
-      "current_price": null,
-      "shares": 1899.99,
-      "size_usdc": 1059.1,
-      "tx_hash": "0xf931e6cd019ba83d87e16a3ad14c69514c064b90271690e130c188f69f1cfd5a",
-      "whale": {
-        "address": "0x96CA2a99b83db409E91a89C141710E5A62fD5A71",
-        "pseudonym": "Trim-Tortoise",
-        "raw_win_rate": 0.9075,
-        "lifetime_pnl": 57016.99,
-        "roi": 0.5881,
-        "recent_wins": 111,
-        "recent_n": 119,
-        "recent_win_rate": 0.9328,
-        "z_score": 0.0,
-        "n_total": 400,
-        "total_wins": 363
-      },
-      "verdict": "LATE",
-      "age_min": 619.4,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$1,059",
+          "value": "$506",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.550 (max +82%)",
+          "value": "0.510 (max +96%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +82% upside on a correct call."
+          "note": "Good payoff — +96% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "fail",
-          "value": "619m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
+          "status": "warn",
+          "value": "198m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
+        "Line moved +75.5% — the move already happened",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
-      "signal_id": "0x64369e1c_0x3ec47e51",
-      "ts": 1780771869.0,
-      "timestamp_iso": "2026-06-06T18:51:09Z",
+      "signal_id": "0xbde33AC3_0xbe43bea7",
+      "ts": 1780813546.0,
+      "timestamp_iso": "2026-06-07T06:25:46Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 473.03,
+      "size_usdc": 241.24,
+      "tx_hash": "0xbe43bea765c126ba7fa732f7b11a7db3e676299fabb465bd0a7439423c5bb190",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 200.5,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$241",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "201m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x2c1bd591",
+      "ts": 1780813518.0,
+      "timestamp_iso": "2026-06-07T06:25:18Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 942.04,
+      "size_usdc": 480.44,
+      "tx_hash": "0x2c1bd591778388f1816402aab68e1c0b0a8328995b0b1adc5207a3667028666c",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 201.0,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$480",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "201m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x7bffdb57",
+      "ts": 1780813329.0,
+      "timestamp_iso": "2026-06-07T06:22:09Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 742.86,
+      "size_usdc": 378.86,
+      "tx_hash": "0x7bffdb57018bef3ede6d584b94d85157427eb6e82ff68b0b8cfcdcb7348b69d3",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 204.2,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$379",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "204m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x118ae2c7",
+      "ts": 1780813300.0,
+      "timestamp_iso": "2026-06-07T06:21:40Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 742.86,
+      "size_usdc": 378.86,
+      "tx_hash": "0x118ae2c7cb1a781436b15e3948f3a19d892222ce1735f609ab2bc479c40f0ed3",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 204.7,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$379",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "205m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x1f585ceb",
+      "ts": 1780813131.0,
+      "timestamp_iso": "2026-06-07T06:18:51Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 400.41,
+      "size_usdc": 204.21,
+      "tx_hash": "0x1f585ceba86d957fad373786af5e310bdb640a30dfeb92a1b4875eeb42593847",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 207.5,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$204",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "207m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0xbb2b2241",
+      "ts": 1780813071.0,
+      "timestamp_iso": "2026-06-07T06:17:51Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 900.0,
+      "size_usdc": 459.0,
+      "tx_hash": "0xbb2b2241c6302f3e05eb234fd91bea89e918b0679a2a4108daa68f937e0e94f6",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 208.5,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$459",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "208m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x657dec67",
+      "ts": 1780813021.0,
+      "timestamp_iso": "2026-06-07T06:17:01Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 500.0,
+      "size_usdc": 255.0,
+      "tx_hash": "0x657dec673c31f1be5fdb78755555452d6e24580211072d01044233dcf821a556",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 209.3,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$255",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "209m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x66c213e4",
+      "ts": 1780812883.0,
+      "timestamp_iso": "2026-06-07T06:14:43Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 210.2,
+      "size_usdc": 107.2,
+      "tx_hash": "0x66c213e45199c2ba1023f071a029ed58d4ba3eef0b2d3c721730fa163c92bb27",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 211.6,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$107",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "212m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0xa4ac0cb7",
+      "ts": 1780812736.0,
+      "timestamp_iso": "2026-06-07T06:12:16Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 2972.06,
+      "size_usdc": 1515.75,
+      "tx_hash": "0xa4ac0cb71f9e9a5ecd044fb0d4d94cb52df042a37d9f2c4f1a2d0041368a7086",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 214.1,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,516",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "214m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x2b3ff45c_0xca1d87a9",
+      "ts": 1780812174.0,
+      "timestamp_iso": "2026-06-07T06:02:54Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.784,
+      "current_price": 0.7855,
+      "shares": 538.84,
+      "size_usdc": 422.45,
+      "tx_hash": "0xca1d87a93630a7b050c4abe7930920ee435b6e09991f1e41ef527c42fbf342b3",
+      "whale": {
+        "address": "0x2b3ff45c91540E46fAe1e0c72f61F4B049453446",
+        "pseudonym": "Muddy-Wifi",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 2287445.11,
+        "roi": 0.5959,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 39,
+        "total_wins": 39
+      },
+      "verdict": "SKIP",
+      "age_min": 223.5,
+      "drift": 0.0015,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.2%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$422",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.784 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "224m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x2b3ff45c_0x16dac019",
+      "ts": 1780812114.0,
+      "timestamp_iso": "2026-06-07T06:01:54Z",
+      "market_id": "0xb6b3d7a2037b3faa7e1306d741840d453432902d73cc9a146a035e40271eae73",
+      "market_title": "Will the San Antonio Spurs win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.7825,
+      "current_price": 0.7835,
+      "shares": 638.97,
+      "size_usdc": 503.26,
+      "tx_hash": "0x16dac0190089ce7d6f06ab4ff0836eb78ec432544ac0146fd3b962ecd09c4b20",
+      "whale": {
+        "address": "0x2b3ff45c91540E46fAe1e0c72f61F4B049453446",
+        "pseudonym": "Muddy-Wifi",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 2287445.11,
+        "roi": 0.5959,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 39,
+        "total_wins": 39
+      },
+      "verdict": "ENTER",
+      "age_min": 224.5,
+      "drift": 0.001,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.1%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$503",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.783 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "225m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x2b3ff45c_0x060ca9ce",
+      "ts": 1780812093.0,
+      "timestamp_iso": "2026-06-07T06:01:33Z",
+      "market_id": "0x713641f745d71f6ec61f906237ffca3c8583f251e49384429a63ceb0ccdb2d37",
+      "market_title": "Will the New York Knicks win the 2026 NBA Finals?",
+      "market_slug": "2026-nba-champion",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.784,
+      "current_price": 0.7855,
+      "shares": 3446.18,
+      "size_usdc": 2719.31,
+      "tx_hash": "0x060ca9ce295e9c4e72b65b4aa3adce81807da217133a7ac016cd9646c7c8559f",
+      "whale": {
+        "address": "0x2b3ff45c91540E46fAe1e0c72f61F4B049453446",
+        "pseudonym": "Muddy-Wifi",
+        "raw_win_rate": 1.0,
+        "lifetime_pnl": 2287445.11,
+        "roi": 0.5959,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 39,
+        "total_wins": 39
+      },
+      "verdict": "ENTER",
+      "age_min": 224.9,
+      "drift": 0.0015,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.2%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$2,719",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.784 (max +28%)",
+          "threshold": "< 0.75",
+          "note": "Modest payoff — +28% on win, small cushion over costs."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "225m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Modest payoff — +28% on win, small cushion over costs.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x14fdb720",
+      "ts": 1780811955.0,
+      "timestamp_iso": "2026-06-07T05:59:15Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 220.45,
+      "size_usdc": 112.43,
+      "tx_hash": "0x14fdb72087b67d25cda3fd2e97f8c7bfa50be5dfdbe620f258f87022b6047b71",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 227.1,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$112",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "227m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xbde33AC3_0x93736e00",
+      "ts": 1780811592.0,
+      "timestamp_iso": "2026-06-07T05:53:12Z",
+      "market_id": "0xbb89a679d44cf88c575b66f234ee288b931da327567f83a5cd65be5682baae53",
+      "market_title": "LoL: KT Rolster vs Dplus KIA (BO5) - LCK Road to MSI",
+      "market_slug": "lol-kt-dk-2026-06-07",
+      "outcome": "Dplus KIA",
+      "outcome_idx": 1,
+      "side": "DPLUS KIA",
+      "entry_price": 0.51,
+      "current_price": 0.895,
+      "shares": 667.35,
+      "size_usdc": 340.35,
+      "tx_hash": "0x93736e00abf20bb99e725992bc5f56b138a3a36ddbf174fa2fc88c0628262aa2",
+      "whale": {
+        "address": "0xbde33AC3839672f1BD3FEcFC0271AD95f07C4a49",
+        "pseudonym": "Drafty-Session",
+        "raw_win_rate": 0.9302,
+        "lifetime_pnl": 265159.77,
+        "roi": 0.7536,
+        "recent_wins": 6,
+        "recent_n": 8,
+        "recent_win_rate": 0.75,
+        "z_score": 0.0,
+        "n_total": 43,
+        "total_wins": 40
+      },
+      "verdict": "SKIP",
+      "age_min": 233.1,
+      "drift": 0.385,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "+75.5%",
+          "threshold": "> 7%",
+          "note": "Line moved +75.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$340",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "233m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +75.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x5F85CBE8_0xd14ac982",
+      "ts": 1780802845.0,
+      "timestamp_iso": "2026-06-07T03:27:25Z",
       "market_id": "0x221b05db581e0beb3bd140683b89b06f6bb565f67674fb7243c6d3789ee18b96",
       "market_title": "Roland Garros ATP: Flavio Cobolli vs Alexander Zverev",
       "market_slug": "atp-cobolli-zverev-2026-06-07",
@@ -4035,40 +1686,40 @@
       "outcome_idx": 1,
       "side": "ALEXANDER ZVEREV",
       "entry_price": 0.78,
-      "current_price": 0.775,
-      "shares": 384.62,
-      "size_usdc": 301.98,
-      "tx_hash": "0x3ec47e5137a5467c845a745aa32c8ee341770d538e3566f3a7572f4cf5ab98fc",
+      "current_price": 0.805,
+      "shares": 12362.67,
+      "size_usdc": 9706.52,
+      "tx_hash": "0xd14ac98293fa24acf4533e7cadaa767229b6c920c8f99d295b5b358bd0144c29",
       "whale": {
-        "address": "0x64369e1c3F41C47f70883a7cdd374F2E073dDA96",
-        "pseudonym": "Muted-Bladder",
-        "raw_win_rate": 0.9448,
-        "lifetime_pnl": 10665.19,
-        "roi": 0.1805,
-        "recent_wins": 165,
-        "recent_n": 175,
-        "recent_win_rate": 0.9429,
+        "address": "0x5F85CBE87b3C3ea6EE99E8054f203aD7C9EA7E17",
+        "pseudonym": "Outgoing-Loneliness",
+        "raw_win_rate": 0.9603,
+        "lifetime_pnl": 53567.47,
+        "roi": 0.8981,
+        "recent_wins": 19,
+        "recent_n": 19,
+        "recent_win_rate": 1.0,
         "z_score": 0.0,
-        "n_total": 181,
-        "total_wins": 171
+        "n_total": 126,
+        "total_wins": 121
       },
-      "verdict": "SKIP",
-      "age_min": 695.2,
-      "drift": -0.005,
+      "verdict": "LATE",
+      "age_min": 379.0,
+      "drift": 0.025,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.6%",
+          "value": "+3.2%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
-          "status": "fail",
-          "value": "$302",
+          "status": "pass",
+          "value": "$9,707",
           "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
+          "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
@@ -4080,14 +1731,340 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "695m ago",
+          "value": "379m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +28% on win, small cushion over costs.",
+        "Very stale — even if price is near entry, you have less time to profit"
+      ]
+    },
+    {
+      "signal_id": "0x7967DeD7_0x2461071c",
+      "ts": 1780797420.0,
+      "timestamp_iso": "2026-06-07T01:57:00Z",
+      "market_id": "0x1595b4818eeb1ea1e0bec5de6f057218e557feee9b405a0e930d290384fa1d16",
+      "market_title": "Will Germany win the 2026 FIFA World Cup?",
+      "market_slug": "world-cup-winner",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.057,
+      "current_price": 0.0565,
+      "shares": 20000.0,
+      "size_usdc": 1172.25,
+      "tx_hash": "0x2461071c4fe12d9e59803d1c795aa69bc17e366698696a9850e145ad0af38f49",
+      "whale": {
+        "address": "0x7967DeD7C72e2FA03d732f5a5e21667F1741f4A0",
+        "pseudonym": "Poor-Gutter",
+        "raw_win_rate": 0.8804,
+        "lifetime_pnl": 128819.67,
+        "roi": 0.6052,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 92,
+        "total_wins": 81
+      },
+      "verdict": "LATE",
+      "age_min": 469.4,
+      "drift": -0.0005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.9%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,172",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.057 (max +1654%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +1654% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "fail",
+          "value": "469m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
+        }
+      ],
+      "skip_reasons": [
+        "Very stale — even if price is near entry, you have less time to profit"
+      ]
+    },
+    {
+      "signal_id": "0x7967DeD7_0xbbfc4b15",
+      "ts": 1780797346.0,
+      "timestamp_iso": "2026-06-07T01:55:46Z",
+      "market_id": "0x0c4cd2055d6ea89354ffddc55d6dbcef9355748112ea952fc925f3db6a5c457f",
+      "market_title": "Will Argentina win the 2026 FIFA World Cup?",
+      "market_slug": "world-cup-winner",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.089,
+      "current_price": 0.0885,
+      "shares": 10000.0,
+      "size_usdc": 914.32,
+      "tx_hash": "0xbbfc4b1571c5b88a48f5d805efa30a1e6f803874c18ff80f9c3d5c0340bd8334",
+      "whale": {
+        "address": "0x7967DeD7C72e2FA03d732f5a5e21667F1741f4A0",
+        "pseudonym": "Poor-Gutter",
+        "raw_win_rate": 0.8804,
+        "lifetime_pnl": 128819.67,
+        "roi": 0.6052,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 92,
+        "total_wins": 81
+      },
+      "verdict": "LATE",
+      "age_min": 470.6,
+      "drift": -0.0005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$914",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.089 (max +1024%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +1024% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "fail",
+          "value": "471m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
+        }
+      ],
+      "skip_reasons": [
+        "Very stale — even if price is near entry, you have less time to profit"
+      ]
+    },
+    {
+      "signal_id": "0x7967DeD7_0x1e0b701c",
+      "ts": 1780797289.0,
+      "timestamp_iso": "2026-06-07T01:54:49Z",
+      "market_id": "0x4f3421fb2daf5cca7430ed8d8132463963081572d75434393a1808fdb8829fe8",
+      "market_title": "Will Portugal win the 2026 FIFA World Cup?",
+      "market_slug": "world-cup-winner",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.101,
+      "current_price": 0.0965,
+      "shares": 10000.0,
+      "size_usdc": 1037.24,
+      "tx_hash": "0x1e0b701cdd4eb5ed138a421c0002eac744c3f33c94bcb7a2d84b2c90282617e9",
+      "whale": {
+        "address": "0x7967DeD7C72e2FA03d732f5a5e21667F1741f4A0",
+        "pseudonym": "Poor-Gutter",
+        "raw_win_rate": 0.8804,
+        "lifetime_pnl": 128819.67,
+        "roi": 0.6052,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 92,
+        "total_wins": 81
+      },
+      "verdict": "LATE",
+      "age_min": 471.6,
+      "drift": -0.0045,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-4.5%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,037",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.101 (max +890%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +890% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "fail",
+          "value": "472m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
+        }
+      ],
+      "skip_reasons": [
+        "Very stale — even if price is near entry, you have less time to profit"
+      ]
+    },
+    {
+      "signal_id": "0x8A4e8F6e_0x6a745e52",
+      "ts": 1780785052.0,
+      "timestamp_iso": "2026-06-06T22:30:52Z",
+      "market_id": "0xc4c3dbcc37a957a817599b0bf9fb5bd6b62b19210b0f527fec57cb75c7ed150a",
+      "market_title": "Will Keiko Fujimori win the 2026 Peruvian presidential election?",
+      "market_slug": "peru-presidential-election-winner",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.62,
+      "current_price": 0.675,
+      "shares": 1612.9,
+      "size_usdc": 1015.2,
+      "tx_hash": "0x6a745e52113ba30d77564550a04094a40e0e0ca6012f5dab5900f0b983f47651",
+      "whale": {
+        "address": "0x8A4e8F6e20B99aE0b05CAF1237AEaBe184831ba4",
+        "pseudonym": "Cheerful-Visit",
+        "raw_win_rate": 0.8947,
+        "lifetime_pnl": 41898.93,
+        "roi": 0.6024,
+        "recent_wins": 30,
+        "recent_n": 30,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 38,
+        "total_wins": 34
+      },
+      "verdict": "LATE",
+      "age_min": 675.5,
+      "drift": 0.055,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+8.9%",
+          "threshold": "> 3%",
+          "note": "Line moved +8.9% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$1,015",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.620 (max +61%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +61% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "fail",
+          "value": "676m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +8.9% — part of the edge is already priced in",
+        "Very stale — even if price is near entry, you have less time to profit"
+      ]
+    },
+    {
+      "signal_id": "0x3f5Ea0A8_0x595fda8b",
+      "ts": 1780784415.0,
+      "timestamp_iso": "2026-06-06T22:20:15Z",
+      "market_id": "0x375409bc5eeeff961e82b479caeccc20f33d15738e5bce1186d628aa3d9dfb1f",
+      "market_title": "Will England win the 2026 FIFA World Cup?",
+      "market_slug": "world-cup-winner",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.888,
+      "current_price": 0.8885,
+      "shares": 16554.05,
+      "size_usdc": 14749.39,
+      "tx_hash": "0x595fda8bb07de451836f5e12f8c2c5c8c0f6806f2d3aca1becb22dbb04e55028",
+      "whale": {
+        "address": "0x3f5Ea0A8053E81CE2F59814118869322C35fE7DB",
+        "pseudonym": "Pleasing-Biology",
+        "raw_win_rate": 0.9541,
+        "lifetime_pnl": 425655.32,
+        "roi": 0.4976,
+        "recent_wins": 1,
+        "recent_n": 1,
+        "recent_win_rate": 1.0,
+        "z_score": 0.0,
+        "n_total": 109,
+        "total_wins": 104
+      },
+      "verdict": "LATE",
+      "age_min": 686.1,
+      "drift": 0.0005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.1%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$14,749",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.888 (max +13%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 13% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "fail",
+          "value": "686m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 13% gain if right, -100% if wrong. Asymmetric risk.",
         "Very stale — even if price is near entry, you have less time to profit"
       ]
     }
