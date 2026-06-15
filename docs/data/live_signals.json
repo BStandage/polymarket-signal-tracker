@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-14T22:54:59.068342Z",
+  "updated_at": "2026-06-15T00:05:32.862692Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 12,
-  "signal_count": 50,
-  "enter_count": 18,
+  "signal_count": 37,
+  "enter_count": 8,
   "signals": [
     {
-      "signal_id": "0x54B56146_0xe05b70e4",
-      "ts": 1781477596.0,
-      "timestamp_iso": "2026-06-14T22:53:16Z",
+      "signal_id": "0x54B56146_0x940f9455",
+      "ts": 1781481885.0,
+      "timestamp_iso": "2026-06-15T00:04:45Z",
       "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
       "market_title": "US x Iran permanent peace deal by June 15, 2026?",
       "market_slug": "us-x-iran-permanent-peace-deal-by",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.743,
-      "current_price": 0.733,
-      "shares": 831.92,
-      "size_usdc": 618.12,
-      "tx_hash": "0xe05b70e4b4486390900a44c75852a577018c434a4ebc9c69ff68fb9b4dcbaf86",
+      "entry_price": 0.836,
+      "current_price": 0.833,
+      "shares": 182.93,
+      "size_usdc": 152.93,
+      "tx_hash": "0x940f9455b2719bcd5807628aec0899bd2b9dc3ce552623030257e758e46d738e",
       "whale": {
         "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
         "pseudonym": "Grand-Reasoning",
@@ -38,56 +38,59 @@
         "n_total": 30,
         "total_wins": 25
       },
-      "verdict": "ENTER",
-      "age_min": 1.6,
-      "drift": -0.01,
+      "verdict": "SKIP",
+      "age_min": 0.7,
+      "drift": -0.003,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.3%",
+          "value": "-0.4%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
-          "status": "pass",
-          "value": "$618",
+          "status": "fail",
+          "value": "$153",
           "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
+          "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.743 (max +35%)",
+          "status": "warn",
+          "value": "0.836 (max +20%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +35% upside on a correct call."
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "2m ago",
+          "value": "1m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+      ]
     },
     {
-      "signal_id": "0x54B56146_0xd1ca579e",
-      "ts": 1781477592.0,
-      "timestamp_iso": "2026-06-14T22:53:12Z",
+      "signal_id": "0x54B56146_0x3f99511d",
+      "ts": 1781481880.0,
+      "timestamp_iso": "2026-06-15T00:04:40Z",
       "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
       "market_title": "US x Iran permanent peace deal by June 15, 2026?",
       "market_slug": "us-x-iran-permanent-peace-deal-by",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.743,
-      "current_price": 0.733,
-      "shares": 4168.08,
-      "size_usdc": 3096.88,
-      "tx_hash": "0xd1ca579e7aecf1c0fc5a7e8fe1cab46f923b4415ff06360c9359c53f69433b44",
+      "entry_price": 0.836,
+      "current_price": 0.833,
+      "shares": 1780.38,
+      "size_usdc": 1488.4,
+      "tx_hash": "0x3f99511da34d7a0401e84754e3abf581f26f1e7b85e7d747b0f6727ec539714d",
       "whale": {
         "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
         "pseudonym": "Grand-Reasoning",
@@ -101,30 +104,95 @@
         "n_total": 30,
         "total_wins": 25
       },
-      "verdict": "ENTER",
-      "age_min": 1.7,
-      "drift": -0.01,
+      "verdict": "LATE",
+      "age_min": 0.8,
+      "drift": -0.003,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.3%",
+          "value": "-0.4%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$3,097",
+          "value": "$1,488",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.743 (max +35%)",
+          "status": "warn",
+          "value": "0.836 (max +20%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +35% upside on a correct call."
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "1m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x54B56146_0xf906e309",
+      "ts": 1781481793.0,
+      "timestamp_iso": "2026-06-15T00:03:13Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.829,
+      "current_price": 0.833,
+      "shares": 1194.55,
+      "size_usdc": 990.28,
+      "tx_hash": "0xf906e3097a3d9f325a56360b98013054f51f3afa74ca1aadb6dd32dff229adff",
+      "whale": {
+        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
+        "pseudonym": "Grand-Reasoning",
+        "raw_win_rate": 0.8333,
+        "lifetime_pnl": 83107.97,
+        "roi": 1.414,
+        "recent_wins": 25,
+        "recent_n": 30,
+        "recent_win_rate": 0.8333,
+        "z_score": 0.0,
+        "n_total": 30,
+        "total_wins": 25
+      },
+      "verdict": "LATE",
+      "age_min": 2.2,
+      "drift": 0.004,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+0.5%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$990",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.829 (max +21%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 21% gain if right, -100% if wrong. Asymmetric risk."
         },
         {
           "name": "Age",
@@ -134,7 +202,467 @@
           "note": "Fresh"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Entry too high — max 21% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x54B56146_0xfc03bab6",
+      "ts": 1781481744.0,
+      "timestamp_iso": "2026-06-15T00:02:24Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.822,
+      "current_price": 0.833,
+      "shares": 911.97,
+      "size_usdc": 749.64,
+      "tx_hash": "0xfc03bab61e8975d92f2e131407d6f421b64f0a82675e9a800cd027bc7ebc5930",
+      "whale": {
+        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
+        "pseudonym": "Grand-Reasoning",
+        "raw_win_rate": 0.8333,
+        "lifetime_pnl": 83107.97,
+        "roi": 1.414,
+        "recent_wins": 25,
+        "recent_n": 30,
+        "recent_win_rate": 0.8333,
+        "z_score": 0.0,
+        "n_total": 30,
+        "total_wins": 25
+      },
+      "verdict": "LATE",
+      "age_min": 3.1,
+      "drift": 0.011,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+1.3%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$750",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.822 (max +22%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "3m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x54B56146_0x2b25ad40",
+      "ts": 1781481649.0,
+      "timestamp_iso": "2026-06-15T00:00:49Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.816,
+      "current_price": 0.833,
+      "shares": 861.08,
+      "size_usdc": 702.64,
+      "tx_hash": "0x2b25ad40364a990a77816743523b4337b8fcf5ef3842f37b7c0f5288fc921cc1",
+      "whale": {
+        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
+        "pseudonym": "Grand-Reasoning",
+        "raw_win_rate": 0.8333,
+        "lifetime_pnl": 83107.97,
+        "roi": 1.414,
+        "recent_wins": 25,
+        "recent_n": 30,
+        "recent_win_rate": 0.8333,
+        "z_score": 0.0,
+        "n_total": 30,
+        "total_wins": 25
+      },
+      "verdict": "LATE",
+      "age_min": 4.6,
+      "drift": 0.017,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+2.1%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$703",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.816 (max +23%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 23% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 23% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x54B56146_0x8595a525",
+      "ts": 1781481534.0,
+      "timestamp_iso": "2026-06-14T23:58:54Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.843,
+      "current_price": 0.833,
+      "shares": 4049.63,
+      "size_usdc": 3413.84,
+      "tx_hash": "0x8595a5258d6779ee65ec546972c4fca031eb10646a37025a01d6bfe3ca26af84",
+      "whale": {
+        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
+        "pseudonym": "Grand-Reasoning",
+        "raw_win_rate": 0.8333,
+        "lifetime_pnl": 83107.97,
+        "roi": 1.414,
+        "recent_wins": 25,
+        "recent_n": 30,
+        "recent_win_rate": 0.8333,
+        "z_score": 0.0,
+        "n_total": 30,
+        "total_wins": 25
+      },
+      "verdict": "LATE",
+      "age_min": 6.6,
+      "drift": -0.01,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-1.2%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$3,414",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.843 (max +19%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "7m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x54B56146_0x090cdc9d",
+      "ts": 1781481196.0,
+      "timestamp_iso": "2026-06-14T23:53:16Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.802,
+      "current_price": 0.833,
+      "shares": 1157.69,
+      "size_usdc": 928.47,
+      "tx_hash": "0x090cdc9d0e761b24e568500b363b813771e507120e17d3b89981448d0cd9e913",
+      "whale": {
+        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
+        "pseudonym": "Grand-Reasoning",
+        "raw_win_rate": 0.8333,
+        "lifetime_pnl": 83107.97,
+        "roi": 1.414,
+        "recent_wins": 25,
+        "recent_n": 30,
+        "recent_win_rate": 0.8333,
+        "z_score": 0.0,
+        "n_total": 30,
+        "total_wins": 25
+      },
+      "verdict": "LATE",
+      "age_min": 12.2,
+      "drift": 0.031,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+3.9%",
+          "threshold": "> 3%",
+          "note": "Line moved +3.9% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$928",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.802 (max +25%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "12m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +3.9% — part of the edge is already priced in",
+        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x54B56146_0xd646b5a6",
+      "ts": 1781481097.0,
+      "timestamp_iso": "2026-06-14T23:51:37Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.802,
+      "current_price": 0.833,
+      "shares": 3842.31,
+      "size_usdc": 3081.53,
+      "tx_hash": "0xd646b5a611b87cef1794ee764f9c52b93ea3b66cca41e99811a19523e6fa215a",
+      "whale": {
+        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
+        "pseudonym": "Grand-Reasoning",
+        "raw_win_rate": 0.8333,
+        "lifetime_pnl": 83107.97,
+        "roi": 1.414,
+        "recent_wins": 25,
+        "recent_n": 30,
+        "recent_win_rate": 0.8333,
+        "z_score": 0.0,
+        "n_total": 30,
+        "total_wins": 25
+      },
+      "verdict": "LATE",
+      "age_min": 13.9,
+      "drift": 0.031,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+3.9%",
+          "threshold": "> 3%",
+          "note": "Line moved +3.9% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$3,082",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.802 (max +25%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "14m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +3.9% — part of the edge is already priced in",
+        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x134A63b7_0x67afcbae",
+      "ts": 1781481007.0,
+      "timestamp_iso": "2026-06-14T23:50:07Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.808,
+      "current_price": 0.833,
+      "shares": 23232.0,
+      "size_usdc": 18771.46,
+      "tx_hash": "0x67afcbaeb5c90f5c687eb9f981ed584d42fda5e9c7021613c20eae7a5874f495",
+      "whale": {
+        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
+        "pseudonym": "Witty-Conviction",
+        "raw_win_rate": 0.975,
+        "lifetime_pnl": 58006.04,
+        "roi": 0.1391,
+        "recent_wins": 39,
+        "recent_n": 40,
+        "recent_win_rate": 0.975,
+        "z_score": 0.0,
+        "n_total": 40,
+        "total_wins": 39
+      },
+      "verdict": "LATE",
+      "age_min": 15.4,
+      "drift": 0.025,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+3.1%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$18,771",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.808 (max +24%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 24% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "15m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 24% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0x54B56146_0xdb7d7456",
+      "ts": 1781480460.0,
+      "timestamp_iso": "2026-06-14T23:41:00Z",
+      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
+      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
+      "market_slug": "us-x-iran-permanent-peace-deal-by",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.836,
+      "current_price": 0.833,
+      "shares": 201.22,
+      "size_usdc": 168.22,
+      "tx_hash": "0xdb7d74562abc445c680323831ddd4016c5e22bd8f0908e2a0ff94e20087afc7c",
+      "whale": {
+        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
+        "pseudonym": "Grand-Reasoning",
+        "raw_win_rate": 0.8333,
+        "lifetime_pnl": 83107.97,
+        "roi": 1.414,
+        "recent_wins": 25,
+        "recent_n": 30,
+        "recent_win_rate": 0.8333,
+        "z_score": 0.0,
+        "n_total": 30,
+        "total_wins": 25
+      },
+      "verdict": "SKIP",
+      "age_min": 24.5,
+      "drift": -0.003,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-0.4%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$168",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.836 (max +20%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "24m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+      ]
     },
     {
       "signal_id": "0xAEbF3aCC_0x6e6e2a38",
@@ -165,7 +693,7 @@
         "total_wins": 67
       },
       "verdict": "ENTER",
-      "age_min": 4.4,
+      "age_min": 75.0,
       "drift": -0.0005,
       "checks": [
         {
@@ -191,140 +719,14 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "4m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x54B56146_0x25f251f0",
-      "ts": 1781476402.0,
-      "timestamp_iso": "2026-06-14T22:33:22Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.717,
-      "current_price": 0.733,
-      "shares": 2408.62,
-      "size_usdc": 1726.98,
-      "tx_hash": "0x25f251f0fb363c07517ead2ae0822d274121b7e4a7a68fe01757c486ce7e271a",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "ENTER",
-      "age_min": 21.5,
-      "drift": 0.016,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,727",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.717 (max +39%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +39% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "21m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x54B56146_0x53375001",
-      "ts": 1781476392.0,
-      "timestamp_iso": "2026-06-14T22:33:12Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.7139,
-      "current_price": 0.733,
-      "shares": 555.0,
-      "size_usdc": 396.21,
-      "tx_hash": "0x533750011974b204988a31afab94c51dec4f881122f49dd732873bb9106f8888",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "SKIP",
-      "age_min": 21.7,
-      "drift": 0.0191,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.7%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$396",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.714 (max +40%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +40% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "22m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "75m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -338,7 +740,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.686,
-      "current_price": 0.733,
+      "current_price": 0.833,
       "shares": 278.6,
       "size_usdc": 191.12,
       "tx_hash": "0xfc8ed77279ca4139d5fdb4f1e1a8ecabcb8d5965fc016c25fd12842b4b1c72c9",
@@ -356,15 +758,15 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 23.2,
-      "drift": 0.047,
+      "age_min": 93.8,
+      "drift": 0.147,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "+6.9%",
-          "threshold": "> 3%",
-          "note": "Line moved +6.9% — part of the edge is already priced in"
+          "status": "fail",
+          "value": "+21.4%",
+          "threshold": "> 7%",
+          "note": "Line moved +21.4% — the move already happened"
         },
         {
           "name": "Size",
@@ -382,15 +784,16 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "23m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "94m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +6.9% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill"
+        "Line moved +21.4% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -404,7 +807,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.686,
-      "current_price": 0.733,
+      "current_price": 0.833,
       "shares": 3330.98,
       "size_usdc": 2285.05,
       "tx_hash": "0x100498ee2c24f76a6675f9c03c279cef8fd3e38d92e05cb2f7a2645d0d6a9b72",
@@ -421,16 +824,16 @@
         "n_total": 40,
         "total_wins": 39
       },
-      "verdict": "LATE",
-      "age_min": 23.3,
-      "drift": 0.047,
+      "verdict": "SKIP",
+      "age_min": 93.9,
+      "drift": 0.147,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "+6.9%",
-          "threshold": "> 3%",
-          "note": "Line moved +6.9% — part of the edge is already priced in"
+          "status": "fail",
+          "value": "+21.4%",
+          "threshold": "> 7%",
+          "note": "Line moved +21.4% — the move already happened"
         },
         {
           "name": "Size",
@@ -448,14 +851,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "23m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "94m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +6.9% — part of the edge is already priced in"
+        "Line moved +21.4% — the move already happened",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -469,7 +873,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.686,
-      "current_price": 0.733,
+      "current_price": 0.833,
       "shares": 1389.43,
       "size_usdc": 953.15,
       "tx_hash": "0xead47fde2308ece224ca11747c30648910c2fc542004f35244ea2389bd7f6bd7",
@@ -486,16 +890,16 @@
         "n_total": 40,
         "total_wins": 39
       },
-      "verdict": "LATE",
-      "age_min": 23.3,
-      "drift": 0.047,
+      "verdict": "SKIP",
+      "age_min": 93.9,
+      "drift": 0.147,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "+6.9%",
-          "threshold": "> 3%",
-          "note": "Line moved +6.9% — part of the edge is already priced in"
+          "status": "fail",
+          "value": "+21.4%",
+          "threshold": "> 7%",
+          "note": "Line moved +21.4% — the move already happened"
         },
         {
           "name": "Size",
@@ -513,14 +917,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "23m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "94m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +6.9% — part of the edge is already priced in"
+        "Line moved +21.4% — the move already happened",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -534,7 +939,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.686,
-      "current_price": 0.733,
+      "current_price": 0.833,
       "shares": 421.87,
       "size_usdc": 289.4,
       "tx_hash": "0x6068a838d2ccbf5c1d985724920c99f3677f6d57111a34be17f6a2b4a4774909",
@@ -552,15 +957,15 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 23.4,
-      "drift": 0.047,
+      "age_min": 94.0,
+      "drift": 0.147,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "+6.9%",
-          "threshold": "> 3%",
-          "note": "Line moved +6.9% — part of the edge is already priced in"
+          "status": "fail",
+          "value": "+21.4%",
+          "threshold": "> 7%",
+          "note": "Line moved +21.4% — the move already happened"
         },
         {
           "name": "Size",
@@ -578,407 +983,16 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "23m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +6.9% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x134A63b7_0x4fdb5187",
-      "ts": 1781476273.0,
-      "timestamp_iso": "2026-06-14T22:31:13Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.686,
-      "current_price": 0.733,
-      "shares": 7449.14,
-      "size_usdc": 5110.11,
-      "tx_hash": "0x4fdb518737c221ef358333696653b0e93ade494af737a14bd2f8d1e6eed61efa",
-      "whale": {
-        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
-        "pseudonym": "Witty-Conviction",
-        "raw_win_rate": 0.975,
-        "lifetime_pnl": 58006.04,
-        "roi": 0.1391,
-        "recent_wins": 39,
-        "recent_n": 40,
-        "recent_win_rate": 0.975,
-        "z_score": 0.0,
-        "n_total": 40,
-        "total_wins": 39
-      },
-      "verdict": "LATE",
-      "age_min": 23.7,
-      "drift": 0.047,
-      "checks": [
-        {
-          "name": "Drift",
           "status": "warn",
-          "value": "+6.9%",
-          "threshold": "> 3%",
-          "note": "Line moved +6.9% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$5,110",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.686 (max +46%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +46% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "24m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "value": "94m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +6.9% — part of the edge is already priced in"
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0xe2e684a1",
-      "ts": 1781476239.0,
-      "timestamp_iso": "2026-06-14T22:30:39Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.668,
-      "current_price": 0.733,
-      "shares": 3000.0,
-      "size_usdc": 2004.0,
-      "tx_hash": "0xe2e684a1abf81d2a528af96fe99a49aace6d7c3cccb92e6fc8d5c1338ea98810",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "LATE",
-      "age_min": 24.2,
-      "drift": 0.065,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+9.7%",
-          "threshold": "> 3%",
-          "note": "Line moved +9.7% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,004",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.668 (max +50%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +50% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "24m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +9.7% — part of the edge is already priced in"
-      ]
-    },
-    {
-      "signal_id": "0x134A63b7_0xcb61d718",
-      "ts": 1781476239.0,
-      "timestamp_iso": "2026-06-14T22:30:39Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.6997,
-      "current_price": 0.733,
-      "shares": 22936.2,
-      "size_usdc": 16049.17,
-      "tx_hash": "0xcb61d718b9a5581adee5a7aa6820b653bdd92b8a7cf504c2ecbdf521ddc8fd6d",
-      "whale": {
-        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
-        "pseudonym": "Witty-Conviction",
-        "raw_win_rate": 0.975,
-        "lifetime_pnl": 58006.04,
-        "roi": 0.1391,
-        "recent_wins": 39,
-        "recent_n": 40,
-        "recent_win_rate": 0.975,
-        "z_score": 0.0,
-        "n_total": 40,
-        "total_wins": 39
-      },
-      "verdict": "LATE",
-      "age_min": 24.3,
-      "drift": 0.0333,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+4.8%",
-          "threshold": "> 3%",
-          "note": "Line moved +4.8% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$16,049",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.700 (max +43%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +43% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "24m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +4.8% — part of the edge is already priced in"
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0x072200e0",
-      "ts": 1781476213.0,
-      "timestamp_iso": "2026-06-14T22:30:13Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.662,
-      "current_price": 0.733,
-      "shares": 274.94,
-      "size_usdc": 182.01,
-      "tx_hash": "0x072200e0a6e7de0024dc901ec409b6f69bdef6e14365d4af84daea330bc6e4eb",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "SKIP",
-      "age_min": 24.7,
-      "drift": 0.071,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+10.7%",
-          "threshold": "> 7%",
-          "note": "Line moved +10.7% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$182",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.662 (max +51%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +51% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "25m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +10.7% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0xba920441",
-      "ts": 1781476213.0,
-      "timestamp_iso": "2026-06-14T22:30:13Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.662,
-      "current_price": 0.733,
-      "shares": 2984.5,
-      "size_usdc": 1975.74,
-      "tx_hash": "0xba920441f5116701531bcc1214c6d9b62072de4676ffe6559e677d6624da08f3",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "SKIP",
-      "age_min": 24.7,
-      "drift": 0.071,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+10.7%",
-          "threshold": "> 7%",
-          "note": "Line moved +10.7% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,976",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.662 (max +51%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +51% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "25m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +10.7% — the move already happened"
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0x4f784614",
-      "ts": 1781476213.0,
-      "timestamp_iso": "2026-06-14T22:30:13Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.662,
-      "current_price": 0.733,
-      "shares": 192.31,
-      "size_usdc": 127.31,
-      "tx_hash": "0x4f7846143f8fb0f5301618e89dc52a89baf21c96be0f14b739a09aafad848123",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "SKIP",
-      "age_min": 24.7,
-      "drift": 0.071,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "fail",
-          "value": "+10.7%",
-          "threshold": "> 7%",
-          "note": "Line moved +10.7% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$127",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.662 (max +51%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +51% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "25m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +10.7% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill"
+        "Line moved +21.4% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -992,7 +1006,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.164,
-      "current_price": 0.1635,
+      "current_price": 0.1625,
       "shares": 12195.12,
       "size_usdc": 2050.16,
       "tx_hash": "0x0ce9dc0f6167c71496fdc4447de861167bd4b79162fd2039144aba111ef21b7d",
@@ -1010,13 +1024,13 @@
         "total_wins": 174
       },
       "verdict": "ENTER",
-      "age_min": 26.1,
-      "drift": -0.0005,
+      "age_min": 96.7,
+      "drift": -0.0015,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.3%",
+          "value": "-0.9%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -1036,144 +1050,14 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "26m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x54B56146_0x18df20eb",
-      "ts": 1781476000.0,
-      "timestamp_iso": "2026-06-14T22:26:40Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.766,
-      "current_price": 0.733,
-      "shares": 3864.21,
-      "size_usdc": 2959.98,
-      "tx_hash": "0x18df20eb0a906aa21f33bba8abe87ce3ce56296a928591537e5aac3293faa4dc",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "LATE",
-      "age_min": 28.2,
-      "drift": -0.033,
-      "checks": [
-        {
-          "name": "Drift",
           "status": "warn",
-          "value": "-4.3%",
-          "threshold": "> 3%",
-          "note": "Line moved -4.3% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,960",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.766 (max +31%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +31% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "28m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "value": "97m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved -4.3% — part of the edge is already priced in",
-        "Modest payoff — +31% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0xf7dde9c8",
-      "ts": 1781475996.0,
-      "timestamp_iso": "2026-06-14T22:26:36Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.763,
-      "current_price": 0.733,
-      "shares": 1200.0,
-      "size_usdc": 915.6,
-      "tx_hash": "0xf7dde9c83eef8d0babb4e7aca52bfa844e1571c142c8afe650e923130bfcff14",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "LATE",
-      "age_min": 28.3,
-      "drift": -0.03,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "-3.9%",
-          "threshold": "> 3%",
-          "note": "Line moved -3.9% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$916",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.763 (max +31%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +31% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "28m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -3.9% — part of the edge is already priced in",
-        "Modest payoff — +31% on win, small cushion over costs."
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -1205,7 +1089,7 @@
         "total_wins": 174
       },
       "verdict": "ENTER",
-      "age_min": 29.0,
+      "age_min": 99.6,
       "drift": -0.0005,
       "checks": [
         {
@@ -1231,667 +1115,14 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "29m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": []
-    },
-    {
-      "signal_id": "0x54B56146_0xec8dc1c0",
-      "ts": 1781475918.0,
-      "timestamp_iso": "2026-06-14T22:25:18Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.757,
-      "current_price": 0.733,
-      "shares": 414.5,
-      "size_usdc": 313.78,
-      "tx_hash": "0xec8dc1c0b119d6d7e999aaa53d9d0470db85b3ad916cdc96e3cd2abd7783c9d4",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "SKIP",
-      "age_min": 29.6,
-      "drift": -0.024,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-3.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$314",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
           "status": "warn",
-          "value": "0.757 (max +32%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "30m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "value": "100m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Modest payoff — +32% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0xadd053df",
-      "ts": 1781475913.0,
-      "timestamp_iso": "2026-06-14T22:25:13Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.757,
-      "current_price": 0.733,
-      "shares": 191.66,
-      "size_usdc": 145.09,
-      "tx_hash": "0xadd053dfc74e0f2410170a541c6794272c1a4bc77bbcc36026abac2e6beac9d9",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "SKIP",
-      "age_min": 29.7,
-      "drift": -0.024,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-3.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$145",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.757 (max +32%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "30m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Modest payoff — +32% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x134A63b7_0x610ec57c",
-      "ts": 1781475510.0,
-      "timestamp_iso": "2026-06-14T22:18:30Z",
-      "market_id": "0x68fbeb8d823552abf9d35f3ebdb8619a1a1d51b650da9101be62f09308fd18d2",
-      "market_title": "US announces new Iran agreement/ceasefire extension by June 13?",
-      "market_slug": "us-announces-new-iran-agreementceasefire-extension-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.0396,
-      "current_price": 0.045,
-      "shares": 8659.38,
-      "size_usdc": 343.34,
-      "tx_hash": "0x610ec57c009736631d2669a90c69f1a58f4b18652e1c486b08c8e8612a635827",
-      "whale": {
-        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
-        "pseudonym": "Witty-Conviction",
-        "raw_win_rate": 0.975,
-        "lifetime_pnl": 58006.04,
-        "roi": 0.1391,
-        "recent_wins": 39,
-        "recent_n": 40,
-        "recent_win_rate": 0.975,
-        "z_score": 0.0,
-        "n_total": 40,
-        "total_wins": 39
-      },
-      "verdict": "SKIP",
-      "age_min": 36.4,
-      "drift": 0.0054,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+13.5%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$343",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.040 (max +2422%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +2422% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "36m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0x134A63b7_0xe057bd4f",
-      "ts": 1781475505.0,
-      "timestamp_iso": "2026-06-14T22:18:25Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.757,
-      "current_price": 0.733,
-      "shares": 1283.2,
-      "size_usdc": 971.38,
-      "tx_hash": "0xe057bd4fb9d22dba3ea80eee77e318c2ac558ba5eee64a3243fa72775bcf3ca4",
-      "whale": {
-        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
-        "pseudonym": "Witty-Conviction",
-        "raw_win_rate": 0.975,
-        "lifetime_pnl": 58006.04,
-        "roi": 0.1391,
-        "recent_wins": 39,
-        "recent_n": 40,
-        "recent_win_rate": 0.975,
-        "z_score": 0.0,
-        "n_total": 40,
-        "total_wins": 39
-      },
-      "verdict": "ENTER",
-      "age_min": 36.5,
-      "drift": -0.024,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-3.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$971",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.757 (max +32%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "36m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Modest payoff — +32% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x134A63b7_0xe6e0b342",
-      "ts": 1781475504.0,
-      "timestamp_iso": "2026-06-14T22:18:24Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.757,
-      "current_price": 0.733,
-      "shares": 2000.0,
-      "size_usdc": 1514.0,
-      "tx_hash": "0xe6e0b34206ddefefc313eee2b6fbcac678aa557db2a3db9660996d106a6725ee",
-      "whale": {
-        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
-        "pseudonym": "Witty-Conviction",
-        "raw_win_rate": 0.975,
-        "lifetime_pnl": 58006.04,
-        "roi": 0.1391,
-        "recent_wins": 39,
-        "recent_n": 40,
-        "recent_win_rate": 0.975,
-        "z_score": 0.0,
-        "n_total": 40,
-        "total_wins": 39
-      },
-      "verdict": "ENTER",
-      "age_min": 36.5,
-      "drift": -0.024,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-3.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,514",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.757 (max +32%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "37m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Modest payoff — +32% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x134A63b7_0xce7a6192",
-      "ts": 1781475504.0,
-      "timestamp_iso": "2026-06-14T22:18:24Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.757,
-      "current_price": 0.733,
-      "shares": 1900.12,
-      "size_usdc": 1438.39,
-      "tx_hash": "0xce7a61927964cbe1c6eef9541832945a6f59c553150cd76c334993f58ff6f897",
-      "whale": {
-        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
-        "pseudonym": "Witty-Conviction",
-        "raw_win_rate": 0.975,
-        "lifetime_pnl": 58006.04,
-        "roi": 0.1391,
-        "recent_wins": 39,
-        "recent_n": 40,
-        "recent_win_rate": 0.975,
-        "z_score": 0.0,
-        "n_total": 40,
-        "total_wins": 39
-      },
-      "verdict": "ENTER",
-      "age_min": 36.5,
-      "drift": -0.024,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-3.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,438",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.757 (max +32%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "37m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Modest payoff — +32% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x134A63b7_0x3ee0cda3",
-      "ts": 1781475496.0,
-      "timestamp_iso": "2026-06-14T22:18:16Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.757,
-      "current_price": 0.733,
-      "shares": 1260.0,
-      "size_usdc": 953.82,
-      "tx_hash": "0x3ee0cda3c12263ed030d68b207b5bd1485d361da1573c8c6753da7e764ae585d",
-      "whale": {
-        "address": "0x134A63b764aC7b008356e8dB1857db94E6b09E42",
-        "pseudonym": "Witty-Conviction",
-        "raw_win_rate": 0.975,
-        "lifetime_pnl": 58006.04,
-        "roi": 0.1391,
-        "recent_wins": 39,
-        "recent_n": 40,
-        "recent_win_rate": 0.975,
-        "z_score": 0.0,
-        "n_total": 40,
-        "total_wins": 39
-      },
-      "verdict": "ENTER",
-      "age_min": 36.7,
-      "drift": -0.024,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-3.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$954",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.757 (max +32%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "37m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Modest payoff — +32% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0x19b852bb",
-      "ts": 1781475382.0,
-      "timestamp_iso": "2026-06-14T22:16:22Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.77,
-      "current_price": 0.733,
-      "shares": 2002.98,
-      "size_usdc": 1542.29,
-      "tx_hash": "0x19b852bbb5ea9fdf87d885e304652c7ba8833957f45140b11dce199d2d2607b3",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "LATE",
-      "age_min": 38.5,
-      "drift": -0.037,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "-4.8%",
-          "threshold": "> 3%",
-          "note": "Line moved -4.8% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,542",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.770 (max +30%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +30% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "39m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -4.8% — part of the edge is already priced in",
-        "Modest payoff — +30% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0xd55aebf7",
-      "ts": 1781475379.0,
-      "timestamp_iso": "2026-06-14T22:16:19Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.77,
-      "current_price": 0.733,
-      "shares": 1258.1,
-      "size_usdc": 968.74,
-      "tx_hash": "0xd55aebf70456bb27ac266748bcfdcbdb4637363c6fe31cc091d54c1a8c602a9c",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "LATE",
-      "age_min": 38.6,
-      "drift": -0.037,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "-4.8%",
-          "threshold": "> 3%",
-          "note": "Line moved -4.8% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$969",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.770 (max +30%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +30% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "39m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -4.8% — part of the edge is already priced in",
-        "Modest payoff — +30% on win, small cushion over costs."
-      ]
-    },
-    {
-      "signal_id": "0x54B56146_0xe24468c7",
-      "ts": 1781475367.0,
-      "timestamp_iso": "2026-06-14T22:16:07Z",
-      "market_id": "0xd86a816093fcd0a0e1ca440bc5ce199bd3c5a8d6139e044b076958164f8c5423",
-      "market_title": "US x Iran permanent peace deal by June 15, 2026?",
-      "market_slug": "us-x-iran-permanent-peace-deal-by",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.768,
-      "current_price": 0.733,
-      "shares": 1028.96,
-      "size_usdc": 790.24,
-      "tx_hash": "0xe24468c7ca1d69342e8d8f0456e5fa2b9217509961759290e08016e995f9faff",
-      "whale": {
-        "address": "0x54B56146656e7eef9DA02b3A030c18e06e924B31",
-        "pseudonym": "Grand-Reasoning",
-        "raw_win_rate": 0.8333,
-        "lifetime_pnl": 83107.97,
-        "roi": 1.414,
-        "recent_wins": 25,
-        "recent_n": 30,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 30,
-        "total_wins": 25
-      },
-      "verdict": "LATE",
-      "age_min": 38.8,
-      "drift": -0.035,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "-4.6%",
-          "threshold": "> 3%",
-          "note": "Line moved -4.6% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$790",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.768 (max +30%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +30% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "39m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -4.6% — part of the edge is already priced in",
-        "Modest payoff — +30% on win, small cushion over costs."
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -1923,7 +1154,7 @@
         "total_wins": 174
       },
       "verdict": "SKIP",
-      "age_min": 41.2,
+      "age_min": 111.8,
       "drift": -0.005,
       "checks": [
         {
@@ -1949,14 +1180,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "41m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "112m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -1988,7 +1220,7 @@
         "total_wins": 174
       },
       "verdict": "SKIP",
-      "age_min": 41.3,
+      "age_min": 111.9,
       "drift": -0.005,
       "checks": [
         {
@@ -2014,14 +1246,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "41m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "112m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -2053,7 +1286,7 @@
         "total_wins": 174
       },
       "verdict": "ENTER",
-      "age_min": 41.7,
+      "age_min": 112.3,
       "drift": -0.0047,
       "checks": [
         {
@@ -2079,13 +1312,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "42m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "112m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
-      "skip_reasons": []
+      "skip_reasons": [
+        "Aging — but OK to tail if drift still small"
+      ]
     },
     {
       "signal_id": "0xf5592765_0x0ffe788d",
@@ -2116,7 +1351,7 @@
         "total_wins": 174
       },
       "verdict": "ENTER",
-      "age_min": 84.5,
+      "age_min": 155.1,
       "drift": -0.0005,
       "checks": [
         {
@@ -2143,7 +1378,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "84m ago",
+          "value": "155m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -2181,7 +1416,7 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 85.0,
+      "age_min": 155.6,
       "drift": null,
       "checks": [
         {
@@ -2208,7 +1443,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "85m ago",
+          "value": "156m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -2247,7 +1482,7 @@
         "total_wins": 39
       },
       "verdict": "ENTER",
-      "age_min": 85.3,
+      "age_min": 155.9,
       "drift": null,
       "checks": [
         {
@@ -2274,7 +1509,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "85m ago",
+          "value": "156m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -2312,7 +1547,7 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 85.3,
+      "age_min": 155.9,
       "drift": null,
       "checks": [
         {
@@ -2339,7 +1574,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "85m ago",
+          "value": "156m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -2378,7 +1613,7 @@
         "total_wins": 39
       },
       "verdict": "ENTER",
-      "age_min": 86.0,
+      "age_min": 156.6,
       "drift": null,
       "checks": [
         {
@@ -2405,7 +1640,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "86m ago",
+          "value": "157m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -2443,7 +1678,7 @@
         "total_wins": 39
       },
       "verdict": "SKIP",
-      "age_min": 87.6,
+      "age_min": 158.1,
       "drift": null,
       "checks": [
         {
@@ -2470,7 +1705,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "88m ago",
+          "value": "158m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -2491,7 +1726,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.4715,
-      "current_price": 0.267,
+      "current_price": 0.167,
       "shares": 6362.48,
       "size_usdc": 3000.0,
       "tx_hash": "0x404d6886873afa4e7fd7dca2b028450fee29168affcde312ec84696a09d6249d",
@@ -2509,15 +1744,15 @@
         "total_wins": 174
       },
       "verdict": "SKIP",
-      "age_min": 96.4,
-      "drift": -0.2045,
+      "age_min": 167.0,
+      "drift": -0.3045,
       "checks": [
         {
           "name": "Drift",
           "status": "fail",
-          "value": "-43.4%",
+          "value": "-64.6%",
           "threshold": "> 7%",
-          "note": "Line moved -43.4% — the move already happened"
+          "note": "Line moved -64.6% — the move already happened"
         },
         {
           "name": "Size",
@@ -2536,13 +1771,13 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "96m ago",
+          "value": "167m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved -43.4% — the move already happened",
+        "Line moved -64.6% — the move already happened",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -2575,7 +1810,7 @@
         "total_wins": 67
       },
       "verdict": "ENTER",
-      "age_min": 231.6,
+      "age_min": 302.2,
       "drift": null,
       "checks": [
         {
@@ -2602,7 +1837,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "232m ago",
+          "value": "302m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -2622,7 +1857,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.21,
-      "current_price": 0.2095,
+      "current_price": 0.209,
       "shares": 2500.0,
       "size_usdc": 537.44,
       "tx_hash": "0xac068d4fc42d06a79fb68c03a3a7757423440f388802e833e32c8c4b11a6782a",
@@ -2639,14 +1874,14 @@
         "n_total": 62,
         "total_wins": 58
       },
-      "verdict": "ENTER",
-      "age_min": 304.7,
-      "drift": -0.0005,
+      "verdict": "LATE",
+      "age_min": 375.3,
+      "drift": -0.001,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.2%",
+          "value": "-0.5%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -2666,14 +1901,14 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "305m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "375m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -2705,7 +1940,7 @@
         "total_wins": 48
       },
       "verdict": "SKIP",
-      "age_min": 321.7,
+      "age_min": 392.3,
       "drift": -0.2595,
       "checks": [
         {
@@ -2731,15 +1966,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "322m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "392m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Line moved -99.8% — the move already happened",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -2771,7 +2006,7 @@
         "total_wins": 48
       },
       "verdict": "SKIP",
-      "age_min": 322.2,
+      "age_min": 392.7,
       "drift": null,
       "checks": [
         {
@@ -2797,15 +2032,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "322m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "393m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -2836,8 +2071,8 @@
         "n_total": 53,
         "total_wins": 48
       },
-      "verdict": "ENTER",
-      "age_min": 326.2,
+      "verdict": "LATE",
+      "age_min": 396.8,
       "drift": null,
       "checks": [
         {
@@ -2863,14 +2098,14 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "326m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "397m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -2902,7 +2137,7 @@
         "total_wins": 48
       },
       "verdict": "SKIP",
-      "age_min": 356.5,
+      "age_min": 427.0,
       "drift": null,
       "checks": [
         {
@@ -2928,15 +2163,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "356m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "427m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -2967,8 +2202,8 @@
         "n_total": 69,
         "total_wins": 67
       },
-      "verdict": "ENTER",
-      "age_min": 356.8,
+      "verdict": "LATE",
+      "age_min": 427.4,
       "drift": null,
       "checks": [
         {
@@ -2994,14 +2229,14 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "357m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "427m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -3015,7 +2250,7 @@
       "outcome_idx": 1,
       "side": "TEAM FALCONS",
       "entry_price": 0.45,
-      "current_price": 0.9995,
+      "current_price": null,
       "shares": 2236.9,
       "size_usdc": 1023.21,
       "tx_hash": "0x92dc8c18edc556de31087c8bd0f9d606eb9b09a4d19277c76189b64b5de411eb",
@@ -3032,16 +2267,16 @@
         "n_total": 69,
         "total_wins": 67
       },
-      "verdict": "SKIP",
-      "age_min": 358.5,
-      "drift": 0.5495,
+      "verdict": "LATE",
+      "age_min": 429.1,
+      "drift": null,
       "checks": [
         {
           "name": "Drift",
-          "status": "fail",
-          "value": "+122.1%",
-          "threshold": "> 7%",
-          "note": "Line moved +122.1% — the move already happened"
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
         },
         {
           "name": "Size",
@@ -3059,15 +2294,14 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "359m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "429m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Line moved +122.1% — the move already happened",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -3099,7 +2333,7 @@
         "total_wins": 39
       },
       "verdict": "LATE",
-      "age_min": 478.1,
+      "age_min": 548.6,
       "drift": null,
       "checks": [
         {
@@ -3126,7 +2360,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "478m ago",
+          "value": "549m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -3164,7 +2398,7 @@
         "total_wins": 67
       },
       "verdict": "SKIP",
-      "age_min": 595.5,
+      "age_min": 666.1,
       "drift": null,
       "checks": [
         {
@@ -3191,78 +2425,13 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "596m ago",
+          "value": "666m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xAEbF3aCC_0xebe78352",
-      "ts": 1781437618.0,
-      "timestamp_iso": "2026-06-14T11:46:58Z",
-      "market_id": "0x1683f0030fc5a167ab82aea42631944706e91a5b0e78f45fbe9cf4d983950fd4",
-      "market_title": "Counter-Strike: MOUZ vs FUT Esports (BO3) - IEM Cologne Major Stage 3",
-      "market_slug": "cs2-mouz-fut-2026-06-14",
-      "outcome": "MOUZ",
-      "outcome_idx": 0,
-      "side": "MOUZ",
-      "entry_price": 0.6,
-      "current_price": null,
-      "shares": 1619.43,
-      "size_usdc": 983.32,
-      "tx_hash": "0xebe783529aebf6767644cedee6390096d0a6b33f602120eac18e195f646af919",
-      "whale": {
-        "address": "0xAEbF3aCC7C9ADd4928BD218f96DE5cf64987E1ca",
-        "pseudonym": "Variable-Ski",
-        "raw_win_rate": 0.971,
-        "lifetime_pnl": 200634.9,
-        "roi": 0.9494,
-        "recent_wins": 67,
-        "recent_n": 69,
-        "recent_win_rate": 0.971,
-        "z_score": 0.0,
-        "n_total": 69,
-        "total_wins": 67
-      },
-      "verdict": "LATE",
-      "age_min": 668.0,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$983",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.600 (max +67%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +67% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "668m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
         "Very stale — even if price is near entry, you have less time to profit"
       ]
     }
