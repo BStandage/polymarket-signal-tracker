@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-16T19:03:00.979795Z",
+  "updated_at": "2026-06-16T21:44:53.177633Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 6,
-  "signal_count": 15,
-  "enter_count": 3,
+  "signal_count": 13,
+  "enter_count": 5,
   "signals": [
     {
-      "signal_id": "0x4df332E2_0xb2bc6a48",
-      "ts": 1781636261.0,
-      "timestamp_iso": "2026-06-16T18:57:41Z",
-      "market_id": "0x101b40299d1527d6e4d26fa91c8134fe1116380b5c9e2c2220405abf413be042",
-      "market_title": "Argentina vs. Algeria: O/U 10.5 Total Corners",
-      "market_slug": "fifwc-arg-alg-2026-06-16-total-corners",
+      "signal_id": "0x4df332E2_0xdeac5085",
+      "ts": 1781645875.0,
+      "timestamp_iso": "2026-06-16T21:37:55Z",
+      "market_id": "0x2990f61e65e45cd01b2c2ee6ceddf2b1bf1194be17b80ecbd0452cdfeea9a274",
+      "market_title": "Iraq vs. Norway: O/U 8.5 Total Corners",
+      "market_slug": "fifwc-irq-nor-2026-06-16-total-corners",
       "outcome": "Under",
       "outcome_idx": 1,
       "side": "UNDER",
-      "entry_price": 0.75,
-      "current_price": 0.755,
-      "shares": 532.0,
-      "size_usdc": 399.0,
-      "tx_hash": "0xb2bc6a4899ad60a02451fcbcd3422cf198ccc6fafb887582583fd7aa5a1c231e",
+      "entry_price": 0.36,
+      "current_price": 0.36,
+      "shares": 1201.0,
+      "size_usdc": 432.36,
+      "tx_hash": "0xdeac50859a75f5cb555ac653a31f18a3a0f907e7798d4e74705db3517c40f16c",
       "whale": {
         "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
         "pseudonym": "Far-Precipitation",
@@ -39,41 +39,501 @@
         "total_wins": 158
       },
       "verdict": "SKIP",
-      "age_min": 5.3,
-      "drift": 0.005,
+      "age_min": 6.9,
+      "drift": 0.0,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+0.7%",
+          "value": "+0.0%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$399",
+          "value": "$432",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.360 (max +178%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +178% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "7m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0x4df332E2_0x647fb71b",
+      "ts": 1781642467.0,
+      "timestamp_iso": "2026-06-16T20:41:07Z",
+      "market_id": "0x7d92b16e6fdf940d1998c439614107af0d2bec5d46f0b1fc9d48d13b431eaf5d",
+      "market_title": "Will the match end in a draw?",
+      "market_slug": "crint-gbr2-nzl7-2026-06-17",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.87,
+      "current_price": 0.88,
+      "shares": 300.0,
+      "size_usdc": 261.0,
+      "tx_hash": "0x647fb71b139d30b49086d2254f7633514aff2372cd6472c6df8ee4d03888f027",
+      "whale": {
+        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
+        "pseudonym": "Far-Precipitation",
+        "raw_win_rate": 0.8144,
+        "lifetime_pnl": 173595.52,
+        "roi": 0.6964,
+        "recent_wins": 158,
+        "recent_n": 194,
+        "recent_win_rate": 0.8144,
+        "z_score": 0.0,
+        "n_total": 194,
+        "total_wins": 158
+      },
+      "verdict": "SKIP",
+      "age_min": 63.7,
+      "drift": 0.01,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+1.1%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$261",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "warn",
-          "value": "0.750 (max +33%)",
+          "value": "0.870 (max +15%)",
           "threshold": "< 0.75",
-          "note": "Modest payoff — +33% on win, small cushion over costs."
+          "note": "Entry too high — max 15% gain if right, -100% if wrong. Asymmetric risk."
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "5m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "64m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Modest payoff — +33% on win, small cushion over costs."
+        "Entry too high — max 15% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x4df332E2_0xdfc80559",
+      "ts": 1781637944.0,
+      "timestamp_iso": "2026-06-16T19:25:44Z",
+      "market_id": "0xa040429177bd8ed84edb1022f8ce1519b133cc82cbbf8429821f7f4337458df5",
+      "market_title": "France vs. Senegal: O/U 8.5 Total Corners",
+      "market_slug": "fifwc-fra-sen-2026-06-16-total-corners",
+      "outcome": "Under",
+      "outcome_idx": 1,
+      "side": "UNDER",
+      "entry_price": 0.32,
+      "current_price": null,
+      "shares": 1459.97,
+      "size_usdc": 467.19,
+      "tx_hash": "0xdfc80559e087cc8360dfd4cc1cd8c88067c79939e0a5aede2b8a240a886fa1e5",
+      "whale": {
+        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
+        "pseudonym": "Far-Precipitation",
+        "raw_win_rate": 0.8144,
+        "lifetime_pnl": 173595.52,
+        "roi": 0.6964,
+        "recent_wins": 158,
+        "recent_n": 194,
+        "recent_win_rate": 0.8144,
+        "z_score": 0.0,
+        "n_total": 194,
+        "total_wins": 158
+      },
+      "verdict": "SKIP",
+      "age_min": 139.1,
+      "drift": null,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$467",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.320 (max +212%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +212% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "139m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x4df332E2_0xd7260042",
+      "ts": 1781637937.0,
+      "timestamp_iso": "2026-06-16T19:25:37Z",
+      "market_id": "0xa040429177bd8ed84edb1022f8ce1519b133cc82cbbf8429821f7f4337458df5",
+      "market_title": "France vs. Senegal: O/U 8.5 Total Corners",
+      "market_slug": "fifwc-fra-sen-2026-06-16-total-corners",
+      "outcome": "Under",
+      "outcome_idx": 1,
+      "side": "UNDER",
+      "entry_price": 0.32,
+      "current_price": null,
+      "shares": 1483.82,
+      "size_usdc": 474.82,
+      "tx_hash": "0xd726004212282c21a0856d72e6d15fe225a6c41df5a2ed2a461e4e80dd662f5a",
+      "whale": {
+        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
+        "pseudonym": "Far-Precipitation",
+        "raw_win_rate": 0.8144,
+        "lifetime_pnl": 173595.52,
+        "roi": 0.6964,
+        "recent_wins": 158,
+        "recent_n": 194,
+        "recent_win_rate": 0.8144,
+        "z_score": 0.0,
+        "n_total": 194,
+        "total_wins": 158
+      },
+      "verdict": "SKIP",
+      "age_min": 139.2,
+      "drift": null,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$475",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.320 (max +212%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +212% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "139m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x4df332E2_0x6f187ac3",
+      "ts": 1781637937.0,
+      "timestamp_iso": "2026-06-16T19:25:37Z",
+      "market_id": "0xa040429177bd8ed84edb1022f8ce1519b133cc82cbbf8429821f7f4337458df5",
+      "market_title": "France vs. Senegal: O/U 8.5 Total Corners",
+      "market_slug": "fifwc-fra-sen-2026-06-16-total-corners",
+      "outcome": "Under",
+      "outcome_idx": 1,
+      "side": "UNDER",
+      "entry_price": 0.32,
+      "current_price": null,
+      "shares": 1483.67,
+      "size_usdc": 474.77,
+      "tx_hash": "0x6f187ac3fb11ca47765213091752d6d74415f18d4ce565bb9a1e7c343b4d62ce",
+      "whale": {
+        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
+        "pseudonym": "Far-Precipitation",
+        "raw_win_rate": 0.8144,
+        "lifetime_pnl": 173595.52,
+        "roi": 0.6964,
+        "recent_wins": 158,
+        "recent_n": 194,
+        "recent_win_rate": 0.8144,
+        "z_score": 0.0,
+        "n_total": 194,
+        "total_wins": 158
+      },
+      "verdict": "SKIP",
+      "age_min": 139.2,
+      "drift": null,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$475",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.320 (max +212%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +212% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "139m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x4df332E2_0x9b8a0d93",
+      "ts": 1781637926.0,
+      "timestamp_iso": "2026-06-16T19:25:26Z",
+      "market_id": "0xa040429177bd8ed84edb1022f8ce1519b133cc82cbbf8429821f7f4337458df5",
+      "market_title": "France vs. Senegal: O/U 8.5 Total Corners",
+      "market_slug": "fifwc-fra-sen-2026-06-16-total-corners",
+      "outcome": "Under",
+      "outcome_idx": 1,
+      "side": "UNDER",
+      "entry_price": 0.33,
+      "current_price": null,
+      "shares": 1177.8,
+      "size_usdc": 388.67,
+      "tx_hash": "0x9b8a0d934abf180b4603008eb6386866f5082bcc93c47d4c21cdcb6dc212a5dc",
+      "whale": {
+        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
+        "pseudonym": "Far-Precipitation",
+        "raw_win_rate": 0.8144,
+        "lifetime_pnl": 173595.52,
+        "roi": 0.6964,
+        "recent_wins": 158,
+        "recent_n": 194,
+        "recent_win_rate": 0.8144,
+        "z_score": 0.0,
+        "n_total": 194,
+        "total_wins": 158
+      },
+      "verdict": "SKIP",
+      "age_min": 139.4,
+      "drift": null,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$389",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.330 (max +203%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +203% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "139m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x4df332E2_0x22b2fecb",
+      "ts": 1781637925.0,
+      "timestamp_iso": "2026-06-16T19:25:25Z",
+      "market_id": "0xa040429177bd8ed84edb1022f8ce1519b133cc82cbbf8429821f7f4337458df5",
+      "market_title": "France vs. Senegal: O/U 8.5 Total Corners",
+      "market_slug": "fifwc-fra-sen-2026-06-16-total-corners",
+      "outcome": "Under",
+      "outcome_idx": 1,
+      "side": "UNDER",
+      "entry_price": 0.33,
+      "current_price": null,
+      "shares": 1575.37,
+      "size_usdc": 519.87,
+      "tx_hash": "0x22b2fecbb14125f475f454ecb424f08cadd4dcba3e070c58c9c5d29fa4e2c353",
+      "whale": {
+        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
+        "pseudonym": "Far-Precipitation",
+        "raw_win_rate": 0.8144,
+        "lifetime_pnl": 173595.52,
+        "roi": 0.6964,
+        "recent_wins": 158,
+        "recent_n": 194,
+        "recent_win_rate": 0.8144,
+        "z_score": 0.0,
+        "n_total": 194,
+        "total_wins": 158
+      },
+      "verdict": "ENTER",
+      "age_min": 139.4,
+      "drift": null,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$520",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.330 (max +203%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +203% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "139m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x4df332E2_0xa47a71ff",
+      "ts": 1781637914.0,
+      "timestamp_iso": "2026-06-16T19:25:14Z",
+      "market_id": "0xa040429177bd8ed84edb1022f8ce1519b133cc82cbbf8429821f7f4337458df5",
+      "market_title": "France vs. Senegal: O/U 8.5 Total Corners",
+      "market_slug": "fifwc-fra-sen-2026-06-16-total-corners",
+      "outcome": "Under",
+      "outcome_idx": 1,
+      "side": "UNDER",
+      "entry_price": 0.33,
+      "current_price": null,
+      "shares": 1606.91,
+      "size_usdc": 530.28,
+      "tx_hash": "0xa47a71ff3d98dda215a95794fe5675f170eacabf6067c774696c8cd3b82ebf27",
+      "whale": {
+        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
+        "pseudonym": "Far-Precipitation",
+        "raw_win_rate": 0.8144,
+        "lifetime_pnl": 173595.52,
+        "roi": 0.6964,
+        "recent_wins": 158,
+        "recent_n": 194,
+        "recent_win_rate": 0.8144,
+        "z_score": 0.0,
+        "n_total": 194,
+        "total_wins": 158
+      },
+      "verdict": "ENTER",
+      "age_min": 139.6,
+      "drift": null,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$530",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.330 (max +203%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +203% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "140m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -87,7 +547,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.67,
-      "current_price": 0.655,
+      "current_price": null,
       "shares": 1343.28,
       "size_usdc": 908.91,
       "tx_hash": "0x5b2b9879cbe568e890aa8c4e52675b3a242384b074a6bb43f1d2d92070246efd",
@@ -105,15 +565,15 @@
         "total_wins": 54
       },
       "verdict": "ENTER",
-      "age_min": 98.9,
-      "drift": -0.015,
+      "age_min": 260.8,
+      "drift": null,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "-2.2%",
+          "status": "unknown",
+          "value": "n/a",
           "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "note": "Current price unavailable"
         },
         {
           "name": "Size",
@@ -132,78 +592,12 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "99m ago",
+          "value": "261m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x4df332E2_0x8e629ea5",
-      "ts": 1781626019.0,
-      "timestamp_iso": "2026-06-16T16:06:59Z",
-      "market_id": "0x9ad38d22c9912987ca4d644c8b7d239f24afba5c93d16300a8cad778bc6f6858",
-      "market_title": "France vs. Senegal: O/U 2.5",
-      "market_slug": "fifwc-fra-sen-2026-06-16-more-markets",
-      "outcome": "Under",
-      "outcome_idx": 1,
-      "side": "UNDER",
-      "entry_price": 0.42,
-      "current_price": 0.435,
-      "shares": 939.0,
-      "size_usdc": 394.38,
-      "tx_hash": "0x8e629ea5f9f45650b914a6bd0b63817cd4d2735dfcc7b5b487dac898dd5b131b",
-      "whale": {
-        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
-        "pseudonym": "Far-Precipitation",
-        "raw_win_rate": 0.8144,
-        "lifetime_pnl": 173595.52,
-        "roi": 0.6964,
-        "recent_wins": 158,
-        "recent_n": 194,
-        "recent_win_rate": 0.8144,
-        "z_score": 0.0,
-        "n_total": 194,
-        "total_wins": 158
-      },
-      "verdict": "SKIP",
-      "age_min": 176.0,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+3.6%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$394",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.420 (max +138%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +138% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "176m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -218,7 +612,7 @@
       "outcome_idx": 0,
       "side": "TEAM VITALITY",
       "entry_price": 0.66,
-      "current_price": 0.9995,
+      "current_price": null,
       "shares": 1019.32,
       "size_usdc": 679.61,
       "tx_hash": "0x6d0f900cce253adbc2a903a59b0f5edee882c501967d230c9fa35816d0c62af5",
@@ -235,16 +629,16 @@
         "n_total": 60,
         "total_wins": 54
       },
-      "verdict": "SKIP",
-      "age_min": 186.1,
-      "drift": 0.3395,
+      "verdict": "ENTER",
+      "age_min": 348.0,
+      "drift": null,
       "checks": [
         {
           "name": "Drift",
-          "status": "fail",
-          "value": "+51.4%",
-          "threshold": "> 7%",
-          "note": "Line moved +51.4% — the move already happened"
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
         },
         {
           "name": "Size",
@@ -263,13 +657,12 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "186m ago",
+          "value": "348m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Line moved +51.4% — the move already happened",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -302,7 +695,7 @@
         "total_wins": 54
       },
       "verdict": "ENTER",
-      "age_min": 189.3,
+      "age_min": 351.2,
       "drift": null,
       "checks": [
         {
@@ -329,7 +722,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "189m ago",
+          "value": "351m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -367,7 +760,7 @@
         "total_wins": 54
       },
       "verdict": "SKIP",
-      "age_min": 253.1,
+      "age_min": 415.0,
       "drift": null,
       "checks": [
         {
@@ -393,271 +786,8 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "253m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x4df332E2_0xce71404d",
-      "ts": 1781618242.0,
-      "timestamp_iso": "2026-06-16T13:57:22Z",
-      "market_id": "0x3d0bae4a9033d5e07012ba7b8adef88024d3984e49e39ee500e35e79e9dc5e9f",
-      "market_title": "Senegal leading at halftime?",
-      "market_slug": "fifwc-fra-sen-2026-06-16-halftime-result",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.12,
-      "current_price": 0.125,
-      "shares": 1183.0,
-      "size_usdc": 141.96,
-      "tx_hash": "0xce71404d0fbeb548c17830f323dacb89526b3aa744a92e3ac9eb2db85e30d9b8",
-      "whale": {
-        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
-        "pseudonym": "Far-Precipitation",
-        "raw_win_rate": 0.8144,
-        "lifetime_pnl": 173595.52,
-        "roi": 0.6964,
-        "recent_wins": 158,
-        "recent_n": 194,
-        "recent_win_rate": 0.8144,
-        "z_score": 0.0,
-        "n_total": 194,
-        "total_wins": 158
-      },
-      "verdict": "SKIP",
-      "age_min": 305.6,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+4.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
           "status": "fail",
-          "value": "$142",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.120 (max +733%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +733% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "306m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x4df332E2_0x6a100808",
-      "ts": 1781615538.0,
-      "timestamp_iso": "2026-06-16T13:12:18Z",
-      "market_id": "0xe48ef90e4188849fcbd81ea7e88516c24ebdd9bc701bb1c0df06f23ab8e68aa6",
-      "market_title": "ICC T20 World Cup, Women: New Zealand vs Sri Lanka",
-      "market_slug": "crint-nzl6-lka3-2026-06-16",
-      "outcome": "Sri Lanka",
-      "outcome_idx": 1,
-      "side": "SRI LANKA",
-      "entry_price": 0.22,
-      "current_price": null,
-      "shares": 2358.9,
-      "size_usdc": 518.96,
-      "tx_hash": "0x6a10080838f910108bf98e0c17a836c4ed1d0e2f6a3d9842e412b72749031796",
-      "whale": {
-        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
-        "pseudonym": "Far-Precipitation",
-        "raw_win_rate": 0.8144,
-        "lifetime_pnl": 173595.52,
-        "roi": 0.6964,
-        "recent_wins": 158,
-        "recent_n": 194,
-        "recent_win_rate": 0.8144,
-        "z_score": 0.0,
-        "n_total": 194,
-        "total_wins": 158
-      },
-      "verdict": "ENTER",
-      "age_min": 350.7,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$519",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.220 (max +355%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +355% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "351m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x4df332E2_0x78ebd855",
-      "ts": 1781614963.0,
-      "timestamp_iso": "2026-06-16T13:02:43Z",
-      "market_id": "0xe48ef90e4188849fcbd81ea7e88516c24ebdd9bc701bb1c0df06f23ab8e68aa6",
-      "market_title": "ICC T20 World Cup, Women: New Zealand vs Sri Lanka",
-      "market_slug": "crint-nzl6-lka3-2026-06-16",
-      "outcome": "Sri Lanka",
-      "outcome_idx": 1,
-      "side": "SRI LANKA",
-      "entry_price": 0.23,
-      "current_price": null,
-      "shares": 469.18,
-      "size_usdc": 110.4,
-      "tx_hash": "0x78ebd85522fdf298478978c8f9cfdd901eefef768b22f0ab42eaaac0f1076561",
-      "whale": {
-        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
-        "pseudonym": "Far-Precipitation",
-        "raw_win_rate": 0.8144,
-        "lifetime_pnl": 173595.52,
-        "roi": 0.6964,
-        "recent_wins": 158,
-        "recent_n": 194,
-        "recent_win_rate": 0.8144,
-        "z_score": 0.0,
-        "n_total": 194,
-        "total_wins": 158
-      },
-      "verdict": "SKIP",
-      "age_min": 360.3,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$110",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.230 (max +335%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +335% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "360m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x4df332E2_0x85b95a5e",
-      "ts": 1781614774.0,
-      "timestamp_iso": "2026-06-16T12:59:34Z",
-      "market_id": "0xe48ef90e4188849fcbd81ea7e88516c24ebdd9bc701bb1c0df06f23ab8e68aa6",
-      "market_title": "ICC T20 World Cup, Women: New Zealand vs Sri Lanka",
-      "market_slug": "crint-nzl6-lka3-2026-06-16",
-      "outcome": "Sri Lanka",
-      "outcome_idx": 1,
-      "side": "SRI LANKA",
-      "entry_price": 0.22,
-      "current_price": null,
-      "shares": 1352.04,
-      "size_usdc": 297.45,
-      "tx_hash": "0x85b95a5e504484af892b791f48d12b46dc361d357c95f03b4b10040b9c04db0a",
-      "whale": {
-        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
-        "pseudonym": "Far-Precipitation",
-        "raw_win_rate": 0.8144,
-        "lifetime_pnl": 173595.52,
-        "roi": 0.6964,
-        "recent_wins": 158,
-        "recent_n": 194,
-        "recent_win_rate": 0.8144,
-        "z_score": 0.0,
-        "n_total": 194,
-        "total_wins": 158
-      },
-      "verdict": "SKIP",
-      "age_min": 363.4,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$297",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.220 (max +355%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +355% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "363m ago",
+          "value": "415m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -678,7 +808,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.177,
-      "current_price": 0.1815,
+      "current_price": 0.1935,
       "shares": 5000.0,
       "size_usdc": 906.85,
       "tx_hash": "0x5452031c9abe2c504cf6ad5bd0b1de0b3d17c2ea9182c18b8ba68b64e90421e1",
@@ -696,13 +826,13 @@
         "total_wins": 188
       },
       "verdict": "LATE",
-      "age_min": 399.6,
-      "drift": 0.0045,
+      "age_min": 561.5,
+      "drift": 0.0165,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+2.5%",
+          "value": "+9.3%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -723,276 +853,12 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "400m ago",
+          "value": "561m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x4df332E2_0xf59d9e02",
-      "ts": 1781605341.0,
-      "timestamp_iso": "2026-06-16T10:22:21Z",
-      "market_id": "0x90b38a022ad976357ba7e1994c0478d29dbc601cc06b1b75a01fb9640641e65e",
-      "market_title": "Will New Zealand win?",
-      "market_slug": "crint-gbr2-nzl7-2026-06-17",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.61,
-      "current_price": 0.635,
-      "shares": 764.49,
-      "size_usdc": 466.34,
-      "tx_hash": "0xf59d9e0265045bff8a41c0d6ddb1c8043a1e8a7b31b629c4544cea1ce4e0cc5a",
-      "whale": {
-        "address": "0x4df332E27f9Ee3224f52ce30e3cE15c1075e788f",
-        "pseudonym": "Far-Precipitation",
-        "raw_win_rate": 0.8144,
-        "lifetime_pnl": 173595.52,
-        "roi": 0.6964,
-        "recent_wins": 158,
-        "recent_n": 194,
-        "recent_win_rate": 0.8144,
-        "z_score": 0.0,
-        "n_total": 194,
-        "total_wins": 158
-      },
-      "verdict": "SKIP",
-      "age_min": 520.6,
-      "drift": 0.025,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+4.1%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$466",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.610 (max +64%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +64% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "521m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x6094E348_0x5f2d7516",
-      "ts": 1781601124.0,
-      "timestamp_iso": "2026-06-16T09:12:04Z",
-      "market_id": "0x03890b6167d1f2c60387913c9a9f2722660000000000000000000000000000",
-      "market_title": "Will France win on 2026-06-16? AND Will Austria vs. Jordan end in a draw? AND Will Czechia vs. South Africa end in a draw? AND Will England vs. Croatia end in a draw?",
-      "market_slug": "",
-      "outcome": "",
-      "outcome_idx": 0,
-      "side": "",
-      "entry_price": 0.013,
-      "current_price": null,
-      "shares": 15383.43,
-      "size_usdc": 205.91,
-      "tx_hash": "0x5f2d7516447803b1ab92f06e6b759933e68c3c06e30cb77ff9bc7aaa92d92e5e",
-      "whale": {
-        "address": "0x6094E34888bC7682fd73E4F9aeA4e0B350323bD9",
-        "pseudonym": "Noteworthy-Clinic",
-        "raw_win_rate": 0.9,
-        "lifetime_pnl": 134391.8,
-        "roi": 1.233,
-        "recent_wins": 21,
-        "recent_n": 23,
-        "recent_win_rate": 0.913,
-        "z_score": 0.0,
-        "n_total": 60,
-        "total_wins": 54
-      },
-      "verdict": "SKIP",
-      "age_min": 590.9,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$206",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.013 (max +7592%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +7592% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "591m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x6094E348_0x14c40a73",
-      "ts": 1781599336.0,
-      "timestamp_iso": "2026-06-16T08:42:16Z",
-      "market_id": "0xec186c5585abfff6a7b9d8090e6412cf613fc6cb745e25da24a21e30448c1017",
-      "market_title": "Will Ethereum reach $2,300 in June?",
-      "market_slug": "what-price-will-ethereum-hit-in-june-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.0246,
-      "current_price": 0.0205,
-      "shares": 4056.8,
-      "size_usdc": 106.83,
-      "tx_hash": "0x14c40a73cd0174b642b4197261437da4771038760b1a9ab4e57f8ef0b406efb9",
-      "whale": {
-        "address": "0x6094E34888bC7682fd73E4F9aeA4e0B350323bD9",
-        "pseudonym": "Noteworthy-Clinic",
-        "raw_win_rate": 0.9,
-        "lifetime_pnl": 134391.8,
-        "roi": 1.233,
-        "recent_wins": 21,
-        "recent_n": 23,
-        "recent_win_rate": 0.913,
-        "z_score": 0.0,
-        "n_total": 60,
-        "total_wins": 54
-      },
-      "verdict": "SKIP",
-      "age_min": 620.7,
-      "drift": -0.0041,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-16.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$107",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.025 (max +3957%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +3957% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "621m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x6094E348_0x3fd31835",
-      "ts": 1781599332.0,
-      "timestamp_iso": "2026-06-16T08:42:12Z",
-      "market_id": "0xafc5d04cc813311b842e632e1f2e02e5fb3b4cb022c53fd24eb55cf268e4fc87",
-      "market_title": "Will Ethereum reach $2,400 in June?",
-      "market_slug": "what-price-will-ethereum-hit-in-june-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.016,
-      "current_price": 0.0135,
-      "shares": 6268.85,
-      "size_usdc": 106.89,
-      "tx_hash": "0x3fd318353df3a8e71ff9e8f6e5c7629051f6075b5899923f0c24fc185143de2e",
-      "whale": {
-        "address": "0x6094E34888bC7682fd73E4F9aeA4e0B350323bD9",
-        "pseudonym": "Noteworthy-Clinic",
-        "raw_win_rate": 0.9,
-        "lifetime_pnl": 134391.8,
-        "roi": 1.233,
-        "recent_wins": 21,
-        "recent_n": 23,
-        "recent_win_rate": 0.913,
-        "z_score": 0.0,
-        "n_total": 60,
-        "total_wins": 54
-      },
-      "verdict": "SKIP",
-      "age_min": 620.8,
-      "drift": -0.0025,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-15.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$107",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.016 (max +6169%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +6169% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "621m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
         "Very stale — even if price is near entry, you have less time to profit"
       ]
     }
