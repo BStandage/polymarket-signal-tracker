@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-28T15:32:20.937244Z",
+  "updated_at": "2026-07-28T17:04:09.341210Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 17,
-  "signal_count": 7,
+  "signal_count": 6,
   "enter_count": 1,
   "signals": [
     {
-      "signal_id": "0x993c0725_0x008cc95a",
-      "ts": 1785252626.0,
-      "timestamp_iso": "2026-07-28T15:30:26Z",
-      "market_id": "0x051cd7d8ee2d0d4b38aef35adbf4ad4de44ea5bda2f9f36c70d919179ef75491",
-      "market_title": "Will WTI Crude Oil (WTI) hit (HIGH) $90 in July?",
+      "signal_id": "0x993c0725_0x7c259556",
+      "ts": 1785256703.0,
+      "timestamp_iso": "2026-07-28T16:38:23Z",
+      "market_id": "0xa4f8288b7c86460c9b86b8850f34c59bfa3a89ab689451aece1720c58bfa8700",
+      "market_title": "Will WTI Crude Oil (WTI) hit (LOW) $75 in July?",
       "market_slug": "what-price-will-wti-hit-in-july-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.07,
-      "current_price": 0.08,
-      "shares": 3999.99,
-      "size_usdc": 280.0,
-      "tx_hash": "0x008cc95aef56e98495a2e4e3845f6ccba61190b3468aa48376f9661b1b70c3b7",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.51,
+      "current_price": 0.575,
+      "shares": 1050.0,
+      "size_usdc": 535.5,
+      "tx_hash": "0x7c259556ad80e8fe454c97a23be0ae21d8ce014a285e6979782324fbf4d748ff",
       "whale": {
         "address": "0x993c072519306017Fe9a6B3ee6FA4a02b3056787",
         "pseudonym": "Smart-Pathway",
@@ -38,41 +38,107 @@
         "n_total": 45,
         "total_wins": 38
       },
+      "verdict": "LATE",
+      "age_min": 25.8,
+      "drift": 0.065,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+12.7%",
+          "threshold": "> 3%",
+          "note": "Line moved +12.7% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$536",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "26m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +12.7% — part of the edge is already priced in"
+      ]
+    },
+    {
+      "signal_id": "0x8afa03dD_0x2b484c18",
+      "ts": 1785254423.0,
+      "timestamp_iso": "2026-07-28T16:00:23Z",
+      "market_id": "0x8126317d621047fb13d508a2651eecc8d38305904671822a62309c5aabd353aa",
+      "market_title": "Will Marine Le Pen win the 2027 French presidential election?",
+      "market_slug": "next-french-presidential-election",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.316,
+      "current_price": 0.3095,
+      "shares": 500.0,
+      "size_usdc": 158.0,
+      "tx_hash": "0x2b484c18a7dc4de8fa3e483a2eab61b6b20a23a3c401d09a7fbef40951d1bc4b",
+      "whale": {
+        "address": "0x8afa03dD6974E44D00C4D14dCcCb00c0DDF6ADB6",
+        "pseudonym": "Kaleidoscopic-Camp",
+        "raw_win_rate": 0.9778,
+        "lifetime_pnl": 221649.92,
+        "roi": 1.1271,
+        "recent_wins": 132,
+        "recent_n": 135,
+        "recent_win_rate": 0.9778,
+        "z_score": 0.0,
+        "n_total": 135,
+        "total_wins": 132
+      },
       "verdict": "SKIP",
-      "age_min": 1.9,
-      "drift": 0.01,
+      "age_min": 63.7,
+      "drift": -0.0065,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+14.3%",
+          "value": "-2.1%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$280",
+          "value": "$158",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.070 (max +1329%)",
+          "value": "0.316 (max +216%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +1329% upside on a correct call."
+          "note": "Good payoff — +216% upside on a correct call."
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "2m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "64m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -104,7 +170,7 @@
         "total_wins": 110
       },
       "verdict": "ENTER",
-      "age_min": 78.6,
+      "age_min": 170.4,
       "drift": 0.0005,
       "checks": [
         {
@@ -131,78 +197,12 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "79m ago",
+          "value": "170m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x993c0725_0x30f6d8d9",
-      "ts": 1785232280.0,
-      "timestamp_iso": "2026-07-28T09:51:20Z",
-      "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
-      "market_title": "US announces end of Iranian blockade by August 15, 2026?",
-      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.34,
-      "current_price": 0.355,
-      "shares": 500.0,
-      "size_usdc": 170.0,
-      "tx_hash": "0x30f6d8d965976a285aa07236d0936f7b2b8d91e9554edd2a8c228516af43aacc",
-      "whale": {
-        "address": "0x993c072519306017Fe9a6B3ee6FA4a02b3056787",
-        "pseudonym": "Smart-Pathway",
-        "raw_win_rate": 0.8444,
-        "lifetime_pnl": 21414.77,
-        "roi": 0.2933,
-        "recent_wins": 38,
-        "recent_n": 45,
-        "recent_win_rate": 0.8444,
-        "z_score": 0.0,
-        "n_total": 45,
-        "total_wins": 38
-      },
-      "verdict": "SKIP",
-      "age_min": 341.0,
-      "drift": 0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+4.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$170",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.340 (max +194%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +194% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "341m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
     },
@@ -217,7 +217,7 @@
       "outcome_idx": 1,
       "side": "STEFANOS TSITSIPAS",
       "entry_price": 0.44,
-      "current_price": 0.435,
+      "current_price": 0.425,
       "shares": 252.27,
       "size_usdc": 114.11,
       "tx_hash": "0x6fe0067d8bac145ead4c37165d1efa110dd615ed2ef3f873c6e862908473525b",
@@ -235,13 +235,13 @@
         "total_wins": 261
       },
       "verdict": "SKIP",
-      "age_min": 348.5,
-      "drift": -0.005,
+      "age_min": 440.3,
+      "drift": -0.015,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.1%",
+          "value": "-3.4%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -261,74 +261,8 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "349m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x993c0725_0x8d8ace2c",
-      "ts": 1785226206.0,
-      "timestamp_iso": "2026-07-28T08:10:06Z",
-      "market_id": "0x6b382feeb97121c8bd5fe0fe0ab8272b955e741ac7117ee691a2460896f43ee7",
-      "market_title": "Will WTI Crude Oil (WTI) hit (LOW) $80 in July?",
-      "market_slug": "what-price-will-wti-hit-in-july-2026",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.11,
-      "current_price": null,
-      "shares": 1000.0,
-      "size_usdc": 110.0,
-      "tx_hash": "0x8d8ace2cff81536ba7515ca1ee51a8af68bf0d278a6bf836e76035c38e03c652",
-      "whale": {
-        "address": "0x993c072519306017Fe9a6B3ee6FA4a02b3056787",
-        "pseudonym": "Smart-Pathway",
-        "raw_win_rate": 0.8444,
-        "lifetime_pnl": 21414.77,
-        "roi": 0.2933,
-        "recent_wins": 38,
-        "recent_n": 45,
-        "recent_win_rate": 0.8444,
-        "z_score": 0.0,
-        "n_total": 45,
-        "total_wins": 38
-      },
-      "verdict": "SKIP",
-      "age_min": 442.2,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
           "status": "fail",
-          "value": "$110",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.110 (max +809%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +809% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "442m ago",
+          "value": "440m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -367,7 +301,7 @@
         "total_wins": 110
       },
       "verdict": "SKIP",
-      "age_min": 487.8,
+      "age_min": 579.6,
       "drift": 0.0005,
       "checks": [
         {
@@ -394,7 +328,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "488m ago",
+          "value": "580m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -433,7 +367,7 @@
         "total_wins": 110
       },
       "verdict": "SKIP",
-      "age_min": 578.5,
+      "age_min": 670.4,
       "drift": 0.0005,
       "checks": [
         {
@@ -460,7 +394,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "579m ago",
+          "value": "670m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
