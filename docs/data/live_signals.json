@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-06T13:41:11.302480Z",
+  "updated_at": "2026-08-06T22:32:09.691275Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -7,24 +7,24 @@
     "min_size_usdc": 500.0
   },
   "watchlist_size": 17,
-  "signal_count": 34,
-  "enter_count": 6,
+  "signal_count": 30,
+  "enter_count": 2,
   "signals": [
     {
-      "signal_id": "0xa8c63F77_0x8f4749a2",
-      "ts": 1786023059.0,
-      "timestamp_iso": "2026-08-06T13:30:59Z",
-      "market_id": "0xc1556ecbe613e403dfb9e38bf1b25a8aee2aa1687f2b343bc896dd2c9763ed74",
-      "market_title": "Israel x Iran ceasefire continues through August 31?",
-      "market_slug": "israel-x-iran-ceasefire-continues-throughptptpt-20260716224448963",
+      "signal_id": "0xa8c63F77_0x7565a9da",
+      "ts": 1786053957.0,
+      "timestamp_iso": "2026-08-06T22:05:57Z",
+      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
+      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
       "outcome": "No",
       "outcome_idx": 1,
       "side": "NO",
-      "entry_price": 0.19,
-      "current_price": 0.185,
-      "shares": 1000.0,
-      "size_usdc": 190.0,
-      "tx_hash": "0x8f4749a209f61e6d2e1db00464c1c4806f9f2c86f52e6da51c8d8fc8d202282f",
+      "entry_price": 0.802,
+      "current_price": 0.8115,
+      "shares": 600.0,
+      "size_usdc": 481.2,
+      "tx_hash": "0x7565a9da9eb4f0cd31b42d2df6ad23b535c5831d5a6915451278785859ded57a",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -39,8 +39,139 @@
         "total_wins": 32
       },
       "verdict": "SKIP",
-      "age_min": 10.1,
+      "age_min": 26.1,
+      "drift": 0.0095,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+1.2%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$481",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.802 (max +25%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "26m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0x103405df",
+      "ts": 1786053428.0,
+      "timestamp_iso": "2026-08-06T21:57:08Z",
+      "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
+      "market_title": "US announces end of Iranian blockade by August 15, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.45,
+      "current_price": 0.445,
+      "shares": 400.0,
+      "size_usdc": 180.0,
+      "tx_hash": "0x103405dfea855b373dc149829c51c320a945344674a2facf632fd91b5b6a85d6",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 34.9,
       "drift": -0.005,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-1.1%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$180",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.450 (max +122%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +122% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "35m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0xe7b3641e",
+      "ts": 1786053353.0,
+      "timestamp_iso": "2026-08-06T21:55:53Z",
+      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
+      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.833,
+      "current_price": 0.8115,
+      "shares": 400.0,
+      "size_usdc": 333.2,
+      "tx_hash": "0xe7b3641e3ed4563da018831bbc0927bf59506df8e895eae07039beda48a97ed0",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 36.2,
+      "drift": -0.0215,
       "checks": [
         {
           "name": "Drift",
@@ -52,44 +183,45 @@
         {
           "name": "Size",
           "status": "fail",
-          "value": "$190",
+          "value": "$333",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "pass",
-          "value": "0.190 (max +426%)",
+          "status": "warn",
+          "value": "0.833 (max +20%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +426% upside on a correct call."
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "10m ago",
+          "value": "36m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0x5e7b1958",
-      "ts": 1786022415.0,
-      "timestamp_iso": "2026-08-06T13:20:15Z",
+      "signal_id": "0xa8c63F77_0x15cba4eb",
+      "ts": 1786053353.0,
+      "timestamp_iso": "2026-08-06T21:55:53Z",
       "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
       "market_title": "US announces end of Iranian blockade by August 15, 2026?",
       "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.69,
-      "current_price": 0.685,
-      "shares": 300.0,
-      "size_usdc": 207.0,
-      "tx_hash": "0x5e7b1958bd649d89893703529b69f19fd8cf6968ac8ddcca52cd0497a02ca778",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.46,
+      "current_price": 0.445,
+      "shares": 400.0,
+      "size_usdc": 184.0,
+      "tx_hash": "0x15cba4eb3e56169c9b6aef6d214277757bdfc6cef8d170eb1aa4b4ad81d5d3c0",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -104,99 +236,34 @@
         "total_wins": 32
       },
       "verdict": "SKIP",
-      "age_min": 20.9,
-      "drift": -0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-0.7%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$207",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.690 (max +45%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +45% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "21m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0xa8c63F77_0x5e7b1958",
-      "ts": 1786022415.0,
-      "timestamp_iso": "2026-08-06T13:20:15Z",
-      "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
-      "market_title": "US announces end of Iranian blockade by August 15, 2026?",
-      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.7,
-      "current_price": 0.685,
-      "shares": 500.0,
-      "size_usdc": 350.0,
-      "tx_hash": "0x5e7b1958bd649d89893703529b69f19fd8cf6968ac8ddcca52cd0497a02ca778",
-      "whale": {
-        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
-        "pseudonym": "Natural-Vacation",
-        "raw_win_rate": 0.9143,
-        "lifetime_pnl": 34272.82,
-        "roi": 0.5559,
-        "recent_wins": 32,
-        "recent_n": 35,
-        "recent_win_rate": 0.9143,
-        "z_score": 0.0,
-        "n_total": 35,
-        "total_wins": 32
-      },
-      "verdict": "SKIP",
-      "age_min": 20.9,
+      "age_min": 36.2,
       "drift": -0.015,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-2.1%",
+          "value": "-3.3%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$350",
+          "value": "$184",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.700 (max +43%)",
+          "value": "0.460 (max +117%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +43% upside on a correct call."
+          "note": "Good payoff — +117% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "21m ago",
+          "value": "36m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -206,20 +273,86 @@
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0xa16080d6",
-      "ts": 1786021719.0,
-      "timestamp_iso": "2026-08-06T13:08:39Z",
-      "market_id": "0x518df6d694ad4658fe6c284850c029c6f00c9b3609cf05f7757d1fecba1641f8",
-      "market_title": "US-Iran 60 day negotiation period extended?",
-      "market_slug": "us-iran-60-day-negotiation-period-extended-20260624044855448",
+      "signal_id": "0xa8c63F77_0x221a7c7c",
+      "ts": 1786053341.0,
+      "timestamp_iso": "2026-08-06T21:55:41Z",
+      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
+      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.842,
+      "current_price": 0.8115,
+      "shares": 600.0,
+      "size_usdc": 505.2,
+      "tx_hash": "0x221a7c7ccd6a0e38f020e2d9e874c33a28b878c77372c1144c8a69c667d87c24",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "LATE",
+      "age_min": 36.4,
+      "drift": -0.0305,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "-3.6%",
+          "threshold": "> 3%",
+          "note": "Line moved -3.6% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$505",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.842 (max +19%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "36m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -3.6% — part of the edge is already priced in",
+        "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk."
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0x26cdec7b",
+      "ts": 1786052334.0,
+      "timestamp_iso": "2026-08-06T21:38:54Z",
+      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
+      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.74,
-      "current_price": 0.745,
-      "shares": 165.83,
-      "size_usdc": 122.71,
-      "tx_hash": "0xa16080d629d23aafe16da44e499086aac2806ec53fbe6cd4e28a15b4309c4a40",
+      "entry_price": 0.152,
+      "current_price": 0.1885,
+      "shares": 700.0,
+      "size_usdc": 106.4,
+      "tx_hash": "0x26cdec7b1c94ec9efb488408372d7852e7bc23e290d62c1779718839f9a173c9",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -234,57 +367,58 @@
         "total_wins": 32
       },
       "verdict": "SKIP",
-      "age_min": 32.5,
-      "drift": 0.005,
+      "age_min": 53.2,
+      "drift": 0.0365,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+0.7%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "+24.0%",
+          "threshold": "> 3%",
+          "note": "Line moved +24.0% — part of the edge is already priced in"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$123",
+          "value": "$106",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.740 (max +35%)",
+          "value": "0.152 (max +558%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +35% upside on a correct call."
+          "note": "Good payoff — +558% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "pass",
-          "value": "32m ago",
+          "value": "53m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
       ],
       "skip_reasons": [
+        "Line moved +24.0% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill"
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0xd0884ba2",
-      "ts": 1786021665.0,
-      "timestamp_iso": "2026-08-06T13:07:45Z",
+      "signal_id": "0xa8c63F77_0x0c56a3f9",
+      "ts": 1786051343.0,
+      "timestamp_iso": "2026-08-06T21:22:23Z",
       "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
       "market_title": "US announces end of Iranian blockade by August 15, 2026?",
       "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
       "outcome": "No",
       "outcome_idx": 1,
       "side": "NO",
-      "entry_price": 0.3,
-      "current_price": 0.315,
-      "shares": 874.08,
-      "size_usdc": 262.22,
-      "tx_hash": "0xd0884ba22285c73ed756c7468dd43d3b54c34d62822f8ec71d4299910f7b4c98",
+      "entry_price": 0.47,
+      "current_price": 0.445,
+      "shares": 478.8,
+      "size_usdc": 225.04,
+      "tx_hash": "0x0c56a3f96fb7d2ac6b4ab77bc25b2d3b946fafa15612ebb5766bc63d1eaf6a10",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -299,187 +433,58 @@
         "total_wins": 32
       },
       "verdict": "SKIP",
-      "age_min": 33.4,
-      "drift": 0.015,
+      "age_min": 69.7,
+      "drift": -0.025,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+5.0%",
+          "value": "-5.3%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$262",
+          "value": "$225",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.300 (max +233%)",
+          "value": "0.470 (max +113%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +233% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "33m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0xa8c63F77_0xc5784237",
-      "ts": 1786020735.0,
-      "timestamp_iso": "2026-08-06T12:52:15Z",
-      "market_id": "0x5a9395dae6c7643ea06e7a555580a5526e81073aea9c9306363529c5b76a8f8b",
-      "market_title": "US x Iran Effective Ceasefire by July 31?",
-      "market_slug": "us-x-iran-effective-ceasfire-byptptpt-2-week-pause-20260715194822042",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.14,
-      "current_price": 0.145,
-      "shares": 999.99,
-      "size_usdc": 140.0,
-      "tx_hash": "0xc578423757c761765ee641104a1202525993e568808c7d9132462f861c04bdab",
-      "whale": {
-        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
-        "pseudonym": "Natural-Vacation",
-        "raw_win_rate": 0.9143,
-        "lifetime_pnl": 34272.82,
-        "roi": 0.5559,
-        "recent_wins": 32,
-        "recent_n": 35,
-        "recent_win_rate": 0.9143,
-        "z_score": 0.0,
-        "n_total": 35,
-        "total_wins": 32
-      },
-      "verdict": "SKIP",
-      "age_min": 48.9,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+3.6%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$140",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.140 (max +614%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +614% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "pass",
-          "value": "49m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill"
-      ]
-    },
-    {
-      "signal_id": "0xa8c63F77_0x2a39eca6",
-      "ts": 1786020059.0,
-      "timestamp_iso": "2026-08-06T12:40:59Z",
-      "market_id": "0x15d2e66dcf1d63c5695d6d0e9e2f8e06dd246d00fd5dfc254f2b22baa33bfa1b",
-      "market_title": "Mitch McConnell steps down from Senate before his term ends?",
-      "market_slug": "will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.7,
-      "current_price": 0.705,
-      "shares": 1000.0,
-      "size_usdc": 700.0,
-      "tx_hash": "0x2a39eca67c8f8a2d769ba250662c4ffe0732c251a90d8729fdc393feee598269",
-      "whale": {
-        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
-        "pseudonym": "Natural-Vacation",
-        "raw_win_rate": 0.9143,
-        "lifetime_pnl": 34272.82,
-        "roi": 0.5559,
-        "recent_wins": 32,
-        "recent_n": 35,
-        "recent_win_rate": 0.9143,
-        "z_score": 0.0,
-        "n_total": 35,
-        "total_wins": 32
-      },
-      "verdict": "ENTER",
-      "age_min": 60.1,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.7%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$700",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.700 (max +43%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +43% upside on a correct call."
+          "note": "Good payoff — +113% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "warn",
-          "value": "60m ago",
+          "value": "70m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0x2a39eca6",
-      "ts": 1786020059.0,
-      "timestamp_iso": "2026-08-06T12:40:59Z",
-      "market_id": "0x15d2e66dcf1d63c5695d6d0e9e2f8e06dd246d00fd5dfc254f2b22baa33bfa1b",
-      "market_title": "Mitch McConnell steps down from Senate before his term ends?",
-      "market_slug": "will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends",
+      "signal_id": "0xa8c63F77_0x0c56a3f9",
+      "ts": 1786051343.0,
+      "timestamp_iso": "2026-08-06T21:22:23Z",
+      "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
+      "market_title": "US announces end of Iranian blockade by August 15, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
       "outcome": "No",
       "outcome_idx": 1,
       "side": "NO",
-      "entry_price": 0.71,
-      "current_price": 0.705,
-      "shares": 1000.0,
-      "size_usdc": 710.0,
-      "tx_hash": "0x2a39eca67c8f8a2d769ba250662c4ffe0732c251a90d8729fdc393feee598269",
+      "entry_price": 0.48,
+      "current_price": 0.445,
+      "shares": 500.0,
+      "size_usdc": 240.0,
+      "tx_hash": "0x0c56a3f96fb7d2ac6b4ab77bc25b2d3b946fafa15612ebb5766bc63d1eaf6a10",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -493,21 +498,88 @@
         "n_total": 35,
         "total_wins": 32
       },
+      "verdict": "SKIP",
+      "age_min": 69.7,
+      "drift": -0.035,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "-7.3%",
+          "threshold": "> 3%",
+          "note": "Line moved -7.3% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$240",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.480 (max +108%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +108% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "70m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -7.3% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa18C5CF2_0xd7879b52",
+      "ts": 1786051208.0,
+      "timestamp_iso": "2026-08-06T21:20:08Z",
+      "market_id": "0x2167ab5c0d163f85195ccea4d11734e4ba53913c838c6720fb815794128c68f2",
+      "market_title": "China x Philippines military clash before 2027?",
+      "market_slug": "china-x-philippines-military-clash-before-2027-20260723214807932",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.71,
+      "current_price": 0.71,
+      "shares": 2769.68,
+      "size_usdc": 1966.47,
+      "tx_hash": "0xd7879b529e2a47946ed91b5de46ef747adc0d5d28a2c3d12981ba8bd08315f6a",
+      "whale": {
+        "address": "0xa18C5CF2BC6EEC389D2D512582ae14654b99d792",
+        "pseudonym": "Gigantic-Graduation",
+        "raw_win_rate": 0.977,
+        "lifetime_pnl": 245753.12,
+        "roi": 1.3442,
+        "recent_wins": 85,
+        "recent_n": 87,
+        "recent_win_rate": 0.977,
+        "z_score": 0.0,
+        "n_total": 87,
+        "total_wins": 85
+      },
       "verdict": "ENTER",
-      "age_min": 60.1,
-      "drift": -0.005,
+      "age_min": 71.9,
+      "drift": 0.0,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-0.7%",
+          "value": "+0.0%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$710",
+          "value": "$1,966",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
@@ -521,7 +593,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "60m ago",
+          "value": "72m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -531,20 +603,20 @@
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0xec63e107",
-      "ts": 1786019937.0,
-      "timestamp_iso": "2026-08-06T12:38:57Z",
-      "market_id": "0xbdc0827c873d1c3c538e549ab94c77829f7e40fd3376b25164c0279f744a87bc",
-      "market_title": "US x Iran diplomatic meeting by August 31, 2026?",
-      "market_slug": "next-round-of-us-iran-peace-talks-byptptpt-20260623022722982",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.53,
-      "current_price": 0.535,
-      "shares": 292.35,
-      "size_usdc": 154.95,
-      "tx_hash": "0xec63e10734b4e1ca70fd215a54c64348bfbfbd1d876052720009d76a5f642697",
+      "signal_id": "0xa8c63F77_0x55366ff5",
+      "ts": 1786051086.0,
+      "timestamp_iso": "2026-08-06T21:18:06Z",
+      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
+      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.811,
+      "current_price": 0.8115,
+      "shares": 499.99,
+      "size_usdc": 405.49,
+      "tx_hash": "0x55366ff5982aad26833304d6755e2fd4ade2b0579ea7d934638fe0f3b8a139d1",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -559,22 +631,489 @@
         "total_wins": 32
       },
       "verdict": "SKIP",
-      "age_min": 62.2,
-      "drift": 0.005,
+      "age_min": 74.0,
+      "drift": 0.0005,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+0.9%",
+          "value": "+0.1%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$155",
+          "value": "$405",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.811 (max +23%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 23% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "74m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Entry too high — max 23% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xF9f207b7_0xee7c0340",
+      "ts": 1786051038.0,
+      "timestamp_iso": "2026-08-06T21:17:18Z",
+      "market_id": "0xf15c917c76abfca4ac934c09e5a2b9ccb718a29178842f668f53789c26197e1c",
+      "market_title": "Will Wendy's (WEN) beat quarterly earnings?",
+      "market_slug": "wen-quarterly-earnings-nongaap-eps-08-07-2026-0pt16",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.59,
+      "current_price": 0.605,
+      "shares": 190.0,
+      "size_usdc": 112.1,
+      "tx_hash": "0xee7c0340c48ad0ccc3a7ef613b9705446ac471f263530b662b702cbfb81ac619",
+      "whale": {
+        "address": "0xF9f207b77137CAA79c6C4516aBDef3133dB45cba",
+        "pseudonym": "Chief-Plot",
+        "raw_win_rate": 0.8943,
+        "lifetime_pnl": 10341.67,
+        "roi": 0.9809,
+        "recent_wins": 110,
+        "recent_n": 123,
+        "recent_win_rate": 0.8943,
+        "z_score": 0.0,
+        "n_total": 123,
+        "total_wins": 110
+      },
+      "verdict": "SKIP",
+      "age_min": 74.9,
+      "drift": 0.015,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+2.5%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$112",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.590 (max +69%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +69% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "75m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0xc0c8986b",
+      "ts": 1786051016.0,
+      "timestamp_iso": "2026-08-06T21:16:56Z",
+      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
+      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.831,
+      "current_price": 0.8115,
+      "shares": 1000.0,
+      "size_usdc": 831.0,
+      "tx_hash": "0xc0c8986b14734c15e6d393e192bcc8a593aa9a177cff2cad79e39d9fd94036fb",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "LATE",
+      "age_min": 75.2,
+      "drift": -0.0195,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-2.3%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$831",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "warn",
+          "value": "0.831 (max +20%)",
+          "threshold": "< 0.75",
+          "note": "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "75m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Entry too high — max 20% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x398900e9_0x69857316",
+      "ts": 1786050221.0,
+      "timestamp_iso": "2026-08-06T21:03:41Z",
+      "market_id": "0xd6a2eb206eb23c89355bcb7e8d0fc97b68630fcdd5bec135b5813a64b2e2774f",
+      "market_title": "Walker Buehler: Strikeouts O/U 3.5",
+      "market_slug": "mlb-sd-ari-2026-08-06-player-props",
+      "outcome": "Over",
+      "outcome_idx": 0,
+      "side": "OVER",
+      "entry_price": 0.5582,
+      "current_price": 0.275,
+      "shares": 300.0,
+      "size_usdc": 171.15,
+      "tx_hash": "0x698573161f077b3d84e1754d944579c623cfafaa9467fee5ec53ad7832221f81",
+      "whale": {
+        "address": "0x398900e95487c704AC3B52FD653E1697D32227b1",
+        "pseudonym": "Legal-Butcher",
+        "raw_win_rate": 0.8546,
+        "lifetime_pnl": 68316.74,
+        "roi": 0.6875,
+        "recent_wins": 21,
+        "recent_n": 24,
+        "recent_win_rate": 0.875,
+        "z_score": 0.0,
+        "n_total": 227,
+        "total_wins": 194
+      },
+      "verdict": "SKIP",
+      "age_min": 88.4,
+      "drift": -0.2832,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-50.7%",
+          "threshold": "> 7%",
+          "note": "Line moved -50.7% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$171",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.558 (max +79%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +79% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "88m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -50.7% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0x398900e9_0x84b12dea",
+      "ts": 1786050198.0,
+      "timestamp_iso": "2026-08-06T21:03:18Z",
+      "market_id": "0xd6a2eb206eb23c89355bcb7e8d0fc97b68630fcdd5bec135b5813a64b2e2774f",
+      "market_title": "Walker Buehler: Strikeouts O/U 3.5",
+      "market_slug": "mlb-sd-ari-2026-08-06-player-props",
+      "outcome": "Over",
+      "outcome_idx": 0,
+      "side": "OVER",
+      "entry_price": 0.5558,
+      "current_price": 0.275,
+      "shares": 499.99,
+      "size_usdc": 284.07,
+      "tx_hash": "0x84b12dea5a3af65d523879c69ac4378cee884feefa61206640666351a8a34fb8",
+      "whale": {
+        "address": "0x398900e95487c704AC3B52FD653E1697D32227b1",
+        "pseudonym": "Legal-Butcher",
+        "raw_win_rate": 0.8546,
+        "lifetime_pnl": 68316.74,
+        "roi": 0.6875,
+        "recent_wins": 21,
+        "recent_n": 24,
+        "recent_win_rate": 0.875,
+        "z_score": 0.0,
+        "n_total": 227,
+        "total_wins": 194
+      },
+      "verdict": "SKIP",
+      "age_min": 88.8,
+      "drift": -0.2808,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-50.5%",
+          "threshold": "> 7%",
+          "note": "Line moved -50.5% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$284",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.556 (max +80%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +80% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "89m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -50.5% — the move already happened",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0xe3584ed2",
+      "ts": 1786048535.0,
+      "timestamp_iso": "2026-08-06T20:35:35Z",
+      "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
+      "market_title": "US announces end of Iranian blockade by August 15, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.52,
+      "current_price": 0.555,
+      "shares": 349.83,
+      "size_usdc": 181.91,
+      "tx_hash": "0xe3584ed23bdc044d4d75b73e451b4f9106a475e51accc03a85093e483513f278",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 116.5,
+      "drift": 0.035,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+6.7%",
+          "threshold": "> 3%",
+          "note": "Line moved +6.7% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$182",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.520 (max +92%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +92% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "117m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +6.7% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0xae220832",
+      "ts": 1786048014.0,
+      "timestamp_iso": "2026-08-06T20:26:54Z",
+      "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
+      "market_title": "US announces end of Iranian blockade by August 15, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.52,
+      "current_price": 0.555,
+      "shares": 608.93,
+      "size_usdc": 316.64,
+      "tx_hash": "0xae220832989aa543a0f14f4055fdda36d38059e627e0b1aa2922764af42cd668",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 125.2,
+      "drift": 0.035,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+6.7%",
+          "threshold": "> 3%",
+          "note": "Line moved +6.7% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$317",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.520 (max +92%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +92% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "125m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +6.7% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0xae220832",
+      "ts": 1786048014.0,
+      "timestamp_iso": "2026-08-06T20:26:54Z",
+      "market_id": "0xa055e1cf533c2fcb1f1c89c20c41c8aa25526dcf27c3ff6be69c230fd8898282",
+      "market_title": "US announces end of Iranian blockade by August 15, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.53,
+      "current_price": 0.555,
+      "shares": 1000.0,
+      "size_usdc": 530.0,
+      "tx_hash": "0xae220832989aa543a0f14f4055fdda36d38059e627e0b1aa2922764af42cd668",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "ENTER",
+      "age_min": 125.2,
+      "drift": 0.025,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "+4.7%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$530",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
@@ -586,7 +1125,72 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "62m ago",
+          "value": "125m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0x1d6cf771",
+      "ts": 1786048007.0,
+      "timestamp_iso": "2026-08-06T20:26:47Z",
+      "market_id": "0x47ec761ae98d7c28b20c0222f1507e3af0f198a904f86b4a264b2e987f0b80c7",
+      "market_title": "US announces end of Iranian blockade by August 31, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.7,
+      "current_price": 0.675,
+      "shares": 354.05,
+      "size_usdc": 247.84,
+      "tx_hash": "0x1d6cf771b4bbd15390fd7f7151604dd6f0012e0f6c15a0e9d2b22092be6faeb8",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "SKIP",
+      "age_min": 125.3,
+      "drift": -0.025,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-3.6%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$248",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.700 (max +43%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +43% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "125m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -597,20 +1201,20 @@
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0x65a63770",
-      "ts": 1786019699.0,
-      "timestamp_iso": "2026-08-06T12:34:59Z",
-      "market_id": "0x518df6d694ad4658fe6c284850c029c6f00c9b3609cf05f7757d1fecba1641f8",
-      "market_title": "US-Iran 60 day negotiation period extended?",
-      "market_slug": "us-iran-60-day-negotiation-period-extended-20260624044855448",
+      "signal_id": "0xa8c63F77_0x71fe6f6b",
+      "ts": 1786047566.0,
+      "timestamp_iso": "2026-08-06T20:19:26Z",
+      "market_id": "0x47ec761ae98d7c28b20c0222f1507e3af0f198a904f86b4a264b2e987f0b80c7",
+      "market_title": "US announces end of Iranian blockade by August 31, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.76,
-      "current_price": 0.745,
-      "shares": 671.23,
-      "size_usdc": 510.13,
-      "tx_hash": "0x65a637704f6285c5fc9fb714bfeba51db9b6df75b0e1ee82f03b0d00f828a6e2",
+      "entry_price": 0.7,
+      "current_price": 0.675,
+      "shares": 245.94,
+      "size_usdc": 172.16,
+      "tx_hash": "0x71fe6f6b5a16ec643bf3894dc49490952e9f6297222711b61e6740c06de46357",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -624,59 +1228,59 @@
         "n_total": 35,
         "total_wins": 32
       },
-      "verdict": "ENTER",
-      "age_min": 66.1,
-      "drift": -0.015,
+      "verdict": "SKIP",
+      "age_min": 132.7,
+      "drift": -0.025,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-2.0%",
+          "value": "-3.6%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
-          "status": "pass",
-          "value": "$510",
+          "status": "fail",
+          "value": "$172",
           "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
+          "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
-          "status": "warn",
-          "value": "0.760 (max +32%)",
+          "status": "pass",
+          "value": "0.700 (max +43%)",
           "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
+          "note": "Good payoff — +43% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "warn",
-          "value": "66m ago",
+          "value": "133m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Modest payoff — +32% on win, small cushion over costs.",
+        "Below conviction threshold — likely noise/partial-fill",
         "Aging — but OK to tail if drift still small"
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0x894c7a6a",
-      "ts": 1786019009.0,
-      "timestamp_iso": "2026-08-06T12:23:29Z",
-      "market_id": "0x60c2c085ee8c16bc8f2419739a94971d4c9d00f637ead10fc0f540afa1be64e8",
-      "market_title": "Strait of Hormuz traffic returns to normal by August 31?",
-      "market_slug": "strait-of-hormuz-traffic-returns-to-normal-by-august-31-20260702154212320",
+      "signal_id": "0xa8c63F77_0x71fe6f6b",
+      "ts": 1786047566.0,
+      "timestamp_iso": "2026-08-06T20:19:26Z",
+      "market_id": "0x47ec761ae98d7c28b20c0222f1507e3af0f198a904f86b4a264b2e987f0b80c7",
+      "market_title": "US announces end of Iranian blockade by August 31, 2026?",
+      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
       "outcome": "Yes",
       "outcome_idx": 0,
       "side": "YES",
-      "entry_price": 0.19,
-      "current_price": 0.185,
-      "shares": 7591.08,
-      "size_usdc": 1442.31,
-      "tx_hash": "0x894c7a6a073f89b62114d28a9c7b88d8fb6d9ce76b20e617cba6fb16f6dd794c",
+      "entry_price": 0.71,
+      "current_price": 0.675,
+      "shares": 400.0,
+      "size_usdc": 284.0,
+      "tx_hash": "0x71fe6f6b5a16ec643bf3894dc49490952e9f6297222711b61e6740c06de46357",
       "whale": {
         "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
         "pseudonym": "Natural-Vacation",
@@ -690,190 +1294,325 @@
         "n_total": 35,
         "total_wins": 32
       },
-      "verdict": "ENTER",
-      "age_min": 77.7,
-      "drift": -0.005,
+      "verdict": "SKIP",
+      "age_min": 132.7,
+      "drift": -0.035,
       "checks": [
         {
           "name": "Drift",
+          "status": "warn",
+          "value": "-4.9%",
+          "threshold": "> 3%",
+          "note": "Line moved -4.9% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$284",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
           "status": "pass",
-          "value": "-2.6%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "value": "0.710 (max +41%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +41% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "133m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -4.9% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa8c63F77_0xa6c7b889",
+      "ts": 1786045146.0,
+      "timestamp_iso": "2026-08-06T19:39:06Z",
+      "market_id": "0x15d2e66dcf1d63c5695d6d0e9e2f8e06dd246d00fd5dfc254f2b22baa33bfa1b",
+      "market_title": "Mitch McConnell steps down from Senate before his term ends?",
+      "market_slug": "will-mitch-mcconnell-resign-from-the-senate-before-his-term-ends",
+      "outcome": "Yes",
+      "outcome_idx": 0,
+      "side": "YES",
+      "entry_price": 0.245,
+      "current_price": 0.28,
+      "shares": 2152.81,
+      "size_usdc": 543.36,
+      "tx_hash": "0xa6c7b88963c9110d2b7e6ded03a078890ca3706655776bb93b6723a7cf32ba60",
+      "whale": {
+        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
+        "pseudonym": "Natural-Vacation",
+        "raw_win_rate": 0.9143,
+        "lifetime_pnl": 34272.82,
+        "roi": 0.5559,
+        "recent_wins": 32,
+        "recent_n": 35,
+        "recent_win_rate": 0.9143,
+        "z_score": 0.0,
+        "n_total": 35,
+        "total_wins": 32
+      },
+      "verdict": "LATE",
+      "age_min": 173.0,
+      "drift": 0.035,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+14.3%",
+          "threshold": "> 3%",
+          "note": "Line moved +14.3% — part of the edge is already priced in"
         },
         {
           "name": "Size",
           "status": "pass",
-          "value": "$1,442",
+          "value": "$543",
           "threshold": "≥ $500",
           "note": "Conviction trade (above minimum)"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.190 (max +426%)",
+          "value": "0.245 (max +308%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +426% upside on a correct call."
+          "note": "Good payoff — +308% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "warn",
-          "value": "78m ago",
+          "value": "173m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
+        "Line moved +14.3% — part of the edge is already priced in",
         "Aging — but OK to tail if drift still small"
       ]
     },
     {
-      "signal_id": "0xa8c63F77_0xf3569c0c",
-      "ts": 1786018581.0,
-      "timestamp_iso": "2026-08-06T12:16:21Z",
-      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
-      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
+      "signal_id": "0xa18C5CF2_0xcc1632d1",
+      "ts": 1786040820.0,
+      "timestamp_iso": "2026-08-06T18:27:00Z",
+      "market_id": "0x25e58ac688a6bfacb5a5a6f1bb0ae4c72badfd3ad3ad03fa6d612f910441db33",
+      "market_title": "Spread: FC Lugano (-2.5)",
+      "market_slug": "col-lug-nsi-2026-08-06-more-markets",
+      "outcome": "NSÍ Runavík",
+      "outcome_idx": 1,
+      "side": "NSÍ RUNAVÍK",
+      "entry_price": 0.51,
+      "current_price": null,
+      "shares": 475.86,
+      "size_usdc": 242.69,
+      "tx_hash": "0xcc1632d1a386cb3926715ff90623d98c2c7826178a320b2f966ad88192456166",
+      "whale": {
+        "address": "0xa18C5CF2BC6EEC389D2D512582ae14654b99d792",
+        "pseudonym": "Gigantic-Graduation",
+        "raw_win_rate": 0.977,
+        "lifetime_pnl": 245753.12,
+        "roi": 1.3442,
+        "recent_wins": 85,
+        "recent_n": 87,
+        "recent_win_rate": 0.977,
+        "z_score": 0.0,
+        "n_total": 87,
+        "total_wins": 85
+      },
+      "verdict": "SKIP",
+      "age_min": 245.1,
+      "drift": null,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "unknown",
+          "value": "n/a",
+          "threshold": "≤ 3%",
+          "note": "Current price unavailable"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$243",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.510 (max +96%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +96% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "245m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xa18C5CF2_0xddd192b8",
+      "ts": 1786039458.0,
+      "timestamp_iso": "2026-08-06T18:04:18Z",
+      "market_id": "0x7f810aa37dfbd5d8fd6a693a57c33ca1504fb2f48e5e983ddbd69a12c9b94c3f",
+      "market_title": "KF Valur vs. FC Nordsjælland: O/U 3.5",
+      "market_slug": "col-val-nor-2026-08-06-more-markets",
+      "outcome": "Over",
+      "outcome_idx": 0,
+      "side": "OVER",
+      "entry_price": 0.54,
+      "current_price": 0.0005,
+      "shares": 1432.5,
+      "size_usdc": 773.55,
+      "tx_hash": "0xddd192b8f02bd6dccec51895e1a02e131cef3384c13938134d41fb39b10608b0",
+      "whale": {
+        "address": "0xa18C5CF2BC6EEC389D2D512582ae14654b99d792",
+        "pseudonym": "Gigantic-Graduation",
+        "raw_win_rate": 0.977,
+        "lifetime_pnl": 245753.12,
+        "roi": 1.3442,
+        "recent_wins": 85,
+        "recent_n": 87,
+        "recent_win_rate": 0.977,
+        "z_score": 0.0,
+        "n_total": 87,
+        "total_wins": 85
+      },
+      "verdict": "SKIP",
+      "age_min": 267.8,
+      "drift": -0.5395,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "fail",
+          "value": "-99.9%",
+          "threshold": "> 7%",
+          "note": "Line moved -99.9% — the move already happened"
+        },
+        {
+          "name": "Size",
+          "status": "pass",
+          "value": "$774",
+          "threshold": "≥ $500",
+          "note": "Conviction trade (above minimum)"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.540 (max +85%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +85% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "268m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved -99.9% — the move already happened",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xF9f207b7_0x92477969",
+      "ts": 1786039145.0,
+      "timestamp_iso": "2026-08-06T17:59:05Z",
+      "market_id": "0xfe53e3a4a80c6952f5c182693a5084d83b1118fafd420c6f1a796003a9223975",
+      "market_title": "Will Western Europe region win The International 2026?",
+      "market_slug": "the-international-2026-winning-region-20260805215811238",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.71,
+      "current_price": 0.755,
+      "shares": 140.0,
+      "size_usdc": 100.84,
+      "tx_hash": "0x9247796923b7c81eec1b509a70a419e5d8fe1e69f59f9ff20a2d7f34702b2c5d",
+      "whale": {
+        "address": "0xF9f207b77137CAA79c6C4516aBDef3133dB45cba",
+        "pseudonym": "Chief-Plot",
+        "raw_win_rate": 0.8943,
+        "lifetime_pnl": 10341.67,
+        "roi": 0.9809,
+        "recent_wins": 110,
+        "recent_n": 123,
+        "recent_win_rate": 0.8943,
+        "z_score": 0.0,
+        "n_total": 123,
+        "total_wins": 110
+      },
+      "verdict": "SKIP",
+      "age_min": 273.1,
+      "drift": 0.045,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "warn",
+          "value": "+6.3%",
+          "threshold": "> 3%",
+          "note": "Line moved +6.3% — part of the edge is already priced in"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$101",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.710 (max +41%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +41% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "warn",
+          "value": "273m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
+        }
+      ],
+      "skip_reasons": [
+        "Line moved +6.3% — part of the edge is already priced in",
+        "Below conviction threshold — likely noise/partial-fill",
+        "Aging — but OK to tail if drift still small"
+      ]
+    },
+    {
+      "signal_id": "0xcAaB1965_0x830086d2",
+      "ts": 1786036190.0,
+      "timestamp_iso": "2026-08-06T17:09:50Z",
+      "market_id": "0x47ec761ae98d7c28b20c0222f1507e3af0f198a904f86b4a264b2e987f0b80c7",
+      "market_title": "US announces end of Iranian blockade by August 31, 2026?",
       "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
       "outcome": "No",
       "outcome_idx": 1,
       "side": "NO",
-      "entry_price": 0.5898,
-      "current_price": 0.649,
-      "shares": 600.0,
-      "size_usdc": 353.86,
-      "tx_hash": "0xf3569c0c36923447ff98d785b60bf8e5adf9ea80066301f690f06c30546dc6c7",
-      "whale": {
-        "address": "0xa8c63F775DDbbE66B56614191747Def3021444E8",
-        "pseudonym": "Natural-Vacation",
-        "raw_win_rate": 0.9143,
-        "lifetime_pnl": 34272.82,
-        "roi": 0.5559,
-        "recent_wins": 32,
-        "recent_n": 35,
-        "recent_win_rate": 0.9143,
-        "z_score": 0.0,
-        "n_total": 35,
-        "total_wins": 32
-      },
-      "verdict": "SKIP",
-      "age_min": 84.8,
-      "drift": 0.0592,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "+10.0%",
-          "threshold": "> 3%",
-          "note": "Line moved +10.0% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$354",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.590 (max +70%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +70% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "85m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved +10.0% — part of the edge is already priced in",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xcAaB1965_0xa98af631",
-      "ts": 1786018295.0,
-      "timestamp_iso": "2026-08-06T12:11:35Z",
-      "market_id": "0x80b3af88cb991980e8da1ce86b9794a0957f96ec98c29319dd7ba65e9744d82b",
-      "market_title": "Fed rate hike in 2026?",
-      "market_slug": "fed-rate-hike-in-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.62,
-      "current_price": 0.625,
+      "entry_price": 0.2998,
+      "current_price": 0.325,
       "shares": 1000.0,
-      "size_usdc": 620.0,
-      "tx_hash": "0xa98af6313909c10441bacc8ec0b1c8200157c3bcb11f403ddc36ff721627e779",
-      "whale": {
-        "address": "0xcAaB19659B995951a44Cc992447CB2aD5BE324dD",
-        "pseudonym": "Cheery-Preparation",
-        "raw_win_rate": 0.9545,
-        "lifetime_pnl": 153274.5,
-        "roi": 0.3215,
-        "recent_wins": 84,
-        "recent_n": 88,
-        "recent_win_rate": 0.9545,
-        "z_score": 0.0,
-        "n_total": 88,
-        "total_wins": 84
-      },
-      "verdict": "ENTER",
-      "age_min": 89.6,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$620",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.620 (max +61%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +61% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "90m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xcAaB1965_0xa98af631",
-      "ts": 1786018295.0,
-      "timestamp_iso": "2026-08-06T12:11:35Z",
-      "market_id": "0x80b3af88cb991980e8da1ce86b9794a0957f96ec98c29319dd7ba65e9744d82b",
-      "market_title": "Fed rate hike in 2026?",
-      "market_slug": "fed-rate-hike-in-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.62,
-      "current_price": 0.625,
-      "shares": 425.81,
-      "size_usdc": 264.0,
-      "tx_hash": "0xa98af6313909c10441bacc8ec0b1c8200157c3bcb11f403ddc36ff721627e779",
+      "size_usdc": 299.79,
+      "tx_hash": "0x830086d2959560fe4b6bf19d8629da3e2fd589a3e2e05277a95688b53589c35a",
       "whale": {
         "address": "0xcAaB19659B995951a44Cc992447CB2aD5BE324dD",
         "pseudonym": "Cheery-Preparation",
@@ -888,166 +1627,34 @@
         "total_wins": 84
       },
       "verdict": "SKIP",
-      "age_min": 89.6,
-      "drift": 0.005,
+      "age_min": 322.3,
+      "drift": 0.0252,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+0.8%",
+          "value": "+8.4%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
           "status": "fail",
-          "value": "$264",
+          "value": "$300",
           "threshold": "≥ $500",
           "note": "Below conviction threshold — likely noise/partial-fill"
         },
         {
           "name": "Payoff",
           "status": "pass",
-          "value": "0.620 (max +61%)",
+          "value": "0.300 (max +234%)",
           "threshold": "< 0.75",
-          "note": "Good payoff — +61% upside on a correct call."
+          "note": "Good payoff — +234% upside on a correct call."
         },
         {
           "name": "Age",
           "status": "warn",
-          "value": "90m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xcAaB1965_0x17fff3f7",
-      "ts": 1786018130.0,
-      "timestamp_iso": "2026-08-06T12:08:50Z",
-      "market_id": "0x80b3af88cb991980e8da1ce86b9794a0957f96ec98c29319dd7ba65e9744d82b",
-      "market_title": "Fed rate hike in 2026?",
-      "market_slug": "fed-rate-hike-in-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.62,
-      "current_price": 0.625,
-      "shares": 200.0,
-      "size_usdc": 124.0,
-      "tx_hash": "0x17fff3f72f7cb80dca31aebea9877f72bb1e4ec7a0ab5cc4761aff21187bbd5b",
-      "whale": {
-        "address": "0xcAaB19659B995951a44Cc992447CB2aD5BE324dD",
-        "pseudonym": "Cheery-Preparation",
-        "raw_win_rate": 0.9545,
-        "lifetime_pnl": 153274.5,
-        "roi": 0.3215,
-        "recent_wins": 84,
-        "recent_n": 88,
-        "recent_win_rate": 0.9545,
-        "z_score": 0.0,
-        "n_total": 88,
-        "total_wins": 84
-      },
-      "verdict": "SKIP",
-      "age_min": 92.3,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$124",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.620 (max +61%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +61% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "92m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xcAaB1965_0x4df51a76",
-      "ts": 1786017618.0,
-      "timestamp_iso": "2026-08-06T12:00:18Z",
-      "market_id": "0x80b3af88cb991980e8da1ce86b9794a0957f96ec98c29319dd7ba65e9744d82b",
-      "market_title": "Fed rate hike in 2026?",
-      "market_slug": "fed-rate-hike-in-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.62,
-      "current_price": 0.625,
-      "shares": 372.6,
-      "size_usdc": 235.4,
-      "tx_hash": "0x4df51a76344345554a03fe33f727604106157b677833cca6fb359601da23fda1",
-      "whale": {
-        "address": "0xcAaB19659B995951a44Cc992447CB2aD5BE324dD",
-        "pseudonym": "Cheery-Preparation",
-        "raw_win_rate": 0.9545,
-        "lifetime_pnl": 153274.5,
-        "roi": 0.3215,
-        "recent_wins": 84,
-        "recent_n": 88,
-        "recent_win_rate": 0.9545,
-        "z_score": 0.0,
-        "n_total": 88,
-        "total_wins": 84
-      },
-      "verdict": "SKIP",
-      "age_min": 100.9,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$235",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.620 (max +61%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +61% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "101m ago",
+          "value": "322m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -1068,7 +1675,7 @@
       "outcome_idx": 0,
       "side": "YES",
       "entry_price": 0.4,
-      "current_price": 0.47,
+      "current_price": 0.385,
       "shares": 300.0,
       "size_usdc": 120.0,
       "tx_hash": "0x5521d434bb7b04185d81df2a9750045ade2f8ea9c0007409edfbb9f6b7c378f3",
@@ -1086,15 +1693,15 @@
         "total_wins": 92
       },
       "verdict": "SKIP",
-      "age_min": 111.7,
-      "drift": 0.07,
+      "age_min": 642.7,
+      "drift": -0.015,
       "checks": [
         {
           "name": "Drift",
-          "status": "warn",
-          "value": "+17.5%",
-          "threshold": "> 3%",
-          "note": "Line moved +17.5% — part of the edge is already priced in"
+          "status": "pass",
+          "value": "-3.8%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
         },
         {
           "name": "Size",
@@ -1112,16 +1719,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "112m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "643m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Line moved +17.5% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -1153,7 +1759,7 @@
         "total_wins": 56
       },
       "verdict": "SKIP",
-      "age_min": 117.2,
+      "age_min": 648.2,
       "drift": 0.005,
       "checks": [
         {
@@ -1179,15 +1785,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "117m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "648m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -1219,7 +1825,7 @@
         "total_wins": 447
       },
       "verdict": "SKIP",
-      "age_min": 130.1,
+      "age_min": 661.1,
       "drift": -0.088,
       "checks": [
         {
@@ -1245,16 +1851,16 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "130m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "661m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Line moved -46.3% — the move already happened",
         "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -1268,7 +1874,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.3395,
-      "current_price": 0.285,
+      "current_price": 0.28,
       "shares": 16998.21,
       "size_usdc": 6037.39,
       "tx_hash": "0x05685e2e268978817f166072e1d4b0c8ccfa0f24a971f82126e15f59d45de171",
@@ -1286,15 +1892,15 @@
         "total_wins": 447
       },
       "verdict": "LATE",
-      "age_min": 144.6,
-      "drift": -0.0545,
+      "age_min": 675.6,
+      "drift": -0.0595,
       "checks": [
         {
           "name": "Drift",
           "status": "warn",
-          "value": "-16.0%",
+          "value": "-17.5%",
           "threshold": "> 3%",
-          "note": "Line moved -16.0% — part of the edge is already priced in"
+          "note": "Line moved -17.5% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -1312,15 +1918,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "145m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "676m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Line moved -16.0% — part of the edge is already priced in",
-        "Aging — but OK to tail if drift still small"
+        "Line moved -17.5% — part of the edge is already priced in",
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -1334,7 +1940,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.3172,
-      "current_price": 0.285,
+      "current_price": 0.28,
       "shares": 3099.04,
       "size_usdc": 1029.97,
       "tx_hash": "0xe703ce11ccfd02efd92392304c987ce100949c4a0399f3d005ab516796c96ebb",
@@ -1352,15 +1958,15 @@
         "total_wins": 447
       },
       "verdict": "LATE",
-      "age_min": 145.8,
-      "drift": -0.0322,
+      "age_min": 676.7,
+      "drift": -0.0372,
       "checks": [
         {
           "name": "Drift",
           "status": "warn",
-          "value": "-10.1%",
+          "value": "-11.7%",
           "threshold": "> 3%",
-          "note": "Line moved -10.1% — part of the edge is already priced in"
+          "note": "Line moved -11.7% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -1378,875 +1984,14 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "146m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -10.1% — part of the edge is already priced in",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xe60F07A8_0x742faaab",
-      "ts": 1786010754.0,
-      "timestamp_iso": "2026-08-06T10:05:54Z",
-      "market_id": "0x6fd3b6000cd02add93d021196ae4a436a2db207c58b7df30e559f697201faf0f",
-      "market_title": "Will Netflix, Inc. (NFLX) hit (LOW) $65 Week of August 3 2026?",
-      "market_slug": "will-nflx-hit-week-of-august-3-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.19,
-      "current_price": 0.062,
-      "shares": 999.99,
-      "size_usdc": 196.15,
-      "tx_hash": "0x742faaab1bdd1caf6200c5b25215d9b1958df94dbd44a6ace14c3f0cbec21d7a",
-      "whale": {
-        "address": "0xe60F07A844Bd18448eB3B23818f94Bec1589f4B4",
-        "pseudonym": "Hasty-Saucer",
-        "raw_win_rate": 1.0,
-        "lifetime_pnl": 69505.94,
-        "roi": 0.1627,
-        "recent_wins": 120,
-        "recent_n": 120,
-        "recent_win_rate": 1.0,
-        "z_score": 0.0,
-        "n_total": 447,
-        "total_wins": 447
-      },
-      "verdict": "SKIP",
-      "age_min": 215.2,
-      "drift": -0.128,
-      "checks": [
-        {
-          "name": "Drift",
           "status": "fail",
-          "value": "-67.4%",
-          "threshold": "> 7%",
-          "note": "Line moved -67.4% — the move already happened"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$196",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.190 (max +426%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +426% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "215m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -67.4% — the move already happened",
-        "Below conviction threshold — likely noise/partial-fill",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xcF19c420_0x6e02bdfe",
-      "ts": 1786009439.0,
-      "timestamp_iso": "2026-08-06T09:43:59Z",
-      "market_id": "0x8aaaca6ea5c037d3cdfe85272ab9029b7165694dcae8af0de5071f01a1a944f0",
-      "market_title": "Will AfD win the most seats in the 2026 Berlin state elections?",
-      "market_slug": "berlin-state-election-winner",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.822,
-      "current_price": 0.825,
-      "shares": 178.0,
-      "size_usdc": 146.32,
-      "tx_hash": "0x6e02bdfea25bd18c685c4c3c1497c8254318372c293f24e1d42e359221fcbffb",
-      "whale": {
-        "address": "0xcF19c420814435ffB1c459588208eD23a7eE6402",
-        "pseudonym": "0xcf19c420814435ffb1c459588208ed23a7ee6402",
-        "raw_win_rate": 0.9286,
-        "lifetime_pnl": 351741.98,
-        "roi": 1.0395,
-        "recent_wins": 19,
-        "recent_n": 21,
-        "recent_win_rate": 0.9048,
-        "z_score": 0.0,
-        "n_total": 42,
-        "total_wins": 39
-      },
-      "verdict": "SKIP",
-      "age_min": 237.1,
-      "drift": 0.003,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$146",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.822 (max +22%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "237m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0x68C24Bf4_0xb5e081a3",
-      "ts": 1786009421.0,
-      "timestamp_iso": "2026-08-06T09:43:41Z",
-      "market_id": "0x7ad403c3508f8e3912940fd1a913f227591145ca0614074208e0b962d5fcc422",
-      "market_title": "Will JD Vance win the 2028 US Presidential Election?",
-      "market_slug": "presidential-election-winner-2028",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.2115,
-      "current_price": 0.2145,
-      "shares": 12396.88,
-      "size_usdc": 2704.58,
-      "tx_hash": "0xb5e081a34be30c8785ea0ff0677ae8ef80df56e91720d6546c54e48588a6cf4e",
-      "whale": {
-        "address": "0x68C24Bf4A8ad4D79a6Fe4B8Eec6f93a02Dfd1711",
-        "pseudonym": "Common-Nitrogen",
-        "raw_win_rate": 0.9333,
-        "lifetime_pnl": 82366.92,
-        "roi": 1.177,
-        "recent_wins": 35,
-        "recent_n": 38,
-        "recent_win_rate": 0.9211,
-        "z_score": 0.0,
-        "n_total": 60,
-        "total_wins": 56
-      },
-      "verdict": "ENTER",
-      "age_min": 237.5,
-      "drift": 0.003,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$2,705",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.211 (max +373%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +373% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "238m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xcF19c420_0x87570bc8",
-      "ts": 1786009340.0,
-      "timestamp_iso": "2026-08-06T09:42:20Z",
-      "market_id": "0x8aaaca6ea5c037d3cdfe85272ab9029b7165694dcae8af0de5071f01a1a944f0",
-      "market_title": "Will AfD win the most seats in the 2026 Berlin state elections?",
-      "market_slug": "berlin-state-election-winner",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.822,
-      "current_price": 0.825,
-      "shares": 146.84,
-      "size_usdc": 120.7,
-      "tx_hash": "0x87570bc8283ebefb45d0779a3f6214aa83504791044dee9884f310feb96528e3",
-      "whale": {
-        "address": "0xcF19c420814435ffB1c459588208eD23a7eE6402",
-        "pseudonym": "0xcf19c420814435ffb1c459588208ed23a7ee6402",
-        "raw_win_rate": 0.9286,
-        "lifetime_pnl": 351741.98,
-        "roi": 1.0395,
-        "recent_wins": 19,
-        "recent_n": 21,
-        "recent_win_rate": 0.9048,
-        "z_score": 0.0,
-        "n_total": 42,
-        "total_wins": 39
-      },
-      "verdict": "SKIP",
-      "age_min": 238.8,
-      "drift": 0.003,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$121",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.822 (max +22%)",
-          "threshold": "< 0.75",
-          "note": "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk."
-        },
-        {
-          "name": "Age",
-          "status": "warn",
-          "value": "239m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Entry too high — max 22% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
-      ]
-    },
-    {
-      "signal_id": "0xA0bcA9bd_0xec4a3928",
-      "ts": 1785996650.0,
-      "timestamp_iso": "2026-08-06T06:10:50Z",
-      "market_id": "0x5dc212b712dcf514432221436140eec9717aea8f9fbead457c858d14ee519b90",
-      "market_title": "US announces end of Iranian blockade by August 7, 2026?",
-      "market_slug": "us-announces-end-of-iranian-blockade-byptptpt-20260713152715080",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.346,
-      "current_price": 0.351,
-      "shares": 399.99,
-      "size_usdc": 138.4,
-      "tx_hash": "0xec4a3928d80c598d858809dc03bfccca05ee050b08f92e17e146f6eee8483ac5",
-      "whale": {
-        "address": "0xA0bcA9bdD8540DA95060eD1fAfb78aA03835d428",
-        "pseudonym": "Bitter-Cartoon",
-        "raw_win_rate": 0.8598,
-        "lifetime_pnl": 14182.1,
-        "roi": 0.4786,
-        "recent_wins": 92,
-        "recent_n": 107,
-        "recent_win_rate": 0.8598,
-        "z_score": 0.0,
-        "n_total": 107,
-        "total_wins": 92
-      },
-      "verdict": "SKIP",
-      "age_min": 450.3,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+1.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$138",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.346 (max +189%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +189% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "450m ago",
+          "value": "677m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xA0bcA9bd_0xf9742329",
-      "ts": 1785992312.0,
-      "timestamp_iso": "2026-08-06T04:58:32Z",
-      "market_id": "0xd2e96e78b5a59e12b4d60d6b8426aa93dc6edf2ed7d711509481050c347856b3",
-      "market_title": "Will Trump's approval rating hit 35% in 2026?",
-      "market_slug": "how-low-will-trumps-approval-rating-go-in-2026",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.3776,
-      "current_price": 0.39,
-      "shares": 1186.1,
-      "size_usdc": 459.01,
-      "tx_hash": "0xf97423297379b2edaefdba0608ed972506079b36a707b6b92e7230dbae34f92b",
-      "whale": {
-        "address": "0xA0bcA9bdD8540DA95060eD1fAfb78aA03835d428",
-        "pseudonym": "Bitter-Cartoon",
-        "raw_win_rate": 0.8598,
-        "lifetime_pnl": 14182.1,
-        "roi": 0.4786,
-        "recent_wins": 92,
-        "recent_n": 107,
-        "recent_win_rate": 0.8598,
-        "z_score": 0.0,
-        "n_total": 107,
-        "total_wins": 92
-      },
-      "verdict": "SKIP",
-      "age_min": 522.6,
-      "drift": 0.0124,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+3.3%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$459",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.378 (max +165%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +165% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "523m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xA0bcA9bd_0xb79afa4f",
-      "ts": 1785992180.0,
-      "timestamp_iso": "2026-08-06T04:56:20Z",
-      "market_id": "0x15ddba100cf49043ada06a98d63ac221cdca86da873485dcca72c174cb9cc300",
-      "market_title": "Trump meets with Putin by December 31?",
-      "market_slug": "trump-meets-with-putin-by",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.74,
-      "current_price": 0.72,
-      "shares": 200.0,
-      "size_usdc": 148.0,
-      "tx_hash": "0xb79afa4f2f8e49d9ed64b9a413471315349b1c41542e3f3b08205edc670a164d",
-      "whale": {
-        "address": "0xA0bcA9bdD8540DA95060eD1fAfb78aA03835d428",
-        "pseudonym": "Bitter-Cartoon",
-        "raw_win_rate": 0.8598,
-        "lifetime_pnl": 14182.1,
-        "roi": 0.4786,
-        "recent_wins": 92,
-        "recent_n": 107,
-        "recent_win_rate": 0.8598,
-        "z_score": 0.0,
-        "n_total": 107,
-        "total_wins": 92
-      },
-      "verdict": "SKIP",
-      "age_min": 524.8,
-      "drift": -0.02,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-2.7%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$148",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.740 (max +35%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +35% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "525m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xA0bcA9bd_0x4231bf35",
-      "ts": 1785991928.0,
-      "timestamp_iso": "2026-08-06T04:52:08Z",
-      "market_id": "0x5c19f205507ce03ff5f3be08a8090a5969ea6870cc07b902a4ca2e61dfe48fdd",
-      "market_title": "Russia x Ukraine ceasefire agreement by December 31, 2026?",
-      "market_slug": "russia-x-ukraine-ceasefire-agreement-by",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.66,
-      "current_price": 0.645,
-      "shares": 300.0,
-      "size_usdc": 198.0,
-      "tx_hash": "0x4231bf35afb914c5e71cb17b99481f79a88827bfba61e0c3935ca99429f5e167",
-      "whale": {
-        "address": "0xA0bcA9bdD8540DA95060eD1fAfb78aA03835d428",
-        "pseudonym": "Bitter-Cartoon",
-        "raw_win_rate": 0.8598,
-        "lifetime_pnl": 14182.1,
-        "roi": 0.4786,
-        "recent_wins": 92,
-        "recent_n": 107,
-        "recent_win_rate": 0.8598,
-        "z_score": 0.0,
-        "n_total": 107,
-        "total_wins": 92
-      },
-      "verdict": "SKIP",
-      "age_min": 529.0,
-      "drift": -0.015,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "-2.3%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$198",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.660 (max +52%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +52% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "529m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x398900e9_0x20fb0875",
-      "ts": 1785991370.0,
-      "timestamp_iso": "2026-08-06T04:42:50Z",
-      "market_id": "0x705a58f860c9884dae531857d908bd1cfd2263bade7b703a59b2bea525f9859e",
-      "market_title": "Will Justin Herbert win the 2026 NFL MVP?",
-      "market_slug": "pro-football-2026-mvp-winner",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.09,
-      "current_price": 0.11,
-      "shares": 2859.42,
-      "size_usdc": 269.06,
-      "tx_hash": "0x20fb0875e65d2241970f817a845214262dfc7eb839312211d104e0364f2aba87",
-      "whale": {
-        "address": "0x398900e95487c704AC3B52FD653E1697D32227b1",
-        "pseudonym": "Legal-Butcher",
-        "raw_win_rate": 0.8546,
-        "lifetime_pnl": 68316.74,
-        "roi": 0.6875,
-        "recent_wins": 21,
-        "recent_n": 24,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 227,
-        "total_wins": 194
-      },
-      "verdict": "SKIP",
-      "age_min": 538.3,
-      "drift": 0.02,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+22.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$269",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.090 (max +1011%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +1011% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "538m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x398900e9_0x2ef2ab6d",
-      "ts": 1785983426.0,
-      "timestamp_iso": "2026-08-06T02:30:26Z",
-      "market_id": "0x61600d487069f99e775307a0655c1a79f26e4fc6d8d1ba66790c64d78d0beba2",
-      "market_title": "Will Jon Ossoff win the 2028 US Presidential Election?",
-      "market_slug": "presidential-election-winner-2028",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.097,
-      "current_price": 0.097,
-      "shares": 12364.77,
-      "size_usdc": 1242.59,
-      "tx_hash": "0x2ef2ab6db19c268930c3c7ac57515c8f6b73f135933a544e55f2c1662d0c0243",
-      "whale": {
-        "address": "0x398900e95487c704AC3B52FD653E1697D32227b1",
-        "pseudonym": "Legal-Butcher",
-        "raw_win_rate": 0.8546,
-        "lifetime_pnl": 68316.74,
-        "roi": 0.6875,
-        "recent_wins": 21,
-        "recent_n": 24,
-        "recent_win_rate": 0.875,
-        "z_score": 0.0,
-        "n_total": 227,
-        "total_wins": 194
-      },
-      "verdict": "LATE",
-      "age_min": 670.7,
-      "drift": 0.0,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.0%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,243",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.097 (max +931%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +931% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "671m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x3eAE5798_0x25408907",
-      "ts": 1785982787.0,
-      "timestamp_iso": "2026-08-06T02:19:47Z",
-      "market_id": "0xf2bf04609e7458df56c9bb4b1e051286dea11da1c944bbc1dafbcc6b76904e52",
-      "market_title": "NATO x Russia military clash by December 31, 2026?",
-      "market_slug": "nato-x-russia-military-clash-in-2025",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.76,
-      "current_price": 0.765,
-      "shares": 404.43,
-      "size_usdc": 307.37,
-      "tx_hash": "0x254089072bee0a3d641372d7d4cb92bdb28e20e564f7cc906368df68d12cc451",
-      "whale": {
-        "address": "0x3eAE57986be5e0cA435102FFE1F14206FFa2e2ED",
-        "pseudonym": "Attached-Example-Anesthesiologist",
-        "raw_win_rate": 0.9813,
-        "lifetime_pnl": 422758.74,
-        "roi": 0.353,
-        "recent_wins": 105,
-        "recent_n": 107,
-        "recent_win_rate": 0.9813,
-        "z_score": 0.0,
-        "n_total": 107,
-        "total_wins": 105
-      },
-      "verdict": "SKIP",
-      "age_min": 681.3,
-      "drift": 0.005,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+0.7%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$307",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.760 (max +32%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +32% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "681m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
-        "Modest payoff — +32% on win, small cushion over costs.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x3eAE5798_0x522bbb1e",
-      "ts": 1785981843.0,
-      "timestamp_iso": "2026-08-06T02:04:03Z",
-      "market_id": "0x28603e21c36ac9d4e40f7a819e477458508ac38854d4ee30c3f1719127eafabf",
-      "market_title": "Jeanine Pirro out as D.C. U.S. Attorney by August 31?",
-      "market_slug": "jeanine-pirro-out-as-dc-us-attorney-by",
-      "outcome": "No",
-      "outcome_idx": 1,
-      "side": "NO",
-      "entry_price": 0.7678,
-      "current_price": 0.715,
-      "shares": 1733.08,
-      "size_usdc": 1342.97,
-      "tx_hash": "0x522bbb1ef0fb93e27f88c9a45d4c7c93f64bf6ec72d15d2112b87c0575d84dbe",
-      "whale": {
-        "address": "0x3eAE57986be5e0cA435102FFE1F14206FFa2e2ED",
-        "pseudonym": "Attached-Example-Anesthesiologist",
-        "raw_win_rate": 0.9813,
-        "lifetime_pnl": 422758.74,
-        "roi": 0.353,
-        "recent_wins": 105,
-        "recent_n": 107,
-        "recent_win_rate": 0.9813,
-        "z_score": 0.0,
-        "n_total": 107,
-        "total_wins": 105
-      },
-      "verdict": "LATE",
-      "age_min": 697.0,
-      "drift": -0.0528,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "warn",
-          "value": "-6.9%",
-          "threshold": "> 3%",
-          "note": "Line moved -6.9% — part of the edge is already priced in"
-        },
-        {
-          "name": "Size",
-          "status": "pass",
-          "value": "$1,343",
-          "threshold": "≥ $500",
-          "note": "Conviction trade (above minimum)"
-        },
-        {
-          "name": "Payoff",
-          "status": "warn",
-          "value": "0.768 (max +30%)",
-          "threshold": "< 0.75",
-          "note": "Modest payoff — +30% on win, small cushion over costs."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "697m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Line moved -6.9% — part of the edge is already priced in",
-        "Modest payoff — +30% on win, small cushion over costs.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0xF9f207b7_0x1dea4295",
-      "ts": 1785981011.0,
-      "timestamp_iso": "2026-08-06T01:50:11Z",
-      "market_id": "0xe64ec54460a1f1b250c9785968e6ebecfb0fd542a34300a161f64460c7a811df",
-      "market_title": "Will the Republican Party win the NC-11 House seat?",
-      "market_slug": "nc-11-house-election-winner",
-      "outcome": "Yes",
-      "outcome_idx": 0,
-      "side": "YES",
-      "entry_price": 0.42,
-      "current_price": 0.43,
-      "shares": 430.04,
-      "size_usdc": 184.81,
-      "tx_hash": "0x1dea42953cf053ba1e9f52b39262fd39870d3949b7cedb4d0048c1fc61d0c56c",
-      "whale": {
-        "address": "0xF9f207b77137CAA79c6C4516aBDef3133dB45cba",
-        "pseudonym": "Chief-Plot",
-        "raw_win_rate": 0.8943,
-        "lifetime_pnl": 10341.67,
-        "roi": 0.9809,
-        "recent_wins": 110,
-        "recent_n": 123,
-        "recent_win_rate": 0.8943,
-        "z_score": 0.0,
-        "n_total": 123,
-        "total_wins": 110
-      },
-      "verdict": "SKIP",
-      "age_min": 711.0,
-      "drift": 0.01,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "pass",
-          "value": "+2.4%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$185",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.420 (max +138%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +138% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "711m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
+        "Line moved -11.7% — part of the edge is already priced in",
         "Very stale — even if price is near entry, you have less time to profit"
       ]
     }
