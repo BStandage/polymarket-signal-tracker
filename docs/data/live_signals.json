@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-26T09:06:58.056856Z",
+  "updated_at": "2026-08-26T09:54:02.366707Z",
   "config": {
     "signal_lookback_minutes": 720,
     "fresh_minutes": 60,
@@ -8,8 +8,73 @@
   },
   "watchlist_size": 25,
   "signal_count": 23,
-  "enter_count": 3,
+  "enter_count": 1,
   "signals": [
+    {
+      "signal_id": "0x6c104A31_0xc365e51e",
+      "ts": 1787737716.0,
+      "timestamp_iso": "2026-08-26T09:48:36Z",
+      "market_id": "0x990d1d3e4d9b120eafce967dc06753b79aa0a6c6f4a92b528fb31fbb7bdb99be",
+      "market_title": "Will Strait of Hormuz traffic not return to normal in 2026?",
+      "market_slug": "which-month-will-strait-of-hormuz-traffic-return-to-normal-20260702155718114",
+      "outcome": "No",
+      "outcome_idx": 1,
+      "side": "NO",
+      "entry_price": 0.35,
+      "current_price": 0.34,
+      "shares": 300.0,
+      "size_usdc": 105.0,
+      "tx_hash": "0xc365e51e99ca9a3b3e2d67b0aec7b47c20d1a97dc83edb876df14a41640dc72b",
+      "whale": {
+        "address": "0x6c104A31c105Ab2573a42E0F178f961E4496DF5C",
+        "pseudonym": "",
+        "raw_win_rate": 0.96,
+        "lifetime_pnl": 72830.86,
+        "roi": 0.9635,
+        "recent_wins": 77,
+        "recent_n": 81,
+        "recent_win_rate": 0.9506,
+        "z_score": 0.0,
+        "n_total": 100,
+        "total_wins": 96
+      },
+      "verdict": "SKIP",
+      "age_min": 5.4,
+      "drift": -0.01,
+      "checks": [
+        {
+          "name": "Drift",
+          "status": "pass",
+          "value": "-2.9%",
+          "threshold": "≤ 3%",
+          "note": "Near whale's entry — you can still mirror the trade at their price"
+        },
+        {
+          "name": "Size",
+          "status": "fail",
+          "value": "$105",
+          "threshold": "≥ $500",
+          "note": "Below conviction threshold — likely noise/partial-fill"
+        },
+        {
+          "name": "Payoff",
+          "status": "pass",
+          "value": "0.350 (max +186%)",
+          "threshold": "< 0.75",
+          "note": "Good payoff — +186% upside on a correct call."
+        },
+        {
+          "name": "Age",
+          "status": "pass",
+          "value": "5m ago",
+          "threshold": "≤ 60m",
+          "note": "Fresh"
+        }
+      ],
+      "skip_reasons": [
+        "Below conviction threshold — likely noise/partial-fill"
+      ]
+    },
     {
       "signal_id": "0x9c261746_0x10972764",
       "ts": 1787734941.0,
@@ -39,7 +104,7 @@
         "total_wins": 25
       },
       "verdict": "SKIP",
-      "age_min": 4.5,
+      "age_min": 51.6,
       "drift": 0.005,
       "checks": [
         {
@@ -66,7 +131,7 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "5m ago",
+          "value": "52m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -105,7 +170,7 @@
         "total_wins": 199
       },
       "verdict": "ENTER",
-      "age_min": 5.7,
+      "age_min": 52.7,
       "drift": 0.005,
       "checks": [
         {
@@ -132,7 +197,7 @@
         {
           "name": "Age",
           "status": "pass",
-          "value": "6m ago",
+          "value": "53m ago",
           "threshold": "≤ 60m",
           "note": "Fresh"
         }
@@ -168,7 +233,7 @@
         "total_wins": 25
       },
       "verdict": "LATE",
-      "age_min": 19.5,
+      "age_min": 66.6,
       "drift": 0.005,
       "checks": [
         {
@@ -194,14 +259,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "20m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "67m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -233,7 +299,7 @@
         "total_wins": 96
       },
       "verdict": "LATE",
-      "age_min": 39.9,
+      "age_min": 86.9,
       "drift": -0.005,
       "checks": [
         {
@@ -259,14 +325,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "40m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "87m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk."
+        "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -298,7 +365,7 @@
         "total_wins": 25
       },
       "verdict": "LATE",
-      "age_min": 57.9,
+      "age_min": 105.0,
       "drift": 0.005,
       "checks": [
         {
@@ -324,14 +391,15 @@
         },
         {
           "name": "Age",
-          "status": "pass",
-          "value": "58m ago",
-          "threshold": "≤ 60m",
-          "note": "Fresh"
+          "status": "warn",
+          "value": "105m ago",
+          "threshold": "> 60m",
+          "note": "Aging — but OK to tail if drift still small"
         }
       ],
       "skip_reasons": [
-        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk."
+        "Entry too high — max 12% gain if right, -100% if wrong. Asymmetric risk.",
+        "Aging — but OK to tail if drift still small"
       ]
     },
     {
@@ -363,7 +431,7 @@
         "total_wins": 96
       },
       "verdict": "SKIP",
-      "age_min": 311.8,
+      "age_min": 358.9,
       "drift": null,
       "checks": [
         {
@@ -390,7 +458,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "312m ago",
+          "value": "359m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -430,7 +498,7 @@
         "total_wins": 96
       },
       "verdict": "SKIP",
-      "age_min": 312.8,
+      "age_min": 359.9,
       "drift": null,
       "checks": [
         {
@@ -457,7 +525,7 @@
         {
           "name": "Age",
           "status": "warn",
-          "value": "313m ago",
+          "value": "360m ago",
           "threshold": "> 60m",
           "note": "Aging — but OK to tail if drift still small"
         }
@@ -497,7 +565,7 @@
         "total_wins": 96
       },
       "verdict": "SKIP",
-      "age_min": 314.1,
+      "age_min": 361.1,
       "drift": null,
       "checks": [
         {
@@ -523,16 +591,16 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "314m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "361m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +27% on win, small cushion over costs.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -564,7 +632,7 @@
         "total_wins": 96
       },
       "verdict": "SKIP",
-      "age_min": 314.1,
+      "age_min": 361.2,
       "drift": null,
       "checks": [
         {
@@ -590,16 +658,16 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "314m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "361m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +28% on win, small cushion over costs.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -631,7 +699,7 @@
         "total_wins": 96
       },
       "verdict": "SKIP",
-      "age_min": 321.4,
+      "age_min": 368.5,
       "drift": 0.035,
       "checks": [
         {
@@ -657,17 +725,17 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "321m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "368m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
         "Line moved +4.4% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill",
         "Modest payoff — +27% on win, small cushion over costs.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -681,7 +749,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.8024,
-      "current_price": 0.81,
+      "current_price": 0.855,
       "shares": 432.26,
       "size_usdc": 349.6,
       "tx_hash": "0x4042637ad3b06ddef93d09c35b3491aa7cbb3bf36d0676e79e4bc64609d18ae8",
@@ -699,15 +767,15 @@
         "total_wins": 56
       },
       "verdict": "SKIP",
-      "age_min": 353.4,
-      "drift": 0.0076,
+      "age_min": 400.5,
+      "drift": 0.0526,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "+0.9%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "+6.6%",
+          "threshold": "> 3%",
+          "note": "Line moved +6.6% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -725,16 +793,17 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "353m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "400m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
+        "Line moved +6.6% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill",
         "Entry too high — max 25% gain if right, -100% if wrong. Asymmetric risk.",
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -748,7 +817,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.4376,
-      "current_price": 0.415,
+      "current_price": 0.475,
       "shares": 1646.6,
       "size_usdc": 720.5,
       "tx_hash": "0xa9871b06dd0a0b8801fb4565796dc077eaaf77bcd8e69ee8a83c6538b5b57926",
@@ -765,16 +834,16 @@
         "n_total": 54,
         "total_wins": 45
       },
-      "verdict": "ENTER",
-      "age_min": 355.0,
-      "drift": -0.0226,
+      "verdict": "LATE",
+      "age_min": 402.0,
+      "drift": 0.0374,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "-5.2%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "+8.6%",
+          "threshold": "> 3%",
+          "note": "Line moved +8.6% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -792,14 +861,15 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "355m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "402m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
+        "Line moved +8.6% — part of the edge is already priced in",
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -830,8 +900,8 @@
         "n_total": 100,
         "total_wins": 96
       },
-      "verdict": "ENTER",
-      "age_min": 357.6,
+      "verdict": "LATE",
+      "age_min": 404.6,
       "drift": 0.02,
       "checks": [
         {
@@ -857,14 +927,14 @@
         },
         {
           "name": "Age",
-          "status": "warn",
-          "value": "358m ago",
-          "threshold": "> 60m",
-          "note": "Aging — but OK to tail if drift still small"
+          "status": "fail",
+          "value": "405m ago",
+          "threshold": "> 360m",
+          "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
-        "Aging — but OK to tail if drift still small"
+        "Very stale — even if price is near entry, you have less time to profit"
       ]
     },
     {
@@ -878,7 +948,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.69,
-      "current_price": 0.69,
+      "current_price": 0.675,
       "shares": 200.0,
       "size_usdc": 138.0,
       "tx_hash": "0x10e8cb1037fe9504a7919e5a2209a8ecde1850dbaabc712c6f78c881aa8aab13",
@@ -896,13 +966,13 @@
         "total_wins": 111
       },
       "verdict": "SKIP",
-      "age_min": 433.9,
-      "drift": 0.0,
+      "age_min": 481.0,
+      "drift": -0.015,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "+0.0%",
+          "value": "-2.2%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -923,7 +993,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "434m ago",
+          "value": "481m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -962,7 +1032,7 @@
         "total_wins": 96
       },
       "verdict": "SKIP",
-      "age_min": 464.0,
+      "age_min": 511.0,
       "drift": -0.015,
       "checks": [
         {
@@ -989,7 +1059,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "464m ago",
+          "value": "511m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1029,7 +1099,7 @@
         "total_wins": 56
       },
       "verdict": "SKIP",
-      "age_min": 521.9,
+      "age_min": 568.9,
       "drift": 0.025,
       "checks": [
         {
@@ -1056,7 +1126,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "522m ago",
+          "value": "569m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1077,7 +1147,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.71,
-      "current_price": 0.69,
+      "current_price": 0.675,
       "shares": 161.42,
       "size_usdc": 114.61,
       "tx_hash": "0x22c42c8eeed4e0b88ec49235208148943063106aa209cf3fe07653856c9f8dfc",
@@ -1095,15 +1165,15 @@
         "total_wins": 111
       },
       "verdict": "SKIP",
-      "age_min": 530.9,
-      "drift": -0.02,
+      "age_min": 578.0,
+      "drift": -0.035,
       "checks": [
         {
           "name": "Drift",
-          "status": "pass",
-          "value": "-2.8%",
-          "threshold": "≤ 3%",
-          "note": "Near whale's entry — you can still mirror the trade at their price"
+          "status": "warn",
+          "value": "-4.9%",
+          "threshold": "> 3%",
+          "note": "Line moved -4.9% — part of the edge is already priced in"
         },
         {
           "name": "Size",
@@ -1122,12 +1192,13 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "531m ago",
+          "value": "578m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
       ],
       "skip_reasons": [
+        "Line moved -4.9% — part of the edge is already priced in",
         "Below conviction threshold — likely noise/partial-fill",
         "Very stale — even if price is near entry, you have less time to profit"
       ]
@@ -1161,7 +1232,7 @@
         "total_wins": 66
       },
       "verdict": "SKIP",
-      "age_min": 554.9,
+      "age_min": 602.0,
       "drift": 0.005,
       "checks": [
         {
@@ -1188,7 +1259,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "555m ago",
+          "value": "602m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1210,7 +1281,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.83,
-      "current_price": 0.82,
+      "current_price": 0.815,
       "shares": 200.0,
       "size_usdc": 166.0,
       "tx_hash": "0x7920e814b8cfb175d1aab7e34bf8de5ea5ffc557f3afee01e619162e88c5c8f5",
@@ -1228,13 +1299,13 @@
         "total_wins": 111
       },
       "verdict": "SKIP",
-      "age_min": 574.6,
-      "drift": -0.01,
+      "age_min": 621.7,
+      "drift": -0.015,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-1.2%",
+          "value": "-1.8%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -1255,7 +1326,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "575m ago",
+          "value": "622m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1295,7 +1366,7 @@
         "total_wins": 167
       },
       "verdict": "LATE",
-      "age_min": 591.8,
+      "age_min": 638.9,
       "drift": -0.005,
       "checks": [
         {
@@ -1322,7 +1393,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "592m ago",
+          "value": "639m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1361,7 +1432,7 @@
         "total_wins": 167
       },
       "verdict": "LATE",
-      "age_min": 592.0,
+      "age_min": 639.1,
       "drift": -0.005,
       "checks": [
         {
@@ -1388,7 +1459,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "592m ago",
+          "value": "639m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1409,7 +1480,7 @@
       "outcome_idx": 1,
       "side": "NO",
       "entry_price": 0.84,
-      "current_price": 0.82,
+      "current_price": 0.815,
       "shares": 200.0,
       "size_usdc": 168.0,
       "tx_hash": "0x7875144b8a188a3eeea764684c6efe9146bdf3c58cace68c04c54b3ac57913ba",
@@ -1427,13 +1498,13 @@
         "total_wins": 111
       },
       "verdict": "SKIP",
-      "age_min": 632.2,
-      "drift": -0.02,
+      "age_min": 679.3,
+      "drift": -0.025,
       "checks": [
         {
           "name": "Drift",
           "status": "pass",
-          "value": "-2.4%",
+          "value": "-3.0%",
           "threshold": "≤ 3%",
           "note": "Near whale's entry — you can still mirror the trade at their price"
         },
@@ -1454,7 +1525,7 @@
         {
           "name": "Age",
           "status": "fail",
-          "value": "632m ago",
+          "value": "679m ago",
           "threshold": "> 360m",
           "note": "Very stale — even if price is near entry, you have less time to profit"
         }
@@ -1462,72 +1533,6 @@
       "skip_reasons": [
         "Below conviction threshold — likely noise/partial-fill",
         "Entry too high — max 19% gain if right, -100% if wrong. Asymmetric risk.",
-        "Very stale — even if price is near entry, you have less time to profit"
-      ]
-    },
-    {
-      "signal_id": "0x398900e9_0x9b04eca4",
-      "ts": 1787693289.0,
-      "timestamp_iso": "2026-08-25T21:28:09Z",
-      "market_id": "0x57ab38386fb9d1f9829e40a4a8d3815c1d3dc0a7becc4c48d77e5b18e11f664a",
-      "market_title": "Los Angeles Dodgers vs. Atlanta Braves",
-      "market_slug": "mlb-lad-atl-2026-08-25",
-      "outcome": "Los Angeles Dodgers",
-      "outcome_idx": 0,
-      "side": "LOS ANGELES DODGERS",
-      "entry_price": 0.6,
-      "current_price": null,
-      "shares": 750.0,
-      "size_usdc": 459.0,
-      "tx_hash": "0x9b04eca40afac038588232ace0f850524a0a05861b1bae545175bbb2a4fe82e2",
-      "whale": {
-        "address": "0x398900e95487c704AC3B52FD653E1697D32227b1",
-        "pseudonym": "Legal-Butcher",
-        "raw_win_rate": 0.8238,
-        "lifetime_pnl": 70217.72,
-        "roi": 0.6964,
-        "recent_wins": 55,
-        "recent_n": 66,
-        "recent_win_rate": 0.8333,
-        "z_score": 0.0,
-        "n_total": 210,
-        "total_wins": 173
-      },
-      "verdict": "SKIP",
-      "age_min": 698.8,
-      "drift": null,
-      "checks": [
-        {
-          "name": "Drift",
-          "status": "unknown",
-          "value": "n/a",
-          "threshold": "≤ 3%",
-          "note": "Current price unavailable"
-        },
-        {
-          "name": "Size",
-          "status": "fail",
-          "value": "$459",
-          "threshold": "≥ $500",
-          "note": "Below conviction threshold — likely noise/partial-fill"
-        },
-        {
-          "name": "Payoff",
-          "status": "pass",
-          "value": "0.600 (max +67%)",
-          "threshold": "< 0.75",
-          "note": "Good payoff — +67% upside on a correct call."
-        },
-        {
-          "name": "Age",
-          "status": "fail",
-          "value": "699m ago",
-          "threshold": "> 360m",
-          "note": "Very stale — even if price is near entry, you have less time to profit"
-        }
-      ],
-      "skip_reasons": [
-        "Below conviction threshold — likely noise/partial-fill",
         "Very stale — even if price is near entry, you have less time to profit"
       ]
     }
